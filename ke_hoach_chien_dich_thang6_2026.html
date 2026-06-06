@@ -1344,6 +1344,178 @@
   </div>
 </div>
 
+<!-- G4: TRACKING QUẬN × CAMPAIGN -->
+<div class="section">
+  <div class="section-title"><span class="num" style="background:#e94560">G4</span> Ma Trận Tracking: Spend × KH Theo Quận — Điền T2 Hàng Tuần</div>
+  <div class="alert" style="font-size:12px;margin-bottom:12px">
+    <strong>2 nguồn data:</strong> Spend = Ads Manager → filter theo <em>ad set name</em> (xem mục O) · KH = PowerBI → filter salon IDs bảng dưới × date range × customer_type.<br>
+    <strong>Tín hiệu:</strong>
+    <span style="color:#27ae60">✅ KH ≥90% plan + CPA ≤ benchmark</span> ·
+    <span style="color:#f39c12">⚠️ Spend OK + KH &lt;70% → creative/audience sai</span> ·
+    <span style="color:#e94560">🔴 Spend &lt;60% → delivery vấn đề</span> ·
+    <span style="color:#c0392b">❌ CPA &gt;2× + volume thấp → kill</span>
+  </div>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Map Salon → Quận (tra PowerBI)</div>
+      <table style="font-size:11px">
+        <tr><th>Quận</th><th>Salon IDs</th><th>Campaign</th></tr>
+        <tr><td>HN Q. Cầu Giấy</td><td>109 TQH · 116 TK · 264 LLQ</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HN Q. Hà Đông</td><td>10 TP · 11 PKT · 186 QT · 55A NVL</td><td>C1 · C2 · C3 · C4</td></tr>
+        <tr><td>HN Q. Long Biên</td><td>168 NVC</td><td>C1 · C2 · C3 · C4</td></tr>
+        <tr><td>HN Q. Từ Liêm</td><td>65 CD · 90 NH</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HN Q. Thanh Xuân</td><td>382 NT</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HN Q. Hai Bà Trưng</td><td>148 TD · 173 TN</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HN Q. Đống Đa</td><td>346 KT · 62 LH</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HN Q. Hoàn Kiếm</td><td>39 HBT</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HN Q. Hoàng Mai</td><td>50BT4 NPC LD</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HN Q. Ba Đình</td><td>202 DC</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HCM Q.1</td><td>186 DTH</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HCM Q.4</td><td>25 TD</td><td>C1 · C2 · C3 · C4</td></tr>
+        <tr><td>HCM Q.5</td><td>8 CVL</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HCM Q.6</td><td>927 HG</td><td>C1 · C2 · C3 · C4</td></tr>
+        <tr><td>HCM Q.7</td><td>237 NTT · 420 HTP</td><td>C1 · C2 · C3 · C4</td></tr>
+        <tr><td>HCM Q.8</td><td>236 DBT</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HCM Q.10</td><td>145 THT</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HCM Q.12</td><td>32 NAT · 76 PVH</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HCM Q.Bình Thạnh</td><td>341 XVNT</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HCM Q.Bình Tân</td><td>708 LTT · 730 TL10</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HCM Q.Gò Vấp</td><td>1180 QT · 12 LDT · 483 TN</td><td>C1 · C2 · C3 · C4</td></tr>
+        <tr><td>HCM Q.Tân Bình</td><td>312 LVS · 575 AC</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>HCM Q.Tân Phú</td><td>190 HB · 99 TSN</td><td>C1 · C3 · C4</td></tr>
+        <tr><td>Thanh Hóa</td><td>290 · 304 · 595 · 80 TP TH</td><td>C1 · C5</td></tr>
+        <tr><td>Bắc Ninh</td><td>362 NGT BN · 4 LQD BN</td><td>C1 · C5</td></tr>
+        <tr><td>Nghệ An</td><td>58 NVC · 68 LN NA</td><td>C1 · C5</td></tr>
+        <tr><td>Thái Nguyên</td><td>363 LNQ TN</td><td>C1 · C5</td></tr>
+        <tr><td>An Giang</td><td>113 THD AG</td><td>C1 · C5</td></tr>
+        <tr><td>Long An</td><td>7 DTP LA</td><td>C1</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">C2 — Tracking theo quận (80M · CA Cũ&gt;12W)</div>
+      <table style="font-size:12px">
+        <tr><th>Quận</th><th>Budget</th><th>KHmới Plan</th><th>C12W Plan</th><th>KHmới thực</th><th>C12W thực</th><th>CPA_CA</th><th>🚦</th></tr>
+        <tr><td>HN Q. Hà Đông</td><td>8.6M</td><td>141</td><td>383</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>HN Q. Long Biên</td><td>12.2M</td><td>214</td><td>527</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>HCM Q.4</td><td>12.1M</td><td>253</td><td>487</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>HCM Q.6</td><td>12.2M</td><td>152</td><td>594</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>HCM Q.7</td><td>16.5M</td><td>203</td><td>802</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>HCM Q.Gò Vấp</td><td>18.4M</td><td>249</td><td>870</td><td></td><td></td><td></td><td></td></tr>
+        <tr class="row-dark"><td><strong>TỔNG C2</strong></td><td><strong>80M</strong></td><td><strong>1,212</strong></td><td><strong>3,663</strong></td><td></td><td></td><td></td><td></td></tr>
+      </table>
+      <div style="font-size:12px;margin-top:8px;color:#7a9bbf">KH thực: PowerBI filter salon_id × customer_type=Cũ&gt;12W × 1–30/6</div>
+      <div class="card-title" style="margin-top:14px">C5 — Tracking theo vùng (105M · từ 12/6)</div>
+      <table style="font-size:12px">
+        <tr><th>Vùng</th><th>Budget</th><th>KH Plan</th><th>W2 KH</th><th>W3 KH</th><th>T6 KH</th><th>CPA</th><th>🚦</th></tr>
+        <tr class="row-success"><td><strong>HN</strong></td><td><strong>36.6M</strong></td><td><strong>870</strong></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr class="row-success"><td><strong>HCM</strong></td><td><strong>52.4M</strong></td><td><strong>1,249</strong></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td><strong>Tỉnh</strong></td><td><strong>16.1M</strong></td><td><strong>383</strong></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr class="row-dark"><td><strong>C5 TỔNG</strong></td><td><strong>105M</strong></td><td><strong>~2,500</strong></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </table>
+      <div style="font-size:12px;margin-top:8px;color:#f39c12">⚠️ W1 không có — C5 chạy từ 12/6. Đo W2 (15–21/6) trở đi.</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <div class="card-title">C1 — Tracking theo quận (260M · nền toàn quốc)</div>
+    <div style="font-size:12px;color:#7a9bbf;margin-bottom:8px">W1/W2/W3 = KHmới + Cũ&gt;12W tích lũy cuối tuần (PowerBI salon IDs × date range)</div>
+    <div class="two-col">
+      <div>
+        <div style="font-weight:700;font-size:12px;margin-bottom:4px">Hà Nội — 90.5M plan</div>
+        <table style="font-size:12px">
+          <tr><th>Quận</th><th>Budget</th><th>KH Plan</th><th>W1</th><th>W2</th><th>W3</th><th>T6 KH</th><th>CPA</th><th>🚦</th></tr>
+          <tr><td>Q. Cầu Giấy</td><td>20.3M</td><td>195</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Hà Đông</td><td>14.4M</td><td>138</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Từ Liêm</td><td>9.5M</td><td>91</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Hai Bà Trưng</td><td>8.4M</td><td>81</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Thanh Xuân</td><td>7.7M</td><td>74</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Đống Đa</td><td>7.5M</td><td>72</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Long Biên</td><td>6.9M</td><td>66</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Hoàn Kiếm</td><td>6.1M</td><td>59</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Hoàng Mai</td><td>5.8M</td><td>56</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Ba Đình</td><td>4.0M</td><td>38</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr class="row-dark"><td><strong>HN</strong></td><td><strong>90.5M</strong></td><td><strong>870</strong></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </table>
+        <div style="font-weight:700;font-size:12px;margin:10px 0 4px">Tỉnh — 39.7M plan</div>
+        <table style="font-size:12px">
+          <tr><th>Vùng</th><th>Budget</th><th>KH Plan</th><th>W1</th><th>W2</th><th>W3</th><th>T6 KH</th><th>CPA</th><th>🚦</th></tr>
+          <tr><td>Thanh Hóa</td><td>10.7M</td><td>103</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Bắc Ninh</td><td>9.4M</td><td>91</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Nghệ An</td><td>7.5M</td><td>73</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Thái Nguyên</td><td>4.8M</td><td>47</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>An Giang</td><td>4.2M</td><td>40</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Long An</td><td>3.0M</td><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr class="row-dark"><td><strong>Tỉnh</strong></td><td><strong>39.7M</strong></td><td><strong>383</strong></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </table>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:12px;margin-bottom:4px">Hồ Chí Minh — 129.6M plan</div>
+        <table style="font-size:12px">
+          <tr><th>Quận</th><th>Budget</th><th>KH Plan</th><th>W1</th><th>W2</th><th>W3</th><th>T6 KH</th><th>CPA</th><th>🚦</th></tr>
+          <tr><td>Q.7</td><td>17.6M</td><td>170</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.Gò Vấp</td><td>15.7M</td><td>152</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.Tân Bình</td><td>15.0M</td><td>145</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.Tân Phú</td><td>12.1M</td><td>117</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.Bình Tân</td><td>11.7M</td><td>113</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.10</td><td>10.6M</td><td>102</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.1</td><td>7.5M</td><td>72</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.5</td><td>7.4M</td><td>71</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.8</td><td>7.1M</td><td>68</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.12</td><td>7.0M</td><td>67</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.6</td><td>6.9M</td><td>67</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.4</td><td>6.9M</td><td>66</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.Bình Thạnh</td><td>4.0M</td><td>39</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr class="row-dark"><td><strong>HCM</strong></td><td><strong>129.6M</strong></td><td><strong>1,249</strong></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="row-dark" style="padding:6px 12px;border-radius:6px;margin-top:6px;font-size:12px">C1 TỔNG: 49 salon · <strong>260M</strong> · KH Plan = 2,502</div>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <div class="card-title">C3 / C4 — Tracking theo quận (C3: 170M · C4: 80M · cùng 37 salon)</div>
+    <div style="font-size:12px;color:#7a9bbf;margin-bottom:8px"><strong>C3 KH thực</strong> = GD slot 12–13h30 tăng thêm vs T5 baseline · <strong>C4 KH thực</strong> = GD slot 17–19h tăng thêm vs T5 (PowerBI filter booking_hour)</div>
+    <div class="two-col">
+      <div>
+        <div style="font-weight:700;font-size:12px;margin-bottom:4px">Hà Nội (C3: 73.3M · C4: 34.5M)</div>
+        <table style="font-size:12px">
+          <tr><th>Quận</th><th>C3 Budget</th><th>C4 Budget</th><th>KH Plan</th><th>C3 KH thực</th><th>C4 KH thực</th><th>C3 CPA</th><th>C4 CPA</th><th>🚦</th></tr>
+          <tr><td>Q. Cầu Giấy</td><td>13.2M</td><td>6.2M</td><td>454</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Hà Đông</td><td>13.8M</td><td>6.5M</td><td>476</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Từ Liêm</td><td>9.6M</td><td>4.5M</td><td>332</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Hoàn Kiếm</td><td>7.8M</td><td>3.7M</td><td>269</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Hai Bà Trưng</td><td>7.0M</td><td>3.3M</td><td>240</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Long Biên</td><td>6.2M</td><td>2.9M</td><td>214</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Thanh Xuân</td><td>5.5M</td><td>2.6M</td><td>190</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Đống Đa</td><td>5.1M</td><td>2.4M</td><td>174</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Hoàng Mai</td><td>4.4M</td><td>2.1M</td><td>153</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q. Ba Đình</td><td>0.6M</td><td>0.3M</td><td>22</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr class="row-dark"><td><strong>HN</strong></td><td><strong>73.3M</strong></td><td><strong>34.5M</strong></td><td><strong>2,524</strong></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </table>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:12px;margin-bottom:4px">Hồ Chí Minh (C3: 96.6M · C4: 45.5M)</div>
+        <table style="font-size:12px">
+          <tr><th>Quận</th><th>C3 Budget</th><th>C4 Budget</th><th>KH Plan</th><th>C3 KH thực</th><th>C4 KH thực</th><th>C3 CPA</th><th>C4 CPA</th><th>🚦</th></tr>
+          <tr><td>Q.7</td><td>13.8M</td><td>6.5M</td><td>475</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.Gò Vấp</td><td>11.3M</td><td>5.3M</td><td>389</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.Tân Bình</td><td>10.0M</td><td>4.7M</td><td>346</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.Tân Phú</td><td>8.2M</td><td>3.9M</td><td>281</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.Bình Tân</td><td>9.7M</td><td>4.6M</td><td>335</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.10</td><td>6.9M</td><td>3.2M</td><td>236</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.4</td><td>7.3M</td><td>3.4M</td><td>253</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.1</td><td>5.0M</td><td>2.4M</td><td>173</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.5</td><td>5.9M</td><td>2.8M</td><td>203</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.8</td><td>5.2M</td><td>2.5M</td><td>180</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.12</td><td>5.8M</td><td>2.7M</td><td>201</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.6</td><td>4.4M</td><td>2.1M</td><td>152</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Q.Bình Thạnh</td><td>2.9M</td><td>1.4M</td><td>99</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr class="row-dark"><td><strong>HCM</strong></td><td><strong>96.6M</strong></td><td><strong>45.5M</strong></td><td><strong>3,323</strong></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="row-dark" style="padding:6px 12px;border-radius:6px;margin-top:6px;font-size:12px">TỔNG C3/C4: 37 salon · C3 <strong>170M</strong> · C4 <strong>80M</strong> · KH Plan = 5,847</div>
+  </div>
+</div>
+
 <!-- H: QUY TẮC -->
 <div class="section">
   <div class="section-title"><span class="num">H</span> Quy Tắc Điều Chỉnh</div>
@@ -1656,6 +1828,110 @@
       </div>
     </div>
   </div>
+</div>
+
+<!-- O: HƯỚNG DẪN SETUP AD SETS -->
+<div class="section" id="section-o">
+  <h2>O. HƯỚNG DẪN SETUP AD SETS THEO QUẬN</h2>
+  <div class="alert">Mục đích: Tách ad set theo quận để Ads Manager hiện spend thực tế từng quận → ghép với KH từ PowerBI = full tracking G4.</div>
+
+  <h3>O1. Nguyên tắc cốt lõi</h3>
+  <table>
+    <thead><tr><th>Quyết định</th><th>Lý do</th></tr></thead>
+    <tbody>
+      <tr><td><strong>ABO</strong> (Ad Set Budget) — không dùng CBO</td><td>CBO: Facebook tự phân bổ → mất control theo quận. ABO: budget cố định từng ad set → Ads Manager hiện spend đúng từng quận</td></tr>
+      <tr><td><strong>1 ad set = 1 quận</strong> (trừ C2)</td><td>Gộp các salon cùng quận vào 1 ad set. Đủ để tracking, dễ quản lý hơn 1 ad set / salon</td></tr>
+      <tr><td><strong>C2: 1 ad set = 1 salon</strong></td><td>Vì CA list Cũ&gt;12W khác nhau từng salon — không thể gộp</td></tr>
+      <tr><td><strong>Không mix Cold + CA trong cùng 1 ad set</strong></td><td>Algorithm tối ưu khác nhau → phải tách</td></tr>
+    </tbody>
+  </table>
+
+  <h3>O2. Naming Convention</h3>
+  <p><strong>Format:</strong> <code>[Campaign]-[Region]-[District]-[Channel]-[Audience]</code></p>
+  <pre style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px;font-size:13px;line-height:1.7;overflow-x:auto">C1-HN-CauGiay-FB-Cold        ← C1, HN, Cầu Giấy, Facebook, cold audience
+C1-HN-CauGiay-TT-Cold        ← cùng quận nhưng TikTok
+C1-HCM-Q7-FB-Cold
+C2-HN-HaDong-FB-CA           ← C2, Custom Audience Cũ&gt;12W
+C2-HCM-GoVap-12LDT-FB-CA    ← C2, ghi rõ salon nếu cùng quận có 2 salon
+C2-HCM-GoVap-1180QT-FB-CA
+C3-HN-CauGiay-FB-Cold
+C3-HN-HaDong-GG-Search       ← Google keyword cho C3
+C4-HCM-Q7-FB-Cold
+C5-HN-HaDong-TT-Cold</pre>
+
+  <p><strong>Mã quận tắt:</strong></p>
+  <table>
+    <thead><tr><th>Vùng</th><th>Quận</th><th>Mã</th></tr></thead>
+    <tbody>
+      <tr><td>HN</td><td>Cầu Giấy · Hà Đông · Từ Liêm · Thanh Xuân · Hai Bà Trưng</td><td>CauGiay · HaDong · TuLiem · ThanhXuan · HaiBaTrung</td></tr>
+      <tr><td>HN</td><td>Đống Đa · Hoàn Kiếm · Hoàng Mai · Long Biên · Ba Đình</td><td>DongDa · HoanKiem · HoangMai · LongBien · BaDinh</td></tr>
+      <tr><td>HCM</td><td>Q1 · Q4 · Q5 · Q6 · Q7 · Q8 · Q10 · Q12</td><td>Q1 · Q4 · Q5 · Q6 · Q7 · Q8 · Q10 · Q12</td></tr>
+      <tr><td>HCM</td><td>Bình Thạnh · Bình Tân · Gò Vấp · Tân Bình · Tân Phú</td><td>BinhThanh · BinhTan · GoVap · TanBinh · TanPhu</td></tr>
+      <tr><td>Tỉnh</td><td>Thanh Hóa · Bắc Ninh · Nghệ An · Thái Nguyên · An Giang</td><td>TH · BN · NA · TN · AG</td></tr>
+    </tbody>
+  </table>
+
+  <h3>O3. Cấu trúc Campaign → Ad Set → Ad</h3>
+  <pre style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px;font-size:13px;line-height:1.7;overflow-x:auto">Campaign: C1_TourDuLich (ABO — đặt budget ở ad set level)
+├── C1-HN-CauGiay-FB-Cold     Budget: 20.3M  Location: Q.Cầu Giấy radius
+│   ├── Ad 1: ASMR slow motion gội đầu
+│   ├── Ad 2: Angle thư giãn riêng tư
+│   └── Ad 3: Angle đặt slot ngay
+├── C1-HN-HaDong-FB-Cold      Budget: 14.4M  Location: Q.Hà Đông radius
+│   └── (dùng chung 3 ads — không cần làm creative riêng theo quận)
+├── C1-HN-CauGiay-TT-Cold     Budget: 8.2M   Location: Q.Cầu Giấy
+│   └── (TikTok ads riêng — format khác)
+...
+
+Campaign: C2_TheraStudio (ABO)
+├── C2-HN-HaDong-10TP-FB-CA   Budget: 8.6M   CA: Cũ&gt;12W list từ 10TP salon
+├── C2-HN-LongBien-168NVC-FB-CA Budget: 12.2M  CA: Cũ&gt;12W list từ 168NVC salon
+├── C2-HCM-Q4-25TD-FB-CA      Budget: 12.1M  CA: Cũ&gt;12W list từ 25TD salon
+...</pre>
+  <div class="alert">Ads (creative) dùng chung giữa các quận trong cùng campaign. Chỉ cần đổi <em>Location</em> ở ad set level — không cần làm video/image riêng cho từng quận.</div>
+
+  <h3>O4. Budget × Ad Set — Setup từng Campaign</h3>
+  <table>
+    <thead><tr><th>Campaign</th><th># Ad sets FB</th><th># Ad sets TT</th><th># Ad sets GG</th><th>Budget type</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td><strong>C1</strong></td><td>23 (HN 10 + HCM 13)</td><td>10 quận lớn (budget ≥5M)</td><td>—</td><td>ABO</td><td>TikTok: chỉ tách quận có TT budget ≥5M</td></tr>
+      <tr><td><strong>C2</strong></td><td>7 (1/salon)</td><td>—</td><td>—</td><td>ABO</td><td>CA list khác nhau từng salon</td></tr>
+      <tr><td><strong>C3</strong></td><td>23</td><td>5 quận lớn HN</td><td>1 (nationwide keyword)</td><td>ABO</td><td>Google không cần geo — 1 campaign nationwide</td></tr>
+      <tr><td><strong>C4</strong></td><td>23</td><td>—</td><td>—</td><td>ABO</td><td>Radius 5km từng salon pin</td></tr>
+      <tr><td><strong>C5</strong></td><td>23 + 6 Tỉnh</td><td>3 (HN / HCM / Tỉnh gộp)</td><td>—</td><td>ABO</td><td>TikTok: gộp Tỉnh vào 1 ad set TT</td></tr>
+      <tr><td><strong>FBCường</strong></td><td>Không đổi</td><td>—</td><td>—</td><td>—</td><td><span class="badge badge-red">KHÔNG TOUCH</span></td></tr>
+    </tbody>
+  </table>
+  <div class="alert">Tổng ad sets FB cần tạo: C1(23) + C2(7) + C3(23) + C4(23) + C5(29) = <strong>105 ad sets</strong>. Ưu tiên C1 + C2 trước — C3/C4/C5 dùng cùng quận list, có thể duplicate cấu trúc.</div>
+
+  <h3>O5. Cách set location trong Facebook Ads Manager</h3>
+  <p><strong>Option A — Target theo quận (nhanh, khuyến nghị cho C1/C3/C4/C5):</strong></p>
+  <ol style="padding-left:20px;line-height:2">
+    <li>Ad Set → Locations → Add Locations</li>
+    <li>Search: <em>"Quận 7, Thành phố Hồ Chí Minh"</em> hoặc <em>"Hà Đông, Hà Nội"</em></li>
+    <li>Facebook cho phép target district tại VN trực tiếp</li>
+  </ol>
+  <p><strong>Option B — Pin radius từng salon (chính xác, dùng cho C2):</strong></p>
+  <ol style="padding-left:20px;line-height:2">
+    <li>Add Locations → Drop Pin → nhập địa chỉ salon</li>
+    <li>Set radius: 3km (quận nhỏ nội đô) · 5km (quận rộng / ngoại ô)</li>
+    <li>Thêm pin cho từng salon trong cùng ad set → circles chồng lên nhau = phủ hết quận</li>
+  </ol>
+  <div class="alert" style="border-left-color:#ef4444"><strong>FBCường exclusion (bắt buộc với mọi campaign):</strong> Exclude Q.Thủ Đức · Q.2 · Biên Hòa · Bình Dương khỏi tất cả ad sets — tránh overlap với vùng Cường.</div>
+
+  <h3>O6. Checklist trước khi publish</h3>
+  <table>
+    <tbody>
+      <tr><td>☐</td><td>Ad set name đúng format <code>C{n}-{Region}-{District}-{Channel}-{Audience}</code></td></tr>
+      <tr><td>☐</td><td>Budget ABO = đúng số từ bảng ma trận quận (section C · G4)</td></tr>
+      <tr><td>☐</td><td>Location = quận đúng (không bao gồm Q.Thủ Đức / Q.2 / Biên Hòa / Bình Dương)</td></tr>
+      <tr><td>☐</td><td>Audience: Cold ≠ CA — không mix trong cùng ad set</td></tr>
+      <tr><td>☐</td><td>C2: CA list đã upload đúng salon (không upload nhầm list salon khác)</td></tr>
+      <tr><td>☐</td><td>C5: Start date = 12/6 · Setup T2 9/6 sáng</td></tr>
+      <tr><td>☐</td><td>Tổng budget tất cả ad sets = budget plan campaign</td></tr>
+      <tr><td>☐</td><td>Sau khi publish: lấy Ad Set ID từ Ads Manager → map vào bảng G4 để dùng khi pull report</td></tr>
+    </tbody>
+  </table>
 </div>
 
 <div style="text-align:center;color:var(--muted);font-size:12px;padding:20px 0;border-top:1px solid var(--border)">
