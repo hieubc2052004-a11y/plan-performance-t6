@@ -19,7 +19,7 @@
 | # | Campaign | Khu vực | Salon/Quận | T5 → T6 | Budget | Kênh |
 |---|---|---|---|---|---|---|
 | **C1** | **Tour du lịch thư giãn 45 phút** (nền) | All salon nationwide (trừ vùng Cường) | Toàn hệ thống | KHmới baseline → +10.8% | **260M** (30.6%) | Facebook + TikTok |
-| **C2** | **Căn hộ phục hồi Thera Studio** | Hà Nội | 8 salon — Cầu Giấy · Long Biên · Hà Đông | Cũ>12W T5 = 3,184 → T6 = 3,314 (+4%) | **80M** (9.4%) | Facebook CA Cũ>12W |
+| **C2** | **Căn hộ phục hồi Thera Studio** | HN + HCM | 8 salon — HN: 10TP · 168NVC · HCM: 103TN · 927HG · 237NTT · 12LDT · 25TD · 1180QT | Cũ>12W T5 = 3,480→ T6 = 3,663 (+5.3%) · 103TN pending | **80M** (9.4%) | Facebook CA Cũ>12W |
 | **C3** | **Nghỉ trưa** | HN + HCM | 37 salon — khu vực văn phòng | Tăng GD slot 12–13h30 +25% vs T5 | **170M** (21.7%) | Facebook + TikTok + Google |
 | **C4** | **Tan làm** | HN + HCM | 37 salon — pre-book slot 17–19h | Tăng GD slot 17–19h +10% vs T5 | **80M** (9.4%) | Facebook |
 | **C5** | **Tóc đẹp đi làm** (từ 12/6) | All salon nationwide | Toàn hệ thống | Boost 12–30/6 · CPA ≤ 40k | **105M** (12.4%) | Facebook + TikTok |
@@ -336,35 +336,37 @@ Tắt content → wait 3 ngày → ngân sách slot đó có thể dùng lại
 
 ---
 
-### CAMPAIGN 2 — CĂN HỘ PHỤC HỒI THERA STUDIO (HN — 8 salon Cầu Giấy / Long Biên / Hà Đông)
+### CAMPAIGN 2 — CĂN HỘ PHỤC HỒI THERA STUDIO (HN 2 salon + HCM 6 salon)
 
 > **💡 Insight:** *"Khi tôi bị đau mỏi vai gáy/stress vì ngồi máy tính nhiều nhưng ngại đi spa đông người, tôi cần 1 nơi có thể vừa gội đầu thư giãn kết hợp massage giãn cơ giảm mỏi vùng cổ vai gáy trong 1 lần ghé."*
 
-**Vai trò:** Brand campaign HN — kéo Cũ>12W bằng concept cao cấp (uốn/nhuộm/trị liệu). 8 clips đã có — chạy ngay ngày 1.
-**Kênh:** Facebook 80M — Custom Audience Cũ>12W + radius từng salon 3–5km. Không TikTok (geo quá hẹp).
-**Tệp mục tiêu:** Cũ>12W (khách đã biết 30Shine, chưa ghé ≥12 tuần) — angle nâng cấp trải nghiệm.
+**Vai trò:** Kéo Cũ>12W bằng concept trải nghiệm cao cấp (gội đầu + massage vai gáy). Custom Audience upload CRM list theo từng salon. Bắt đầu ngay ngày 1.
+**Kênh:** Facebook 80M — Custom Audience Cũ>12W + radius từng salon 3–5km. Không TikTok (geo đặc thù từng salon).
+**Tệp mục tiêu:** Cũ>12W (chưa ghé ≥12 tuần) PRIMARY · KHmới trong bán kính 3–5km SECONDARY.
 
-#### Mục tiêu Cũ>12W từng salon — T5 → T6
+#### Mục tiêu từng salon — T5 → T6
 
-> **Growth rate dựa trên capacity còn lại:** Cap 5–8 (+6% C12W) · Cap 8–11 (+3% C12W) · Salon gần đầy thì target thấp hơn.
+> **Growth rate:** KHmới: Cap <5 (+18%) · 5–8 (+12%) · 8–11 (+7%). Cũ>12W: Cap <5 (+8%) · 5–8 (+6%) · 8–11 (+3%).
 
-| Salon | Quận | Cap (KH/Thợ/ng) | Cũ>12W T5 | Rate | Cũ>12W T6 | Δ |
-|---|---|---|---|---|---|---|
-| 109 TQH | Q. Cầu Giấy | 🟢 7.3 | 621 | +6% | 658 | +37 |
-| 116 TK | Q. Cầu Giấy | 🟢 8.8 | 624 | +3% | 643 | +19 |
-| 264 LLQ | Q. Cầu Giấy | 🟢 7.2 | 398 | +6% | 422 | +24 |
-| 168 NVC | Q. Long Biên | 🟢 9.1 | 512 | +3% | 527 | +15 |
-| 10 TP | Q. Hà Đông | 🟢 9.8 | 372 | +3% | 383 | +11 |
-| 11 PKT | Q. Hà Đông | 🟢 8.4 | 265 | +3% | 273 | +8 |
-| 55A NVL | Q. Hà Đông | 🟢 9.0 | 248 | +3% | 255 | +7 |
-| 186 QT | Q. Hà Đông | 🟢 6.3 | 144 | +6% | 153 | +9 |
-| **TỔNG C2** | | | **3.184** | | **3.314** | **+130** |
+| Salon | Khu vực | Cap | KHmới T5 | KHmới T6 | Cũ>12W T5 | Cũ>12W T6 | Δ tổng |
+|---|---|---|---|---|---|---|---|
+| **10 TP** | HN · Hà Đông | 🟠 9.8 | 132 | 141 (+7%) | 372 | 383 (+3%) | **+20** |
+| **168 NVC** | HN · Long Biên | 🟠 9.1 | 200 | 214 (+7%) | 512 | 527 (+3%) | **+29** |
+| **103 TN** | HCM · ? | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ |
+| **927 HG** | HCM · Q.6 | 🟢 6.6 | 136 | 152 (+12%) | 560 | 594 (+6%) | **+50** |
+| **237 NTT** | HCM · Q.7 | 🟠 8.9 | 190 | 203 (+7%) | 779 | 802 (+3%) | **+36** |
+| **12 LDT** | HCM · Gò Vấp | 🟢 4.6 | 113 | 133 (+18%) | 431 | 465 (+8%) | **+54** |
+| **25 TD** | HCM · Q.4 | 🟢 4.8 | 214 | 253 (+18%) | 451 | 487 (+8%) | **+75** |
+| **1180 QT** | HCM · Gò Vấp | 🟢 4.1 | 98 | 116 (+18%) | 375 | 405 (+8%) | **+48** |
+| **TỔNG (7 salon)** | | | **1.083** | **1.212** | **3.480** | **3.663** | **+312** |
 
-> **Lý do chọn 8 salon này:** Cầu Giấy + Long Biên + Hà Đông là cụm dân trí cao, thu nhập tốt, phù hợp với concept Thera Studio cao cấp. Cũ>12W T5 = 3,184 — pool khách quay lại lớn, chỉ cần trigger đúng.
+> ⚠️ **103 TN chưa có data T5** — cần confirm salon này. Tổng trên là 7/8 salon.
+> **3 salon HCM có room lớn nhất:** 25 TD (+75) · 12 LDT (+54) · 1180 QT (+48) — cap thấp, growth rate cao nhất.
+> **2 salon HN (10 TP, 168 NVC):** cap gần đầy (9.1–9.8), delta thấp — chủ yếu giữ Cũ>12W, không kỳ vọng bứt phá mạnh.
 
-**Target:** Cũ>12W T5=3,184 → **T6=3,314** (+130, avg +4%)
-**Lượt mua ước tính:** 80M ÷ 20k avg CPA = **~4,000 lượt mua Cũ>12W HN**
-**KPI PRIMARY:** Cũ>12W visits tại 8 salon này. **KPI SECONDARY:** CPA_Cũ>12W ≤ 25k.
+**Target (7 salon):** KHmới 1,083 → **1,212** (+129) · Cũ>12W 3,480 → **3,663** (+183)
+**Lượt mua ước tính:** 80M ÷ 17k CPA_CA = **~4,700 lượt** (đủ phủ pool Cũ>12W 3,663+)
+**KPI PRIMARY:** Cũ>12W visits tại 8 salon. **KPI SECONDARY:** CPA_Cũ>12W ≤ 25k.
 
 ---
 
@@ -717,7 +719,7 @@ Data T5: SK peak 18h = 1.4× daily avg. Để không overload tại giờ này, 
 | Campaign | Budget | KPI PRIMARY | KHmới T5→T6 | Cũ>12W T5→T6 | Tổng mới+Cũ>12W |
 |---|---|---|---|---|---|
 | **C1 Tour nền** (49 salon — tất cả trừ Cường) | **260M** | KHmới + Cũ>12W reactivation (Custom Audience) | 6,890 → ~7,703 (+11.8%) | 19,122 → ~20,172 (+5.5%) | 26,012 → **27,875** |
-| **C2 Căn hộ phục hồi Thera Studio** (8 salon HN) | **80M** | Cũ>12W HN — uốn/nhuộm/trị liệu | ~130 | 3,184 → 3,314 (+4.1%) | 4,236 → **~4,404** |
+| **C2 Căn hộ phục hồi Thera Studio** (8 salon HN+HCM) | **80M** | Cũ>12W — trải nghiệm massage vai gáy | +129 KHmới | 3,480 → 3,663 (+5.3%) · 103TN pending | **+312 tổng** |
 | **C3 Nghỉ trưa** (37 salon HN+HCM) | **170M** (FB100+TikTok20+Google50) | Tăng GD slot 12–13h30 | **+617 incremental** | — | **+617 slot GD** |
 | **C4 Tan làm** (37 salon HN+HCM) | **80M** | Tăng GD slot 17–19h | **+617 incremental** | — | **+10% = +1,429 slot GD** |
 | **C5 Tóc đẹp đi làm** (toàn hệ thống, 12–30/6) | **105M** | KHmới + Cũ>12W nationwide | ~600 | ~200 | **~800** |
