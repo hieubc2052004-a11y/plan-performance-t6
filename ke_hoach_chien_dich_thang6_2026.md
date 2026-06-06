@@ -181,6 +181,7 @@
 | Chạy đều cả tuần | ML ổn định, tối ưu liên tục | **Đã kiểm chứng: hiệu quả cao hơn tăng/giảm** |
 
 > **Chỉ điều chỉnh ngân sách ĐẦU TUẦN (sáng T2)** dựa trên kết quả tuần trước.
+> **Nếu campaign underspend (chi < 80% kế hoạch):** chuyển phần dư sang C1 — không để tiền nằm. Thứ tự ưu tiên nhận: **C1 → C3 → C4**. C2 không nhận thêm (pool CA giới hạn).
 > Signal tăng: KM pace > target từ đầu tuần → scale lên. "Nếu tiêu được 1.5 tỷ với 40k khách hiệu quả — tại sao không?"
 
 ### 2. Dồn Content — Input Một Lần/Tuần
@@ -365,6 +366,8 @@ Tắt content → wait 3 ngày → ngân sách slot đó có thể dùng lại
 **Target:** KHmới 1,083 → **1,212** (+129) · Cũ>12W 3,480 → **3,663** (+183)
 **Lượt mua ước tính:** 80M ÷ 17k CPA_CA = **~4,700 lượt** (đủ phủ pool Cũ>12W 3,663)
 **KPI PRIMARY:** Cũ>12W visits tại 7 salon. **KPI SECONDARY:** CPA_Cũ>12W ≤ 25k.
+
+> **💸 Nếu C2 underspend:** Pool CA có giới hạn (3,663 người) — Facebook sẽ tự giảm chi khi hết pool. Nếu sau W1 chi tiêu thực < 80% kế hoạch → **chuyển phần dư sang C1** (nationwide, hấp thụ không giới hạn). Chỉ điều chỉnh vào T2 sáng.
 
 ---
 
