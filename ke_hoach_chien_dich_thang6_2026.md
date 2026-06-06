@@ -331,6 +331,59 @@ Tắt content → wait 3 ngày → ngân sách slot đó có thể dùng lại
 
 | **TỔNG C1** | | | **6.890** | **19.122** | **26.012** | **27.875** | **+1.863** |
 
+#### Ma trận ngân sách theo quận — Ad Platform Setup
+
+> Budget tỷ lệ theo Tổng T6 (mới+Cũ>12W) từng quận. C1 total = 27,875 → **260M**.
+
+**Hà Nội — 90.5M:**
+
+| Quận | Salon | Budget | Tổng T6 |
+|---|---|---|---|
+| Q. Ba Đình | 202 DC | 4.0M | 426 |
+| Q. Cầu Giấy | 109 TQH · 116 TK · 264 LLQ | 20.3M | 2,177 |
+| Q. Hai Bà Trưng | 148 TD · 173 TN | 8.4M | 903 |
+| Q. Hoàn Kiếm | 39 HBT | 6.1M | 656 |
+| Q. Hoàng Mai | 50BT4 NPC LD | 5.8M | 622 |
+| Q. Hà Đông | 10 TP · 11 PKT · 186 QT · 55A NVL | 14.4M | 1,540 |
+| Q. Long Biên | 168 NVC | 6.9M | 741 |
+| Q. Thanh Xuân | 382 NT | 7.7M | 830 |
+| Q. Từ Liêm | 65 CD · 90 NH | 9.5M | 1,017 |
+| Q. Đống Đa | 346 KT · 62 LH | 7.5M | 800 |
+| **HN** | **18 salon** | **90.5M** | **9,712** |
+
+**Hồ Chí Minh — 129.6M:**
+
+| Quận | Salon | Budget | Tổng T6 |
+|---|---|---|---|
+| Q.1 | 186 DTH | 7.5M | 800 |
+| Q.4 | 25 TD | 6.9M | 740 |
+| Q.5 | 8 CVL | 7.4M | 793 |
+| Q.6 | 927 HG | 6.9M | 746 |
+| Q.7 | 237 NTT · 420 HTP | 17.6M | 1,889 |
+| Q.8 | 236 DBT | 7.1M | 760 |
+| Q.10 | 145 THT | 10.6M | 1,139 |
+| Q.12 | 32 NAT · 76 PVH | 7.0M | 747 |
+| Q.Bình Thạnh | 341 XVNT | 4.0M | 432 |
+| Q.Bình Tân | 708 LTT · 730 TL10 | 11.7M | 1,253 |
+| Q.Gò Vấp | 1180 QT · 12 LDT · 483 TN | 15.7M | 1,689 |
+| Q.Tân Bình | 312 LVS · 575 AC | 15.0M | 1,614 |
+| Q.Tân Phú | 190 HB · 99 TSN | 12.1M | 1,300 |
+| **HCM** | **20 salon** | **129.6M** | **13,902** |
+
+**Tỉnh / TP khác — 39.7M:**
+
+| Vùng | Salon | Budget | Tổng T6 |
+|---|---|---|---|
+| An Giang | 113 THD AG | 4.2M | 449 |
+| Bắc Ninh | 362 NGT BN · 4 LQD BN | 9.4M | 1,009 |
+| Long An | 7 DTP LA | 3.0M | 323 |
+| Nghệ An | 58 NVC NA · 68 LN NA | 7.5M | 809 |
+| Thanh Hóa | 290 QT TH · 304 NT TH · 595 BT TH · 80 TP TH | 10.7M | 1,151 |
+| Thái Nguyên | 363 LNQ TN | 4.8M | 520 |
+| **Tỉnh** | **11 salon** | **39.7M** | **4,261** |
+
+| **TỔNG C1** | **49 salon** | **260M** | **27,875** |
+
 > Tăng trưởng theo capacity: salon còn nhiều room tăng mạnh hơn. Tổng mới+Cũ>12W: T5=26,012 → T6=27,875 (+7.2%)
 
 **Lượt mua ước tính:** 260M ÷ CPA est 25k = **~10,400 lượt mua** (main volume driver)
@@ -359,6 +412,20 @@ Tắt content → wait 3 ngày → ngân sách slot đó có thể dùng lại
 | **25 TD** | HCM · Q.4 | 🟢 4.8 | 214 | 253 (+18%) | 451 | 487 (+8%) | **+75** |
 | **1180 QT** | HCM · Gò Vấp | 🟢 4.1 | 98 | 116 (+18%) | 375 | 405 (+8%) | **+48** |
 | **TỔNG C2 (7 salon)** | | | **1.083** | **1.212** | **3.480** | **3.663** | **+312** |
+
+#### Ma trận ngân sách theo quận — Ad Platform Setup
+
+> Budget tỷ lệ theo (KHmới T6 + Cũ>12W T6) từng quận. Tổng C2 pool = 4,875 → **80M**.
+
+| Quận | Salon | Budget | KHmới T6 | Cũ>12W T6 | Tổng |
+|---|---|---|---|---|---|
+| Q. Hà Đông (HN) | 10 TP | **8.6M** | 141 | 383 | 524 |
+| Q. Long Biên (HN) | 168 NVC | **12.2M** | 214 | 527 | 741 |
+| Q.4 (HCM) | 25 TD | **12.1M** | 253 | 487 | 740 |
+| Q.6 (HCM) | 927 HG | **12.2M** | 152 | 594 | 746 |
+| Q.7 (HCM) | 237 NTT | **16.5M** | 203 | 802 | 1,005 |
+| Q.Gò Vấp (HCM) | 12 LDT · 1180 QT | **18.4M** | 249 | 870 | 1,119 |
+| **TỔNG** | **7 salon** | **80M** | **1,212** | **3,663** | **4,875** |
 
 > **3 salon HCM có room lớn nhất:** 25 TD (+75) · 12 LDT (+54) · 1180 QT (+48) — cap thấp, growth rate cao nhất.
 > **2 salon HN (10 TP, 168 NVC):** cap gần đầy (9.1–9.8) — chủ yếu giữ Cũ>12W, không kỳ vọng bứt phá mạnh.
@@ -455,6 +522,47 @@ Tắt content → wait 3 ngày → ngân sách slot đó có thể dùng lại
 | **TỔNG HCM** | | | **2.980** | | **3.326** | **+346** |
 
 | **TỔNG C3 Nghỉ trưa (HN+HCM)** | | | **5.233** | | **5.850** | **+617** |
+
+#### Ma trận ngân sách theo quận — Ad Platform Setup
+
+> Budget tỷ lệ theo KHmới T6 từng quận. Tổng FB+TikTok+Google = **170M**. Google 50M chạy keyword nationwide — phân bổ dưới đây áp cho FB+TikTok.
+
+**Hà Nội — 73.3M:**
+
+| Quận | Salon | Budget C3 | KHmới T6 |
+|---|---|---|---|
+| Q. Ba Đình | 202 DC | 0.6M | 22 |
+| Q. Cầu Giấy | 109 TQH · 116 TK · 264 LLQ | 13.2M | 454 |
+| Q. Hai Bà Trưng | 148 TD · 173 TN | 7.0M | 240 |
+| Q. Hoàn Kiếm | 39 HBT | 7.8M | 269 |
+| Q. Hoàng Mai | 50BT4 NPC LD | 4.4M | 153 |
+| Q. Hà Đông | 10 TP · 11 PKT · 186 QT · 55A NVL | 13.8M | 476 |
+| Q. Long Biên | 168 NVC | 6.2M | 214 |
+| Q. Thanh Xuân | 382 NT | 5.5M | 190 |
+| Q. Từ Liêm | 65 CD · 90 NH | 9.6M | 332 |
+| Q. Đống Đa | 346 KT · 62 LH | 5.1M | 174 |
+| **HN** | | **73.3M** | **2,524** |
+
+**Hồ Chí Minh — 96.6M:**
+
+| Quận | Salon | Budget C3 | KHmới T6 |
+|---|---|---|---|
+| Q.1 | 186 DTH | 5.0M | 173 |
+| Q.4 | 25 TD | 7.3M | 253 |
+| Q.5 | 8 CVL | 5.9M | 203 |
+| Q.6 | 927 HG | 4.4M | 152 |
+| Q.7 | 237 NTT · 420 HTP | 13.8M | 475 |
+| Q.8 | 236 DBT | 5.2M | 180 |
+| Q.10 | 145 THT | 6.9M | 236 |
+| Q.12 | 32 NAT · 76 PVH | 5.8M | 201 |
+| Q.Bình Thạnh | 341 XVNT | 2.9M | 99 |
+| Q.Bình Tân | 708 LTT · 730 TL10 | 9.7M | 335 |
+| Q.Gò Vấp | 1180 QT · 12 LDT · 483 TN | 11.3M | 389 |
+| Q.Tân Bình | 312 LVS | 10.0M | 346 |
+| Q.Tân Phú | 190 HB · 99 TSN | 8.2M | 281 |
+| **HCM** | | **96.6M** | **3,326** |
+
+| **TỔNG C3** | **37 salon** | **170M** | **5,850** |
 
 > **Lý do 37 salon:** 575 AC (Q.Tân Bình) loại vì cap **10.41 — FULL** (toàn hệ thống). Còn lại 37 salon đều cap < 10 — khai thác slot trưa an toàn.
 
@@ -562,6 +670,47 @@ Data T5: SK peak 18h = 1.4× daily avg. Để không overload tại giờ này, 
 
 | **TỔNG C4 Tan làm (HN+HCM)** | | | **5.233** | | **5.850** | **+617** |
 
+#### Ma trận ngân sách theo quận — Ad Platform Setup
+
+> Cùng tỷ lệ phân quận với C3 nhưng tổng = **80M** (Facebook radius chạy 13–15h).
+
+**Hà Nội — 34.5M:**
+
+| Quận | Salon | Budget C4 | KHmới T6 |
+|---|---|---|---|
+| Q. Ba Đình | 202 DC | 0.3M | 22 |
+| Q. Cầu Giấy | 109 TQH · 116 TK · 264 LLQ | 6.2M | 454 |
+| Q. Hai Bà Trưng | 148 TD · 173 TN | 3.3M | 240 |
+| Q. Hoàn Kiếm | 39 HBT | 3.7M | 269 |
+| Q. Hoàng Mai | 50BT4 NPC LD | 2.1M | 153 |
+| Q. Hà Đông | 10 TP · 11 PKT · 186 QT · 55A NVL | 6.5M | 476 |
+| Q. Long Biên | 168 NVC | 2.9M | 214 |
+| Q. Thanh Xuân | 382 NT | 2.6M | 190 |
+| Q. Từ Liêm | 65 CD · 90 NH | 4.5M | 332 |
+| Q. Đống Đa | 346 KT · 62 LH | 2.4M | 174 |
+| **HN** | | **34.5M** | **2,524** |
+
+**Hồ Chí Minh — 45.5M:**
+
+| Quận | Salon | Budget C4 | KHmới T6 |
+|---|---|---|---|
+| Q.1 | 186 DTH | 2.4M | 173 |
+| Q.4 | 25 TD | 3.4M | 253 |
+| Q.5 | 8 CVL | 2.8M | 203 |
+| Q.6 | 927 HG | 2.1M | 152 |
+| Q.7 | 237 NTT · 420 HTP | 6.5M | 475 |
+| Q.8 | 236 DBT | 2.5M | 180 |
+| Q.10 | 145 THT | 3.2M | 236 |
+| Q.12 | 32 NAT · 76 PVH | 2.7M | 201 |
+| Q.Bình Thạnh | 341 XVNT | 1.4M | 99 |
+| Q.Bình Tân | 708 LTT · 730 TL10 | 4.6M | 335 |
+| Q.Gò Vấp | 1180 QT · 12 LDT · 483 TN | 5.3M | 389 |
+| Q.Tân Bình | 312 LVS | 4.7M | 346 |
+| Q.Tân Phú | 190 HB · 99 TSN | 3.9M | 281 |
+| **HCM** | | **45.5M** | **3,326** |
+
+| **TỔNG C4** | **37 salon** | **80M** | **5,850** |
+
 > **Lý do 37 salon:** 575 AC (Q.Tân Bình) loại vì cap **10.41 — FULL** (toàn hệ thống). Còn lại 37 salon đều cap < 10 — slot tan làm vẫn còn room để tăng.
 
 **Lượt mua ước tính:** 80M ÷ 70k CPA est = **~1,143 lượt**
@@ -615,6 +764,59 @@ Data T5: SK peak 18h = 1.4× daily avg. Để không overload tại giờ này, 
 | Vùng | KHmới+Cũ>12W T5 (12–30/5) | T6 target (12–30/6) | Δ |
 |---|---|---|---|
 | Toàn quốc (all salon trừ vùng Cường) | ~2,200 | **~2,500** | +300 (+13.6%) |
+
+#### Ma trận ngân sách theo vùng — Ad Platform Setup (C5 từ 12/6)
+
+> Budget tỷ lệ theo Tổng T6 (mới+Cũ>12W) cùng tỷ lệ C1. Tổng **105M / 19 ngày** (12–30/6).
+
+**Hà Nội — 36.6M:**
+
+| Quận | Budget | Target mới+Cũ>12W (19ng) |
+|---|---|---|
+| Q. Cầu Giấy | 8.2M | 195 |
+| Q. Hà Đông | 5.8M | 138 |
+| Q. Từ Liêm | 3.8M | 91 |
+| Q. Thanh Xuân | 3.1M | 74 |
+| Q. Đống Đa | 3.0M | 72 |
+| Q. Hai Bà Trưng | 3.4M | 81 |
+| Q. Long Biên | 2.8M | 66 |
+| Q. Hoàn Kiếm | 2.5M | 59 |
+| Q. Hoàng Mai | 2.3M | 56 |
+| Q. Ba Đình | 1.6M | 38 |
+| **HN** | **36.6M** | **870** |
+
+**Hồ Chí Minh — 52.4M:**
+
+| Quận | Budget | Target mới+Cũ>12W (19ng) |
+|---|---|---|
+| Q.7 | 7.1M | 170 |
+| Q.Gò Vấp | 6.4M | 152 |
+| Q.Tân Bình | 6.1M | 145 |
+| Q.Tân Phú | 4.9M | 117 |
+| Q.Bình Tân | 4.7M | 113 |
+| Q.10 | 4.3M | 102 |
+| Q.5 | 3.0M | 71 |
+| Q.1 | 3.0M | 72 |
+| Q.8 | 2.9M | 68 |
+| Q.6 | 2.8M | 67 |
+| Q.12 | 2.8M | 67 |
+| Q.4 | 2.8M | 66 |
+| Q.Bình Thạnh | 1.6M | 39 |
+| **HCM** | **52.4M** | **1,249** |
+
+**Tỉnh / TP khác — 16.1M:**
+
+| Vùng | Budget | Target mới+Cũ>12W (19ng) |
+|---|---|---|
+| Thanh Hóa | 4.3M | 103 |
+| Bắc Ninh | 3.8M | 91 |
+| Nghệ An | 3.0M | 73 |
+| Thái Nguyên | 2.0M | 47 |
+| An Giang | 1.7M | 40 |
+| Long An | 1.2M | 29 |
+| **Tỉnh** | **16.1M** | **383** |
+
+| **TỔNG C5** | **105M** | **~2,500** |
 
 #### KPI & Đo lường
 
