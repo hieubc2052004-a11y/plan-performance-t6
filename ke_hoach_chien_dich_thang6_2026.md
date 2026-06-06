@@ -19,7 +19,7 @@
 | # | Campaign | Khu vực | Salon/Quận | T5 → T6 | Budget | Kênh |
 |---|---|---|---|---|---|---|
 | **C1** | **Tour du lịch thư giãn 45 phút** (nền) | All salon nationwide (trừ vùng Cường) | Toàn hệ thống | KHmới baseline → +10.8% | **260M** (30.6%) | Facebook + TikTok |
-| **C2** | **Căn hộ phục hồi Thera Studio** | HN + HCM | 8 salon — HN: 10TP · 168NVC · HCM: 103TN · 927HG · 237NTT · 12LDT · 25TD · 1180QT | Cũ>12W T5 = 3,480→ T6 = 3,663 (+5.3%) · 103TN pending | **80M** (9.4%) | Facebook CA Cũ>12W |
+| **C2** | **Căn hộ phục hồi Thera Studio** | HN + HCM | 7 salon — HN: 10TP · 168NVC · HCM: 927HG · 237NTT · 12LDT · 25TD · 1180QT | Cũ>12W T5 = 3,480 → T6 = 3,663 (+5.3%) | **80M** (9.4%) | Facebook CA Cũ>12W |
 | **C3** | **Nghỉ trưa** | HN + HCM | 37 salon — khu vực văn phòng | Tăng GD slot 12–13h30 +25% vs T5 | **170M** (21.7%) | Facebook + TikTok + Google |
 | **C4** | **Tan làm** | HN + HCM | 37 salon — pre-book slot 17–19h | Tăng GD slot 17–19h +10% vs T5 | **80M** (9.4%) | Facebook |
 | **C5** | **Tóc đẹp đi làm** (từ 12/6) | All salon nationwide | Toàn hệ thống | Boost 12–30/6 · CPA ≤ 40k | **105M** (12.4%) | Facebook + TikTok |
@@ -336,7 +336,7 @@ Tắt content → wait 3 ngày → ngân sách slot đó có thể dùng lại
 
 ---
 
-### CAMPAIGN 2 — CĂN HỘ PHỤC HỒI THERA STUDIO (HN 2 salon + HCM 6 salon)
+### CAMPAIGN 2 — CĂN HỘ PHỤC HỒI THERA STUDIO (HN 2 salon + HCM 5 salon)
 
 > **💡 Insight:** *"Khi tôi bị đau mỏi vai gáy/stress vì ngồi máy tính nhiều nhưng ngại đi spa đông người, tôi cần 1 nơi có thể vừa gội đầu thư giãn kết hợp massage giãn cơ giảm mỏi vùng cổ vai gáy trong 1 lần ghé."*
 
@@ -352,21 +352,19 @@ Tắt content → wait 3 ngày → ngân sách slot đó có thể dùng lại
 |---|---|---|---|---|---|---|---|
 | **10 TP** | HN · Hà Đông | 🟠 9.8 | 132 | 141 (+7%) | 372 | 383 (+3%) | **+20** |
 | **168 NVC** | HN · Long Biên | 🟠 9.1 | 200 | 214 (+7%) | 512 | 527 (+3%) | **+29** |
-| **103 TN** | HCM · ? | ❓ | ❓ | ❓ | ❓ | ❓ | ❓ |
 | **927 HG** | HCM · Q.6 | 🟢 6.6 | 136 | 152 (+12%) | 560 | 594 (+6%) | **+50** |
 | **237 NTT** | HCM · Q.7 | 🟠 8.9 | 190 | 203 (+7%) | 779 | 802 (+3%) | **+36** |
 | **12 LDT** | HCM · Gò Vấp | 🟢 4.6 | 113 | 133 (+18%) | 431 | 465 (+8%) | **+54** |
 | **25 TD** | HCM · Q.4 | 🟢 4.8 | 214 | 253 (+18%) | 451 | 487 (+8%) | **+75** |
 | **1180 QT** | HCM · Gò Vấp | 🟢 4.1 | 98 | 116 (+18%) | 375 | 405 (+8%) | **+48** |
-| **TỔNG (7 salon)** | | | **1.083** | **1.212** | **3.480** | **3.663** | **+312** |
+| **TỔNG C2 (7 salon)** | | | **1.083** | **1.212** | **3.480** | **3.663** | **+312** |
 
-> ⚠️ **103 TN chưa có data T5** — cần confirm salon này. Tổng trên là 7/8 salon.
 > **3 salon HCM có room lớn nhất:** 25 TD (+75) · 12 LDT (+54) · 1180 QT (+48) — cap thấp, growth rate cao nhất.
-> **2 salon HN (10 TP, 168 NVC):** cap gần đầy (9.1–9.8), delta thấp — chủ yếu giữ Cũ>12W, không kỳ vọng bứt phá mạnh.
+> **2 salon HN (10 TP, 168 NVC):** cap gần đầy (9.1–9.8) — chủ yếu giữ Cũ>12W, không kỳ vọng bứt phá mạnh.
 
-**Target (7 salon):** KHmới 1,083 → **1,212** (+129) · Cũ>12W 3,480 → **3,663** (+183)
-**Lượt mua ước tính:** 80M ÷ 17k CPA_CA = **~4,700 lượt** (đủ phủ pool Cũ>12W 3,663+)
-**KPI PRIMARY:** Cũ>12W visits tại 8 salon. **KPI SECONDARY:** CPA_Cũ>12W ≤ 25k.
+**Target:** KHmới 1,083 → **1,212** (+129) · Cũ>12W 3,480 → **3,663** (+183)
+**Lượt mua ước tính:** 80M ÷ 17k CPA_CA = **~4,700 lượt** (đủ phủ pool Cũ>12W 3,663)
+**KPI PRIMARY:** Cũ>12W visits tại 7 salon. **KPI SECONDARY:** CPA_Cũ>12W ≤ 25k.
 
 ---
 
