@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo cáo Tuần 4 – Tháng 6/2026 | 30Shine Performance</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #F1F5F9;
+  padding: 24px;
+  color: #1E293B;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.header {
+  background: linear-gradient(135deg, #1E293B 0%, #2D3F5B 100%);
+  color: white;
+  padding: 22px 28px;
+  border-radius: 14px 14px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header h1 { font-size: 18px; font-weight: 800; }
+.header h1 span { color: #F97316; }
+.header p  { font-size: 11px; color: #94A3B8; margin-top: 4px; }
+.period-badge {
+  background: rgba(249,115,22,.15);
+  border: 1px solid rgba(249,115,22,.35);
+  color: #FB923C;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+.hero-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  background: #fff;
+  padding: 18px 20px;
+  border-bottom: 1px solid #E2E8F0;
+}
+.hero-card { text-align: center; }
+.hero-label { font-size: 10px; font-weight: 600; color: #64748B; text-transform: uppercase; letter-spacing: .5px; }
+.hero-val   { font-size: 22px; font-weight: 800; color: #1E293B; margin: 4px 0; line-height: 1; }
+.hero-sub   { font-size: 11px; color: #94A3B8; }
+.hero-val.green  { color: #16A34A; }
+.hero-val.orange { color: #EA580C; }
+.hero-val.red    { color: #DC2626; }
+.hero-sep { width: 1px; background: #E2E8F0; align-self: stretch; }
+.card {
+  background: white;
+  border-radius: 10px;
+  margin-top: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.card-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: #64748B;
+  padding: 12px 18px 10px;
+  background: #FAFAFA;
+  border-bottom: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-body { padding: 16px 18px; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+thead th {
+  background: #1E293B;
+  color: #CBD5E1;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 9px 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+thead th.r { text-align: right; }
+tbody td {
+  padding: 10px 10px;
+  border-bottom: 1px solid #F1F5F9;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover td { background: #F8FAFC; }
+td.r { text-align: right; font-variant-numeric: tabular-nums; }
+td.ch { font-weight: 700; }
+td.g  { color: #16A34A; font-weight: 700; }
+td.o  { color: #EA580C; }
+td.r2 { color: #DC2626; font-weight: 700; }
+td.m  { color: #94A3B8; font-size: 11px; }
+tbody tr.total td { background: #F0F4FF; font-weight: 700; border-top: 2px solid #C7D2FE; }
+.wow-table thead th { background: #334155; }
+.wow-val-up   { color: #DC2626; font-weight: 700; }
+.wow-val-down { color: #16A34A; font-weight: 700; }
+.wow-val-flat { color: #94A3B8; }
+.insight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.insight-box {
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.insight-box h4 { font-size: 12px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+.insight-green { background: #F0FDF4; border-left: 3px solid #22C55E; }
+.insight-green h4 { color: #16A34A; }
+.insight-amber { background: #FFFBEB; border-left: 3px solid #F59E0B; }
+.insight-amber h4 { color: #B45309; }
+.insight-blue { background: #EFF6FF; border-left: 3px solid #3B82F6; }
+.insight-blue h4 { color: #1D4ED8; }
+.insight-red { background: #FEF2F2; border-left: 3px solid #EF4444; }
+.insight-red h4 { color: #DC2626; }
+.li-item { display: flex; gap: 6px; margin-bottom: 4px; }
+.li-item span:first-child { flex-shrink: 0; }
+.badge {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.badge-g { background: #DCFCE7; color: #166534; }
+.badge-o { background: #FEF3C7; color: #92400E; }
+.badge-r { background: #FEE2E2; color: #991B1B; }
+.daily-grid {
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  gap: 6px;
+  padding: 14px 18px;
+}
+.day-card {
+  text-align: center;
+  padding: 8px 4px;
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+}
+.day-date { font-size: 9px; color: #64748B; }
+.day-dow  { font-size: 10px; font-weight: 700; margin: 2px 0; }
+.day-kh   { font-size: 14px; font-weight: 800; margin: 3px 0; }
+.day-chi  { font-size: 9px; color: #94A3B8; }
+.day-cpc  { font-size: 10px; font-weight: 600; }
+footer {
+  font-size: 10px; color: #94A3B8; margin-top: 18px; text-align: center; line-height: 1.8;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <h1>BÁO CÁO HIỆU QUẢ ADS — <span>TUẦN 4</span></h1>
+    <p>22–28/6/2026 · Số liệu chốt · Nguồn: Bảng nội bộ + Windsor.ai · Cập nhật 28/6/2026</p>
+  </div>
+  <div class="period-badge">W4 · 7 ngày</div>
+</div>
+
+<!-- HERO NUMBERS -->
+<div class="hero-row" style="border-radius:0;">
+  <div class="hero-card">
+    <div class="hero-label">Ngân sách Perf</div>
+    <div class="hero-val">108.6M</div>
+    <div class="hero-sub">FB 74.9 · TK 23.6 · GG 8.6 · DL 1.4</div>
+  </div>
+  <div class="hero-sep"></div>
+  <div class="hero-card">
+    <div class="hero-label">Lượt mua (bảng NB)</div>
+    <div class="hero-val orange">1,707</div>
+    <div class="hero-sub">FB 1,514 · TK 69 · GG 124</div>
+  </div>
+  <div class="hero-sep"></div>
+  <div class="hero-card">
+    <div class="hero-label">Khách mới + cũ &gt;12w</div>
+    <div class="hero-val green">7,321</div>
+    <div class="hero-sub">−0.1% vs W3 (7,330) ✅</div>
+  </div>
+  <div class="hero-sep"></div>
+  <div class="hero-card">
+    <div class="hero-label">CPC (perf/khách)</div>
+    <div class="hero-val green">14,836đ</div>
+    <div class="hero-sub">−63.6% vs W3 (40,723đ) ✅</div>
+  </div>
+</div>
+<div style="background:white;border-radius:0 0 10px 10px;box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;height:6px;border-top:1px solid #E2E8F0;"></div>
+
+<!-- HIGHLIGHT BANNER -->
+<div style="background:linear-gradient(90deg,#F0FDF4,#ECFDF5);border:1px solid #86EFAC;border-radius:10px;padding:14px 18px;margin-bottom:14px;font-size:12.5px;color:#166534;line-height:1.7">
+  <b>🏆 Phát hiện quan trọng W4:</b> Ngân sách perf giảm 63.6% (298.5M → 108.6M) nhưng KHmới+cũ&gt;12W gần như không đổi (7,330 → 7,321, −0.1%). CPC tốt nhất trong tháng: <b>14,836đ</b>. Điều này chứng minh có <b>organic baseline ~900–1,200 KH/ngày</b> không phụ thuộc trực tiếp vào ads. Ngân sách quảng cáo có tác dụng incremental trên nền này.
+</div>
+
+<!-- PHỄU W4 -->
+<div class="card">
+  <div class="card-title">📊 Phễu Marketing — Tuần 4 (22–28/6)</div>
+  <div style="overflow-x:auto">
+  <table>
+    <thead>
+      <tr>
+        <th>Chỉ số</th>
+        <th class="r" style="background:#1e4a8a">Facebook</th>
+        <th class="r" style="background:#166534">TikTok</th>
+        <th class="r" style="background:#92400e">Google</th>
+        <th class="r" style="background:#4c1d95">Tổng W4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="ch">Ngân sách Perf (đã chi)</td>
+        <td class="r">74.9M</td>
+        <td class="r">23.6M</td>
+        <td class="r">8.6M</td>
+        <td class="r" style="font-weight:700">108.6M <span style="color:#94A3B8;font-size:10px">+14.8M CRM</span></td>
+      </tr>
+      <tr>
+        <td class="ch">Tỷ lệ chi</td>
+        <td class="r">69%</td>
+        <td class="r">22%</td>
+        <td class="r">8%</td>
+        <td class="r" style="font-weight:700">100%</td>
+      </tr>
+      <tr>
+        <td class="ch">Lượt mua <span style="font-size:10px;color:#94A3B8">(bảng NB)</span></td>
+        <td class="r o">1,514</td>
+        <td class="r">69</td>
+        <td class="r g">124</td>
+        <td class="r" style="font-weight:700">1,707</td>
+      </tr>
+      <tr style="background:#FFFDE7">
+        <td class="ch">Khách mới + cũ &gt;12w</td>
+        <td class="m" colspan="3" style="text-align:center;font-style:italic">← từ bảng nội bộ</td>
+        <td class="r" style="font-weight:700;background:#FFF9C4">7,321</td>
+      </tr>
+      <tr>
+        <td class="ch" style="padding-left:16px;color:#64748B">└ Khách mới</td>
+        <td class="m" colspan="3" style="text-align:center"></td>
+        <td class="r">2,181</td>
+      </tr>
+      <tr>
+        <td class="ch" style="padding-left:16px;color:#64748B">└ Khách cũ &gt;12W</td>
+        <td class="m" colspan="3" style="text-align:center"></td>
+        <td class="r">5,140</td>
+      </tr>
+      <tr style="height:4px;background:#F8FAFC"><td colspan="5"></td></tr>
+      <tr>
+        <td class="ch" style="color:#64748B">CPA <span style="font-size:10px">(ngân sách/lượt mua)</span></td>
+        <td class="r o">49,498đ</td>
+        <td class="r m">342,506đ <span style="font-size:9px;color:#94A3B8">(view-through)</span></td>
+        <td class="r o">69,409đ</td>
+        <td class="r o" style="font-weight:700">63,627đ</td>
+      </tr>
+      <tr>
+        <td class="ch" style="color:#64748B">CPC <span style="font-size:10px">(ngân sách/khách mới+12w)</span></td>
+        <td class="m" colspan="3" style="text-align:center">—</td>
+        <td class="r g" style="font-weight:700">14,836đ ✅</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div style="font-size:10.5px;color:#64748B;padding:10px 18px;border-top:1px solid #F1F5F9;line-height:1.7">
+    <b>Ghi chú:</b>
+    · Perf = FB + TikTok + Google + Dư luận = 108.6M · CRM weekend (27-28/6) = ~14.8M → tổng AC bảng = 123.4M.
+    · Lượt mua = bảng nội bộ · TikTok CPA view-through — không so sánh trực tiếp với FB CPA.
+    · CPM/Reach W4 chưa pull từ Windsor — ước tính trong bảng WoW dưới.
+  </div>
+</div>
+
+<!-- DAILY BREAKDOWN -->
+<div class="card">
+  <div class="card-title">📅 Chi tiết từng ngày — W4 (22–28/6)</div>
+  <div class="daily-grid">
+    <div class="day-card" style="background:#FFF8F0;border-color:#FED7AA">
+      <div class="day-date">22/6</div>
+      <div class="day-dow" style="color:#EA580C">T2</div>
+      <div class="day-kh" style="color:#EA580C">976</div>
+      <div class="day-chi">Chi 48.1M</div>
+      <div class="day-cpc" style="color:#DC2626">49,319đ</div>
+      <div style="font-size:9px;color:#94A3B8;margin-top:2px">FB 276 · TK 21 · GG 13</div>
+    </div>
+    <div class="day-card" style="background:#FFF8F0;border-color:#FED7AA">
+      <div class="day-date">23/6</div>
+      <div class="day-dow" style="color:#EA580C">T3</div>
+      <div class="day-kh" style="color:#EA580C">870</div>
+      <div class="day-chi">Chi 32.5M</div>
+      <div class="day-cpc" style="color:#EA580C">37,325đ</div>
+      <div style="font-size:9px;color:#94A3B8;margin-top:2px">FB 240 · TK 26 · GG 13</div>
+    </div>
+    <div class="day-card" style="background:#F0FDF4;border-color:#86EFAC">
+      <div class="day-date">24/6</div>
+      <div class="day-dow" style="color:#16A34A">T4</div>
+      <div class="day-kh" style="color:#16A34A">954</div>
+      <div class="day-chi">Chi 9.2M</div>
+      <div class="day-cpc" style="color:#16A34A">9,607đ ✅</div>
+      <div style="font-size:9px;color:#94A3B8;margin-top:2px">FB 156 · TK 9 · GG 19</div>
+    </div>
+    <div class="day-card" style="background:#F0FDF4;border-color:#86EFAC">
+      <div class="day-date">25/6</div>
+      <div class="day-dow" style="color:#16A34A">T5</div>
+      <div class="day-kh" style="color:#16A34A">893</div>
+      <div class="day-chi">Chi 8.6M</div>
+      <div class="day-cpc" style="color:#16A34A">9,638đ ✅</div>
+      <div style="font-size:9px;color:#94A3B8;margin-top:2px">FB 50 · TK 9 · GG 11</div>
+    </div>
+    <div class="day-card" style="background:#F0FDF4;border-color:#86EFAC">
+      <div class="day-date">26/6</div>
+      <div class="day-dow" style="color:#16A34A">T6</div>
+      <div class="day-kh" style="color:#16A34A">995</div>
+      <div class="day-chi">Chi 2.4M</div>
+      <div class="day-cpc" style="color:#16A34A">2,424đ ✅✅</div>
+      <div style="font-size:9px;color:#94A3B8;margin-top:2px">FB 49 · TK 1 · GG 19</div>
+    </div>
+    <div class="day-card" style="background:#EFF6FF;border-color:#BFDBFE">
+      <div class="day-date">27/6</div>
+      <div class="day-dow" style="color:#2563EB">T7</div>
+      <div class="day-kh" style="color:#2563EB">1,225</div>
+      <div class="day-chi">Chi 4.7M perf</div>
+      <div class="day-cpc" style="color:#2563EB">3,863đ</div>
+      <div style="font-size:9px;color:#94A3B8;margin-top:2px">FB 363 · TK 1 · GG 31</div>
+    </div>
+    <div class="day-card" style="background:#F5F3FF;border-color:#DDD6FE">
+      <div class="day-date">28/6</div>
+      <div class="day-dow" style="color:#7C3AED">CN</div>
+      <div class="day-kh" style="color:#7C3AED">1,408</div>
+      <div class="day-chi">Chi 2.9M perf</div>
+      <div class="day-cpc" style="color:#7C3AED">2,081đ</div>
+      <div style="font-size:9px;color:#94A3B8;margin-top:2px">FB 380 · TK 2 · GG 18 🏆</div>
+    </div>
+  </div>
+  <div style="font-size:10.5px;color:#64748B;padding:6px 18px 12px;line-height:1.7">
+    ⭐ <b>28/6 (CN) = ngày tốt nhất T6:</b> 1,408 KHmới+cũ · 1,017M doanh thu · CPC perf chỉ 2,081đ (khách đến chủ yếu organic). · T7 27-Jun: chi bao gồm CRM batch ~6.76M.
+  </div>
+</div>
+
+<!-- SO SÁNH 4 TUẦN -->
+<div class="card">
+  <div class="card-title">📈 So sánh 4 tuần (WoW)</div>
+  <div style="overflow-x:auto">
+  <table class="wow-table">
+    <thead>
+      <tr>
+        <th>Chỉ số</th>
+        <th class="r">W1 (1–7/6)</th>
+        <th class="r">W2 (8–14/6)</th>
+        <th class="r">W3 (15–21/6)</th>
+        <th class="r" style="background:#2D3F5B">W4 (22–28/6)</th>
+        <th class="r">W4 vs W3</th>
+        <th class="r">W4 vs W2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="ch">Ngân sách Perf</td>
+        <td class="r">181.3M</td>
+        <td class="r">259.5M</td>
+        <td class="r">298.5M</td>
+        <td class="r" style="font-weight:700">108.6M</td>
+        <td class="r wow-val-down">−63.6% ✅</td>
+        <td class="r wow-val-down">−58.2%</td>
+      </tr>
+      <tr>
+        <td class="ch">Lượt mua (tổng)</td>
+        <td class="r">6,981</td>
+        <td class="r">7,379</td>
+        <td class="r o">3,442</td>
+        <td class="r o" style="font-weight:700">1,707</td>
+        <td class="r wow-val-up">−50.4%</td>
+        <td class="r wow-val-up">−76.8%</td>
+      </tr>
+      <tr>
+        <td class="ch" style="padding-left:16px;color:#3B82F6">└ FB lượt mua</td>
+        <td class="r">6,755</td>
+        <td class="r">7,067</td>
+        <td class="r o">3,081</td>
+        <td class="r o">1,514</td>
+        <td class="r wow-val-up">−50.8%</td>
+        <td class="r wow-val-up">−78.6%</td>
+      </tr>
+      <tr>
+        <td class="ch" style="padding-left:16px;color:#22C55E">└ TikTok lượt mua</td>
+        <td class="r">128</td>
+        <td class="r">221</td>
+        <td class="r">244</td>
+        <td class="r">69</td>
+        <td class="r wow-val-up">−71.7%</td>
+        <td class="r wow-val-up">−68.8%</td>
+      </tr>
+      <tr>
+        <td class="ch" style="padding-left:16px;color:#F59E0B">└ Google lượt mua</td>
+        <td class="r">98</td>
+        <td class="r">91</td>
+        <td class="r">117</td>
+        <td class="r g">124</td>
+        <td class="r wow-val-down">+5.9% ✅</td>
+        <td class="r wow-val-down">+36.3% ✅</td>
+      </tr>
+      <tr>
+        <td class="ch">Khách mới + cũ &gt;12w</td>
+        <td class="r">7,365</td>
+        <td class="r">7,368</td>
+        <td class="r">7,330</td>
+        <td class="r g" style="font-weight:700">7,321</td>
+        <td class="r wow-val-flat">−0.1% ✅</td>
+        <td class="r wow-val-flat">−0.6% ✅</td>
+      </tr>
+      <tr>
+        <td class="ch">CPC (chi/KHmới+cũ)</td>
+        <td class="r g">24,616đ</td>
+        <td class="r o">35,218đ</td>
+        <td class="r r2">40,723đ</td>
+        <td class="r g" style="font-weight:700">14,836đ ✅</td>
+        <td class="r wow-val-down">−63.6% ✅</td>
+        <td class="r wow-val-down">−57.9% ✅</td>
+      </tr>
+      <tr>
+        <td class="ch">FB CPA</td>
+        <td class="r g">19,570đ</td>
+        <td class="r o">27,401đ</td>
+        <td class="r r2">72,672đ</td>
+        <td class="r o" style="font-weight:700">49,498đ</td>
+        <td class="r wow-val-down">−31.9% ✅</td>
+        <td class="r wow-val-up">+80.6%</td>
+      </tr>
+      <tr>
+        <td class="ch">Google CPA</td>
+        <td class="r">—</td>
+        <td class="r o">120,736đ</td>
+        <td class="r o">197,904đ</td>
+        <td class="r g" style="font-weight:700">69,409đ ✅</td>
+        <td class="r wow-val-down">−64.9% ✅</td>
+        <td class="r wow-val-down">−42.5% ✅</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ĐIỂM SÁNG + CẦN THEO DÕI -->
+<div class="card">
+  <div class="card-title">💡 Phân tích & Điểm nổi bật</div>
+  <div class="card-body">
+    <div class="insight-grid">
+
+      <div class="insight-box insight-green">
+        <h4>✅ Điểm tích cực</h4>
+        <div class="li-item"><span>✅</span><span><b>KHmới+cũ&gt;12W ổn định: 7,321</b> — chỉ giảm 0.1% dù ngân sách giảm 63.6%. Organic baseline mạnh.</span></div>
+        <div class="li-item"><span>✅</span><span><b>CPC thấp nhất cả tháng: 14,836đ</b> — tốt hơn W1 (24,616đ). Hiệu suất ngân sách end-of-month rất cao.</span></div>
+        <div class="li-item"><span>✅</span><span><b>28/6 (CN) ngày đỉnh tháng:</b> 1,408 KHmới+cũ · 1,017M doanh thu · CPC perf 2,081đ.</span></div>
+        <div class="li-item"><span>✅</span><span><b>Google CPA cải thiện mạnh: 69,409đ</b> — tốt nhất cả tháng, giảm 64.9% vs W3 (197,904đ). Lượt mua GG 124 (+5.9%).</span></div>
+        <div class="li-item"><span>✅</span><span><b>FB CPA phục hồi: 49,498đ</b> — giảm 31.9% vs W3 (72,672đ). Audience exclusion W3 không còn ảnh hưởng.</span></div>
+      </div>
+
+      <div class="insight-box insight-red">
+        <h4>⚠️ Cần theo dõi</h4>
+        <div class="li-item"><span>🔴</span><span><b>FB lượt mua vẫn thấp: 1,514</b> — −78.6% vs W2 (7,067). Nguyên nhân chủ yếu: budget giảm (74.9M vs 240M), không phải hiệu suất ads.</span></div>
+        <div class="li-item"><span>🟡</span><span><b>TikTok lượt mua: 69</b> — giảm theo ngân sách (23.6M vs 51.4M W3). CPA view-through 342K đ bình thường.</span></div>
+        <div class="li-item"><span>🟡</span><span><b>22-23/6 FB CPA còn cao:</b> 142K và 101K — phần đầu tuần ads vẫn trong quá trình re-learn sau audience change W3. Từ 24/6 FB CPA đã cải thiện về 28K-62K.</span></div>
+        <div class="li-item"><span>🟡</span><span><b>MTD 90.4% target:</b> 29,384 / 32,500 KH. Cần ~3,116 KH từ 29-30/6 để đạt target — khả năng khó nếu budget 29-30 vẫn thấp.</span></div>
+      </div>
+
+      <div class="insight-box insight-blue">
+        <h4>🔍 Phân tích: Organic Baseline</h4>
+        <div class="li-item"><span>1.</span><span><b>Phát hiện quan trọng:</b> Ngày 25-26/6 chỉ chi 8.6M và 2.4M ads nhưng vẫn có 893 và 995 KHmới+cũ. Điều này chứng tỏ có organic baseline ~900K/ngày đến salon không cần ads.</span></div>
+        <div class="li-item"><span>2.</span><span><b>Incremental impact of ads:</b> W4 chi 108.6M thu 7,321 KH. Nếu organic ~900 KH/ngày × 7 = 6,300 KH organic → ads incremental = 1,021 KH → real CPC incremental = 108.6M/1,021 = 106,366đ.</span></div>
+        <div class="li-item"><span>3.</span><span><b>Ngày T7-CN organic đặc biệt mạnh:</b> 27-Jun 1,225 KH và 28-Jun 1,408 KH với ads rất thấp → weekend organic surge. Plan T7 nên tận dụng weekend organic thay vì push ads nặng vào cuối tuần.</span></div>
+      </div>
+
+      <div class="insight-box insight-amber">
+        <h4>📌 Đề xuất cho Tháng 7/2026</h4>
+        <div class="li-item"><span>1.</span><span><b>Khởi động ngay từ 1/7:</b> Không để W1 T7 lặp lại pattern W1 T6 (chạy chung, chưa phân tuyến). Phân tuyến từ đầu tháng, budget mỗi tuyến rõ ràng.</span></div>
+        <div class="li-item"><span>2.</span><span><b>Giữ audience khách cũ trong targeting FB:</b> Bài học từ W3 — loại trừ audience cũ làm CPA tăng 2.65×. Không tắt này.</span></div>
+        <div class="li-item"><span>3.</span><span><b>Scale Google Ads:</b> W4 Google CPA 69K tốt nhất tháng và lượt mua tăng. Nên tăng GG budget T7 từ 51M lên 70-80M.</span></div>
+        <div class="li-item"><span>4.</span><span><b>Khai thác TikTok view-through:</b> TikTok offline purchases = 217-396/chiến dịch. Không bỏ TikTok khi budget eo hẹp — TikTok branding tạo demand cho FB convert.</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- HIỆU QUẢ THEO KÊNH -->
+<div class="card">
+  <div class="card-title">📡 Hiệu quả chi tiết theo kênh — W4</div>
+  <div style="overflow-x:auto">
+  <table>
+    <thead>
+      <tr>
+        <th>Kênh</th>
+        <th class="r">Chi tiêu</th>
+        <th class="r">Tỷ lệ</th>
+        <th class="r">Lượt mua</th>
+        <th class="r">CPA</th>
+        <th class="r">vs W3</th>
+        <th>Đánh giá</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="ch" style="color:#2563EB">🔵 Facebook</td>
+        <td class="r">74.9M</td>
+        <td class="r">69%</td>
+        <td class="r o">1,514</td>
+        <td class="r o">49,498đ</td>
+        <td class="r" style="color:#16A34A">−31.9% ✅</td>
+        <td><span class="badge badge-o">Cải thiện</span></td>
+      </tr>
+      <tr>
+        <td class="ch" style="color:#16A34A">🟢 TikTok BFI</td>
+        <td class="r">23.6M</td>
+        <td class="r">22%</td>
+        <td class="r">69</td>
+        <td class="r m">342,506đ <span style="font-size:9px;color:#94A3B8">(view-through)</span></td>
+        <td class="r m">giảm theo budget</td>
+        <td><span class="badge badge-g">Ổn định</span></td>
+      </tr>
+      <tr>
+        <td class="ch" style="color:#D97706">🟡 Google Ads</td>
+        <td class="r">8.6M</td>
+        <td class="r">8%</td>
+        <td class="r g">124</td>
+        <td class="r g">69,409đ ✅</td>
+        <td class="r" style="color:#16A34A">−64.9% ✅</td>
+        <td><span class="badge badge-g">Tốt nhất tháng</span></td>
+      </tr>
+      <tr>
+        <td class="ch" style="color:#64748B">📢 Dư luận</td>
+        <td class="r">1.4M</td>
+        <td class="r">1%</td>
+        <td class="r m">—</td>
+        <td class="r m">—</td>
+        <td class="r m">—</td>
+        <td><span class="badge badge-o">Support</span></td>
+      </tr>
+      <tr class="total">
+        <td class="ch">Tổng Perf W4</td>
+        <td class="r">108.6M</td>
+        <td class="r">100%</td>
+        <td class="r">1,707</td>
+        <td class="r o">63,627đ</td>
+        <td class="r" style="color:#16A34A">−26.6% ✅</td>
+        <td><span class="badge badge-g">CPC 14,836đ ✅</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- TỔNG HỢP LUỸ KẾ -->
+<div class="card">
+  <div class="card-title">🗓️ Luỹ kế 4 tuần đầu tháng 6 (1–28/6)</div>
+  <div class="card-body">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;text-align:center;margin-bottom:16px">
+      <div>
+        <div style="font-size:10px;color:#64748B;text-transform:uppercase;font-weight:600;margin-bottom:4px">Tổng chi Perf</div>
+        <div style="font-size:20px;font-weight:800">847.9M</div>
+        <div style="font-size:11px;color:#94A3B8">181.3+259.5+298.5+108.6</div>
+      </div>
+      <div>
+        <div style="font-size:10px;color:#64748B;text-transform:uppercase;font-weight:600;margin-bottom:4px">Tổng lượt mua</div>
+        <div style="font-size:20px;font-weight:800;color:#EA580C">19,572</div>
+        <div style="font-size:11px;color:#94A3B8">W1+W2+W3+W4</div>
+      </div>
+      <div>
+        <div style="font-size:10px;color:#64748B;text-transform:uppercase;font-weight:600;margin-bottom:4px">KHmới+cũ MTD</div>
+        <div style="font-size:20px;font-weight:800">29,384</div>
+        <div style="font-size:11px;color:#94A3B8">7,365+7,368+7,330+7,321</div>
+      </div>
+      <div>
+        <div style="font-size:10px;color:#64748B;text-transform:uppercase;font-weight:600;margin-bottom:4px">% vs target</div>
+        <div style="font-size:20px;font-weight:800;color:#EA580C">90.4%</div>
+        <div style="font-size:11px;color:#94A3B8">29,384 / 32,500</div>
+      </div>
+      <div>
+        <div style="font-size:10px;color:#64748B;text-transform:uppercase;font-weight:600;margin-bottom:4px">CPC MTD avg</div>
+        <div style="font-size:20px;font-weight:800;color:#16A34A">28,856đ ✅</div>
+        <div style="font-size:11px;color:#94A3B8">847.9M ÷ 29,384</div>
+      </div>
+    </div>
+    <div style="background:#FEF3C7;border:1px solid #FCD34D;border-radius:8px;padding:12px 16px;font-size:12px;line-height:1.7">
+      <b>🎯 Dự báo full tháng 6:</b> Còn 29–30/6 (2 ngày weekday). Pace weekday cuối tháng ~870 KH/ngày → +1,740 KH.
+      <b>Ước tính full T6: ~31,124 KH</b> (95.8% target 32,500).
+      Để đạt đúng target cần 2 ngày 29-30/6 trung bình 1,558 KH/ngày — có thể nếu tăng budget và audience fresh cuối tháng.
+    </div>
+  </div>
+</div>
+
+<footer>
+  30Shine · Ads Performance Report · W4 (22–28/6/2026) · Số liệu từ bảng nội bộ ngày 28/6/2026<br>
+  Nguồn: Bảng theo dõi nội bộ + Windsor.ai (FB Tỉnh 671545627449956 · FBCường 3420547021605953 · TikTok BFI-3738 7628820059174518801 · Google Ads)
+</footer>
+
+</body>
+</html>

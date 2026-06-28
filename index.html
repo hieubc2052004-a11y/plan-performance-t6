@@ -3,971 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kế hoạch Performance 28–30/5/2026</title>
+<title>Performance Marketing Hub · Tháng 6/2026 · 30Shine</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f6fa; color: #1a1a2e; }
-
-  .header {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
-    color: white;
-    padding: 36px 48px 28px;
-  }
-  .header-tag { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #e94560; margin-bottom: 10px; }
-  .header h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
-  .header-sub { font-size: 14px; color: #a0aec0; margin-bottom: 20px; }
-  .header-meta { display: flex; gap: 32px; }
-  .meta-item { font-size: 12px; color: #cbd5e0; }
-  .meta-item strong { color: #fff; font-size: 13px; display: block; margin-bottom: 2px; }
-
-  .container { max-width: 900px; margin: 0 auto; padding: 32px 24px; }
-
-  /* BUDGET TOTAL */
-  .budget-total {
-    background: white;
-    border-radius: 12px;
-    padding: 24px 28px;
-    margin-bottom: 28px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  .budget-total-label { font-size: 13px; color: #718096; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-  .budget-total-number { font-size: 32px; font-weight: 800; color: #1a1a2e; }
-  .budget-total-sub { font-size: 13px; color: #a0aec0; margin-top: 2px; }
-  .budget-channels { display: flex; gap: 20px; flex-wrap: wrap; }
-  .channel-pill {
-    padding: 10px 18px;
-    border-radius: 8px;
-    text-align: center;
-    min-width: 120px;
-  }
-  .channel-pill .ch-name { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
-  .channel-pill .ch-amount { font-size: 18px; font-weight: 700; }
-  .channel-pill .ch-pct { font-size: 11px; margin-top: 2px; opacity: 0.8; }
-  .ch-tiktok { background: #fff0f3; color: #e91e63; }
-  .ch-fb { background: #eff3ff; color: #3b5bdb; }
-  .ch-fb2 { background: #e8f4fd; color: #1971c2; }
-  .ch-gg { background: #f0fdf4; color: #2f9e44; }
-
-  /* SECTION */
-  .section { background: white; border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
-  .section-title {
-    font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
-    color: #718096; margin-bottom: 20px; padding-bottom: 12px;
-    border-bottom: 2px solid #f0f4f8;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .section-title .badge {
-    background: #e94560; color: white; font-size: 10px; padding: 2px 8px;
-    border-radius: 20px; letter-spacing: 0;
-  }
-
-  /* STRATEGY CARDS */
-  .strategy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .strategy-card {
-    border-radius: 10px;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-  }
-  .strategy-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0;
-    height: 3px;
-  }
-  .s1 { background: #fffbeb; }
-  .s1::before { background: #f59e0b; }
-  .s2 { background: #eff6ff; }
-  .s2::before { background: #3b82f6; }
-  .s3 { background: #f0fdf4; }
-  .s3::before { background: #22c55e; }
-  .strategy-num { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
-  .s1 .strategy-num { color: #d97706; }
-  .s2 .strategy-num { color: #2563eb; }
-  .s3 .strategy-num { color: #16a34a; }
-  .strategy-name { font-size: 15px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px; }
-  .strategy-desc { font-size: 13px; color: #4a5568; line-height: 1.6; }
-  .strategy-kpi {
-    margin-top: 12px; padding-top: 10px;
-    border-top: 1px solid rgba(0,0,0,0.07);
-    font-size: 12px; color: #718096;
-  }
-  .strategy-kpi strong { color: #1a1a2e; }
-
-  /* BUDGET TABLE */
-  table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  thead tr { background: #f8fafc; }
-  thead th {
-    padding: 10px 14px; text-align: left;
-    font-size: 11px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 1px; color: #718096;
-    border-bottom: 2px solid #e2e8f0;
-  }
-  thead th.num { text-align: right; }
-  tbody tr { border-bottom: 1px solid #f0f4f8; }
-  tbody tr:hover { background: #fafbfc; }
-  tbody td { padding: 11px 14px; vertical-align: middle; }
-  tbody td.num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; color: #2d3748; }
-  .row-group { background: #f8fafc; }
-  .row-group td { font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #4a5568; padding: 8px 14px; }
-  .tag {
-    display: inline-block; padding: 2px 8px; border-radius: 20px;
-    font-size: 11px; font-weight: 600;
-  }
-  .tag-nen { background: #e2e8f0; color: #4a5568; }
-  .tag-push { background: #dbeafe; color: #1d4ed8; }
-  .tfoot-row td { padding: 12px 14px; font-weight: 800; background: #1a1a2e; color: white; border-radius: 0; }
-  .tfoot-row td.num { color: #fbbf24; font-size: 15px; }
-  .channel-dot {
-    display: inline-block; width: 8px; height: 8px;
-    border-radius: 50%; margin-right: 6px; vertical-align: middle;
-  }
-  .dot-tiktok { background: #e91e63; }
-  .dot-fb { background: #3b5bdb; }
-  .dot-gg { background: #2f9e44; }
-  .dot-fb2 { background: #1971c2; }
-
-  /* ZONE TABLE */
-  .zone-table table { font-size: 13px; }
-  .signal { font-size: 14px; margin-right: 4px; }
-  .reason { font-size: 12px; color: #718096; }
-
-  /* PAUSE BOX */
-  .pause-box {
-    background: #fff5f5; border: 1px solid #fed7d7;
-    border-radius: 8px; padding: 14px 18px; margin-top: 16px;
-  }
-  .pause-box-title { font-size: 12px; font-weight: 700; color: #c53030; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-  .pause-item { font-size: 13px; color: #742a2a; margin-bottom: 4px; display: flex; align-items: flex-start; gap: 8px; }
-  .pause-item::before { content: '✕'; color: #e53e3e; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-
-  /* CONTENT WIN */
-  .platform-header {
-    display: flex; align-items: center; gap: 10px;
-    font-size: 13px; font-weight: 700; color: #1a1a2e;
-    margin: 20px 0 12px;
-    padding: 10px 14px;
-    border-radius: 8px;
-  }
-  .platform-tiktok { background: #fff0f3; border-left: 3px solid #e91e63; }
-  .platform-fb { background: #eff3ff; border-left: 3px solid #3b5bdb; }
-  .platform-header .ph-meta { font-size: 11px; font-weight: 400; color: #718096; margin-left: auto; }
-  .rank-badge {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 24px; height: 24px; border-radius: 50%;
-    font-size: 11px; font-weight: 800; flex-shrink: 0;
-  }
-  .rank-gold { background: #fef3c7; color: #92400e; }
-  .rank-silver { background: #f1f5f9; color: #475569; }
-  .rank-bronze { background: #fff7ed; color: #9a3412; }
-  .rank-star { background: #f0fdf4; color: #166534; }
-  .win-tag {
-    display: inline-block; padding: 1px 7px; border-radius: 12px;
-    font-size: 10px; font-weight: 700; margin-left: 6px; vertical-align: middle;
-  }
-  .win-scale { background: #dcfce7; color: #166534; }
-  .win-watch { background: #fef9c3; color: #854d0e; }
-  .win-stop { background: #fee2e2; color: #991b1b; }
-  .win-top { background: #dbeafe; color: #1e40af; }
-  .metric-row { display: flex; gap: 6px; margin-top: 4px; flex-wrap: wrap; }
-  .metric-chip {
-    padding: 2px 8px; border-radius: 12px;
-    font-size: 11px; background: #f1f5f9; color: #475569;
-  }
-  .metric-chip.hot { background: #fef3c7; color: #92400e; font-weight: 700; }
-  .metric-chip.warn { background: #fee2e2; color: #991b1b; }
-  .content-row { padding: 10px 0; border-bottom: 1px solid #f0f4f8; display: flex; align-items: flex-start; gap: 12px; }
-  .content-row:last-child { border-bottom: none; }
-  .content-info { flex: 1; min-width: 0; }
-  .content-name { font-size: 13px; font-weight: 600; color: #1a1a2e; line-height: 1.4; }
-  .angle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 4px; }
-  .angle-card {
-    padding: 14px 16px; border-radius: 8px; border: 1px solid #e2e8f0;
-    position: relative;
-  }
-  .angle-card.best { border-color: #22c55e; background: #f0fdf4; }
-  .angle-card.mid { border-color: #e2e8f0; background: #fafbfc; }
-  .angle-card.worst { border-color: #fca5a5; background: #fff5f5; }
-  .angle-name { font-size: 13px; font-weight: 700; color: #1a1a2e; margin-bottom: 6px; }
-  .angle-cpa { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
-  .angle-card.best .angle-cpa { color: #16a34a; }
-  .angle-card.mid .angle-cpa { color: #2563eb; }
-  .angle-card.worst .angle-cpa { color: #dc2626; }
-  .angle-meta { font-size: 11px; color: #718096; }
-  .angle-label { position: absolute; top: 10px; right: 10px; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 8px; }
-  .label-best { background: #dcfce7; color: #166534; }
-  .label-mid { background: #dbeafe; color: #1e40af; }
-  .label-cut { background: #fee2e2; color: #991b1b; }
-  .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 4px; }
-  .service-card { padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center; }
-  .service-card.best { border-color: #22c55e; background: #f0fdf4; }
-  .service-card.bad { border-color: #fca5a5; background: #fff5f5; }
-  .svc-name { font-size: 11px; font-weight: 700; color: #4a5568; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .svc-cpa { font-size: 17px; font-weight: 800; }
-  .service-card.best .svc-cpa { color: #16a34a; }
-  .service-card.bad .svc-cpa { color: #dc2626; }
-  .svc-vol { font-size: 11px; color: #718096; margin-top: 2px; }
-
-  /* TARGET */
-  .target-box {
-    background: linear-gradient(135deg, #1a1a2e, #0f3460);
-    color: white; border-radius: 10px;
-    padding: 20px 24px;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 16px;
-  }
-  .target-item { text-align: center; }
-  .target-label { font-size: 11px; color: #a0aec0; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-  .target-value { font-size: 24px; font-weight: 800; color: #fbbf24; }
-  .target-sub { font-size: 11px; color: #a0aec0; margin-top: 3px; }
-  .target-divider { width: 1px; height: 50px; background: rgba(255,255,255,0.15); }
-
-  /* FOOTER */
-  .footer { text-align: center; padding: 24px; font-size: 12px; color: #a0aec0; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+.header{background:linear-gradient(135deg,#0f172a 0%,#1e293b 60%,#0f3460 100%);padding:36px 48px 28px;border-bottom:1px solid #1e293b}
+.header-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#f59e0b;margin-bottom:10px}
+.header h1{font-size:24px;font-weight:800;color:#f8fafc;margin-bottom:6px}
+.header-sub{font-size:13px;color:#94a3b8}
+.container{max-width:960px;margin:0 auto;padding:32px 24px}
+.section-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#64748b;margin:28px 0 14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:20px 22px;text-decoration:none;color:#e2e8f0;display:flex;flex-direction:column;gap:6px;transition:all .15s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:10px 10px 0 0}
+.card:hover{background:#273344;border-color:#475569;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.card-icon{font-size:22px;margin-bottom:2px}
+.card-title{font-size:14px;font-weight:700;color:#f1f5f9}
+.card-desc{font-size:11px;color:#94a3b8;line-height:1.5}
+.card-meta{font-size:10px;color:#64748b;margin-top:4px;display:flex;gap:8px;flex-wrap:wrap}
+.meta-chip{background:#0f172a;padding:2px 7px;border-radius:10px;border:1px solid #334155}
+.c-blue::before{background:#3b82f6}.c-green::before{background:#22c55e}.c-yellow::before{background:#f59e0b}.c-red::before{background:#ef4444}.c-purple::before{background:#a855f7}.c-teal::before{background:#14b8a6}
+.badge-new{background:#f59e0b;color:#0f172a;font-size:9px;font-weight:800;padding:1px 6px;border-radius:8px;letter-spacing:.5px;margin-left:6px;vertical-align:middle}
+.footer{text-align:center;padding:24px;font-size:11px;color:#475569;border-top:1px solid #1e293b;margin-top:12px}
 </style>
 </head>
 <body>
 
 <div class="header">
-  <div class="header-tag">Performance Marketing Report</div>
-  <h1>Kế hoạch hành động 28–30/5/2026</h1>
-  <div class="header-sub">Chiến lược triển khai cuối tháng 5 — 3 nhóm ưu tiên chính</div>
-  <div class="header-meta">
-    <div class="meta-item"><strong>Thực hiện</strong>Bùi Thị Huế · Trần Quang Khánh</div>
-    <div class="meta-item"><strong>Giai đoạn</strong>28/05 – 30/05/2026 (3 ngày)</div>
-    <div class="meta-item"><strong>Báo cáo lên</strong>Nguyễn Kiều Oanh</div>
-  </div>
+  <div class="header-tag">Performance Marketing · 30Shine</div>
+  <h1>Marketing Hub — Tháng 6 / 2026</h1>
+  <div class="header-sub">Bùi Thị Huế · Ads Performance · Target: 32,500 KH · Ngân sách: 978M</div>
 </div>
 
 <div class="container">
 
-  <!-- TỔNG NGÂN SÁCH -->
-  <div class="budget-total">
-    <div>
-      <div class="budget-total-label">Tổng ngân sách 3 ngày</div>
-      <div class="budget-total-number">74.700.000 đ</div>
-      <div class="budget-total-sub">24.900.000 đ/ngày · 4 kênh</div>
-    </div>
-    <div class="budget-channels">
-      <div class="channel-pill ch-tiktok">
-        <div class="ch-name">TikTok</div>
-        <div class="ch-amount">7.200.000</div>
-        <div class="ch-pct">31% tổng</div>
+  <div class="section-label">Kế hoạch & chiến lược</div>
+  <div class="cards">
+    <a href="ke_hoach_chien_dich_thang6_2026.html" class="card c-blue">
+      <div class="card-icon">📋</div>
+      <div class="card-title">Kế hoạch chiến dịch T6/2026</div>
+      <div class="card-desc">Phân bổ ngân sách 978M theo 5 tuyến C1–C5 + FBCường + GG + CRM. Định hướng, KPI từng tuyến, theo dõi tiến độ chi tiêu.</div>
+      <div class="card-meta">
+        <span class="meta-chip">C1–C5</span>
+        <span class="meta-chip">FB · TikTok · GG</span>
+        <span class="meta-chip">Blended CPA 27,631đ</span>
       </div>
-      <div class="channel-pill ch-fb">
-        <div class="ch-name">Facebook</div>
-        <div class="ch-amount">12.600.000</div>
-        <div class="ch-pct">51% tổng</div>
+    </a>
+
+    <a href="ads_ranking_T6.html" class="card c-green">
+      <div class="card-icon">🏆</div>
+      <div class="card-title">Xếp hạng quảng cáo T6</div>
+      <div class="card-desc">Ranking toàn bộ QC Facebook + TikTok từng tuyến 1–22/6. Có cột Lượt mua* TikTok (offline_shopping_events), định hướng Scale/Theo dõi/Tắt, kế hoạch ngân sách 24–30/6.</div>
+      <div class="card-meta">
+        <span class="meta-chip">1–22/6</span>
+        <span class="meta-chip">FB + TikTok</span>
+        <span class="meta-chip">C1: 217 TK mua · C5: 396 TK mua</span>
       </div>
-      <div class="channel-pill ch-fb2">
-        <div class="ch-name">FB Cường</div>
-        <div class="ch-amount">3.000.000</div>
-        <div class="ch-pct">12% tổng</div>
+    </a>
+
+    <a href="campaign_compare_T6.html" class="card c-purple">
+      <div class="card-icon">📊</div>
+      <div class="card-title">So sánh 5 campaign T6</div>
+      <div class="card-desc">Phân tích so sánh hiệu quả C1–C5 theo nhiều chiều: chi tiêu, lượt mua, CPA, phân bổ kênh. Tìm ra tuyến mạnh/yếu để tái phân bổ.</div>
+      <div class="card-meta">
+        <span class="meta-chip">C1 vs C2 vs C3 vs C4 vs C5</span>
+        <span class="meta-chip">Cross-channel</span>
       </div>
-      <div class="channel-pill ch-gg">
-        <div class="ch-name">Google</div>
-        <div class="ch-amount">2.100.000</div>
-        <div class="ch-pct">8% tổng</div>
-      </div>
-    </div>
+    </a>
   </div>
 
-  <!-- 3 CHIẾN LƯỢC -->
-  <div class="section">
-    <div class="section-title">
-      3 nhóm chiến lược chính
-      <span class="badge">CHỐT</span>
-    </div>
-    <div class="strategy-grid">
-      <div class="strategy-card s1">
-        <div class="strategy-num">Chiến lược 1</div>
-        <div class="strategy-name">Nền đa kênh — Content Always-on</div>
-        <div class="strategy-desc">KOC + 30Shine + Salon tự sản xuất chạy song song TikTok / Facebook / Google. Ưu tiên content KOC đang có CPP thấp nhất hệ thống (14–18k/lượt mua).</div>
-        <div class="strategy-kpi">Mục tiêu: Giữ khách cũ &gt;12 tuần · Tăng tỷ lệ W24W</div>
+  <div class="section-label">Báo cáo tuần <span class="badge-new">MỚI</span></div>
+  <div class="cards">
+    <a href="bao_cao_tuan4_T6_2026.html" class="card c-yellow">
+      <div class="card-icon">📈</div>
+      <div class="card-title">Báo cáo Tuần 4 — 22–28/6/2026 <span class="badge-new">W4</span></div>
+      <div class="card-desc">Chi perf 108.6M · KH mới+cũ 7,321 · FB CPA 49,498đ · TK CPA 342,506đ · GG CPA 69,409đ. MTD 1–28/6: 29,384 KH (90.4% target 32,500).</div>
+      <div class="card-meta">
+        <span class="meta-chip">22–28/6</span>
+        <span class="meta-chip">MTD 847.9M / 898M</span>
+        <span class="meta-chip">Còn 3 ngày</span>
       </div>
-      <div class="strategy-card s2">
-        <div class="strategy-num">Chiến lược 2</div>
-        <div class="strategy-name">Push 5 khu vực còn capacity</div>
-        <div class="strategy-desc">HCM Q1/4/7/8 · Thanh Hoá · Bắc Ninh · Vinh · An Giang — vùng Stylist dưới 13 KH/ngày, còn hấp thụ được khách mới. Chạy radius ads theo salon thay vì broad.</div>
-        <div class="strategy-kpi">Mục tiêu: <strong>+20% khách mới</strong> tại 5 khu vực</div>
+    </a>
+
+    <a href="bao_cao_tuan3_T6_2026.html" class="card c-teal">
+      <div class="card-icon">📉</div>
+      <div class="card-title">Báo cáo Tuần 3 — 15–21/6/2026</div>
+      <div class="card-desc">Tuần cắt ngân sách 63.6%. KH mới+cũ gần như flat (−0.1%) dù chi giảm mạnh → phát hiện baseline hữu cơ ~900 KH/ngày. CPA tuần tốt hơn W2.</div>
+      <div class="card-meta">
+        <span class="meta-chip">15–21/6</span>
+        <span class="meta-chip">Cắt ngân sách</span>
+        <span class="meta-chip">Organic baseline</span>
       </div>
-      <div class="strategy-card s3">
-        <div class="strategy-num">Chiến lược 3</div>
-        <div class="strategy-name">Nhân bản content win — KOC/Salon</div>
-        <div class="strategy-desc">Dùng data CPP + view rate xác định mạch content đang thắng → book KOC nhân bản đúng mạch đó. Không để KOC tự nói — brief trước, đo sau.</div>
-        <div class="strategy-kpi">Tuyến ưu tiên: Biến hình · Khách quay lại · Tạt ngang</div>
-      </div>
-    </div>
+    </a>
   </div>
 
-  <!-- CHI TIẾT NGÂN SÁCH -->
-  <div class="section">
-    <div class="section-title">Chi tiết phân bổ ngân sách / ngày</div>
-    <table>
-      <thead>
-        <tr>
-          <th>Nhóm</th>
-          <th>Tuyến nội dung</th>
-          <th class="num"><span class="channel-dot dot-tiktok"></span>TikTok</th>
-          <th class="num"><span class="channel-dot dot-fb"></span>Facebook</th>
-          <th class="num"><span class="channel-dot dot-gg"></span>Google</th>
-          <th class="num">Tổng/ngày</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="row-group">
-          <td colspan="6"><span class="tag tag-nen">Chạy nền</span> · Always-on baseline</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Thera tuyến mới</td>
-          <td class="num">600.000</td>
-          <td class="num">1.000.000</td>
-          <td class="num">—</td>
-          <td class="num">1.600.000</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Nội dung bán hàng 30Shine</td>
-          <td class="num">600.000</td>
-          <td class="num">2.000.000</td>
-          <td class="num">800.000</td>
-          <td class="num">3.400.000</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Nội dung bán hàng salon sản xuất</td>
-          <td class="num">1.200.000</td>
-          <td class="num">1.000.000</td>
-          <td class="num">—</td>
-          <td class="num">2.200.000</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Nội dung bán hàng KOC ⭐</td>
-          <td class="num">1.200.000</td>
-          <td class="num">5.000.000</td>
-          <td class="num">400.000</td>
-          <td class="num">6.600.000</td>
-        </tr>
-
-        <tr class="row-group">
-          <td colspan="6"><span class="tag tag-push">Push khu vực</span> · 5 vùng capacity còn trống</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>HCM Q1/4/7/8 (TXQ)</td>
-          <td class="num">1.200.000</td>
-          <td class="num">1.500.000</td>
-          <td class="num">200.000</td>
-          <td class="num">2.900.000</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Thanh Hoá</td>
-          <td class="num">600.000</td>
-          <td class="num">900.000</td>
-          <td class="num">200.000</td>
-          <td class="num">1.700.000</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Bắc Ninh</td>
-          <td class="num">600.000</td>
-          <td class="num">600.000</td>
-          <td class="num">200.000</td>
-          <td class="num">1.400.000</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Vinh (Nghệ An)</td>
-          <td class="num">600.000</td>
-          <td class="num">300.000</td>
-          <td class="num">200.000</td>
-          <td class="num">1.100.000</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>An Giang</td>
-          <td class="num">600.000</td>
-          <td class="num">300.000</td>
-          <td class="num">100.000</td>
-          <td class="num">1.000.000</td>
-        </tr>
-
-        <tr class="row-group">
-          <td colspan="6"><span class="tag tag-push">Facebook vùng Cường</span> · Thủ Đức / Q2 (tách riêng account)</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Thủ Đức + Quận 2 radius</td>
-          <td class="num">—</td>
-          <td class="num">3.000.000</td>
-          <td class="num">—</td>
-          <td class="num">3.000.000</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr class="tfoot-row">
-          <td colspan="2">TỔNG NGÂN SÁCH / NGÀY</td>
-          <td class="num">7.200.000</td>
-          <td class="num">15.600.000</td>
-          <td class="num">2.100.000</td>
-          <td class="num">24.900.000</td>
-        </tr>
-      </tfoot>
-    </table>
-
-    <div class="pause-box">
-      <div class="pause-box-title">❌ Dừng / Không tăng ngân sách</div>
-      <div class="pause-item">Biên Hòa MESS (FB Cường) — CPP 3.300.000đ/lượt mua, dừng ngay</div>
-      <div class="pause-item">Bình Dương LRT (FB Cường) — CPP 1.500.000đ/lượt mua, tạm dừng</div>
-      <div class="pause-item">Bắc Ninh 362 NGT pet local (FB Tỉnh) — CPP 2.400.000đ/1 lượt mua duy nhất</div>
-      <div class="pause-item">Google PMax + Shopping — CPP 120–216k, không hiệu quả so với Facebook</div>
-      <div class="pause-item">Khu vực Đoàn Trung Đức (HN TT03) — Stylist 14.3 KH/ngày, đã vượt công suất · thêm tiền = lãng phí</div>
-    </div>
-  </div>
-
-  <!-- KHU VỰC PUSH -->
-  <div class="section zone-table">
-    <div class="section-title">Căn cứ chọn 5 khu vực Push</div>
-    <table>
-      <thead>
-        <tr>
-          <th>Khu vực</th>
-          <th>GDKV</th>
-          <th class="num">KH/Stylist/ngày</th>
-          <th class="num">Room còn (slots)</th>
-          <th>Lý do ưu tiên</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="signal">🟢</span>HCM Q1/4/7/8</td>
-          <td>Tống Xuân Quyền</td>
-          <td class="num">10.3</td>
-          <td class="num">155 slots/ngày</td>
-          <td class="reason">Chưa có nhóm ads riêng — đang đi vào HCM broad chung</td>
-        </tr>
-        <tr>
-          <td><span class="signal">🟢</span>Thanh Hoá</td>
-          <td>Nguyễn Thị Huệ</td>
-          <td class="num">10.1</td>
-          <td class="num">61 slots/ngày</td>
-          <td class="reason">Test Khánh: +50% khách mới · TikTok Biến hình R25=13.7%</td>
-        </tr>
-        <tr>
-          <td><span class="signal">🟢</span>Bắc Ninh</td>
-          <td>Nguyễn Như Quỳnh</td>
-          <td class="num">12.0</td>
-          <td class="num">17 slots/ngày</td>
-          <td class="reason">TikTok pet local CPP 18k đang hoạt động tốt</td>
-        </tr>
-        <tr>
-          <td><span class="signal">🟡</span>Vinh (NA)</td>
-          <td>Nguyễn Thị Huệ</td>
-          <td class="num">10.1</td>
-          <td class="num">61 slots/ngày</td>
-          <td class="reason">Cùng GDKV Thanh Hoá — content transformation nhân bản được</td>
-        </tr>
-        <tr>
-          <td><span class="signal">🟡</span>An Giang</td>
-          <td>Tống Xuân Quyền</td>
-          <td class="num">10.3</td>
-          <td class="num">155 slots/ngày</td>
-          <td class="reason">Cùng vùng TXQ — salon 113 THD AG còn 38 slots/ngày (r=5.5)</td>
-        </tr>
-        <tr>
-          <td><span class="signal">🔵</span>Thủ Đức / Q2</td>
-          <td>Nguyễn Việt Cường</td>
-          <td class="num">10.2 – 11.2</td>
-          <td class="num">49 slots/ngày</td>
-          <td class="reason">FB Cường CPP thực Q2/TĐ = 120–170k · tách Biên Hòa ra để làm sạch</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- CONTENT WIN -->
-  <div class="section">
-    <div class="section-title">
-      Top 20 Content nên nhân bản — Windsor data 01–28/5/2026
-      <span class="badge">WINDSOR LIVE</span>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;">
-      <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:14px 16px;">
-        <div style="font-size:11px;font-weight:700;color:#166534;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">📘 Facebook — 3 phát hiện mới</div>
-        <div style="font-size:13px;color:#14532d;line-height:1.8;">
-          🆕 <strong>COMBO VÔ ĐỊCH Hoàng Sao (16/05)</strong> — CPP 12.016đ, nội dung mới đang tốt<br>
-          🏆 Top CPP = 8.077đ — tuyến <em>Financial "Mọi thứ đều tăng"</em><br>
-          ❌ Biên Hòa MESS 10/05 mới chạy — CPP 424.186đ, dừng ngay
-        </div>
+  <div class="section-label">Tổng quan tiến độ tháng 6</div>
+  <div style="background:#1e293b;border:1px solid #334155;border-radius:10px;padding:20px 24px;margin-bottom:8px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px">
+      <div>
+        <div style="font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">KH MTD (1–28/6)</div>
+        <div style="font-size:26px;font-weight:800;color:#f59e0b">29,384</div>
+        <div style="font-size:11px;color:#94a3b8">90.4% target 32,500</div>
       </div>
-      <div style="background:#fff0f3;border:1px solid #fda4af;border-radius:8px;padding:14px 16px;">
-        <div style="font-size:11px;font-weight:700;color:#9f1239;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">📱 TikTok — 3 phát hiện mới</div>
-        <div style="font-size:13px;color:#881337;line-height:1.8;">
-          🆕 <strong>KOC Tùng Chiu Chiu (27/05)</strong> — VR25 = 25.5% cực cao, data nhỏ, scale test ngay<br>
-          🆕 <strong>168 NVC Tour du lịch (17/05)</strong> — VR25 9.4%, Retention 55% ổn<br>
-          ❌ Lê Min Hô + 362 NGT BN — VR25 &lt; 2.6%, đang tiêu 10.6M, tắt ngay
-        </div>
+      <div>
+        <div style="font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Chi MTD</div>
+        <div style="font-size:26px;font-weight:800;color:#38bdf8">847.9M</div>
+        <div style="font-size:11px;color:#94a3b8">/ 898M kế hoạch perf</div>
+      </div>
+      <div>
+        <div style="font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">CPC blended MTD</div>
+        <div style="font-size:26px;font-weight:800;color:#a78bfa">28,856đ</div>
+        <div style="font-size:11px;color:#94a3b8">target ≤27,631đ</div>
+      </div>
+      <div>
+        <div style="font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Còn lại</div>
+        <div style="font-size:26px;font-weight:800;color:#34d399">3 ngày</div>
+        <div style="font-size:11px;color:#94a3b8">29–30/6 · Cần thêm 3,116 KH</div>
       </div>
     </div>
-
-    <!-- FACEBOOK TABLE -->
-    <div class="platform-header platform-fb">
-      📘 Facebook Top 20 — CPP thấp nhất (01/05–28/05/2026)
-      <span class="ph-meta">Windsor · 3 tài khoản · CPP = Spend ÷ Lượt mua thực tế</span>
+    <div style="margin-top:16px;background:#0f172a;border-radius:6px;height:8px;overflow:hidden">
+      <div style="width:90.4%;height:100%;background:linear-gradient(90deg,#f59e0b,#fb923c);border-radius:6px"></div>
     </div>
-    <table style="margin-bottom:8px;">
-      <thead>
-        <tr>
-          <th style="width:28px;">#</th>
-          <th>Nội dung</th>
-          <th class="num">Spend</th>
-          <th class="num">Lượt mua</th>
-          <th class="num">CPP</th>
-          <th style="width:90px;text-align:center;">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="background:#f0fdf4;">
-          <td style="text-align:center;font-weight:800;color:#16a34a;">1</td>
-          <td><strong>16491 · Mọi thứ đều tăng và 30Shine cũng tăng</strong><br><span style="font-size:11px;color:#718096;">Financial · SC · Không KOC</span></td>
-          <td class="num">4.6M</td><td class="num">567</td>
-          <td class="num" style="color:#16a34a;font-weight:800;">8.077đ</td>
-          <td style="text-align:center;"><span class="win-tag win-scale">NHÂN BẢN</span></td>
-        </tr>
-        <tr style="background:#eff6ff;">
-          <td style="text-align:center;font-weight:800;color:#1d4ed8;">2</td>
-          <td><strong>KOL Hoàng Sao · COMBO CỦA NHÀ VÔ ĐỊCH HOÀNG SAO · 16/05</strong> <span style="background:#dcfce7;color:#166534;font-size:10px;font-weight:700;padding:1px 6px;border-radius:8px;">🆕 MỚI</span><br><span style="font-size:11px;color:#718096;">KOL Reset · SC · CPP tốt từ ngày đầu</span></td>
-          <td class="num">1.7M</td><td class="num">145</td>
-          <td class="num" style="color:#16a34a;font-weight:700;">12.016đ</td>
-          <td style="text-align:center;"><span class="win-tag win-scale">SCALE</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;font-weight:700;">3</td>
-          <td>10819 · KOC Hoàng không sao · Bắt kịp Hairstyle 2026<br><span style="font-size:11px;color:#718096;">KOC phong cách · SC</span></td>
-          <td class="num">2.2M</td><td class="num">180</td>
-          <td class="num" style="color:#16a34a;font-weight:700;">12.021đ</td>
-          <td style="text-align:center;"><span class="win-tag win-scale">NHÂN BẢN</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;font-weight:700;">4</td>
-          <td>17169 · Có những khoản chi là tiêu tiền<br><span style="font-size:11px;color:#718096;">Financial · SC · Không KOC</span></td>
-          <td class="num">8.7M</td><td class="num">705</td>
-          <td class="num" style="color:#16a34a;font-weight:700;">12.294đ</td>
-          <td style="text-align:center;"><span class="win-tag win-scale">NHÂN BẢN</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;font-weight:700;">5</td>
-          <td>12994 · KOC Nguyễn Đức Toàn · "cứu tinh dân văn phòng"<br><span style="font-size:11px;color:#718096;">Testimonial · SC · KOC HN</span></td>
-          <td class="num">3.2M</td><td class="num">257</td>
-          <td class="num" style="color:#16a34a;font-weight:700;">12.642đ</td>
-          <td style="text-align:center;"><span class="win-tag win-scale">NHÂN BẢN</span></td>
-        </tr>
-        <tr style="background:#fefce8;">
-          <td style="text-align:center;font-weight:800;color:#854d0e;">6</td>
-          <td><strong>12994 · KOC Phạm Hoàng Nghĩa · Khách hàng nói gì sau khi quay lại ⭐</strong><br><span style="font-size:11px;color:#718096;">Testimonial · CPP tốt + VOLUME 4.738 mua — cao nhất hệ thống</span></td>
-          <td class="num">63.9M</td><td class="num" style="color:#dc2626;font-weight:800;">4.738</td>
-          <td class="num" style="color:#16a34a;font-weight:700;">13.481đ</td>
-          <td style="text-align:center;"><span class="win-tag" style="background:#fef9c3;color:#854d0e;">TOP VOL</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">7</td>
-          <td>KOC · Sang Nguyễn<br><span style="font-size:11px;color:#718096;">KOC HCM</span></td>
-          <td class="num">1.5M</td><td class="num">102</td>
-          <td class="num">14.483đ</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">8</td>
-          <td>13240 · ĐỨNG DẬY ĐI MẤY ANH EM CODER ƠI<br><span style="font-size:11px;color:#718096;">Identity IT · SC · Không KOC</span></td>
-          <td class="num">7.7M</td><td class="num">523</td>
-          <td class="num">14.796đ</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">9</td>
-          <td>10819 · KOC Hoàng không sao · Mohawk Tapper hair style 2026<br><span style="font-size:11px;color:#718096;">KOC phong cách · SC</span></td>
-          <td class="num">5.4M</td><td class="num">363</td>
-          <td class="num">14.958đ</td>
-          <td style="text-align:center;"><span class="win-tag win-scale">NHÂN BẢN</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">10</td>
-          <td>KOC · Hoàng Nam Đặng<br><span style="font-size:11px;color:#718096;">KOC</span></td>
-          <td class="num">1.2M</td><td class="num">83</td>
-          <td class="num">14.996đ</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">11</td>
-          <td>KOC · Sơn Nguyễn<br><span style="font-size:11px;color:#718096;">KOC HCM</span></td>
-          <td class="num">4.2M</td><td class="num">275</td>
-          <td class="num">15.130đ</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">12</td>
-          <td>KOC · Ngô Quang Tùng<br><span style="font-size:11px;color:#718096;">KOC</span></td>
-          <td class="num">1.2M</td><td class="num">80</td>
-          <td class="num">15.451đ</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">13</td>
-          <td>12773 · GIAO DIỆN IT<br><span style="font-size:11px;color:#718096;">Identity IT · SC · Không KOC</span></td>
-          <td class="num">3.5M</td><td class="num">226</td>
-          <td class="num">15.607đ</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">14</td>
-          <td>3298 · KOC Nguyễn Trí Kiên · làm chủ phong độ<br><span style="font-size:11px;color:#718096;">Phong độ · SC</span></td>
-          <td class="num">15.5M</td><td class="num">949</td>
-          <td class="num">16.315đ</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">15</td>
-          <td>KOC · Nguyễn Hoàng Anh<br><span style="font-size:11px;color:#718096;">KOC HCM</span></td>
-          <td class="num">9.4M</td><td class="num">534</td>
-          <td class="num">17.652đ</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">16</td>
-          <td>KOC · biến hình tóc 2 loại hói<br><span style="font-size:11px;color:#718096;">KOC · Format biến hình</span></td>
-          <td class="num">1.9M</td><td class="num">107</td>
-          <td class="num">18.048đ</td>
-          <td style="text-align:center;"><span class="win-tag win-scale">NHÂN BẢN</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">17</td>
-          <td>KOC · Sơn Nguyễn 2<br><span style="font-size:11px;color:#718096;">KOC HCM</span></td>
-          <td class="num">0.9M</td><td class="num">52</td>
-          <td class="num">18.250đ</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">18</td>
-          <td>KOC · Nguyễn Đức Toàn<br><span style="font-size:11px;color:#718096;">KOC HN · Volume cao</span></td>
-          <td class="num">31.6M</td><td class="num">1.725</td>
-          <td class="num">18.291đ</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">19</td>
-          <td>13240 · ĐỪNG ĐỂ 8 TIẾNG CÀY DEADLINE · 14/05<br><span style="font-size:11px;color:#718096;">Identity · SC · Không KOC</span></td>
-          <td class="num">11.3M</td><td class="num">602</td>
-          <td class="num">18.828đ</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">20</td>
-          <td>3298 · Tạt ngang 45 phút "lánh đời"<br><span style="font-size:11px;color:#718096;">Mental/Reset · SC · Không KOC</span></td>
-          <td class="num">44.9M</td><td class="num">2.339</td>
-          <td class="num">19.189đ</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr style="background:#fff5f5;">
-          <td colspan="2" style="font-size:12px;font-weight:700;color:#dc2626;padding:10px 14px;">❌ DỪNG NGAY — CPP thảm họa</td>
-          <td class="num" style="color:#dc2626;">Spend</td>
-          <td class="num" style="color:#dc2626;">Mua</td>
-          <td class="num" style="color:#dc2626;">CPP</td>
-          <td></td>
-        </tr>
-        <tr style="background:#fff5f5;">
-          <td></td>
-          <td>30Shine Biên Hòa MESS 10/05 🆕<br><span style="font-size:11px;color:#dc2626;">Mới chạy mà đã 424k/mua</span></td>
-          <td class="num" style="color:#dc2626;">1.7M</td><td class="num" style="color:#dc2626;">4</td>
-          <td class="num" style="color:#dc2626;font-weight:800;">424.186đ</td>
-          <td style="text-align:center;"><span class="win-tag win-stop">TẮT NGAY</span></td>
-        </tr>
-        <tr style="background:#fff5f5;">
-          <td></td>
-          <td>30SHINE BD MESS LRT 2/5<br><span style="font-size:11px;color:#dc2626;">Đã chạy lâu nhưng không hiệu quả</span></td>
-          <td class="num" style="color:#dc2626;">20.1M</td><td class="num" style="color:#dc2626;">52</td>
-          <td class="num" style="color:#dc2626;font-weight:800;">386.924đ</td>
-          <td style="text-align:center;"><span class="win-tag win-stop">TẮT NGAY</span></td>
-        </tr>
-        <tr style="background:#fff5f5;">
-          <td></td>
-          <td>30Shine Quận 2 SCB 10/05 🆕<br><span style="font-size:11px;color:#dc2626;">Mới chạy, CPP 162k — sai format</span></td>
-          <td class="num" style="color:#dc2626;">7.3M</td><td class="num" style="color:#dc2626;">45</td>
-          <td class="num" style="color:#dc2626;font-weight:700;">162.213đ</td>
-          <td style="text-align:center;"><span class="win-tag win-stop">TẮT</span></td>
-        </tr>
-      </tbody>
-    </table>
-    <div style="background:#fef9c3;border-radius:6px;padding:8px 14px;font-size:12px;color:#92400e;margin-bottom:24px;">
-      💡 <strong>Nhân bản ngay (tuần này):</strong> Book KOC theo đúng 2 mạch thắng: <strong>(1) Financial "Thông minh xứng đáng"</strong> — CPP 8–12k không cần KOC nổi tiếng · <strong>(2) Testimonial "Khách quay lại"</strong> — CPP 13k, volume cao nhất hệ thống.
-    </div>
-
-    <!-- TIKTOK TABLE -->
-    <div class="platform-header platform-tiktok">
-      📱 TikTok Top 20 — VR25% cao nhất (01/05–28/05/2026)
-      <span class="ph-meta">Windsor · TK 7628820059174518801 · VR25 = % xem qua 25% video · Benchmark min: 3%</span>
-    </div>
-    <table>
-      <thead>
-        <tr>
-          <th style="width:28px;">#</th>
-          <th>Nội dung</th>
-          <th class="num">Spend</th>
-          <th class="num">Impr</th>
-          <th class="num">VR25%</th>
-          <th class="num">Ret 25→50</th>
-          <th style="width:90px;text-align:center;">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="background:#eff6ff;">
-          <td style="text-align:center;font-weight:800;color:#1d4ed8;">1</td>
-          <td><strong>KOC Tùng Chiu Chiu · Tình yêu và sự nghiệp · 27/05</strong> <span style="background:#dcfce7;color:#166534;font-size:10px;font-weight:700;padding:1px 6px;border-radius:8px;">🆕 MỚI</span><br><span style="font-size:11px;color:#b45309;">⚠️ Data nhỏ 1.158 impr — cần scale test để xác nhận</span></td>
-          <td class="num">0.0M</td><td class="num">1.158</td>
-          <td class="num" style="color:#1d4ed8;font-weight:800;">25.5%</td>
-          <td class="num">52.9%</td>
-          <td style="text-align:center;"><span class="win-tag win-scale">SCALE TEST</span></td>
-        </tr>
-        <tr style="background:#f0fdf4;">
-          <td style="text-align:center;font-weight:800;color:#16a34a;">2</td>
-          <td><strong>KOC Hoàng không sao · Biến hình VAR1000 Ngày 2 · 24/05</strong><br><span style="font-size:11px;color:#718096;">Format biến hình trước/sau · Uốn texture — Sản xuất tiếp Ngày 5, 6, 7</span></td>
-          <td class="num">1.8M</td><td class="num">188.048</td>
-          <td class="num" style="color:#16a34a;font-weight:800;">13.3%</td>
-          <td class="num" style="color:#16a34a;font-weight:700;">78.3% 🔥</td>
-          <td style="text-align:center;"><span class="win-tag win-scale">SCALE NGAY</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;font-weight:700;">3</td>
-          <td>KOC Nguyễn Đức Toàn · TRẢI NGHIỆM · 22/04<br><span style="font-size:11px;color:#718096;">Testimonial · 5.854 impr</span></td>
-          <td class="num">0.1M</td><td class="num">5.854</td>
-          <td class="num" style="color:#16a34a;font-weight:700;">12.4%</td>
-          <td class="num" style="color:#16a34a;">65.7% 🔥</td>
-          <td style="text-align:center;"><span class="win-tag win-scale">SCALE TEST</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;font-weight:700;">4</td>
-          <td>KOC Phạm Hoàng Nghĩa · Khách hàng nói gì sau khi quay lại · 05/04<br><span style="font-size:11px;color:#718096;">Testimonial · 6.268 impr</span></td>
-          <td class="num">0.1M</td><td class="num">6.268</td>
-          <td class="num" style="color:#16a34a;font-weight:700;">10.9%</td>
-          <td class="num">53.9%</td>
-          <td style="text-align:center;"><span class="win-tag win-scale">SCALE TEST</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;font-weight:700;">5</td>
-          <td>KOC Hoàng không sao · Mohawk Tapper hair style 2026 · 02/04<br><span style="font-size:11px;color:#718096;">Phong cách tóc · Uốn</span></td>
-          <td class="num">0.1M</td><td class="num">15.589</td>
-          <td class="num" style="color:#16a34a;font-weight:700;">9.7%</td>
-          <td class="num" style="color:#16a34a;">70.6% 🔥</td>
-          <td style="text-align:center;"><span class="win-tag win-scale">SCALE</span></td>
-        </tr>
-        <tr style="background:#fef9c3;">
-          <td style="text-align:center;font-weight:700;">6</td>
-          <td>KOL Hoàng Sao · KHÔNG CẦN VÔ ĐỊCH THẾ GIỚI · 25/03 ⚠️<br><span style="font-size:11px;color:#b45309;">Hook tốt nhưng Retention 18% — 82% bỏ xem sau 25% · Không scale thêm</span></td>
-          <td class="num">15.6M</td><td class="num">1.059.992</td>
-          <td class="num" style="color:#d97706;font-weight:700;">9.5%</td>
-          <td class="num" style="color:#dc2626;font-weight:700;">18.0% ⚠️</td>
-          <td style="text-align:center;"><span class="win-tag win-watch">EDIT VIDEO</span></td>
-        </tr>
-        <tr style="background:#eff6ff;">
-          <td style="text-align:center;font-weight:700;">7</td>
-          <td><strong>168 NVC · Tour du lịch thư giãn 45p · 17/05</strong> <span style="background:#dcfce7;color:#166634;font-size:10px;font-weight:700;padding:1px 6px;border-radius:8px;">🆕 MỚI</span><br><span style="font-size:11px;color:#718096;">Local pet Thủ Đức · Hook mới tốt — cần tăng ngân sách</span></td>
-          <td class="num">0.1M</td><td class="num">6.800</td>
-          <td class="num" style="color:#16a34a;font-weight:700;">9.4%</td>
-          <td class="num">55.1%</td>
-          <td style="text-align:center;"><span class="win-tag win-scale">SCALE</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">8</td>
-          <td>11000 · 168 NVC · giờ trưa · 10/05<br><span style="font-size:11px;color:#718096;">Local pet Thủ Đức · CPM cao 19.220đ — mở rộng audience</span></td>
-          <td class="num">0.7M</td><td class="num">36.473</td>
-          <td class="num" style="color:#16a34a;">8.7%</td>
-          <td class="num" style="color:#16a34a;">67.3% 🔥</td>
-          <td style="text-align:center;"><span class="win-tag win-top">MỞ RỘNG</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">9</td>
-          <td>KOC Hoàng không sao · Ngày 4: Ivy uốn Hoàng Sao · 24/05<br><span style="font-size:11px;color:#718096;">Series VAR 1000 · Uốn texture</span></td>
-          <td class="num">0.2M</td><td class="num">21.290</td>
-          <td class="num" style="color:#16a34a;">7.9%</td>
-          <td class="num" style="color:#16a34a;">61.4% 🔥</td>
-          <td style="text-align:center;"><span class="win-tag win-scale">SCALE</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">10</td>
-          <td>KOL Hoàng Sao · VÔ ĐỊCH PHONG THÁI NHƯ HOÀNG SAO · 27/03<br><span style="font-size:11px;color:#718096;">Reset/Relax · Retention thấp 25.5%</span></td>
-          <td class="num">7.9M</td><td class="num">629.677</td>
-          <td class="num">7.7%</td>
-          <td class="num">25.5%</td>
-          <td style="text-align:center;"><span class="win-tag win-watch">THEO DÕI</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">11</td>
-          <td>12773 · Chấp mọi KPI · 22/04<br><span style="font-size:11px;color:#718096;">Không KOC · Ổn định nhất trong nhóm không KOC</span></td>
-          <td class="num">3.1M</td><td class="num">200.606</td>
-          <td class="num">7.0%</td>
-          <td class="num">57.6%</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">12</td>
-          <td>KOC Hoàng không sao · Cắt tạo kiểu HIẾU THỨ HAI · 18/03<br><span style="font-size:11px;color:#718096;">Phong cách tóc</span></td>
-          <td class="num">0.2M</td><td class="num">26.433</td>
-          <td class="num">6.8%</td>
-          <td class="num">47.7%</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr style="background:#eff6ff;">
-          <td style="text-align:center;font-weight:700;">13</td>
-          <td><strong>10 TP · Lần cuối ai đó nói anh trông già hơn tuổi · 14/05</strong> <span style="background:#dcfce7;color:#166634;font-size:10px;font-weight:700;padding:1px 6px;border-radius:8px;">🆕 MỚI</span><br><span style="font-size:11px;color:#718096;">Uốn texture · Hook góc pain point tuổi tác — tốt</span></td>
-          <td class="num">0.1M</td><td class="num">5.759</td>
-          <td class="num" style="color:#16a34a;">6.3%</td>
-          <td class="num">56.5%</td>
-          <td style="text-align:center;"><span class="win-tag win-scale">SCALE TEST</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">14</td>
-          <td>11000 · 10 TP · Đặt lịch ngay thôi · 08/05<br><span style="font-size:11px;color:#718096;">Local pet · 10 TP HCM</span></td>
-          <td class="num">0.5M</td><td class="num">38.428</td>
-          <td class="num">5.4%</td>
-          <td class="num">59.2%</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">15</td>
-          <td>11000 · 10 TP · giờ trưa của anh đi đâu · 10/05<br><span style="font-size:11px;color:#718096;">Local pet · 10 TP HCM</span></td>
-          <td class="num">4.6M</td><td class="num">325.971</td>
-          <td class="num">5.3%</td>
-          <td class="num">56.6%</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">16</td>
-          <td>Hoang Nam Dang<br><span style="font-size:11px;color:#718096;">KOC</span></td>
-          <td class="num">0.7M</td><td class="num">47.679</td>
-          <td class="num">5.2%</td>
-          <td class="num" style="color:#16a34a;">64.1% 🔥</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">17</td>
-          <td>Lê Tuấn Kiệt<br><span style="font-size:11px;color:#718096;">KOC</span></td>
-          <td class="num">1.1M</td><td class="num">67.180</td>
-          <td class="num">4.7%</td>
-          <td class="num" style="color:#16a34a;">61.2% 🔥</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">18</td>
-          <td>Lê Nam<br><span style="font-size:11px;color:#718096;">KOC</span></td>
-          <td class="num">3.2M</td><td class="num">232.038</td>
-          <td class="num">4.7%</td>
-          <td class="num">59.4%</td>
-          <td style="text-align:center;"><span class="win-tag win-top">GIỮ</span></td>
-        </tr>
-        <tr>
-          <td style="text-align:center;">19</td>
-          <td>11000 · 11 PKT · giờ trưa · 10/05<br><span style="font-size:11px;color:#718096;">Local pet · PKT — CPM cao 19.559đ</span></td>
-          <td class="num">2.6M</td><td class="num">130.477</td>
-          <td class="num">3.7%</td>
-          <td class="num">50.2%</td>
-          <td style="text-align:center;"><span class="win-tag win-watch">CPM CAO</span></td>
-        </tr>
-        <tr style="background:#fef9c3;">
-          <td style="text-align:center;">20</td>
-          <td>Trung Hiếu Review ⚠️<br><span style="font-size:11px;color:#b45309;">VR25 chỉ 3.5%, tiêu 12.2M — quá đắt cho view rate thấp</span></td>
-          <td class="num" style="color:#b45309;">12.2M</td><td class="num">674.192</td>
-          <td class="num" style="color:#d97706;">3.5%</td>
-          <td class="num">47.5%</td>
-          <td style="text-align:center;"><span class="win-tag win-watch">GIẢM 40%</span></td>
-        </tr>
-        <tr style="background:#fff5f5;">
-          <td colspan="2" style="font-size:12px;font-weight:700;color:#dc2626;padding:10px 14px;">❌ DỪNG NGAY — VR25 &lt; 3% (dưới ngưỡng tối thiểu)</td>
-          <td class="num" style="color:#dc2626;">Spend</td>
-          <td class="num" style="color:#dc2626;">Impr</td>
-          <td class="num" style="color:#dc2626;">VR25%</td>
-          <td class="num" style="color:#dc2626;">Ret</td>
-          <td></td>
-        </tr>
-        <tr style="background:#fff5f5;">
-          <td></td>
-          <td>KOL Hoàng Sao · Lê Min Hô ai đẹp trai hơn · 16/04<br><span style="font-size:11px;color:#dc2626;">Tiêu nhiều nhất nhóm kém</span></td>
-          <td class="num" style="color:#dc2626;">7.7M</td><td class="num">480.620</td>
-          <td class="num" style="color:#dc2626;font-weight:800;">2.6%</td>
-          <td class="num">40.7%</td>
-          <td style="text-align:center;"><span class="win-tag win-stop">TẮT NGAY</span></td>
-        </tr>
-        <tr style="background:#fff5f5;">
-          <td></td>
-          <td>11000 · 362 NGT BN · giờ trưa · 10/05<br><span style="font-size:11px;color:#dc2626;">VR25 thấp nhất toàn bộ</span></td>
-          <td class="num" style="color:#dc2626;">2.9M</td><td class="num">167.492</td>
-          <td class="num" style="color:#dc2626;font-weight:800;">1.8%</td>
-          <td class="num">55.4%</td>
-          <td style="text-align:center;"><span class="win-tag win-stop">TẮT NGAY</span></td>
-        </tr>
-        <tr style="background:#fff5f5;">
-          <td></td>
-          <td>11000 · 80 TP TH · giờ trưa · 10/05</td>
-          <td class="num" style="color:#dc2626;">4.5M</td><td class="num">171.232</td>
-          <td class="num" style="color:#dc2626;font-weight:700;">2.6%</td>
-          <td class="num">44.1%</td>
-          <td style="text-align:center;"><span class="win-tag win-stop">TẮT</span></td>
-        </tr>
-        <tr style="background:#fff5f5;">
-          <td></td>
-          <td>KOL Hoàng Sao · Người ta thắng giải · 18/03</td>
-          <td class="num" style="color:#dc2626;">2.9M</td><td class="num">261.783</td>
-          <td class="num" style="color:#dc2626;font-weight:700;">2.6%</td>
-          <td class="num">40.7%</td>
-          <td style="text-align:center;"><span class="win-tag win-stop">TẮT</span></td>
-        </tr>
-      </tbody>
-    </table>
-    <div style="background:#fff0f3;border-radius:6px;padding:8px 14px;font-size:12px;color:#9f1239;margin-top:8px;">
-      💡 <strong>Action TikTok ngay hôm nay:</strong> (1) Scale budget KOC Tùng Chiu Chiu test thêm (2) Sản xuất tiếp VAR1000 Ngày 5/6/7 (3) Tắt Lê Min Hô + 362 NGT BN + 80 TP TH giải phóng ~15.1M để tái đầu tư vào biến hình.
-    </div>
-  </div>
-
-    <!-- MỤC TIÊU -->
-  <div class="section">
-    <div class="section-title">Mục tiêu 3 ngày 28–30/5</div>
-    <div class="target-box">
-      <div class="target-item">
-        <div class="target-label">Tăng trưởng khách mới</div>
-        <div class="target-value">+20%</div>
-        <div class="target-sub">so với baseline tuần trước</div>
-      </div>
-      <div class="target-divider"></div>
-      <div class="target-item">
-        <div class="target-label">Khách W24W quay lại</div>
-        <div class="target-value">↑ W24W</div>
-        <div class="target-sub">target khách cũ &gt;12 tuần</div>
-      </div>
-      <div class="target-divider"></div>
-      <div class="target-item">
-        <div class="target-label">Ngân sách 3 ngày</div>
-        <div class="target-value">74.7M</div>
-        <div class="target-sub">24.9M/ngày · 4 kênh</div>
-      </div>
-      <div class="target-divider"></div>
-      <div class="target-item">
-        <div class="target-label">CPP mục tiêu (FB)</div>
-        <div class="target-value">&lt; 25k</div>
-        <div class="target-sub">benchmark hiện tại: 21k avg</div>
-      </div>
+    <div style="display:flex;justify-content:space-between;font-size:10px;color:#64748b;margin-top:4px">
+      <span>0</span><span style="color:#f59e0b;font-weight:700">29,384 KH (90.4%)</span><span>32,500 KH</span>
     </div>
   </div>
 
 </div>
 
 <div class="footer">
-  Prepared by Bùi Thị Huế & Trần Quang Khánh · Performance Marketing · 30Shine · 28/05/2026
+  Performance Marketing · Bùi Thị Huế · 30Shine · Tháng 6/2026
 </div>
 
 </body>
