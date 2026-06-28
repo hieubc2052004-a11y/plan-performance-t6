@@ -30,6 +30,25 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1e293b;fo
 .delta.ok{color:#16a34a}.delta.near{color:#ca8a04}.delta.bad{color:#dc2626}
 @media(max-width:900px){.kpi-bar{grid-template-columns:repeat(3,1fr)}}
 
+/* ── Weekly recap ── */
+.week-recap{background:linear-gradient(135deg,#1e3a5f 0%,#0c2340 100%);padding:16px 24px 18px;margin:0}
+.week-recap-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.week-recap-hdr .title{font-size:13px;font-weight:900;color:#f8fafc;letter-spacing:-.2px}
+.week-recap-hdr .sub{font-size:10px;color:#64748b;margin-top:1px}
+.week-recap-hdr .badge-w{background:#f59e0b;color:#1e293b;font-size:9px;font-weight:800;padding:2px 8px;border-radius:10px;letter-spacing:.5px}
+.wkpi-bar{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+.wkpi{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:10px 12px;border-left:3px solid var(--c)}
+.wkpi .wlbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:#94a3b8;margin-bottom:3px}
+.wkpi .wval{font-size:18px;font-weight:900;color:#f8fafc;line-height:1.1}
+.wkpi .wmt{font-size:9px;color:#64748b;margin-top:2px}
+.wkpi .wow{font-size:10px;font-weight:700;margin-top:3px;display:flex;align-items:center;gap:3px}
+.wow.up{color:#34d399}.wow.dn{color:#f87171}.wow.neu{color:#94a3b8}
+.week-charts{display:grid;grid-template-columns:2fr 1fr;gap:10px;margin-top:12px}
+.wbox{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:12px 14px}
+.wbox h4{font-size:10px;font-weight:700;color:#94a3b8;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.wbox canvas{max-height:130px}
+@media(max-width:1100px){.wkpi-bar{grid-template-columns:repeat(4,1fr)}}
+
 /* ── Section ── */
 .section{padding:0 24px}
 .section-hdr{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#475569;margin:22px 0 12px;display:flex;align-items:center;gap:8px}
@@ -99,7 +118,7 @@ td.dim{color:#94a3b8}.nonq{font-weight:700;color:#78350f;background:#fef9c3!impo
   <div class="dash-meta">
     <div>Kỳ báo cáo: <b>1–28/6/2026</b></div>
     <div>MT KH: <b>32,500</b> · MT Chi: <b>978M</b> · MT CPA: <b>30,092đ</b></div>
-    <div style="margin-top:4px;font-size:10px;color:#475569">TikTok* = offline_shopping_events (view-through 14d)</div>
+    <div style="margin-top:4px;font-size:10px;color:#475569">Dashboard = hệ thống (không NQ) · TikTok* = offline_shopping_events</div>
   </div>
 </div>
 
@@ -157,6 +176,83 @@ td.dim{color:#94a3b8}.nonq{font-weight:700;color:#78350f;background:#fef9c3!impo
   <div class="insight" style="--c:#10b981">CPA thực tế <b>29,607đ</b> ← dưới MT (<b>1.6%</b>)</div>
   <div class="insight" style="--c:#3b82f6">TikTok CTR trung bình <b>0.93%</b> · FB <b>0.97%</b></div>
 </div>
+</div>
+
+<!-- TUẦN VỪA QUA -->
+<div class="week-recap">
+  <div class="week-recap-hdr">
+    <div>
+      <div class="title">Tuần vừa qua — W4 (22–28/6)</div>
+      <div class="sub">So sánh với W3 (15–21/6) và mục tiêu tuần</div>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <div style="font-size:10px;color:#64748b">KH đạt <b style="color:#f59e0b">90.1%</b> MT tuần · CPA <b style="color:#34d399">17,223đ</b></div>
+      <div class="badge-w">W4 · 22–28/6</div>
+    </div>
+  </div>
+
+  <div class="wkpi-bar">
+    <div class="wkpi" style="--c:#f59e0b">
+      <div class="wlbl">KH mới+cũ&gt;12W</div>
+      <div class="wval">7,321</div>
+      <div class="wmt"><span style="color:#fbbf24">90.1%</span> MT 8,125</div>
+      <span class="wow dn">▼ 0.1% vs W3</span>
+    </div>
+    <div class="wkpi" style="--c:#4f46e5">
+      <div class="wlbl">Chi hệ thống</div>
+      <div class="wval">126M</div>
+      <div class="wmt"><span style="color:#f87171">51.6%</span> MT 244M</div>
+      <span class="wow dn">▼ 59.3% vs W3</span>
+    </div>
+    <div class="wkpi" style="--c:#34d399">
+      <div class="wlbl">CPA blended</div>
+      <div class="wval">17.2k₫</div>
+      <div class="wmt"><span style="color:#34d399">✓ Dưới MT</span></div>
+      <span class="wow up">▼ 59.2% vs W3</span>
+    </div>
+    <div class="wkpi" style="--c:#10b981">
+      <div class="wlbl">Doanh thu</div>
+      <div class="wval">5.54tỷ</div>
+      <div class="wmt">ROAS 44.0x</div>
+      <span class="wow up">▲ 1.1% vs W3</span>
+    </div>
+    <div class="wkpi" style="--c:#3b82f6">
+      <div class="wlbl">Lượt mua FB</div>
+      <div class="wval">819</div>
+      <div class="wmt">TK: 67</div>
+      <span class="wow dn">▼ 73.6% vs W3</span>
+    </div>
+    <div class="wkpi" style="--c:#8b5cf6">
+      <div class="wlbl">CTR TikTok</div>
+      <div class="wval">0.98%</div>
+      <div class="wmt">FB: 0.48%</div>
+      <span class="wow up">▲ 7.0% vs W3</span>
+    </div>
+    <div class="wkpi" style="--c:#ec4899">
+      <div class="wlbl">Clicks tổng</div>
+      <div class="wval">46k</div>
+      <div class="wmt">TK 13k · FB 32k</div>
+      <span class="wow dn">▼ 70.1% vs W3</span>
+    </div>
+  </div>
+
+  <div class="week-charts">
+    <div class="wbox">
+      <h4>KH mới+cũ&gt;12W &amp; Chi (M₫) — từng ngày W4</h4>
+      <canvas id="c_w4_main"></canvas>
+    </div>
+    <div class="wbox">
+      <h4>CTR TikTok vs FB — W4</h4>
+      <canvas id="c_w4_ctr"></canvas>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:14px;margin-top:10px;flex-wrap:wrap">
+    <div style="font-size:10px;color:#94a3b8">📅 Ngày tốt nhất: <b style="color:#f8fafc">28/6</b> — 1,408 KH</div>
+    <div style="font-size:10px;color:#94a3b8">📉 Ngày thấp nhất: <b style="color:#f8fafc">23/6</b> — 870 KH</div>
+    <div style="font-size:10px;color:#94a3b8">📊 KH/ngày trung bình: <b style="color:#f8fafc">1,045</b></div>
+    <div style="font-size:10px;color:#94a3b8">💰 Chi/ngày trung bình: <b style="color:#f8fafc">18.0M₫</b></div>
+  </div>
 </div>
 
 <!-- CHARTS ROW 1 -->
@@ -847,6 +943,43 @@ function switchTab(t) {
   document.getElementById('tab-'+t).classList.add('active');
   event.target.classList.add('active');
 }
+
+// W4 daily charts
+const W4_DAYS  = ["22/6", "23/6", "24/6", "25/6", "26/6", "27/6", "28/6"];
+const W4_KH    = [976, 870, 954, 893, 995, 1225, 1408];
+const W4_NONQ  = [49.5, 32.3, 10.1, 8.6, 2.4, 11.5, 11.7];
+const W4_CPA   = [50688, 37109, 10595, 9627, 2436, 9369, 8331];
+const W4_CTR_TK= [0.95, 0.97, 0.96, 1.04, 0.84, 1.07, 1.05];
+const W4_CTR_FB= [0.43, 0.5, 0.36, 0.64, 1.17, 1.08, 0.75];
+
+new Chart(document.getElementById('c_w4_main'), {
+  data:{labels:W4_DAYS, datasets:[
+    {type:'bar', label:'Chi HT (M₫)', data:W4_NONQ, backgroundColor:'rgba(99,102,241,.6)', yAxisID:'y', order:2},
+    {type:'line', label:'KH mới+cũ>12W', data:W4_KH, borderColor:'#f59e0b', backgroundColor:'rgba(245,158,11,.15)', tension:.3, pointRadius:4, pointBackgroundColor:'#f59e0b', yAxisID:'y2', borderWidth:2, order:1}
+  ]},
+  options:{ responsive:true, maintainAspectRatio:true, interaction:{mode:'index',intersect:false},
+    scales:{
+      y: {position:'left', grid:{color:'rgba(255,255,255,.06)'}, ticks:{color:'#64748b',font:{size:9}}, title:{display:true,text:'Chi (M₫)',color:'#64748b',font:{size:9}}},
+      y2:{position:'right', grid:{drawOnChartArea:false}, ticks:{color:'#64748b',font:{size:9}}, title:{display:true,text:'KH',color:'#64748b',font:{size:9}}}
+    },
+    plugins:{legend:{position:'bottom',labels:{color:'#94a3b8',boxWidth:10}}}
+  }
+});
+
+new Chart(document.getElementById('c_w4_ctr'), {
+  type:'line',
+  data:{labels:W4_DAYS, datasets:[
+    {label:'CTR TikTok', data:W4_CTR_TK, borderColor:'#f59e0b', backgroundColor:'rgba(245,158,11,.1)', tension:.3, pointRadius:4, pointBackgroundColor:'#f59e0b', borderWidth:2},
+    {label:'CTR Facebook', data:W4_CTR_FB, borderColor:'#60a5fa', backgroundColor:'rgba(96,165,250,.1)', tension:.3, pointRadius:4, pointBackgroundColor:'#60a5fa', borderWidth:2}
+  ]},
+  options:{ responsive:true, maintainAspectRatio:true,
+    scales:{
+      y:{grid:{color:'rgba(255,255,255,.06)'}, ticks:{color:'#64748b',font:{size:9}}, title:{display:true,text:'CTR (%)',color:'#64748b',font:{size:9}}}
+    },
+    plugins:{legend:{position:'bottom',labels:{color:'#94a3b8',boxWidth:10}}}
+  }
+});
+
 </script>
 </body>
 </html>
