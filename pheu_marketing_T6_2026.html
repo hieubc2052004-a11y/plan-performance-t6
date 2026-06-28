@@ -46,7 +46,7 @@ thead .sub-head th{background:#f8fafc;font-size:9px;padding:5px 6px;color:#64748
 .th-tc{background:#fef3c7;color:#92400e}
 .th-kh{background:#dcfce7;color:#14532d}
 .th-lm{background:#fce7f3;color:#831843;font-weight:700}
-.th-tlm{background:#fdf2f8;color:#9d174d}
+.th-tlm{background:#fdf2f8;color:#9d174d;font-weight:700}
 .th-pht{background:#e0e7ff;color:#312e81}
 .th-ptc{background:#fff7ed;color:#92400e}
 .th-tb{background:#f3e8ff;color:#581c87}
@@ -70,8 +70,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 .sep-l{border-left:2px solid #e2e8f0!important}
 .pct-td{color:#4338ca;font-size:11px}
 .lm-td{color:#be185d;font-weight:600}
-.tlm-td{color:#9d174d;font-size:11px}
-.ok-lm{color:#15803d;font-weight:700}
+.tlm-td{font-size:11px;font-weight:600}
+.tlm-hi{color:#15803d}
+.tlm-mid{color:#a16207}
+.tlm-lo{color:#b91c1c}
 .kh-new{color:#166534}
 .kh-cu{color:#065f46}
 .kh-tot{color:#064e3b;background:#f0fdf4}
@@ -86,9 +88,9 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 </div>
 <div class="wrap">
 <div class="note">
-  <b>Tổng chi hệ thống</b> = TK + FB Tỉnh+Cường + GG + CRM — so sánh với MT 978M. Chi NQ ghi riêng, không tính vào MT. &nbsp;|&nbsp;
-  <b>Lượt mua TK*</b> = offline_shopping_events (view-through 14 ngày). &nbsp;|&nbsp;
-  <b>Tỷ lệ lượt mua/KH</b> = lượt mua ads / KH mới+cũ&gt;12W — đo mức độ ghi nhận của ads so với khách thực tế.
+  <b>Tổng chi hệ thống</b> = TK + FB Tỉnh+Cường + GG + CRM — so sánh với MT 978M. NQ ghi riêng, không tính vào MT. &nbsp;|&nbsp;
+  <b>KH/Lượt mua</b> = (KH mới+cũ&gt;12W) / lượt mua ads — &gt;100%: ads ghi nhận ít hơn khách thực; &lt;100%: ads ghi nhận nhiều hơn khách thực. &nbsp;|&nbsp;
+  <b>TikTok*</b> = offline_shopping_events (view-through 14 ngày).
 </div>
 
 <div class="section-title">📊 So sánh thực tế vs mục tiêu — Hệ thống (không NQ)</div>
@@ -153,7 +155,7 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
   <th colspan="2" class="th-tc">TIẾP CẬN (nghìn)</th>
   <th colspan="3" class="th-kh">KHÁCH (hệ thống)</th>
   <th colspan="2" class="th-lm">LƯỢT MUA (ads)</th>
-  <th colspan="2" class="th-tlm">TỶ LỆ LƯỢT MUA/KH</th>
+  <th colspan="2" class="th-tlm">TỶ LỆ KH/LƯỢT MUA</th>
   <th colspan="2" class="th-pht">TỶ LỆ HT → KH</th>
   <th colspan="2" class="th-ptc">TỶ LỆ TC → KH</th>
   <th colspan="2" class="th-tb">TB TỔNG KÊNH</th>
@@ -166,7 +168,7 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
   <th class="th-tc">TikTok</th><th class="th-tc">FB+Cường</th>
   <th class="th-kh">Mới</th><th class="th-kh">Cũ&gt;12W</th><th class="th-kh">Mới+Cũ&gt;12W</th>
   <th class="th-lm">TikTok*</th><th class="th-lm">FB+Cường</th>
-  <th class="th-tlm">TK/KH</th><th class="th-tlm">FB/KH</th>
+  <th class="th-tlm">KH/LM TikTok</th><th class="th-tlm">KH/LM FB</th>
   <th class="th-pht">TikTok</th><th class="th-pht">FB+Cường</th>
   <th class="th-ptc">TikTok</th><th class="th-ptc">FB+Cường</th>
   <th class="th-tb">Hiển thị</th><th class="th-tb">Tiếp cận</th>
@@ -181,10 +183,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">1,288</td><td>2,725</td>
 <td class="sep-l kh-new">2,076</td><td class="kh-cu">5,289</td><td class="kh-tot"><b>7,365</b></td>
 <td class="lm-td sep-l">128</td><td class="lm-td">6,844</td>
-<td class="sep-l tlm-td">1.740%</td><td class="tlm-td">92.930%</td>
-<td class="pct-td sep-l">0.370%</td><td class="pct-td">0.120%</td>
-<td class="pct-td sep-l">0.570%</td><td class="pct-td">0.270%</td>
-<td class="pct-td sep-l">0.090%</td><td class="pct-td">0.180%</td>
+<td class="tlm-td sep-l tlm-hi">5753.91%</td><td class="tlm-td tlm-hi">107.61%</td>
+<td class="pct-td sep-l">0.37%</td><td class="pct-td">0.12%</td>
+<td class="pct-td sep-l">0.57%</td><td class="pct-td">0.27%</td>
+<td class="pct-td sep-l">0.09%</td><td class="pct-td">0.18%</td>
 </tr><tr class="week-row">
 <td class="label-cell"><b>Tuần 2</b><br><span class="sub-label">8–14/6</span></td>
 <td>46.15</td><td>193.64</td><td class="nq-spend">34.46</td>
@@ -195,10 +197,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">1,784</td><td>3,708</td>
 <td class="sep-l kh-new">2,098</td><td class="kh-cu">5,270</td><td class="kh-tot"><b>7,368</b></td>
 <td class="lm-td sep-l">221</td><td class="lm-td">7,060</td>
-<td class="sep-l tlm-td">3.000%</td><td class="tlm-td">95.820%</td>
-<td class="pct-td sep-l">0.250%</td><td class="pct-td">0.080%</td>
-<td class="pct-td sep-l">0.410%</td><td class="pct-td">0.200%</td>
-<td class="pct-td sep-l">0.060%</td><td class="pct-td">0.130%</td>
+<td class="tlm-td sep-l tlm-hi">3333.94%</td><td class="tlm-td tlm-hi">104.36%</td>
+<td class="pct-td sep-l">0.25%</td><td class="pct-td">0.08%</td>
+<td class="pct-td sep-l">0.41%</td><td class="pct-td">0.20%</td>
+<td class="pct-td sep-l">0.06%</td><td class="pct-td">0.13%</td>
 </tr><tr class="week-row">
 <td class="label-cell"><b>Tuần 3</b><br><span class="sub-label">15–21/6</span></td>
 <td>53.10</td><td>223.93</td><td class="nq-spend">36.18</td>
@@ -209,10 +211,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">1,852</td><td>7,860</td>
 <td class="sep-l kh-new">2,185</td><td class="kh-cu">5,145</td><td class="kh-tot"><b>7,330</b></td>
 <td class="lm-td sep-l">283</td><td class="lm-td">3,100</td>
-<td class="sep-l tlm-td">3.860%</td><td class="tlm-td">42.290%</td>
-<td class="pct-td sep-l">0.220%</td><td class="pct-td">0.040%</td>
-<td class="pct-td sep-l">0.400%</td><td class="pct-td">0.090%</td>
-<td class="pct-td sep-l">0.030%</td><td class="pct-td">0.080%</td>
+<td class="tlm-td sep-l tlm-hi">2590.11%</td><td class="tlm-td tlm-hi">236.45%</td>
+<td class="pct-td sep-l">0.22%</td><td class="pct-td">0.04%</td>
+<td class="pct-td sep-l">0.40%</td><td class="pct-td">0.09%</td>
+<td class="pct-td sep-l">0.03%</td><td class="pct-td">0.08%</td>
 </tr><tr class="week-row">
 <td class="label-cell"><b>Tuần 4</b><br><span class="sub-label">22–28/6</span></td>
 <td>25.01</td><td>76.47</td><td class="nq-spend">35.39</td>
@@ -223,10 +225,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">887</td><td>3,235</td>
 <td class="sep-l kh-new">2,181</td><td class="kh-cu">5,140</td><td class="kh-tot"><b>7,321</b></td>
 <td class="lm-td sep-l">67</td><td class="lm-td">819</td>
-<td class="sep-l tlm-td">0.920%</td><td class="tlm-td">11.190%</td>
-<td class="pct-td sep-l">0.520%</td><td class="pct-td">0.110%</td>
-<td class="pct-td sep-l">0.830%</td><td class="pct-td">0.230%</td>
-<td class="pct-td sep-l">0.090%</td><td class="pct-td">0.180%</td>
+<td class="tlm-td sep-l tlm-hi">10926.87%</td><td class="tlm-td tlm-hi">893.89%</td>
+<td class="pct-td sep-l">0.52%</td><td class="pct-td">0.11%</td>
+<td class="pct-td sep-l">0.83%</td><td class="pct-td">0.23%</td>
+<td class="pct-td sep-l">0.09%</td><td class="pct-td">0.18%</td>
 </tr><tr class="total-row">
 <td class="label-cell"><b>TỔNG T6</b><br><span class="sub-label">1–28/6</span></td>
 <td>153.72</td><td>626.23</td><td class="nq-spend">143.12</td>
@@ -237,10 +239,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">5,813</td><td>17,529</td>
 <td class="sep-l kh-new">8,540</td><td class="kh-cu">20,844</td><td class="kh-tot"><b>29,384</b></td>
 <td class="lm-td sep-l">699</td><td class="lm-td">17,823</td>
-<td class="sep-l tlm-td">2.380%</td><td class="tlm-td">60.660%</td>
-<td class="pct-td sep-l">0.310%</td><td class="pct-td">0.070%</td>
-<td class="pct-td sep-l">0.510%</td><td class="pct-td">0.170%</td>
-<td class="pct-td sep-l">0.060%</td><td class="pct-td">0.130%</td>
+<td class="tlm-td sep-l tlm-hi">4203.72%</td><td class="tlm-td tlm-hi">164.87%</td>
+<td class="pct-td sep-l">0.31%</td><td class="pct-td">0.07%</td>
+<td class="pct-td sep-l">0.51%</td><td class="pct-td">0.17%</td>
+<td class="pct-td sep-l">0.06%</td><td class="pct-td">0.13%</td>
 </tr></tbody></table></div>
 
 <div class="section-title">📅 Chi tiết theo ngày</div>
@@ -255,7 +257,7 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
   <th colspan="2" class="th-tc">TIẾP CẬN (nghìn)</th>
   <th colspan="3" class="th-kh">KHÁCH (hệ thống)</th>
   <th colspan="2" class="th-lm">LƯỢT MUA (ads)</th>
-  <th colspan="2" class="th-tlm">TỶ LỆ LƯỢT MUA/KH</th>
+  <th colspan="2" class="th-tlm">TỶ LỆ KH/LƯỢT MUA</th>
   <th colspan="2" class="th-pht">TỶ LỆ HT → KH</th>
   <th colspan="2" class="th-ptc">TỶ LỆ TC → KH</th>
   <th colspan="2" class="th-tb">TB TỔNG KÊNH</th>
@@ -268,7 +270,7 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
   <th class="th-tc">TikTok</th><th class="th-tc">FB+Cường</th>
   <th class="th-kh">Mới</th><th class="th-kh">Cũ&gt;12W</th><th class="th-kh">Mới+Cũ&gt;12W</th>
   <th class="th-lm">TikTok*</th><th class="th-lm">FB+Cường</th>
-  <th class="th-tlm">TK/KH</th><th class="th-tlm">FB/KH</th>
+  <th class="th-tlm">KH/LM TikTok</th><th class="th-tlm">KH/LM FB</th>
   <th class="th-pht">TikTok</th><th class="th-pht">FB+Cường</th>
   <th class="th-ptc">TikTok</th><th class="th-ptc">FB+Cường</th>
   <th class="th-tb">Hiển thị</th><th class="th-tb">Tiếp cận</th>
@@ -284,10 +286,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">184</td><td>518</td>
 <td class="sep-l kh-new">237</td><td class="kh-cu">593</td><td class="kh-tot"><b>830</b></td>
 <td class="lm-td sep-l">20</td><td class="lm-td">891</td>
-<td class="sep-l tlm-td">2.410%</td><td class="tlm-td">107.350%</td>
-<td class="pct-td sep-l">0.290%</td><td class="pct-td">0.080%</td>
-<td class="pct-td sep-l">0.450%</td><td class="pct-td">0.160%</td>
-<td class="pct-td sep-l">0.060%</td><td class="pct-td">0.120%</td>
+<td class="tlm-td sep-l tlm-hi">4150.00%</td><td class="tlm-td tlm-mid">93.15%</td>
+<td class="pct-td sep-l">0.29%</td><td class="pct-td">0.08%</td>
+<td class="pct-td sep-l">0.45%</td><td class="pct-td">0.16%</td>
+<td class="pct-td sep-l">0.06%</td><td class="pct-td">0.12%</td>
 </tr><tr class="">
 <td class="label-cell"><b>02/6</b> <span class="dow-badge dow-T3">T3</span></td>
 <td>4.24</td><td>18.57</td><td class="nq-spend">5.95</td>
@@ -298,10 +300,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">191</td><td>485</td>
 <td class="sep-l kh-new">246</td><td class="kh-cu">605</td><td class="kh-tot"><b>851</b></td>
 <td class="lm-td sep-l">13</td><td class="lm-td">810</td>
-<td class="sep-l tlm-td">1.530%</td><td class="tlm-td">95.180%</td>
-<td class="pct-td sep-l">0.290%</td><td class="pct-td">0.090%</td>
-<td class="pct-td sep-l">0.440%</td><td class="pct-td">0.180%</td>
-<td class="pct-td sep-l">0.070%</td><td class="pct-td">0.130%</td>
+<td class="tlm-td sep-l tlm-hi">6546.15%</td><td class="tlm-td tlm-hi">105.06%</td>
+<td class="pct-td sep-l">0.29%</td><td class="pct-td">0.09%</td>
+<td class="pct-td sep-l">0.44%</td><td class="pct-td">0.18%</td>
+<td class="pct-td sep-l">0.07%</td><td class="pct-td">0.13%</td>
 </tr><tr class="">
 <td class="label-cell"><b>03/6</b> <span class="dow-badge dow-T4">T4</span></td>
 <td>4.22</td><td>18.48</td><td class="nq-spend">4.69</td>
@@ -312,10 +314,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">185</td><td>341</td>
 <td class="sep-l kh-new">263</td><td class="kh-cu">687</td><td class="kh-tot"><b>950</b></td>
 <td class="lm-td sep-l">12</td><td class="lm-td">1,002</td>
-<td class="sep-l tlm-td">1.260%</td><td class="tlm-td">105.470%</td>
-<td class="pct-td sep-l">0.340%</td><td class="pct-td">0.110%</td>
-<td class="pct-td sep-l">0.510%</td><td class="pct-td">0.280%</td>
-<td class="pct-td sep-l">0.080%</td><td class="pct-td">0.180%</td>
+<td class="tlm-td sep-l tlm-hi">7916.67%</td><td class="tlm-td tlm-mid">94.81%</td>
+<td class="pct-td sep-l">0.34%</td><td class="pct-td">0.11%</td>
+<td class="pct-td sep-l">0.51%</td><td class="pct-td">0.28%</td>
+<td class="pct-td sep-l">0.08%</td><td class="pct-td">0.18%</td>
 </tr><tr class="">
 <td class="label-cell"><b>04/6</b> <span class="dow-badge dow-T5">T5</span></td>
 <td>4.21</td><td>19.10</td><td class="nq-spend">2.41</td>
@@ -326,10 +328,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">180</td><td>368</td>
 <td class="sep-l kh-new">258</td><td class="kh-cu">684</td><td class="kh-tot"><b>942</b></td>
 <td class="lm-td sep-l">14</td><td class="lm-td">1,006</td>
-<td class="sep-l tlm-td">1.490%</td><td class="tlm-td">106.790%</td>
-<td class="pct-td sep-l">0.330%</td><td class="pct-td">0.110%</td>
-<td class="pct-td sep-l">0.520%</td><td class="pct-td">0.260%</td>
-<td class="pct-td sep-l">0.080%</td><td class="pct-td">0.170%</td>
+<td class="tlm-td sep-l tlm-hi">6728.57%</td><td class="tlm-td tlm-mid">93.64%</td>
+<td class="pct-td sep-l">0.33%</td><td class="pct-td">0.11%</td>
+<td class="pct-td sep-l">0.52%</td><td class="pct-td">0.26%</td>
+<td class="pct-td sep-l">0.08%</td><td class="pct-td">0.17%</td>
 </tr><tr class="">
 <td class="label-cell"><b>05/6</b> <span class="dow-badge dow-T6">T6</span></td>
 <td>4.19</td><td>18.70</td><td class="nq-spend">6.23</td>
@@ -340,10 +342,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">179</td><td>390</td>
 <td class="sep-l kh-new">277</td><td class="kh-cu">740</td><td class="kh-tot"><b>1,017</b></td>
 <td class="lm-td sep-l">19</td><td class="lm-td">968</td>
-<td class="sep-l tlm-td">1.870%</td><td class="tlm-td">95.180%</td>
-<td class="pct-td sep-l">0.360%</td><td class="pct-td">0.110%</td>
-<td class="pct-td sep-l">0.570%</td><td class="pct-td">0.260%</td>
-<td class="pct-td sep-l">0.090%</td><td class="pct-td">0.180%</td>
+<td class="tlm-td sep-l tlm-hi">5352.63%</td><td class="tlm-td tlm-hi">105.06%</td>
+<td class="pct-td sep-l">0.36%</td><td class="pct-td">0.11%</td>
+<td class="pct-td sep-l">0.57%</td><td class="pct-td">0.26%</td>
+<td class="pct-td sep-l">0.09%</td><td class="pct-td">0.18%</td>
 </tr><tr class="wknd-row">
 <td class="label-cell"><b>06/6</b> <span class="dow-badge dow-T7">T7</span></td>
 <td>4.12</td><td>18.46</td><td class="nq-spend">6.09</td>
@@ -354,10 +356,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">180</td><td>316</td>
 <td class="sep-l kh-new">338</td><td class="kh-cu">947</td><td class="kh-tot"><b>1,285</b></td>
 <td class="lm-td sep-l">25</td><td class="lm-td">1,119</td>
-<td class="sep-l tlm-td">1.950%</td><td class="tlm-td">87.080%</td>
-<td class="pct-td sep-l">0.460%</td><td class="pct-td">0.170%</td>
-<td class="pct-td sep-l">0.710%</td><td class="pct-td">0.410%</td>
-<td class="pct-td sep-l">0.130%</td><td class="pct-td">0.260%</td>
+<td class="tlm-td sep-l tlm-hi">5140.00%</td><td class="tlm-td tlm-hi">114.83%</td>
+<td class="pct-td sep-l">0.46%</td><td class="pct-td">0.17%</td>
+<td class="pct-td sep-l">0.71%</td><td class="pct-td">0.41%</td>
+<td class="pct-td sep-l">0.13%</td><td class="pct-td">0.26%</td>
 </tr><tr class="wknd-row">
 <td class="label-cell"><b>07/6</b> <span class="dow-badge dow-CN">CN</span></td>
 <td>4.23</td><td>19.50</td><td class="nq-spend">6.12</td>
@@ -368,10 +370,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">186</td><td>304</td>
 <td class="sep-l kh-new">457</td><td class="kh-cu">1,033</td><td class="kh-tot"><b>1,490</b></td>
 <td class="lm-td sep-l">25</td><td class="lm-td">1,048</td>
-<td class="sep-l tlm-td">1.680%</td><td class="tlm-td">70.340%</td>
-<td class="pct-td sep-l">0.500%</td><td class="pct-td">0.230%</td>
-<td class="pct-td sep-l">0.800%</td><td class="pct-td">0.490%</td>
-<td class="pct-td sep-l">0.160%</td><td class="pct-td">0.300%</td>
+<td class="tlm-td sep-l tlm-hi">5960.00%</td><td class="tlm-td tlm-hi">142.18%</td>
+<td class="pct-td sep-l">0.50%</td><td class="pct-td">0.23%</td>
+<td class="pct-td sep-l">0.80%</td><td class="pct-td">0.49%</td>
+<td class="pct-td sep-l">0.16%</td><td class="pct-td">0.30%</td>
 </tr><tr class="week-header-row"><td colspan="26">Tuần 2 · 8–14/6</td></tr>
 <tr class="">
 <td class="label-cell"><b>08/6</b> <span class="dow-badge dow-T2">T2</span></td>
@@ -383,10 +385,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">184</td><td>385</td>
 <td class="sep-l kh-new">210</td><td class="kh-cu">649</td><td class="kh-tot"><b>859</b></td>
 <td class="lm-td sep-l">14</td><td class="lm-td">690</td>
-<td class="sep-l tlm-td">1.630%</td><td class="tlm-td">80.330%</td>
-<td class="pct-td sep-l">0.300%</td><td class="pct-td">0.100%</td>
-<td class="pct-td sep-l">0.470%</td><td class="pct-td">0.220%</td>
-<td class="pct-td sep-l">0.070%</td><td class="pct-td">0.150%</td>
+<td class="tlm-td sep-l tlm-hi">6135.71%</td><td class="tlm-td tlm-hi">124.49%</td>
+<td class="pct-td sep-l">0.30%</td><td class="pct-td">0.10%</td>
+<td class="pct-td sep-l">0.47%</td><td class="pct-td">0.22%</td>
+<td class="pct-td sep-l">0.07%</td><td class="pct-td">0.15%</td>
 </tr><tr class="">
 <td class="label-cell"><b>09/6</b> <span class="dow-badge dow-T3">T3</span></td>
 <td>7.08</td><td>20.48</td><td class="nq-spend">5.08</td>
@@ -397,10 +399,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">256</td><td>307</td>
 <td class="sep-l kh-new">290</td><td class="kh-cu">619</td><td class="kh-tot"><b>909</b></td>
 <td class="lm-td sep-l">21</td><td class="lm-td">843</td>
-<td class="sep-l tlm-td">2.310%</td><td class="tlm-td">92.740%</td>
-<td class="pct-td sep-l">0.210%</td><td class="pct-td">0.100%</td>
-<td class="pct-td sep-l">0.350%</td><td class="pct-td">0.300%</td>
-<td class="pct-td sep-l">0.070%</td><td class="pct-td">0.160%</td>
+<td class="tlm-td sep-l tlm-hi">4328.57%</td><td class="tlm-td tlm-hi">107.83%</td>
+<td class="pct-td sep-l">0.21%</td><td class="pct-td">0.10%</td>
+<td class="pct-td sep-l">0.35%</td><td class="pct-td">0.30%</td>
+<td class="pct-td sep-l">0.07%</td><td class="pct-td">0.16%</td>
 </tr><tr class="">
 <td class="label-cell"><b>10/6</b> <span class="dow-badge dow-T4">T4</span></td>
 <td>6.68</td><td>15.38</td><td class="nq-spend">4.72</td>
@@ -411,10 +413,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">245</td><td>347</td>
 <td class="sep-l kh-new">260</td><td class="kh-cu">628</td><td class="kh-tot"><b>888</b></td>
 <td class="lm-td sep-l">26</td><td class="lm-td">806</td>
-<td class="sep-l tlm-td">2.930%</td><td class="tlm-td">90.770%</td>
-<td class="pct-td sep-l">0.220%</td><td class="pct-td">0.120%</td>
-<td class="pct-td sep-l">0.360%</td><td class="pct-td">0.260%</td>
-<td class="pct-td sep-l">0.080%</td><td class="pct-td">0.150%</td>
+<td class="tlm-td sep-l tlm-hi">3415.38%</td><td class="tlm-td tlm-hi">110.17%</td>
+<td class="pct-td sep-l">0.22%</td><td class="pct-td">0.12%</td>
+<td class="pct-td sep-l">0.36%</td><td class="pct-td">0.26%</td>
+<td class="pct-td sep-l">0.08%</td><td class="pct-td">0.15%</td>
 </tr><tr class="">
 <td class="label-cell"><b>11/6</b> <span class="dow-badge dow-T5">T5</span></td>
 <td>6.99</td><td>32.71</td><td class="nq-spend">4.83</td>
@@ -425,10 +427,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">269</td><td>602</td>
 <td class="sep-l kh-new">260</td><td class="kh-cu">710</td><td class="kh-tot"><b>970</b></td>
 <td class="lm-td sep-l">25</td><td class="lm-td">910</td>
-<td class="sep-l tlm-td">2.580%</td><td class="tlm-td">93.810%</td>
-<td class="pct-td sep-l">0.220%</td><td class="pct-td">0.070%</td>
-<td class="pct-td sep-l">0.360%</td><td class="pct-td">0.160%</td>
-<td class="pct-td sep-l">0.050%</td><td class="pct-td">0.110%</td>
+<td class="tlm-td sep-l tlm-hi">3880.00%</td><td class="tlm-td tlm-hi">106.59%</td>
+<td class="pct-td sep-l">0.22%</td><td class="pct-td">0.07%</td>
+<td class="pct-td sep-l">0.36%</td><td class="pct-td">0.16%</td>
+<td class="pct-td sep-l">0.05%</td><td class="pct-td">0.11%</td>
 </tr><tr class="">
 <td class="label-cell"><b>12/6</b> <span class="dow-badge dow-T6">T6</span></td>
 <td>7.32</td><td>31.48</td><td class="nq-spend">3.88</td>
@@ -439,10 +441,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">278</td><td>502</td>
 <td class="sep-l kh-new">305</td><td class="kh-cu">725</td><td class="kh-tot"><b>1,030</b></td>
 <td class="lm-td sep-l">37</td><td class="lm-td">1,009</td>
-<td class="sep-l tlm-td">3.590%</td><td class="tlm-td">97.960%</td>
-<td class="pct-td sep-l">0.230%</td><td class="pct-td">0.070%</td>
-<td class="pct-td sep-l">0.370%</td><td class="pct-td">0.200%</td>
-<td class="pct-td sep-l">0.060%</td><td class="pct-td">0.130%</td>
+<td class="tlm-td sep-l tlm-hi">2783.78%</td><td class="tlm-td tlm-hi">102.08%</td>
+<td class="pct-td sep-l">0.23%</td><td class="pct-td">0.07%</td>
+<td class="pct-td sep-l">0.37%</td><td class="pct-td">0.20%</td>
+<td class="pct-td sep-l">0.06%</td><td class="pct-td">0.13%</td>
 </tr><tr class="wknd-row">
 <td class="label-cell"><b>13/6</b> <span class="dow-badge dow-T7">T7</span></td>
 <td>7.10</td><td>36.14</td><td class="nq-spend">4.85</td>
@@ -453,10 +455,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">277</td><td>754</td>
 <td class="sep-l kh-new">386</td><td class="kh-cu">935</td><td class="kh-tot"><b>1,321</b></td>
 <td class="lm-td sep-l">49</td><td class="lm-td">1,422</td>
-<td class="sep-l tlm-td">3.710%</td><td class="tlm-td">107.650%</td>
-<td class="pct-td sep-l">0.290%</td><td class="pct-td">0.070%</td>
-<td class="pct-td sep-l">0.480%</td><td class="pct-td">0.180%</td>
-<td class="pct-td sep-l">0.050%</td><td class="pct-td">0.130%</td>
+<td class="tlm-td sep-l tlm-hi">2695.92%</td><td class="tlm-td tlm-mid">92.90%</td>
+<td class="pct-td sep-l">0.29%</td><td class="pct-td">0.07%</td>
+<td class="pct-td sep-l">0.48%</td><td class="pct-td">0.18%</td>
+<td class="pct-td sep-l">0.05%</td><td class="pct-td">0.13%</td>
 </tr><tr class="wknd-row">
 <td class="label-cell"><b>14/6</b> <span class="dow-badge dow-CN">CN</span></td>
 <td>6.74</td><td>37.10</td><td class="nq-spend">5.26</td>
@@ -467,10 +469,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">273</td><td>808</td>
 <td class="sep-l kh-new">387</td><td class="kh-cu">1,004</td><td class="kh-tot"><b>1,391</b></td>
 <td class="lm-td sep-l">49</td><td class="lm-td">1,380</td>
-<td class="sep-l tlm-td">3.520%</td><td class="tlm-td">99.210%</td>
-<td class="pct-td sep-l">0.310%</td><td class="pct-td">0.070%</td>
-<td class="pct-td sep-l">0.510%</td><td class="pct-td">0.170%</td>
-<td class="pct-td sep-l">0.060%</td><td class="pct-td">0.130%</td>
+<td class="tlm-td sep-l tlm-hi">2838.78%</td><td class="tlm-td tlm-hi">100.80%</td>
+<td class="pct-td sep-l">0.31%</td><td class="pct-td">0.07%</td>
+<td class="pct-td sep-l">0.51%</td><td class="pct-td">0.17%</td>
+<td class="pct-td sep-l">0.06%</td><td class="pct-td">0.13%</td>
 </tr><tr class="week-header-row"><td colspan="26">Tuần 3 · 15–21/6</td></tr>
 <tr class="">
 <td class="label-cell"><b>15/6</b> <span class="dow-badge dow-T2">T2</span></td>
@@ -482,10 +484,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">293</td><td>904</td>
 <td class="sep-l kh-new">240</td><td class="kh-cu">503</td><td class="kh-tot"><b>743</b></td>
 <td class="lm-td sep-l">34</td><td class="lm-td">705</td>
-<td class="sep-l tlm-td">4.580%</td><td class="tlm-td">94.890%</td>
-<td class="pct-td sep-l">0.150%</td><td class="pct-td">0.030%</td>
-<td class="pct-td sep-l">0.250%</td><td class="pct-td">0.080%</td>
-<td class="pct-td sep-l">0.030%</td><td class="pct-td">0.060%</td>
+<td class="tlm-td sep-l tlm-hi">2185.29%</td><td class="tlm-td tlm-hi">105.39%</td>
+<td class="pct-td sep-l">0.15%</td><td class="pct-td">0.03%</td>
+<td class="pct-td sep-l">0.25%</td><td class="pct-td">0.08%</td>
+<td class="pct-td sep-l">0.03%</td><td class="pct-td">0.06%</td>
 </tr><tr class="">
 <td class="label-cell"><b>16/6</b> <span class="dow-badge dow-T3">T3</span></td>
 <td>7.83</td><td>12.29</td><td class="nq-spend">4.96</td>
@@ -496,10 +498,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">286</td><td>414</td>
 <td class="sep-l kh-new">268</td><td class="kh-cu">651</td><td class="kh-tot"><b>919</b></td>
 <td class="lm-td sep-l">37</td><td class="lm-td">695</td>
-<td class="sep-l tlm-td">4.030%</td><td class="tlm-td">75.630%</td>
-<td class="pct-td sep-l">0.190%</td><td class="pct-td">0.110%</td>
-<td class="pct-td sep-l">0.320%</td><td class="pct-td">0.220%</td>
-<td class="pct-td sep-l">0.070%</td><td class="pct-td">0.130%</td>
+<td class="tlm-td sep-l tlm-hi">2483.78%</td><td class="tlm-td tlm-hi">132.23%</td>
+<td class="pct-td sep-l">0.19%</td><td class="pct-td">0.11%</td>
+<td class="pct-td sep-l">0.32%</td><td class="pct-td">0.22%</td>
+<td class="pct-td sep-l">0.07%</td><td class="pct-td">0.13%</td>
 </tr><tr class="">
 <td class="label-cell"><b>17/6</b> <span class="dow-badge dow-T4">T4</span></td>
 <td>7.95</td><td>25.74</td><td class="nq-spend">4.79</td>
@@ -510,10 +512,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">269</td><td>996</td>
 <td class="sep-l kh-new">278</td><td class="kh-cu">710</td><td class="kh-tot"><b>988</b></td>
 <td class="lm-td sep-l">30</td><td class="lm-td">265</td>
-<td class="sep-l tlm-td">3.040%</td><td class="tlm-td">26.820%</td>
-<td class="pct-td sep-l">0.190%</td><td class="pct-td">0.050%</td>
-<td class="pct-td sep-l">0.370%</td><td class="pct-td">0.100%</td>
-<td class="pct-td sep-l">0.040%</td><td class="pct-td">0.080%</td>
+<td class="tlm-td sep-l tlm-hi">3293.33%</td><td class="tlm-td tlm-hi">372.83%</td>
+<td class="pct-td sep-l">0.19%</td><td class="pct-td">0.05%</td>
+<td class="pct-td sep-l">0.37%</td><td class="pct-td">0.10%</td>
+<td class="pct-td sep-l">0.04%</td><td class="pct-td">0.08%</td>
 </tr><tr class="">
 <td class="label-cell"><b>18/6</b> <span class="dow-badge dow-T5">T5</span></td>
 <td>7.95</td><td>37.60</td><td class="nq-spend">4.98</td>
@@ -524,10 +526,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">253</td><td>1,473</td>
 <td class="sep-l kh-new">275</td><td class="kh-cu">648</td><td class="kh-tot"><b>923</b></td>
 <td class="lm-td sep-l">33</td><td class="lm-td">312</td>
-<td class="sep-l tlm-td">3.580%</td><td class="tlm-td">33.800%</td>
-<td class="pct-td sep-l">0.190%</td><td class="pct-td">0.030%</td>
-<td class="pct-td sep-l">0.360%</td><td class="pct-td">0.060%</td>
-<td class="pct-td sep-l">0.030%</td><td class="pct-td">0.050%</td>
+<td class="tlm-td sep-l tlm-hi">2796.97%</td><td class="tlm-td tlm-hi">295.83%</td>
+<td class="pct-td sep-l">0.19%</td><td class="pct-td">0.03%</td>
+<td class="pct-td sep-l">0.36%</td><td class="pct-td">0.06%</td>
+<td class="pct-td sep-l">0.03%</td><td class="pct-td">0.05%</td>
 </tr><tr class="">
 <td class="label-cell"><b>19/6</b> <span class="dow-badge dow-T6">T6</span></td>
 <td>7.84</td><td>39.24</td><td class="nq-spend">5.33</td>
@@ -538,10 +540,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">260</td><td>1,350</td>
 <td class="sep-l kh-new">343</td><td class="kh-cu">759</td><td class="kh-tot"><b>1,102</b></td>
 <td class="lm-td sep-l">54</td><td class="lm-td">374</td>
-<td class="sep-l tlm-td">4.900%</td><td class="tlm-td">33.940%</td>
-<td class="pct-td sep-l">0.240%</td><td class="pct-td">0.040%</td>
-<td class="pct-td sep-l">0.420%</td><td class="pct-td">0.080%</td>
-<td class="pct-td sep-l">0.030%</td><td class="pct-td">0.070%</td>
+<td class="tlm-td sep-l tlm-hi">2040.74%</td><td class="tlm-td tlm-hi">294.65%</td>
+<td class="pct-td sep-l">0.24%</td><td class="pct-td">0.04%</td>
+<td class="pct-td sep-l">0.42%</td><td class="pct-td">0.08%</td>
+<td class="pct-td sep-l">0.03%</td><td class="pct-td">0.07%</td>
 </tr><tr class="wknd-row">
 <td class="label-cell"><b>20/6</b> <span class="dow-badge dow-T7">T7</span></td>
 <td>6.75</td><td>26.12</td><td class="nq-spend">4.78</td>
@@ -552,10 +554,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">240</td><td>1,184</td>
 <td class="sep-l kh-new">368</td><td class="kh-cu">879</td><td class="kh-tot"><b>1,247</b></td>
 <td class="lm-td sep-l">51</td><td class="lm-td">366</td>
-<td class="sep-l tlm-td">4.090%</td><td class="tlm-td">29.350%</td>
-<td class="pct-td sep-l">0.300%</td><td class="pct-td">0.050%</td>
-<td class="pct-td sep-l">0.520%</td><td class="pct-td">0.110%</td>
-<td class="pct-td sep-l">0.040%</td><td class="pct-td">0.090%</td>
+<td class="tlm-td sep-l tlm-hi">2445.10%</td><td class="tlm-td tlm-hi">340.71%</td>
+<td class="pct-td sep-l">0.30%</td><td class="pct-td">0.05%</td>
+<td class="pct-td sep-l">0.52%</td><td class="pct-td">0.11%</td>
+<td class="pct-td sep-l">0.04%</td><td class="pct-td">0.09%</td>
 </tr><tr class="wknd-row">
 <td class="label-cell"><b>21/6</b> <span class="dow-badge dow-CN">CN</span></td>
 <td>6.88</td><td>42.84</td><td class="nq-spend">5.91</td>
@@ -566,10 +568,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">249</td><td>1,537</td>
 <td class="sep-l kh-new">413</td><td class="kh-cu">995</td><td class="kh-tot"><b>1,408</b></td>
 <td class="lm-td sep-l">44</td><td class="lm-td">383</td>
-<td class="sep-l tlm-td">3.120%</td><td class="tlm-td">27.200%</td>
-<td class="pct-td sep-l">0.330%</td><td class="pct-td">0.040%</td>
-<td class="pct-td sep-l">0.560%</td><td class="pct-td">0.090%</td>
-<td class="pct-td sep-l">0.030%</td><td class="pct-td">0.080%</td>
+<td class="tlm-td sep-l tlm-hi">3200.00%</td><td class="tlm-td tlm-hi">367.62%</td>
+<td class="pct-td sep-l">0.33%</td><td class="pct-td">0.04%</td>
+<td class="pct-td sep-l">0.56%</td><td class="pct-td">0.09%</td>
+<td class="pct-td sep-l">0.03%</td><td class="pct-td">0.08%</td>
 </tr><tr class="week-header-row"><td colspan="26">Tuần 4 · 22–28/6</td></tr>
 <tr class="">
 <td class="label-cell"><b>22/6</b> <span class="dow-badge dow-T2">T2</span></td>
@@ -581,10 +583,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">256</td><td>1,550</td>
 <td class="sep-l kh-new">321</td><td class="kh-cu">655</td><td class="kh-tot"><b>976</b></td>
 <td class="lm-td sep-l">21</td><td class="lm-td">279</td>
-<td class="sep-l tlm-td">2.150%</td><td class="tlm-td">28.590%</td>
-<td class="pct-td sep-l">0.220%</td><td class="pct-td">0.030%</td>
-<td class="pct-td sep-l">0.380%</td><td class="pct-td">0.060%</td>
-<td class="pct-td sep-l">0.020%</td><td class="pct-td">0.050%</td>
+<td class="tlm-td sep-l tlm-hi">4647.62%</td><td class="tlm-td tlm-hi">349.82%</td>
+<td class="pct-td sep-l">0.22%</td><td class="pct-td">0.03%</td>
+<td class="pct-td sep-l">0.38%</td><td class="pct-td">0.06%</td>
+<td class="pct-td sep-l">0.02%</td><td class="pct-td">0.05%</td>
 </tr><tr class="">
 <td class="label-cell"><b>23/6</b> <span class="dow-badge dow-T3">T3</span></td>
 <td>5.65</td><td>24.32</td><td class="nq-spend">5.18</td>
@@ -595,10 +597,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">184</td><td>1,088</td>
 <td class="sep-l kh-new">258</td><td class="kh-cu">612</td><td class="kh-tot"><b>870</b></td>
 <td class="lm-td sep-l">26</td><td class="lm-td">242</td>
-<td class="sep-l tlm-td">2.990%</td><td class="tlm-td">27.820%</td>
-<td class="pct-td sep-l">0.300%</td><td class="pct-td">0.040%</td>
-<td class="pct-td sep-l">0.470%</td><td class="pct-td">0.080%</td>
-<td class="pct-td sep-l">0.030%</td><td class="pct-td">0.070%</td>
+<td class="tlm-td sep-l tlm-hi">3346.15%</td><td class="tlm-td tlm-hi">359.50%</td>
+<td class="pct-td sep-l">0.30%</td><td class="pct-td">0.04%</td>
+<td class="pct-td sep-l">0.47%</td><td class="pct-td">0.08%</td>
+<td class="pct-td sep-l">0.03%</td><td class="pct-td">0.07%</td>
 </tr><tr class="">
 <td class="label-cell"><b>24/6</b> <span class="dow-badge dow-T4">T4</span></td>
 <td>4.30</td><td>4.46</td><td class="nq-spend">5.16</td>
@@ -609,10 +611,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">155</td><td>228</td>
 <td class="sep-l kh-new">300</td><td class="kh-cu">654</td><td class="kh-tot"><b>954</b></td>
 <td class="lm-td sep-l">9</td><td class="lm-td">156</td>
-<td class="sep-l tlm-td">0.940%</td><td class="tlm-td">16.350%</td>
-<td class="pct-td sep-l">0.390%</td><td class="pct-td">0.260%</td>
-<td class="pct-td sep-l">0.610%</td><td class="pct-td">0.420%</td>
-<td class="pct-td sep-l">0.150%</td><td class="pct-td">0.250%</td>
+<td class="tlm-td sep-l tlm-hi">10600.00%</td><td class="tlm-td tlm-hi">611.54%</td>
+<td class="pct-td sep-l">0.39%</td><td class="pct-td">0.26%</td>
+<td class="pct-td sep-l">0.61%</td><td class="pct-td">0.42%</td>
+<td class="pct-td sep-l">0.15%</td><td class="pct-td">0.25%</td>
 </tr><tr class="">
 <td class="label-cell"><b>25/6</b> <span class="dow-badge dow-T5">T5</span></td>
 <td>4.22</td><td>3.10</td><td class="nq-spend">5.34</td>
@@ -623,10 +625,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">144</td><td>145</td>
 <td class="sep-l kh-new">274</td><td class="kh-cu">619</td><td class="kh-tot"><b>893</b></td>
 <td class="lm-td sep-l">9</td><td class="lm-td">50</td>
-<td class="sep-l tlm-td">1.010%</td><td class="tlm-td">5.600%</td>
-<td class="pct-td sep-l">0.380%</td><td class="pct-td">0.400%</td>
-<td class="pct-td sep-l">0.620%</td><td class="pct-td">0.610%</td>
-<td class="pct-td sep-l">0.200%</td><td class="pct-td">0.310%</td>
+<td class="tlm-td sep-l tlm-hi">9922.22%</td><td class="tlm-td tlm-hi">1786.00%</td>
+<td class="pct-td sep-l">0.38%</td><td class="pct-td">0.40%</td>
+<td class="pct-td sep-l">0.62%</td><td class="pct-td">0.61%</td>
+<td class="pct-td sep-l">0.20%</td><td class="pct-td">0.31%</td>
 </tr><tr class="">
 <td class="label-cell"><b>26/6</b> <span class="dow-badge dow-T6">T6</span></td>
 <td>0.58</td><td>0.88</td><td class="nq-spend">4.70</td>
@@ -637,10 +639,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">26</td><td>42</td>
 <td class="sep-l kh-new">269</td><td class="kh-cu">726</td><td class="kh-tot"><b>995</b></td>
 <td class="lm-td sep-l">1</td><td class="lm-td">50</td>
-<td class="sep-l tlm-td">0.100%</td><td class="tlm-td">5.030%</td>
-<td class="pct-td sep-l">3.010%</td><td class="pct-td">1.870%</td>
-<td class="pct-td sep-l">3.710%</td><td class="pct-td">2.360%</td>
-<td class="pct-td sep-l">1.150%</td><td class="pct-td">1.440%</td>
+<td class="tlm-td sep-l tlm-hi">99500.00%</td><td class="tlm-td tlm-hi">1990.00%</td>
+<td class="pct-td sep-l">3.01%</td><td class="pct-td">1.87%</td>
+<td class="pct-td sep-l">3.71%</td><td class="pct-td">2.36%</td>
+<td class="pct-td sep-l">1.15%</td><td class="pct-td">1.44%</td>
 </tr><tr class="wknd-row">
 <td class="label-cell"><b>27/6</b> <span class="dow-badge dow-T7">T7</span></td>
 <td>1.32</td><td>2.41</td><td class="nq-spend">4.11</td>
@@ -651,10 +653,10 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">68</td><td>101</td>
 <td class="sep-l kh-new">346</td><td class="kh-cu">879</td><td class="kh-tot"><b>1,225</b></td>
 <td class="lm-td sep-l">1</td><td class="lm-td">42</td>
-<td class="sep-l tlm-td">0.080%</td><td class="tlm-td">3.430%</td>
-<td class="pct-td sep-l">1.330%</td><td class="pct-td">0.870%</td>
-<td class="pct-td sep-l">1.790%</td><td class="pct-td">1.210%</td>
-<td class="pct-td sep-l">0.530%</td><td class="pct-td">0.720%</td>
+<td class="tlm-td sep-l tlm-hi">122500.00%</td><td class="tlm-td tlm-hi">2916.67%</td>
+<td class="pct-td sep-l">1.33%</td><td class="pct-td">0.87%</td>
+<td class="pct-td sep-l">1.79%</td><td class="pct-td">1.21%</td>
+<td class="pct-td sep-l">0.53%</td><td class="pct-td">0.72%</td>
 </tr><tr class="wknd-row">
 <td class="label-cell"><b>28/6</b> <span class="dow-badge dow-CN">CN</span></td>
 <td>0.93</td><td>1.80</td><td class="nq-spend">5.22</td>
@@ -665,12 +667,12 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">50</td><td>79</td>
 <td class="sep-l kh-new">413</td><td class="kh-cu">995</td><td class="kh-tot"><b>1,408</b></td>
 <td class="lm-td sep-l">—</td><td class="lm-td">—</td>
-<td class="sep-l tlm-td">—</td><td class="tlm-td">—</td>
-<td class="pct-td sep-l">2.110%</td><td class="pct-td">1.160%</td>
-<td class="pct-td sep-l">2.780%</td><td class="pct-td">1.780%</td>
-<td class="pct-td sep-l">0.750%</td><td class="pct-td">1.090%</td>
+<td class="tlm-td sep-l">—</td><td class="tlm-td">—</td>
+<td class="pct-td sep-l">2.11%</td><td class="pct-td">1.16%</td>
+<td class="pct-td sep-l">2.78%</td><td class="pct-td">1.78%</td>
+<td class="pct-td sep-l">0.75%</td><td class="pct-td">1.09%</td>
 </tr></tbody></table></div>
 </div>
-<div class="footer">30Shine · Bùi Thị Huế · T6/2026 · 1–28/6 · Lượt mua TikTok = offline_shopping_events (view-through)</div>
+<div class="footer">30Shine · Bùi Thị Huế · T6/2026 · 1–28/6 · TikTok* = offline_shopping_events (view-through 14 ngày)</div>
 </body>
 </html>
