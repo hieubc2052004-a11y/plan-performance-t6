@@ -13,19 +13,17 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#f8fafc;color:#1e
 .header-sub{font-size:11px;color:#94a3b8}
 .wrap{padding:16px}
 .note{background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:8px 14px;margin-bottom:14px;font-size:11px;color:#78350f;line-height:1.7}
-.note b{color:#92400e}
 .section-title{font-size:12px;font-weight:800;color:#1e3a5f;text-transform:uppercase;margin:20px 0 8px;padding:6px 10px;background:#e0e7ff;border-left:4px solid #4f46e5;border-radius:0 4px 4px 0}
-/* Comparison */
 .cmp-wrap{overflow-x:auto;border-radius:8px;border:1px solid #e2e8f0;margin-bottom:8px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
 .cmp-table{border-collapse:collapse;width:100%;min-width:680px}
 .cmp-table th{background:#f1f5f9;color:#475569;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:8px 14px;text-align:center;border-bottom:2px solid #e2e8f0;border-right:1px solid #e2e8f0;white-space:nowrap}
 .cmp-table td{padding:9px 14px;border-bottom:1px solid #f1f5f9;border-right:1px solid #f1f5f9;text-align:right;vertical-align:top;font-size:12px}
 .cmp-table tr:hover td{background:#f8fafc}
 .cmp-table .total-row td{background:#f0fdf4;font-weight:700;font-size:13px;border-top:2px solid #16a34a}
-.label-cell{text-align:left!important;min-width:110px}
+.label-cell{text-align:left!important;min-width:110px;white-space:nowrap}
 .sub-label{font-size:10px;color:#94a3b8;font-weight:400}
-.mt-val{color:#94a3b8;font-size:10px}
-.nq-note{color:#c2410c;font-size:10px}
+.mt-val,.nq-note{color:#94a3b8;font-size:10px}
+.nq-note{color:#c2410c}
 .pct-cell{font-weight:700;text-align:center!important}
 .ok-cell{color:#15803d;background:#f0fdf4}
 .near-cell{color:#a16207;background:#fefce8}
@@ -34,9 +32,8 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#f8fafc;color:#1e
 .badge.ok{background:#dcfce7;color:#15803d}
 .badge.near{background:#fef9c3;color:#a16207}
 .badge.low{background:#fee2e2;color:#b91c1c}
-/* Data tables */
 .tbl-wrap{overflow-x:auto;border-radius:8px;border:1px solid #e2e8f0;margin-bottom:24px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-table{border-collapse:collapse;width:100%;min-width:1700px}
+table{border-collapse:collapse;width:100%;min-width:2100px}
 thead th{background:#f1f5f9;color:#475569;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:7px 6px;text-align:center;border-bottom:2px solid #e2e8f0;border-right:1px solid #e2e8f0;white-space:nowrap}
 thead .sub-head th{background:#f8fafc;font-size:9px;padding:5px 6px;color:#64748b;font-weight:600}
 .th-label{background:#e8edf5;color:#1e3a5f;text-align:left!important;min-width:80px}
@@ -44,12 +41,14 @@ thead .sub-head th{background:#f8fafc;font-size:9px;padding:5px 6px;color:#64748
 .th-gg{background:#f7fee7;color:#3f6212}
 .th-crm{background:#fff7ed;color:#9a3412}
 .th-nonq{background:#fef9c3;color:#78350f;font-weight:800}
-.th-tong{background:#f1f5f9;color:#64748b}
+.th-tong{background:#f1f5f9;color:#94a3b8}
 .th-ht{background:#ede9fe;color:#4c1d95}
 .th-tc{background:#fef3c7;color:#92400e}
 .th-kh{background:#dcfce7;color:#14532d}
+.th-lm{background:#fce7f3;color:#831843;font-weight:700}
+.th-tlm{background:#fdf2f8;color:#9d174d}
 .th-pht{background:#e0e7ff;color:#312e81}
-.th-ptc{background:#fce7f3;color:#831843}
+.th-ptc{background:#fff7ed;color:#92400e}
 .th-tb{background:#f3e8ff;color:#581c87}
 tbody tr{border-bottom:1px solid #f1f5f9}
 tbody tr:hover td{background:#f8fafc}
@@ -59,7 +58,6 @@ tbody tr.week-row td{font-weight:600}
 tbody tr.total-row td{background:#f0fdf4;font-weight:700;border-top:2px solid #16a34a}
 tbody tr.week-header-row td{background:#1e3a5f;color:#93c5fd;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 10px;border-top:2px solid #334155}
 td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
-.label-cell{text-align:left!important;white-space:nowrap}
 .dow-badge{display:inline-block;font-size:9px;padding:1px 4px;border-radius:3px;font-weight:700;margin-left:2px}
 .dow-T2,.dow-T3,.dow-T4,.dow-T5,.dow-T6{background:#dbeafe;color:#1e40af}
 .dow-T7{background:#ede9fe;color:#5b21b6}
@@ -71,6 +69,9 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 .tong-col{color:#94a3b8;font-size:11px}
 .sep-l{border-left:2px solid #e2e8f0!important}
 .pct-td{color:#4338ca;font-size:11px}
+.lm-td{color:#be185d;font-weight:600}
+.tlm-td{color:#9d174d;font-size:11px}
+.ok-lm{color:#15803d;font-weight:700}
 .kh-new{color:#166534}
 .kh-cu{color:#065f46}
 .kh-tot{color:#064e3b;background:#f0fdf4}
@@ -81,11 +82,13 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <div class="header">
   <div class="header-tag">Performance Marketing · 30Shine</div>
   <h1>Bảng Phễu Theo Ngày — Tháng 6 / 2026</h1>
-  <div class="header-sub">Bùi Thị Huế · Ads Performance · TikTok · Facebook · Google · CRM · Nội bộ</div>
+  <div class="header-sub">Bùi Thị Huế · Ads Performance · TikTok · Facebook · Google · CRM</div>
 </div>
 <div class="wrap">
 <div class="note">
-  <b>Lưu ý:</b> Mục tiêu 978M và KH mới+cũ&gt;12W là của <b>hệ thống</b> (không gồm Nhượng Quyền). Chi NQ được ghi riêng để tham khảo nhưng <b>không tính vào so sánh mục tiêu</b>. Tỉ lệ phễu chỉ tính cho TikTok và FB Tỉnh+Cường vì chưa có dữ liệu KH từ NQ.
+  <b>Tổng chi hệ thống</b> = TK + FB Tỉnh+Cường + GG + CRM — so sánh với MT 978M. Chi NQ ghi riêng, không tính vào MT. &nbsp;|&nbsp;
+  <b>Lượt mua TK*</b> = offline_shopping_events (view-through 14 ngày). &nbsp;|&nbsp;
+  <b>Tỷ lệ lượt mua/KH</b> = lượt mua ads / KH mới+cũ&gt;12W — đo mức độ ghi nhận của ads so với khách thực tế.
 </div>
 
 <div class="section-title">📊 So sánh thực tế vs mục tiêu — Hệ thống (không NQ)</div>
@@ -93,45 +96,45 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <table class="cmp-table">
 <thead><tr>
   <th style="text-align:left">Tuần / Tháng</th>
-  <th>KH Mới + Cũ&gt;12W<br><small>Thực tế / Mục tiêu</small></th>
+  <th>KH Mới + Cũ&gt;12W<br><small>Thực tế / MT</small></th>
   <th>% Đạt KH</th>
-  <th>Tổng Chi Hệ thống<br><small>Thực tế / MT (978M)</small></th>
+  <th>Chi Hệ thống<br><small>Thực tế / MT 978M</small></th>
   <th>% Đạt Chi</th>
-  <th>CPA Thực tế<br><small>MT: 30,092đ</small></th>
+  <th>CPA<br><small>MT: 30,092đ</small></th>
 </tr></thead>
 <tbody><tr class="">
 <td class="label-cell"><b>Tuần 1</b><br><span class="sub-label">1–7/6</span></td>
 <td>7,365<br><small class="mt-val">MT: 8,125</small><div style="background:#fef9c3;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#ca8a04;height:5px;border-radius:3px;width:90.65%"></div></div></td>
 <td class="pct-cell near-cell">90.7%<br><span class="badge near">≈ Gần đạt</span></td>
-<td>173.38M<br><small class="nq-note">+NQ: 37.10M riêng</small><br><small class="mt-val">MT: 244.50M</small><div style="background:#fee2e2;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#dc2626;height:5px;border-radius:3px;width:70.91%"></div></div></td>
+<td>173.38M<br><small class="nq-note">NQ riêng: 37.10M</small><br><small class="mt-val">MT: 244.50M</small><div style="background:#fee2e2;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#dc2626;height:5px;border-radius:3px;width:70.91%"></div></div></td>
 <td class="pct-cell bad-cell">70.9%</td>
 <td class="ok-cell">23,541đ<br><small class="mt-val">MT: 30,092đ</small></td>
 </tr><tr class="">
 <td class="label-cell"><b>Tuần 2</b><br><span class="sub-label">8–14/6</span></td>
 <td>7,368<br><small class="mt-val">MT: 8,125</small><div style="background:#fef9c3;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#ca8a04;height:5px;border-radius:3px;width:90.68%"></div></div></td>
 <td class="pct-cell near-cell">90.7%<br><span class="badge near">≈ Gần đạt</span></td>
-<td>260.91M<br><small class="nq-note">+NQ: 34.46M riêng</small><br><small class="mt-val">MT: 244.50M</small><div style="background:#dcfce7;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#16a34a;height:5px;border-radius:3px;width:100%"></div></div></td>
+<td>260.91M<br><small class="nq-note">NQ riêng: 34.46M</small><br><small class="mt-val">MT: 244.50M</small><div style="background:#dcfce7;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#16a34a;height:5px;border-radius:3px;width:100%"></div></div></td>
 <td class="pct-cell ok-cell">106.7%</td>
 <td class="bad-cell">35,411đ<br><small class="mt-val">MT: 30,092đ</small></td>
 </tr><tr class="">
 <td class="label-cell"><b>Tuần 3</b><br><span class="sub-label">15–21/6</span></td>
 <td>7,330<br><small class="mt-val">MT: 8,125</small><div style="background:#fef9c3;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#ca8a04;height:5px;border-radius:3px;width:90.22%"></div></div></td>
 <td class="pct-cell near-cell">90.2%<br><span class="badge near">≈ Gần đạt</span></td>
-<td>309.59M<br><small class="nq-note">+NQ: 36.18M riêng</small><br><small class="mt-val">MT: 244.50M</small><div style="background:#dcfce7;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#16a34a;height:5px;border-radius:3px;width:100%"></div></div></td>
+<td>309.59M<br><small class="nq-note">NQ riêng: 36.18M</small><br><small class="mt-val">MT: 244.50M</small><div style="background:#dcfce7;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#16a34a;height:5px;border-radius:3px;width:100%"></div></div></td>
 <td class="pct-cell ok-cell">126.6%</td>
 <td class="bad-cell">42,236đ<br><small class="mt-val">MT: 30,092đ</small></td>
 </tr><tr class="">
 <td class="label-cell"><b>Tuần 4</b><br><span class="sub-label">22–28/6</span></td>
 <td>7,321<br><small class="mt-val">MT: 8,125</small><div style="background:#fef9c3;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#ca8a04;height:5px;border-radius:3px;width:90.1%"></div></div></td>
 <td class="pct-cell near-cell">90.1%<br><span class="badge near">≈ Gần đạt</span></td>
-<td>126.09M<br><small class="nq-note">+NQ: 35.39M riêng</small><br><small class="mt-val">MT: 244.50M</small><div style="background:#fee2e2;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#dc2626;height:5px;border-radius:3px;width:51.57%"></div></div></td>
+<td>126.09M<br><small class="nq-note">NQ riêng: 35.39M</small><br><small class="mt-val">MT: 244.50M</small><div style="background:#fee2e2;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#dc2626;height:5px;border-radius:3px;width:51.57%"></div></div></td>
 <td class="pct-cell bad-cell">51.6%</td>
 <td class="ok-cell">17,223đ<br><small class="mt-val">MT: 30,092đ</small></td>
 </tr><tr class="total-row">
 <td class="label-cell"><b>TỔNG T6</b><br><span class="sub-label">1–28/6</span></td>
 <td>29,384<br><small class="mt-val">MT: 32,500</small><div style="background:#fef9c3;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#ca8a04;height:5px;border-radius:3px;width:90.41%"></div></div></td>
 <td class="pct-cell near-cell">90.4%<br><span class="badge near">≈ Gần đạt</span></td>
-<td>869.97M<br><small class="nq-note">+NQ: 143.12M riêng</small><br><small class="mt-val">MT: 978.00M</small><div style="background:#fef9c3;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#ca8a04;height:5px;border-radius:3px;width:88.95%"></div></div></td>
+<td>869.97M<br><small class="nq-note">NQ riêng: 143.12M</small><br><small class="mt-val">MT: 978.00M</small><div style="background:#fef9c3;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#ca8a04;height:5px;border-radius:3px;width:88.95%"></div></div></td>
 <td class="pct-cell bad-cell">89.0%</td>
 <td class="ok-cell">29,607đ<br><small class="mt-val">MT: 30,092đ</small></td>
 </tr></tbody>
@@ -142,13 +145,15 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <div class="tbl-wrap"><table><thead>
 <tr>
   <th rowspan="2" class="th-label">Tuần / Ngày</th>
-  <th colspan="3" class="th-chi">CHI TIÊU PERF (triệu đ)</th>
+  <th colspan="3" class="th-chi">CHI TIÊU (triệu đ)</th>
   <th class="th-gg">GG</th><th class="th-crm">CRM</th>
-  <th class="th-nonq">TỔNG CHI<br>Hệ thống</th>
-  <th class="th-tong">+ NQ</th>
+  <th class="th-nonq">TỔNG HT</th>
+  <th class="th-tong">+NQ</th>
   <th colspan="2" class="th-ht">HIỂN THỊ (nghìn)</th>
   <th colspan="2" class="th-tc">TIẾP CẬN (nghìn)</th>
   <th colspan="3" class="th-kh">KHÁCH (hệ thống)</th>
+  <th colspan="2" class="th-lm">LƯỢT MUA (ads)</th>
+  <th colspan="2" class="th-tlm">TỶ LỆ LƯỢT MUA/KH</th>
   <th colspan="2" class="th-pht">TỶ LỆ HT → KH</th>
   <th colspan="2" class="th-ptc">TỶ LỆ TC → KH</th>
   <th colspan="2" class="th-tb">TB TỔNG KÊNH</th>
@@ -160,6 +165,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
   <th class="th-ht">TikTok</th><th class="th-ht">FB+Cường</th>
   <th class="th-tc">TikTok</th><th class="th-tc">FB+Cường</th>
   <th class="th-kh">Mới</th><th class="th-kh">Cũ&gt;12W</th><th class="th-kh">Mới+Cũ&gt;12W</th>
+  <th class="th-lm">TikTok*</th><th class="th-lm">FB+Cường</th>
+  <th class="th-tlm">TK/KH</th><th class="th-tlm">FB/KH</th>
   <th class="th-pht">TikTok</th><th class="th-pht">FB+Cường</th>
   <th class="th-ptc">TikTok</th><th class="th-ptc">FB+Cường</th>
   <th class="th-tb">Hiển thị</th><th class="th-tb">Tiếp cận</th>
@@ -173,6 +180,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">1,994</td><td>6,000</td>
 <td class="sep-l">1,288</td><td>2,725</td>
 <td class="sep-l kh-new">2,076</td><td class="kh-cu">5,289</td><td class="kh-tot"><b>7,365</b></td>
+<td class="lm-td sep-l">128</td><td class="lm-td">6,844</td>
+<td class="sep-l tlm-td">1.740%</td><td class="tlm-td">92.930%</td>
 <td class="pct-td sep-l">0.370%</td><td class="pct-td">0.120%</td>
 <td class="pct-td sep-l">0.570%</td><td class="pct-td">0.270%</td>
 <td class="pct-td sep-l">0.090%</td><td class="pct-td">0.180%</td>
@@ -185,6 +194,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">2,919</td><td>9,346</td>
 <td class="sep-l">1,784</td><td>3,708</td>
 <td class="sep-l kh-new">2,098</td><td class="kh-cu">5,270</td><td class="kh-tot"><b>7,368</b></td>
+<td class="lm-td sep-l">221</td><td class="lm-td">7,060</td>
+<td class="sep-l tlm-td">3.000%</td><td class="tlm-td">95.820%</td>
 <td class="pct-td sep-l">0.250%</td><td class="pct-td">0.080%</td>
 <td class="pct-td sep-l">0.410%</td><td class="pct-td">0.200%</td>
 <td class="pct-td sep-l">0.060%</td><td class="pct-td">0.130%</td>
@@ -197,6 +208,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">3,266</td><td>17,876</td>
 <td class="sep-l">1,852</td><td>7,860</td>
 <td class="sep-l kh-new">2,185</td><td class="kh-cu">5,145</td><td class="kh-tot"><b>7,330</b></td>
+<td class="lm-td sep-l">283</td><td class="lm-td">3,100</td>
+<td class="sep-l tlm-td">3.860%</td><td class="tlm-td">42.290%</td>
 <td class="pct-td sep-l">0.220%</td><td class="pct-td">0.040%</td>
 <td class="pct-td sep-l">0.400%</td><td class="pct-td">0.090%</td>
 <td class="pct-td sep-l">0.030%</td><td class="pct-td">0.080%</td>
@@ -209,6 +222,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">1,407</td><td>6,900</td>
 <td class="sep-l">887</td><td>3,235</td>
 <td class="sep-l kh-new">2,181</td><td class="kh-cu">5,140</td><td class="kh-tot"><b>7,321</b></td>
+<td class="lm-td sep-l">67</td><td class="lm-td">819</td>
+<td class="sep-l tlm-td">0.920%</td><td class="tlm-td">11.190%</td>
 <td class="pct-td sep-l">0.520%</td><td class="pct-td">0.110%</td>
 <td class="pct-td sep-l">0.830%</td><td class="pct-td">0.230%</td>
 <td class="pct-td sep-l">0.090%</td><td class="pct-td">0.180%</td>
@@ -221,6 +236,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">9,588</td><td>40,124</td>
 <td class="sep-l">5,813</td><td>17,529</td>
 <td class="sep-l kh-new">8,540</td><td class="kh-cu">20,844</td><td class="kh-tot"><b>29,384</b></td>
+<td class="lm-td sep-l">699</td><td class="lm-td">17,823</td>
+<td class="sep-l tlm-td">2.380%</td><td class="tlm-td">60.660%</td>
 <td class="pct-td sep-l">0.310%</td><td class="pct-td">0.070%</td>
 <td class="pct-td sep-l">0.510%</td><td class="pct-td">0.170%</td>
 <td class="pct-td sep-l">0.060%</td><td class="pct-td">0.130%</td>
@@ -230,13 +247,15 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <div class="tbl-wrap"><table><thead>
 <tr>
   <th rowspan="2" class="th-label">Tuần / Ngày</th>
-  <th colspan="3" class="th-chi">CHI TIÊU PERF (triệu đ)</th>
+  <th colspan="3" class="th-chi">CHI TIÊU (triệu đ)</th>
   <th class="th-gg">GG</th><th class="th-crm">CRM</th>
-  <th class="th-nonq">TỔNG CHI<br>Hệ thống</th>
-  <th class="th-tong">+ NQ</th>
+  <th class="th-nonq">TỔNG HT</th>
+  <th class="th-tong">+NQ</th>
   <th colspan="2" class="th-ht">HIỂN THỊ (nghìn)</th>
   <th colspan="2" class="th-tc">TIẾP CẬN (nghìn)</th>
   <th colspan="3" class="th-kh">KHÁCH (hệ thống)</th>
+  <th colspan="2" class="th-lm">LƯỢT MUA (ads)</th>
+  <th colspan="2" class="th-tlm">TỶ LỆ LƯỢT MUA/KH</th>
   <th colspan="2" class="th-pht">TỶ LỆ HT → KH</th>
   <th colspan="2" class="th-ptc">TỶ LỆ TC → KH</th>
   <th colspan="2" class="th-tb">TB TỔNG KÊNH</th>
@@ -248,11 +267,13 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
   <th class="th-ht">TikTok</th><th class="th-ht">FB+Cường</th>
   <th class="th-tc">TikTok</th><th class="th-tc">FB+Cường</th>
   <th class="th-kh">Mới</th><th class="th-kh">Cũ&gt;12W</th><th class="th-kh">Mới+Cũ&gt;12W</th>
+  <th class="th-lm">TikTok*</th><th class="th-lm">FB+Cường</th>
+  <th class="th-tlm">TK/KH</th><th class="th-tlm">FB/KH</th>
   <th class="th-pht">TikTok</th><th class="th-pht">FB+Cường</th>
   <th class="th-ptc">TikTok</th><th class="th-ptc">FB+Cường</th>
   <th class="th-tb">Hiển thị</th><th class="th-tb">Tiếp cận</th>
 </tr>
-</thead><tbody><tr class="week-header-row"><td colspan="22">Tuần 1 · 1–7/6</td></tr>
+</thead><tbody><tr class="week-header-row"><td colspan="26">Tuần 1 · 1–7/6</td></tr>
 <tr class="">
 <td class="label-cell"><b>01/6</b> <span class="dow-badge dow-T2">T2</span></td>
 <td>4.25</td><td>19.39</td><td class="nq-spend">5.62</td>
@@ -262,6 +283,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">284</td><td>1,010</td>
 <td class="sep-l">184</td><td>518</td>
 <td class="sep-l kh-new">237</td><td class="kh-cu">593</td><td class="kh-tot"><b>830</b></td>
+<td class="lm-td sep-l">20</td><td class="lm-td">891</td>
+<td class="sep-l tlm-td">2.410%</td><td class="tlm-td">107.350%</td>
 <td class="pct-td sep-l">0.290%</td><td class="pct-td">0.080%</td>
 <td class="pct-td sep-l">0.450%</td><td class="pct-td">0.160%</td>
 <td class="pct-td sep-l">0.060%</td><td class="pct-td">0.120%</td>
@@ -274,6 +297,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">288</td><td>979</td>
 <td class="sep-l">191</td><td>485</td>
 <td class="sep-l kh-new">246</td><td class="kh-cu">605</td><td class="kh-tot"><b>851</b></td>
+<td class="lm-td sep-l">13</td><td class="lm-td">810</td>
+<td class="sep-l tlm-td">1.530%</td><td class="tlm-td">95.180%</td>
 <td class="pct-td sep-l">0.290%</td><td class="pct-td">0.090%</td>
 <td class="pct-td sep-l">0.440%</td><td class="pct-td">0.180%</td>
 <td class="pct-td sep-l">0.070%</td><td class="pct-td">0.130%</td>
@@ -286,6 +311,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">278</td><td>840</td>
 <td class="sep-l">185</td><td>341</td>
 <td class="sep-l kh-new">263</td><td class="kh-cu">687</td><td class="kh-tot"><b>950</b></td>
+<td class="lm-td sep-l">12</td><td class="lm-td">1,002</td>
+<td class="sep-l tlm-td">1.260%</td><td class="tlm-td">105.470%</td>
 <td class="pct-td sep-l">0.340%</td><td class="pct-td">0.110%</td>
 <td class="pct-td sep-l">0.510%</td><td class="pct-td">0.280%</td>
 <td class="pct-td sep-l">0.080%</td><td class="pct-td">0.180%</td>
@@ -298,6 +325,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">283</td><td>888</td>
 <td class="sep-l">180</td><td>368</td>
 <td class="sep-l kh-new">258</td><td class="kh-cu">684</td><td class="kh-tot"><b>942</b></td>
+<td class="lm-td sep-l">14</td><td class="lm-td">1,006</td>
+<td class="sep-l tlm-td">1.490%</td><td class="tlm-td">106.790%</td>
 <td class="pct-td sep-l">0.330%</td><td class="pct-td">0.110%</td>
 <td class="pct-td sep-l">0.520%</td><td class="pct-td">0.260%</td>
 <td class="pct-td sep-l">0.080%</td><td class="pct-td">0.170%</td>
@@ -310,6 +339,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">280</td><td>885</td>
 <td class="sep-l">179</td><td>390</td>
 <td class="sep-l kh-new">277</td><td class="kh-cu">740</td><td class="kh-tot"><b>1,017</b></td>
+<td class="lm-td sep-l">19</td><td class="lm-td">968</td>
+<td class="sep-l tlm-td">1.870%</td><td class="tlm-td">95.180%</td>
 <td class="pct-td sep-l">0.360%</td><td class="pct-td">0.110%</td>
 <td class="pct-td sep-l">0.570%</td><td class="pct-td">0.260%</td>
 <td class="pct-td sep-l">0.090%</td><td class="pct-td">0.180%</td>
@@ -322,6 +353,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">281</td><td>744</td>
 <td class="sep-l">180</td><td>316</td>
 <td class="sep-l kh-new">338</td><td class="kh-cu">947</td><td class="kh-tot"><b>1,285</b></td>
+<td class="lm-td sep-l">25</td><td class="lm-td">1,119</td>
+<td class="sep-l tlm-td">1.950%</td><td class="tlm-td">87.080%</td>
 <td class="pct-td sep-l">0.460%</td><td class="pct-td">0.170%</td>
 <td class="pct-td sep-l">0.710%</td><td class="pct-td">0.410%</td>
 <td class="pct-td sep-l">0.130%</td><td class="pct-td">0.260%</td>
@@ -334,10 +367,12 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">297</td><td>650</td>
 <td class="sep-l">186</td><td>304</td>
 <td class="sep-l kh-new">457</td><td class="kh-cu">1,033</td><td class="kh-tot"><b>1,490</b></td>
+<td class="lm-td sep-l">25</td><td class="lm-td">1,048</td>
+<td class="sep-l tlm-td">1.680%</td><td class="tlm-td">70.340%</td>
 <td class="pct-td sep-l">0.500%</td><td class="pct-td">0.230%</td>
 <td class="pct-td sep-l">0.800%</td><td class="pct-td">0.490%</td>
 <td class="pct-td sep-l">0.160%</td><td class="pct-td">0.300%</td>
-</tr><tr class="week-header-row"><td colspan="22">Tuần 2 · 8–14/6</td></tr>
+</tr><tr class="week-header-row"><td colspan="26">Tuần 2 · 8–14/6</td></tr>
 <tr class="">
 <td class="label-cell"><b>08/6</b> <span class="dow-badge dow-T2">T2</span></td>
 <td>4.24</td><td>20.35</td><td class="nq-spend">5.84</td>
@@ -347,6 +382,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">282</td><td>876</td>
 <td class="sep-l">184</td><td>385</td>
 <td class="sep-l kh-new">210</td><td class="kh-cu">649</td><td class="kh-tot"><b>859</b></td>
+<td class="lm-td sep-l">14</td><td class="lm-td">690</td>
+<td class="sep-l tlm-td">1.630%</td><td class="tlm-td">80.330%</td>
 <td class="pct-td sep-l">0.300%</td><td class="pct-td">0.100%</td>
 <td class="pct-td sep-l">0.470%</td><td class="pct-td">0.220%</td>
 <td class="pct-td sep-l">0.070%</td><td class="pct-td">0.150%</td>
@@ -359,6 +396,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">434</td><td>884</td>
 <td class="sep-l">256</td><td>307</td>
 <td class="sep-l kh-new">290</td><td class="kh-cu">619</td><td class="kh-tot"><b>909</b></td>
+<td class="lm-td sep-l">21</td><td class="lm-td">843</td>
+<td class="sep-l tlm-td">2.310%</td><td class="tlm-td">92.740%</td>
 <td class="pct-td sep-l">0.210%</td><td class="pct-td">0.100%</td>
 <td class="pct-td sep-l">0.350%</td><td class="pct-td">0.300%</td>
 <td class="pct-td sep-l">0.070%</td><td class="pct-td">0.160%</td>
@@ -371,6 +410,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">400</td><td>741</td>
 <td class="sep-l">245</td><td>347</td>
 <td class="sep-l kh-new">260</td><td class="kh-cu">628</td><td class="kh-tot"><b>888</b></td>
+<td class="lm-td sep-l">26</td><td class="lm-td">806</td>
+<td class="sep-l tlm-td">2.930%</td><td class="tlm-td">90.770%</td>
 <td class="pct-td sep-l">0.220%</td><td class="pct-td">0.120%</td>
 <td class="pct-td sep-l">0.360%</td><td class="pct-td">0.260%</td>
 <td class="pct-td sep-l">0.080%</td><td class="pct-td">0.150%</td>
@@ -383,6 +424,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">445</td><td>1,438</td>
 <td class="sep-l">269</td><td>602</td>
 <td class="sep-l kh-new">260</td><td class="kh-cu">710</td><td class="kh-tot"><b>970</b></td>
+<td class="lm-td sep-l">25</td><td class="lm-td">910</td>
+<td class="sep-l tlm-td">2.580%</td><td class="tlm-td">93.810%</td>
 <td class="pct-td sep-l">0.220%</td><td class="pct-td">0.070%</td>
 <td class="pct-td sep-l">0.360%</td><td class="pct-td">0.160%</td>
 <td class="pct-td sep-l">0.050%</td><td class="pct-td">0.110%</td>
@@ -395,6 +438,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">457</td><td>1,381</td>
 <td class="sep-l">278</td><td>502</td>
 <td class="sep-l kh-new">305</td><td class="kh-cu">725</td><td class="kh-tot"><b>1,030</b></td>
+<td class="lm-td sep-l">37</td><td class="lm-td">1,009</td>
+<td class="sep-l tlm-td">3.590%</td><td class="tlm-td">97.960%</td>
 <td class="pct-td sep-l">0.230%</td><td class="pct-td">0.070%</td>
 <td class="pct-td sep-l">0.370%</td><td class="pct-td">0.200%</td>
 <td class="pct-td sep-l">0.060%</td><td class="pct-td">0.130%</td>
@@ -407,6 +452,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">449</td><td>1,971</td>
 <td class="sep-l">277</td><td>754</td>
 <td class="sep-l kh-new">386</td><td class="kh-cu">935</td><td class="kh-tot"><b>1,321</b></td>
+<td class="lm-td sep-l">49</td><td class="lm-td">1,422</td>
+<td class="sep-l tlm-td">3.710%</td><td class="tlm-td">107.650%</td>
 <td class="pct-td sep-l">0.290%</td><td class="pct-td">0.070%</td>
 <td class="pct-td sep-l">0.480%</td><td class="pct-td">0.180%</td>
 <td class="pct-td sep-l">0.050%</td><td class="pct-td">0.130%</td>
@@ -419,10 +466,12 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">449</td><td>2,053</td>
 <td class="sep-l">273</td><td>808</td>
 <td class="sep-l kh-new">387</td><td class="kh-cu">1,004</td><td class="kh-tot"><b>1,391</b></td>
+<td class="lm-td sep-l">49</td><td class="lm-td">1,380</td>
+<td class="sep-l tlm-td">3.520%</td><td class="tlm-td">99.210%</td>
 <td class="pct-td sep-l">0.310%</td><td class="pct-td">0.070%</td>
 <td class="pct-td sep-l">0.510%</td><td class="pct-td">0.170%</td>
 <td class="pct-td sep-l">0.060%</td><td class="pct-td">0.130%</td>
-</tr><tr class="week-header-row"><td colspan="22">Tuần 3 · 15–21/6</td></tr>
+</tr><tr class="week-header-row"><td colspan="26">Tuần 3 · 15–21/6</td></tr>
 <tr class="">
 <td class="label-cell"><b>15/6</b> <span class="dow-badge dow-T2">T2</span></td>
 <td>7.90</td><td>40.08</td><td class="nq-spend">5.42</td>
@@ -432,6 +481,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">501</td><td>2,365</td>
 <td class="sep-l">293</td><td>904</td>
 <td class="sep-l kh-new">240</td><td class="kh-cu">503</td><td class="kh-tot"><b>743</b></td>
+<td class="lm-td sep-l">34</td><td class="lm-td">705</td>
+<td class="sep-l tlm-td">4.580%</td><td class="tlm-td">94.890%</td>
 <td class="pct-td sep-l">0.150%</td><td class="pct-td">0.030%</td>
 <td class="pct-td sep-l">0.250%</td><td class="pct-td">0.080%</td>
 <td class="pct-td sep-l">0.030%</td><td class="pct-td">0.060%</td>
@@ -444,6 +495,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">476</td><td>804</td>
 <td class="sep-l">286</td><td>414</td>
 <td class="sep-l kh-new">268</td><td class="kh-cu">651</td><td class="kh-tot"><b>919</b></td>
+<td class="lm-td sep-l">37</td><td class="lm-td">695</td>
+<td class="sep-l tlm-td">4.030%</td><td class="tlm-td">75.630%</td>
 <td class="pct-td sep-l">0.190%</td><td class="pct-td">0.110%</td>
 <td class="pct-td sep-l">0.320%</td><td class="pct-td">0.220%</td>
 <td class="pct-td sep-l">0.070%</td><td class="pct-td">0.130%</td>
@@ -456,6 +509,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">510</td><td>2,017</td>
 <td class="sep-l">269</td><td>996</td>
 <td class="sep-l kh-new">278</td><td class="kh-cu">710</td><td class="kh-tot"><b>988</b></td>
+<td class="lm-td sep-l">30</td><td class="lm-td">265</td>
+<td class="sep-l tlm-td">3.040%</td><td class="tlm-td">26.820%</td>
 <td class="pct-td sep-l">0.190%</td><td class="pct-td">0.050%</td>
 <td class="pct-td sep-l">0.370%</td><td class="pct-td">0.100%</td>
 <td class="pct-td sep-l">0.040%</td><td class="pct-td">0.080%</td>
@@ -468,6 +523,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">474</td><td>3,165</td>
 <td class="sep-l">253</td><td>1,473</td>
 <td class="sep-l kh-new">275</td><td class="kh-cu">648</td><td class="kh-tot"><b>923</b></td>
+<td class="lm-td sep-l">33</td><td class="lm-td">312</td>
+<td class="sep-l tlm-td">3.580%</td><td class="tlm-td">33.800%</td>
 <td class="pct-td sep-l">0.190%</td><td class="pct-td">0.030%</td>
 <td class="pct-td sep-l">0.360%</td><td class="pct-td">0.060%</td>
 <td class="pct-td sep-l">0.030%</td><td class="pct-td">0.050%</td>
@@ -480,6 +537,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">463</td><td>3,130</td>
 <td class="sep-l">260</td><td>1,350</td>
 <td class="sep-l kh-new">343</td><td class="kh-cu">759</td><td class="kh-tot"><b>1,102</b></td>
+<td class="lm-td sep-l">54</td><td class="lm-td">374</td>
+<td class="sep-l tlm-td">4.900%</td><td class="tlm-td">33.940%</td>
 <td class="pct-td sep-l">0.240%</td><td class="pct-td">0.040%</td>
 <td class="pct-td sep-l">0.420%</td><td class="pct-td">0.080%</td>
 <td class="pct-td sep-l">0.030%</td><td class="pct-td">0.070%</td>
@@ -492,6 +551,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">409</td><td>2,409</td>
 <td class="sep-l">240</td><td>1,184</td>
 <td class="sep-l kh-new">368</td><td class="kh-cu">879</td><td class="kh-tot"><b>1,247</b></td>
+<td class="lm-td sep-l">51</td><td class="lm-td">366</td>
+<td class="sep-l tlm-td">4.090%</td><td class="tlm-td">29.350%</td>
 <td class="pct-td sep-l">0.300%</td><td class="pct-td">0.050%</td>
 <td class="pct-td sep-l">0.520%</td><td class="pct-td">0.110%</td>
 <td class="pct-td sep-l">0.040%</td><td class="pct-td">0.090%</td>
@@ -504,10 +565,12 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">429</td><td>3,982</td>
 <td class="sep-l">249</td><td>1,537</td>
 <td class="sep-l kh-new">413</td><td class="kh-cu">995</td><td class="kh-tot"><b>1,408</b></td>
+<td class="lm-td sep-l">44</td><td class="lm-td">383</td>
+<td class="sep-l tlm-td">3.120%</td><td class="tlm-td">27.200%</td>
 <td class="pct-td sep-l">0.330%</td><td class="pct-td">0.040%</td>
 <td class="pct-td sep-l">0.560%</td><td class="pct-td">0.090%</td>
 <td class="pct-td sep-l">0.030%</td><td class="pct-td">0.080%</td>
-</tr><tr class="week-header-row"><td colspan="22">Tuần 4 · 22–28/6</td></tr>
+</tr><tr class="week-header-row"><td colspan="26">Tuần 4 · 22–28/6</td></tr>
 <tr class="">
 <td class="label-cell"><b>22/6</b> <span class="dow-badge dow-T2">T2</span></td>
 <td>8.01</td><td>39.50</td><td class="nq-spend">5.67</td>
@@ -517,6 +580,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">442</td><td>3,736</td>
 <td class="sep-l">256</td><td>1,550</td>
 <td class="sep-l kh-new">321</td><td class="kh-cu">655</td><td class="kh-tot"><b>976</b></td>
+<td class="lm-td sep-l">21</td><td class="lm-td">279</td>
+<td class="sep-l tlm-td">2.150%</td><td class="tlm-td">28.590%</td>
 <td class="pct-td sep-l">0.220%</td><td class="pct-td">0.030%</td>
 <td class="pct-td sep-l">0.380%</td><td class="pct-td">0.060%</td>
 <td class="pct-td sep-l">0.020%</td><td class="pct-td">0.050%</td>
@@ -529,6 +594,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">294</td><td>2,252</td>
 <td class="sep-l">184</td><td>1,088</td>
 <td class="sep-l kh-new">258</td><td class="kh-cu">612</td><td class="kh-tot"><b>870</b></td>
+<td class="lm-td sep-l">26</td><td class="lm-td">242</td>
+<td class="sep-l tlm-td">2.990%</td><td class="tlm-td">27.820%</td>
 <td class="pct-td sep-l">0.300%</td><td class="pct-td">0.040%</td>
 <td class="pct-td sep-l">0.470%</td><td class="pct-td">0.080%</td>
 <td class="pct-td sep-l">0.030%</td><td class="pct-td">0.070%</td>
@@ -541,6 +608,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">246</td><td>371</td>
 <td class="sep-l">155</td><td>228</td>
 <td class="sep-l kh-new">300</td><td class="kh-cu">654</td><td class="kh-tot"><b>954</b></td>
+<td class="lm-td sep-l">9</td><td class="lm-td">156</td>
+<td class="sep-l tlm-td">0.940%</td><td class="tlm-td">16.350%</td>
 <td class="pct-td sep-l">0.390%</td><td class="pct-td">0.260%</td>
 <td class="pct-td sep-l">0.610%</td><td class="pct-td">0.420%</td>
 <td class="pct-td sep-l">0.150%</td><td class="pct-td">0.250%</td>
@@ -553,6 +622,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">232</td><td>224</td>
 <td class="sep-l">144</td><td>145</td>
 <td class="sep-l kh-new">274</td><td class="kh-cu">619</td><td class="kh-tot"><b>893</b></td>
+<td class="lm-td sep-l">9</td><td class="lm-td">50</td>
+<td class="sep-l tlm-td">1.010%</td><td class="tlm-td">5.600%</td>
 <td class="pct-td sep-l">0.380%</td><td class="pct-td">0.400%</td>
 <td class="pct-td sep-l">0.620%</td><td class="pct-td">0.610%</td>
 <td class="pct-td sep-l">0.200%</td><td class="pct-td">0.310%</td>
@@ -565,6 +636,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">33</td><td>53</td>
 <td class="sep-l">26</td><td>42</td>
 <td class="sep-l kh-new">269</td><td class="kh-cu">726</td><td class="kh-tot"><b>995</b></td>
+<td class="lm-td sep-l">1</td><td class="lm-td">50</td>
+<td class="sep-l tlm-td">0.100%</td><td class="tlm-td">5.030%</td>
 <td class="pct-td sep-l">3.010%</td><td class="pct-td">1.870%</td>
 <td class="pct-td sep-l">3.710%</td><td class="pct-td">2.360%</td>
 <td class="pct-td sep-l">1.150%</td><td class="pct-td">1.440%</td>
@@ -577,6 +650,8 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">91</td><td>140</td>
 <td class="sep-l">68</td><td>101</td>
 <td class="sep-l kh-new">346</td><td class="kh-cu">879</td><td class="kh-tot"><b>1,225</b></td>
+<td class="lm-td sep-l">1</td><td class="lm-td">42</td>
+<td class="sep-l tlm-td">0.080%</td><td class="tlm-td">3.430%</td>
 <td class="pct-td sep-l">1.330%</td><td class="pct-td">0.870%</td>
 <td class="pct-td sep-l">1.790%</td><td class="pct-td">1.210%</td>
 <td class="pct-td sep-l">0.530%</td><td class="pct-td">0.720%</td>
@@ -589,11 +664,13 @@ td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
 <td class="sep-l">66</td><td>120</td>
 <td class="sep-l">50</td><td>79</td>
 <td class="sep-l kh-new">413</td><td class="kh-cu">995</td><td class="kh-tot"><b>1,408</b></td>
+<td class="lm-td sep-l">—</td><td class="lm-td">—</td>
+<td class="sep-l tlm-td">—</td><td class="tlm-td">—</td>
 <td class="pct-td sep-l">2.110%</td><td class="pct-td">1.160%</td>
 <td class="pct-td sep-l">2.780%</td><td class="pct-td">1.780%</td>
 <td class="pct-td sep-l">0.750%</td><td class="pct-td">1.090%</td>
 </tr></tbody></table></div>
 </div>
-<div class="footer">30Shine · Bùi Thị Huế · Tháng 6/2026 · Dữ liệu 1–28/6/2026 · Chi hệ thống = TK + FB Tỉnh+Cường + GG + CRM</div>
+<div class="footer">30Shine · Bùi Thị Huế · T6/2026 · 1–28/6 · Lượt mua TikTok = offline_shopping_events (view-through)</div>
 </body>
 </html>
