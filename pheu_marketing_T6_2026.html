@@ -2,803 +2,851 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bảng Phễu Theo Ngày — T6/2026 · 30Shine</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Campaign Performance Dashboard — T6/2026 · 30Shine</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#f8fafc;color:#1e293b;font-size:12px}
-.header{background:#1e293b;padding:20px 28px 16px;color:#f8fafc}
-.header-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#f59e0b;margin-bottom:4px}
-.header h1{font-size:18px;font-weight:800;margin-bottom:3px}
-.header-sub{font-size:11px;color:#94a3b8}
-.wrap{padding:16px}
-.note{background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:8px 14px;margin-bottom:14px;font-size:11px;color:#78350f;line-height:1.7}
-.section-title{font-size:12px;font-weight:800;color:#1e3a5f;text-transform:uppercase;margin:20px 0 8px;padding:6px 10px;background:#e0e7ff;border-left:4px solid #4f46e5;border-radius:0 4px 4px 0}
-.cmp-wrap{overflow-x:auto;border-radius:8px;border:1px solid #e2e8f0;margin-bottom:8px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.cmp-table{border-collapse:collapse;width:100%;min-width:680px}
-.cmp-table th{background:#f1f5f9;color:#475569;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:8px 14px;text-align:center;border-bottom:2px solid #e2e8f0;border-right:1px solid #e2e8f0;white-space:nowrap}
-.cmp-table td{padding:9px 14px;border-bottom:1px solid #f1f5f9;border-right:1px solid #f1f5f9;text-align:right;vertical-align:top;font-size:12px}
-.cmp-table tr:hover td{background:#f8fafc}
-.cmp-table .total-row td{background:#f0fdf4;font-weight:700;font-size:13px;border-top:2px solid #16a34a}
-.label-cell{text-align:left!important;min-width:110px;white-space:nowrap}
-.sub-label{font-size:10px;color:#94a3b8;font-weight:400}
-.mt-val,.nq-note{color:#94a3b8;font-size:10px}
-.nq-note{color:#c2410c}
-.pct-cell{font-weight:700;text-align:center!important}
-.ok-cell{color:#15803d;background:#f0fdf4}
-.near-cell{color:#a16207;background:#fefce8}
-.bad-cell{color:#b91c1c;background:#fef2f2}
-.badge{display:inline-block;font-size:9px;font-weight:700;padding:1px 5px;border-radius:8px;margin-top:2px}
-.badge.ok{background:#dcfce7;color:#15803d}
-.badge.near{background:#fef9c3;color:#a16207}
-.badge.low{background:#fee2e2;color:#b91c1c}
-.tbl-wrap{overflow-x:auto;border-radius:8px;border:1px solid #e2e8f0;margin-bottom:24px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-table{border-collapse:collapse;width:100%;min-width:2700px}
-thead th{background:#f1f5f9;color:#475569;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:7px 6px;text-align:center;border-bottom:2px solid #e2e8f0;border-right:1px solid #e2e8f0;white-space:nowrap}
-thead .sub-head th{background:#f8fafc;font-size:9px;padding:5px 6px;color:#64748b;font-weight:600}
-.th-label{background:#e8edf5;color:#1e3a5f;text-align:left!important;min-width:80px}
-.th-chi{background:#f0fdf4;color:#166534}
-.th-gg{background:#f7fee7;color:#3f6212}
-.th-crm{background:#fff7ed;color:#9a3412}
-.th-nonq{background:#fef9c3;color:#78350f;font-weight:800}
-.th-tong{background:#f1f5f9;color:#94a3b8}
-.th-ht{background:#ede9fe;color:#4c1d95}
-.th-tc{background:#fef3c7;color:#92400e}
-.th-kh{background:#dcfce7;color:#14532d}
-.th-rev{background:#ecfdf5;color:#065f46;font-weight:800}
-.th-lm{background:#fce7f3;color:#831843;font-weight:700}
-.th-tlm{background:#fdf2f8;color:#9d174d;font-weight:700}
-.th-ck{background:#fef3c7;color:#7c2d12;font-weight:700}
-.th-ctr{background:#fff7ed;color:#7c3aed;font-weight:700}
-.th-pht{background:#e0e7ff;color:#312e81}
-.th-ptc{background:#fff7ed;color:#92400e}
-.th-tb{background:#f3e8ff;color:#581c87}
-tbody tr{border-bottom:1px solid #f1f5f9}
-tbody tr:hover td{background:#f8fafc}
-tbody tr.wknd-row{background:#fafafa}
-tbody tr.week-row{background:#f0f9ff;border-top:2px solid #bae6fd}
-tbody tr.week-row td{font-weight:600}
-tbody tr.total-row td{background:#f0fdf4;font-weight:700;border-top:2px solid #16a34a}
-tbody tr.week-header-row td{background:#1e3a5f;color:#93c5fd;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 10px;border-top:2px solid #334155}
-td{padding:5px 7px;text-align:right;border-right:1px solid #f1f5f9}
-.dow-badge{display:inline-block;font-size:9px;padding:1px 4px;border-radius:3px;font-weight:700;margin-left:2px}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1e293b;font-size:13px}
+
+/* ── Header ── */
+.dash-header{background:linear-gradient(135deg,#1e293b 0%,#0f3460 100%);padding:22px 32px 18px;display:flex;justify-content:space-between;align-items:center}
+.dash-title{color:#fff}
+.dash-title .tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#f59e0b;margin-bottom:5px}
+.dash-title h1{font-size:20px;font-weight:900;letter-spacing:-.3px}
+.dash-title .sub{font-size:11px;color:#94a3b8;margin-top:3px}
+.dash-meta{text-align:right;color:#64748b;font-size:11px;line-height:1.8}
+.dash-meta b{color:#f59e0b}
+
+/* ── KPI Cards ── */
+.kpi-bar{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;padding:18px 24px 0}
+.kpi{background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-left:4px solid var(--c);position:relative;overflow:hidden}
+.kpi::after{content:'';position:absolute;right:-10px;top:-10px;width:60px;height:60px;border-radius:50%;background:var(--c);opacity:.07}
+.kpi .icon{font-size:20px;margin-bottom:6px}
+.kpi .lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#64748b;margin-bottom:2px}
+.kpi .val{font-size:22px;font-weight:900;color:#1e293b;line-height:1}
+.kpi .sub{font-size:10px;color:#94a3b8;margin-top:4px}
+.kpi .delta{font-size:10px;font-weight:700;margin-top:3px}
+.delta.ok{color:#16a34a}.delta.near{color:#ca8a04}.delta.bad{color:#dc2626}
+@media(max-width:900px){.kpi-bar{grid-template-columns:repeat(3,1fr)}}
+
+/* ── Section ── */
+.section{padding:0 24px}
+.section-hdr{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#475569;margin:22px 0 12px;display:flex;align-items:center;gap:8px}
+.section-hdr::after{content:'';flex:1;height:1px;background:#e2e8f0}
+
+/* ── Chart Grid ── */
+.chart-grid{display:grid;gap:14px;margin-bottom:4px}
+.chart-grid.g2{grid-template-columns:1fr 1fr}
+.chart-grid.g3{grid-template-columns:1.6fr 1fr 1fr}
+.chart-grid.g1{grid-template-columns:1fr}
+.chart-box{background:#fff;border-radius:10px;padding:16px 18px 14px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.chart-box h3{font-size:11px;font-weight:800;color:#334155;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.chart-box h3 .badge{background:#f1f5f9;border-radius:4px;padding:1px 6px;font-size:9px;color:#64748b;font-weight:600}
+.chart-box canvas{max-height:200px}
+
+/* ── Insight chips ── */
+.insight-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.insight{background:#fff;border-radius:8px;padding:8px 14px;font-size:11px;color:#334155;box-shadow:0 1px 3px rgba(0,0,0,.06);border-left:3px solid var(--c,#4f46e5)}
+.insight b{color:#1e293b}
+
+/* ── Table ── */
+.tbl-wrap{overflow-x:auto;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:20px;background:#fff}
+table{border-collapse:collapse;width:100%;min-width:2400px;font-size:11px}
+thead th{background:#f8fafc;color:#475569;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:8px 7px;text-align:center;border-bottom:2px solid #e2e8f0;border-right:1px solid #f1f5f9;white-space:nowrap;position:sticky;top:0;z-index:2}
+thead th.sticky{left:0;z-index:3;background:#f1f5f9}
+tbody td{padding:5px 7px;border-bottom:1px solid #f8fafc;border-right:1px solid #f8fafc;text-align:right;white-space:nowrap}
+tbody td.sticky{text-align:left;position:sticky;left:0;background:#fff;z-index:1;border-right:2px solid #e2e8f0}
+tbody tr.wknd td{background:#fafafa}
+tbody tr.wknd td.sticky{background:#fafafa}
+tbody tr.week-row td{background:#eff6ff;font-weight:700}
+tbody tr.week-row td.sticky{background:#dbeafe}
+tbody tr.total-row td{background:#f0fdf4;font-weight:800;border-top:2px solid #16a34a}
+tbody tr.total-row td.sticky{background:#dcfce7}
+tbody tr.sep-row td{background:#1e3a5f;color:#93c5fd;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border:none}
+tbody tr:hover td:not(.sticky){background:#f8fafc!important}
+td.dim{color:#94a3b8}.nonq{font-weight:700;color:#78350f;background:#fef9c3!important}
+.gg{color:#4d7c0f}.crm{color:#c2410c}.new{color:#166534}
+.cu{color:#065f46}.tot{background:#f0fdf4!important;font-weight:700}
+.rev{color:#065f46;font-weight:700}.lm{color:#be185d}
+.ck{color:#92400e}.ctr{color:#7c3aed}
+.sl{border-left:2px solid #e2e8f0!important}
+.ok{color:#16a34a}.bad{color:#dc2626}
+.hi{color:#16a34a;font-weight:700}.mid{color:#ca8a04}.lo{color:#dc2626}
+.dow{display:inline-block;font-size:9px;padding:1px 4px;border-radius:3px;font-weight:700;margin-left:3px}
 .dow-T2,.dow-T3,.dow-T4,.dow-T5,.dow-T6{background:#dbeafe;color:#1e40af}
-.dow-T7{background:#ede9fe;color:#5b21b6}
-.dow-CN{background:#fee2e2;color:#991b1b}
-.nq-spend{color:#94a3b8}
-.gg-col{color:#4d7c0f}
-.crm-col{color:#c2410c}
-.nonq-col{font-weight:700;color:#78350f;background:#fef9c3}
-.tong-col{color:#94a3b8;font-size:11px}
-.rev-col{font-weight:700;color:#065f46;background:#f0fdf4}
-.sep-l{border-left:2px solid #e2e8f0!important}
-.pct-td{color:#4338ca;font-size:11px}
-.lm-td{color:#be185d;font-weight:600}
-.ck-td{color:#92400e;font-weight:600}
-.ctr-td{color:#7c3aed;font-size:11px;font-weight:600}
-.tlm-td{font-size:11px;font-weight:600}
-.tlm-hi{color:#15803d}
-.tlm-mid{color:#a16207}
-.tlm-lo{color:#b91c1c}
-.kh-new{color:#166534}
-.kh-cu{color:#065f46}
-.kh-tot{color:#064e3b;background:#f0fdf4}
-.footer{text-align:center;padding:14px;font-size:10px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:4px}
+.dow-T7{background:#ede9fe;color:#5b21b6}.dow-CN{background:#fee2e2;color:#991b1b}
+
+/* ── Tab toggle ── */
+.tabs{display:flex;gap:2px;margin-bottom:0}
+.tab-btn{padding:7px 18px;font-size:11px;font-weight:700;border:none;cursor:pointer;border-radius:6px 6px 0 0;background:#e2e8f0;color:#64748b;transition:.15s}
+.tab-btn.active{background:#fff;color:#1e293b;box-shadow:0 -2px 6px rgba(0,0,0,.08)}
+.tab-pane{display:none}.tab-pane.active{display:block}
+
+/* ── Footer ── */
+.footer{text-align:center;padding:14px;font-size:10px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:8px}
 </style>
 </head>
 <body>
-<div class="header">
-  <div class="header-tag">Performance Marketing · 30Shine</div>
-  <h1>Bảng Phễu Theo Ngày — Tháng 6 / 2026</h1>
-  <div class="header-sub">Bùi Thị Huế · Ads Performance · TikTok · Facebook · Google · CRM</div>
+
+<!-- HEADER -->
+<div class="dash-header">
+  <div class="dash-title">
+    <div class="tag">Campaign Performance Dashboard</div>
+    <h1>30Shine — Tháng 6 / 2026</h1>
+    <div class="sub">Bùi Thị Huế · Ads Performance · TikTok · Facebook · Google · CRM</div>
+  </div>
+  <div class="dash-meta">
+    <div>Kỳ báo cáo: <b>1–28/6/2026</b></div>
+    <div>MT KH: <b>32,500</b> · MT Chi: <b>978M</b> · MT CPA: <b>30,092đ</b></div>
+    <div style="margin-top:4px;font-size:10px;color:#475569">TikTok* = offline_shopping_events (view-through 14d)</div>
+  </div>
 </div>
-<div class="wrap">
-<div class="note">
-  <b>Tổng chi hệ thống</b> = TK + FB Tỉnh+Cường + GG + CRM — so sánh với MT 978M. NQ ghi riêng, không tính vào MT. &nbsp;|&nbsp;
-  <b>KH/Lượt mua</b> = (KH mới+cũ&gt;12W) / lượt mua ads — &gt;100%: ads ghi nhận ít hơn khách thực. &nbsp;|&nbsp;
-  <b>TikTok*</b> = offline_shopping_events. &nbsp;|&nbsp;
-  <b>CTR TK</b> = CTR (all) từ TikTok Ads Manager. &nbsp;|&nbsp;
-  <b>CTR FB</b> = CTR (Tất cả) từ Facebook Ads Manager (weighted by impressions).
+
+<!-- KPI CARDS -->
+<div class="kpi-bar">
+  <div class="kpi" style="--c:#f59e0b">
+    <div class="icon">🎯</div>
+    <div class="lbl">KH mới + cũ &gt;12W</div>
+    <div class="val">29,384</div>
+    <div class="sub">MT: 32,500</div>
+    <div class="delta near">90.4% mục tiêu</div>
+  </div>
+  <div class="kpi" style="--c:#4f46e5">
+    <div class="icon">💰</div>
+    <div class="lbl">Chi hệ thống</div>
+    <div class="val">870M</div>
+    <div class="sub">MT: 978M</div>
+    <div class="delta bad">89.0% ngân sách</div>
+  </div>
+  <div class="kpi" style="--c:#16a34a">
+    <div class="icon">📊</div>
+    <div class="lbl">CPA blended</div>
+    <div class="val">29.6k₫</div>
+    <div class="sub">MT: 30.1k₫</div>
+    <div class="delta ok">✓ Dưới MT</div>
+  </div>
+  <div class="kpi" style="--c:#10b981">
+    <div class="icon">💵</div>
+    <div class="lbl">Doanh thu</div>
+    <div class="val">22.4 tỷ</div>
+    <div class="sub">ROAS: 25.8x</div>
+    <div class="delta ok">~763k₫/KH</div>
+  </div>
+  <div class="kpi" style="--c:#3b82f6">
+    <div class="icon">👁️</div>
+    <div class="lbl">Tổng Impressions</div>
+    <div class="val">49.7M</div>
+    <div class="sub">TK 9.6M · FB 40.1M</div>
+    <div class="delta" style="color:#3b82f6">CTR blended 0.87%</div>
+  </div>
+  <div class="kpi" style="--c:#8b5cf6">
+    <div class="icon">🖱️</div>
+    <div class="lbl">Tổng Clicks</div>
+    <div class="val">431k</div>
+    <div class="sub">TK 90k · FB 342k</div>
+    <div class="delta" style="color:#8b5cf6">Lượt mua ads: 18,522</div>
+  </div>
 </div>
-<div class="section-title">📊 So sánh thực tế vs mục tiêu — Hệ thống (không NQ)</div>
-<div class="cmp-wrap">
-<table class="cmp-table">
-<thead><tr>
-  <th style="text-align:left">Tuần / Tháng</th>
-  <th>KH Mới + Cũ&gt;12W<br><small>Thực tế / MT</small></th>
-  <th>% Đạt KH</th>
-  <th>Chi Hệ thống<br><small>Thực tế / MT 978M</small></th>
-  <th>% Đạt Chi</th>
-  <th>CPA<br><small>MT: 30,092đ</small></th>
-</tr></thead>
-<tbody><tr class="">
-<td class="label-cell"><b>Tuần 1</b><br><span class="sub-label">1–7/6</span></td>
-<td>7,365<br><small class="mt-val">MT: 8,125</small><div style="background:#fef9c3;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#ca8a04;height:5px;border-radius:3px;width:90.65%"></div></div></td>
-<td class="pct-cell near-cell">90.6%<br><span class="badge near">≈ Gần đạt</span></td>
-<td>173.38M<br><small class="nq-note">NQ riêng: 37.10M</small><br><small class="mt-val">MT: 244.50M</small><div style="background:#e5e7eb;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#dc2626;height:5px;border-radius:3px;width:70.9%"></div></div></td>
-<td class="pct-cell bad-cell">70.9%<br><span class="badge low">↓ Chưa đạt</span></td>
-<td class="ok-cell">23,541đ<br><small class="mt-val">MT: 30,092đ</small></td>
-</tr><tr class="">
-<td class="label-cell"><b>Tuần 2</b><br><span class="sub-label">8–14/6</span></td>
-<td>7,368<br><small class="mt-val">MT: 8,125</small><div style="background:#fef9c3;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#ca8a04;height:5px;border-radius:3px;width:90.68%"></div></div></td>
-<td class="pct-cell near-cell">90.7%<br><span class="badge near">≈ Gần đạt</span></td>
-<td>260.91M<br><small class="nq-note">NQ riêng: 34.46M</small><br><small class="mt-val">MT: 244.50M</small><div style="background:#e5e7eb;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#16a34a;height:5px;border-radius:3px;width:100.0%"></div></div></td>
-<td class="pct-cell ok-cell">106.7%<br><span class="badge ok">✓ Đạt</span></td>
-<td class="bad-cell">35,411đ<br><small class="mt-val">MT: 30,092đ</small></td>
-</tr><tr class="">
-<td class="label-cell"><b>Tuần 3</b><br><span class="sub-label">15–21/6</span></td>
-<td>7,330<br><small class="mt-val">MT: 8,125</small><div style="background:#fef9c3;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#ca8a04;height:5px;border-radius:3px;width:90.22%"></div></div></td>
-<td class="pct-cell near-cell">90.2%<br><span class="badge near">≈ Gần đạt</span></td>
-<td>309.59M<br><small class="nq-note">NQ riêng: 36.18M</small><br><small class="mt-val">MT: 244.50M</small><div style="background:#e5e7eb;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#16a34a;height:5px;border-radius:3px;width:100.0%"></div></div></td>
-<td class="pct-cell ok-cell">126.6%<br><span class="badge ok">✓ Đạt</span></td>
-<td class="bad-cell">42,236đ<br><small class="mt-val">MT: 30,092đ</small></td>
-</tr><tr class="">
-<td class="label-cell"><b>Tuần 4</b><br><span class="sub-label">22–28/6</span></td>
-<td>7,321<br><small class="mt-val">MT: 8,125</small><div style="background:#fef9c3;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#ca8a04;height:5px;border-radius:3px;width:90.10%"></div></div></td>
-<td class="pct-cell near-cell">90.1%<br><span class="badge near">≈ Gần đạt</span></td>
-<td>126.09M<br><small class="nq-note">NQ riêng: 35.40M</small><br><small class="mt-val">MT: 244.50M</small><div style="background:#e5e7eb;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#dc2626;height:5px;border-radius:3px;width:51.6%"></div></div></td>
-<td class="pct-cell bad-cell">51.6%<br><span class="badge low">↓ Chưa đạt</span></td>
-<td class="ok-cell">17,223đ<br><small class="mt-val">MT: 30,092đ</small></td>
-</tr><tr class="total-row">
-<td class="label-cell"><b>TỔNG T6</b><br><span class="sub-label">1–28/6</span></td>
-<td>30,360<br><small class="mt-val">MT: 32,500</small><div style="background:#fef9c3;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#ca8a04;height:5px;border-radius:3px;width:93.42%"></div></div></td>
-<td class="pct-cell near-cell">93.4%<br><span class="badge near">≈ Gần đạt</span></td>
-<td>869.98M<br><small class="nq-note">NQ riêng: 143.27M</small><br><small class="mt-val">MT: 978.00M</small><div style="background:#e5e7eb;border-radius:3px;height:5px;width:100%;margin-top:3px"><div style="background:#dc2626;height:5px;border-radius:3px;width:89.0%"></div></div></td>
-<td class="pct-cell bad-cell">89.0%<br><span class="badge low">↓ Chưa đạt</span></td>
-<td class="ok-cell">28,655đ<br><small class="mt-val">MT: 30,092đ</small></td>
-</tr></tbody>
-</table>
-</div><div class="section-title">📋 Tổng hợp theo tuần</div>
-<div class="tbl-wrap"><table><thead>
+
+<!-- KEY INSIGHTS -->
+<div class="section" style="margin-top:18px">
+<div class="insight-row">
+  <div class="insight" style="--c:#f59e0b">KH đạt <b>90.4%</b> MT tháng — còn thiếu <b>3,116 KH</b> trong 2 ngày còn lại</div>
+  <div class="insight" style="--c:#4f46e5">FB chiếm <b>72%</b> chi tiêu nhưng <b>96%</b> lượt mua ads</div>
+  <div class="insight" style="--c:#10b981">CPA thực tế <b>29,607đ</b> ← dưới MT (<b>1.6%</b>)</div>
+  <div class="insight" style="--c:#3b82f6">TikTok CTR trung bình <b>0.93%</b> · FB <b>0.97%</b></div>
+</div>
+</div>
+
+<!-- CHARTS ROW 1 -->
+<div class="section">
+<div class="section-hdr">📈 Campaign Performance Overview</div>
+<div class="chart-grid g2">
+  <div class="chart-box">
+    <h3>Chi tiêu hệ thống (M₫) &amp; KH mới+cũ&gt;12W <span class="badge">theo ngày</span></h3>
+    <canvas id="c_main"></canvas>
+  </div>
+  <div class="chart-box">
+    <h3>Doanh thu (tỷ₫) &amp; CPA (₫/KH) <span class="badge">theo ngày</span></h3>
+    <canvas id="c_rev_cpa"></canvas>
+  </div>
+</div>
+
+<div class="section-hdr">📊 Performance Metrics by Channel &amp; Period</div>
+<div class="chart-grid g3">
+  <div class="chart-box">
+    <h3>KH &amp; Chi tiêu theo tuần <span class="badge">vs MT</span></h3>
+    <canvas id="c_weekly"></canvas>
+  </div>
+  <div class="chart-box">
+    <h3>Phân bổ chi tiêu theo kênh <span class="badge">T6 1-28/6</span></h3>
+    <canvas id="c_channel_spend"></canvas>
+  </div>
+  <div class="chart-box">
+    <h3>Lượt mua &amp; CPA theo kênh <span class="badge">TK vs FB</span></h3>
+    <canvas id="c_channel_cpa"></canvas>
+  </div>
+</div>
+
+<div class="section-hdr">🔍 Phân tích chất lượng quảng cáo</div>
+<div class="chart-grid g2">
+  <div class="chart-box">
+    <h3>CTR theo ngày — TikTok vs Facebook <span class="badge">%</span></h3>
+    <canvas id="c_ctr"></canvas>
+  </div>
+  <div class="chart-box">
+    <h3>Phễu hiệu quả: Hiển thị → Tiếp cận → KH <span class="badge">theo tuần, %</span></h3>
+    <canvas id="c_funnel"></canvas>
+  </div>
+</div>
+</div>
+
+<!-- DATA TABLES -->
+<div class="section">
+<div class="section-hdr">📋 Bảng dữ liệu chi tiết</div>
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('weekly')">Tổng hợp tuần</button>
+  <button class="tab-btn" onclick="switchTab('daily')">Chi tiết ngày</button>
+</div>
+
+<div id="tab-weekly" class="tab-pane active">
+<div class="tbl-wrap"><table>
+<thead>
 <tr>
-  <th rowspan="2" class="th-label">Tuần / Ngày</th>
-  <th colspan="3" class="th-chi">CHI TIÊU (triệu đ)</th>
-  <th class="th-gg">GG</th><th class="th-crm">CRM</th>
-  <th class="th-nonq">TỔNG HT</th>
-  <th class="th-tong">+NQ</th>
-  <th colspan="2" class="th-ht">HIỂN THỊ (nghìn)</th>
-  <th colspan="2" class="th-tc">TIẾP CẬN (nghìn)</th>
-  <th colspan="3" class="th-kh">KHÁCH (hệ thống)</th>
-  <th class="th-rev">DOANH THU</th>
-  <th colspan="2" class="th-lm">LƯỢT MUA (ads)</th>
-  <th colspan="2" class="th-tlm">KH/LƯỢT MUA</th>
-  <th colspan="2" class="th-ck">CLICKS (nghìn)</th>
-  <th colspan="2" class="th-ctr">CTR (%)</th>
-  <th colspan="2" class="th-pht">TỶ LỆ HT → KH</th>
-  <th colspan="2" class="th-ptc">TỶ LỆ TC → KH</th>
-  <th colspan="2" class="th-tb">TB TỔNG KÊNH</th>
+<th rowspan="2" class="sticky">Ngày</th>
+<th colspan="3">CHI (M₫)</th><th>GG</th><th>CRM</th><th>TỔNG HT</th>
+<th colspan="2">HIỂN THỊ (k)</th><th colspan="2">TIẾP CẬN (k)</th>
+<th colspan="3">KHÁCH</th><th>DOANH THU (tỷ)</th>
+<th colspan="2">LƯỢT MUA</th><th colspan="2">KH/LM</th>
+<th colspan="2">CLICKS (k)</th><th colspan="2">CTR (%)</th><th>CPA</th>
 </tr>
-<tr class="sub-head">
-  <th class="th-chi">TikTok</th><th class="th-chi">FB+Cường</th><th class="th-chi">NQ</th>
-  <th class="th-gg">(tr.đ)</th><th class="th-crm">(tr.đ)</th>
-  <th class="th-nonq">(tr.đ)</th><th class="th-tong">(tr.đ)</th>
-  <th class="th-ht">TikTok</th><th class="th-ht">FB+Cường</th>
-  <th class="th-tc">TikTok</th><th class="th-tc">FB+Cường</th>
-  <th class="th-kh">Mới</th><th class="th-kh">Cũ&gt;12W</th><th class="th-kh">Mới+Cũ&gt;12W</th>
-  <th class="th-rev">(tỷ đ)</th>
-  <th class="th-lm">TikTok*</th><th class="th-lm">FB+Cường</th>
-  <th class="th-tlm">KH/LM TikTok</th><th class="th-tlm">KH/LM FB</th>
-  <th class="th-ck">TikTok</th><th class="th-ck">FB+Cường</th>
-  <th class="th-ctr">TikTok</th><th class="th-ctr">FB+Cường</th>
-  <th class="th-pht">TikTok</th><th class="th-pht">FB+Cường</th>
-  <th class="th-ptc">TikTok</th><th class="th-ptc">FB+Cường</th>
-  <th class="th-tb">Hiển thị</th><th class="th-tb">Tiếp cận</th>
-</tr>
-</thead><tbody><tr class="week-row">
-<td class="label-cell"><b>Tuần 1</b><br><span class="sub-label">1–7/6</span></td>
-<td>29.46</td><td>132.20</td><td class="nq-spend">37.10</td>
-<td class="gg-col">11.72</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>173.38</b></td>
-<td class="tong-col">210.48</td>
-<td class="sep-l">1,994</td><td>6,001</td>
-<td class="sep-l">1,289</td><td>2,725</td>
-<td class="sep-l kh-new">2,076</td><td class="kh-cu">5,289</td><td class="kh-tot"><b>7,365</b></td>
-<td class="rev-col sep-l">5.715</td>
-<td class="lm-td sep-l">128</td><td class="lm-td">6,844</td>
-<td class="tlm-td tlm-hi sep-l">5753.91%</td><td class="tlm-td tlm-hi">107.61%</td>
-<td class="ck-td sep-l">15.8</td><td class="ck-td">66.0</td>
-<td class="ctr-td sep-l">0.79%</td><td class="ctr-td">1.10%</td>
-<td class="pct-td sep-l">0.37%</td><td class="pct-td">0.12%</td>
-<td class="pct-td sep-l">0.57%</td><td class="pct-td">0.27%</td>
-<td class="pct-td sep-l">0.09%</td><td class="pct-td">0.18%</td>
-</tr><tr class="week-row">
-<td class="label-cell"><b>Tuần 2</b><br><span class="sub-label">8–14/6</span></td>
-<td>46.15</td><td>193.64</td><td class="nq-spend">34.46</td>
-<td class="gg-col">11.39</td><td class="crm-col">9.72</td>
-<td class="nonq-col"><b>260.91</b></td>
-<td class="tong-col">295.37</td>
-<td class="sep-l">2,920</td><td>9,347</td>
-<td class="sep-l">1,785</td><td>3,708</td>
-<td class="sep-l kh-new">2,098</td><td class="kh-cu">5,270</td><td class="kh-tot"><b>7,368</b></td>
-<td class="rev-col sep-l">5.681</td>
-<td class="lm-td sep-l">221</td><td class="lm-td">7,060</td>
-<td class="tlm-td tlm-hi sep-l">3333.94%</td><td class="tlm-td tlm-hi">104.36%</td>
-<td class="ck-td sep-l">30.1</td><td class="ck-td">116.1</td>
-<td class="ctr-td sep-l">1.02%</td><td class="ctr-td">1.24%</td>
-<td class="pct-td sep-l">0.25%</td><td class="pct-td">0.08%</td>
-<td class="pct-td sep-l">0.41%</td><td class="pct-td">0.20%</td>
-<td class="pct-td sep-l">0.06%</td><td class="pct-td">0.13%</td>
-</tr><tr class="week-row">
-<td class="label-cell"><b>Tuần 3</b><br><span class="sub-label">15–21/6</span></td>
-<td>53.10</td><td>223.93</td><td class="nq-spend">36.18</td>
-<td class="gg-col">12.83</td><td class="crm-col">19.74</td>
-<td class="nonq-col"><b>309.59</b></td>
-<td class="tong-col">345.77</td>
-<td class="sep-l">3,266</td><td>17,876</td>
-<td class="sep-l">1,853</td><td>7,860</td>
-<td class="sep-l kh-new">2,185</td><td class="kh-cu">5,145</td><td class="kh-tot"><b>7,330</b></td>
-<td class="rev-col sep-l">5.482</td>
-<td class="lm-td sep-l">283</td><td class="lm-td">3,100</td>
-<td class="tlm-td tlm-hi sep-l">2590.11%</td><td class="tlm-td tlm-hi">236.45%</td>
-<td class="ck-td sep-l">29.9</td><td class="ck-td">126.5</td>
-<td class="ctr-td sep-l">0.92%</td><td class="ctr-td">0.71%</td>
-<td class="pct-td sep-l">0.22%</td><td class="pct-td">0.04%</td>
-<td class="pct-td sep-l">0.40%</td><td class="pct-td">0.09%</td>
-<td class="pct-td sep-l">0.03%</td><td class="pct-td">0.08%</td>
-</tr><tr class="week-row">
-<td class="label-cell"><b>Tuần 4</b><br><span class="sub-label">22–28/6</span></td>
-<td>25.01</td><td>76.47</td><td class="nq-spend">35.40</td>
-<td class="gg-col">9.86</td><td class="crm-col">14.76</td>
-<td class="nonq-col"><b>126.09</b></td>
-<td class="tong-col">161.49</td>
-<td class="sep-l">1,408</td><td>6,901</td>
-<td class="sep-l">887</td><td>3,236</td>
-<td class="sep-l kh-new">2,181</td><td class="kh-cu">5,140</td><td class="kh-tot"><b>7,321</b></td>
-<td class="rev-col sep-l">5.542</td>
-<td class="lm-td sep-l">67</td><td class="lm-td">819</td>
-<td class="tlm-td tlm-hi sep-l">10926.87%</td><td class="tlm-td tlm-hi">893.89%</td>
-<td class="ck-td sep-l">13.8</td><td class="ck-td">33.0</td>
-<td class="ctr-td sep-l">0.98%</td><td class="ctr-td">0.48%</td>
-<td class="pct-td sep-l">0.52%</td><td class="pct-td">0.11%</td>
-<td class="pct-td sep-l">0.83%</td><td class="pct-td">0.23%</td>
-<td class="pct-td sep-l">0.09%</td><td class="pct-td">0.18%</td>
-</tr><tr class="total-row">
-<td class="label-cell"><b>TỔNG T6</b><br><span class="sub-label">1–28/6</span></td>
-<td>153.72</td><td>626.24</td><td class="nq-spend">143.27</td>
-<td class="gg-col">45.80</td><td class="crm-col">44.21</td>
-<td class="nonq-col"><b>869.98</b></td>
-<td class="tong-col">1013.25</td>
-<td class="sep-l">9,588</td><td>40,127</td>
-<td class="sep-l">5,814</td><td>17,532</td>
-<td class="sep-l kh-new">8,861</td><td class="kh-cu">21,499</td><td class="kh-tot"><b>30,360</b></td>
-<td class="rev-col sep-l">23.141</td>
-<td class="lm-td sep-l">699</td><td class="lm-td">17,823</td>
-<td class="tlm-td tlm-hi sep-l">4343.35%</td><td class="tlm-td tlm-hi">170.34%</td>
-<td class="ck-td sep-l">89.6</td><td class="ck-td">341.6</td>
-<td class="ctr-td sep-l">0.94%</td><td class="ctr-td">0.85%</td>
-<td class="pct-td sep-l">0.32%</td><td class="pct-td">0.08%</td>
-<td class="pct-td sep-l">0.52%</td><td class="pct-td">0.17%</td>
-<td class="pct-td sep-l">0.06%</td><td class="pct-td">0.13%</td>
-</tr></tbody></table></div><div class="section-title">📅 Chi tiết theo ngày</div>
-<div class="tbl-wrap"><table><thead>
 <tr>
-  <th rowspan="2" class="th-label">Tuần / Ngày</th>
-  <th colspan="3" class="th-chi">CHI TIÊU (triệu đ)</th>
-  <th class="th-gg">GG</th><th class="th-crm">CRM</th>
-  <th class="th-nonq">TỔNG HT</th>
-  <th class="th-tong">+NQ</th>
-  <th colspan="2" class="th-ht">HIỂN THỊ (nghìn)</th>
-  <th colspan="2" class="th-tc">TIẾP CẬN (nghìn)</th>
-  <th colspan="3" class="th-kh">KHÁCH (hệ thống)</th>
-  <th class="th-rev">DOANH THU</th>
-  <th colspan="2" class="th-lm">LƯỢT MUA (ads)</th>
-  <th colspan="2" class="th-tlm">KH/LƯỢT MUA</th>
-  <th colspan="2" class="th-ck">CLICKS (nghìn)</th>
-  <th colspan="2" class="th-ctr">CTR (%)</th>
-  <th colspan="2" class="th-pht">TỶ LỆ HT → KH</th>
-  <th colspan="2" class="th-ptc">TỶ LỆ TC → KH</th>
-  <th colspan="2" class="th-tb">TB TỔNG KÊNH</th>
+<th>TikTok</th><th>FB+Cường</th><th class="dim">NQ</th>
+<th class="gg">(M₫)</th><th class="crm">(M₫)</th><th class="nonq">(M₫)</th>
+<th>TikTok</th><th>FB</th><th>TikTok</th><th>FB</th>
+<th class="new">Mới</th><th class="cu">Cũ&gt;12W</th><th class="tot">Mới+Cũ</th>
+<th class="rev">(tỷ₫)</th>
+<th class="lm">TK*</th><th class="lm">FB</th>
+<th>TK</th><th>FB</th>
+<th class="ck">TK</th><th class="ck">FB</th>
+<th class="ctr">TK</th><th class="ctr">FB</th>
+<th>(₫/KH)</th>
 </tr>
-<tr class="sub-head">
-  <th class="th-chi">TikTok</th><th class="th-chi">FB+Cường</th><th class="th-chi">NQ</th>
-  <th class="th-gg">(tr.đ)</th><th class="th-crm">(tr.đ)</th>
-  <th class="th-nonq">(tr.đ)</th><th class="th-tong">(tr.đ)</th>
-  <th class="th-ht">TikTok</th><th class="th-ht">FB+Cường</th>
-  <th class="th-tc">TikTok</th><th class="th-tc">FB+Cường</th>
-  <th class="th-kh">Mới</th><th class="th-kh">Cũ&gt;12W</th><th class="th-kh">Mới+Cũ&gt;12W</th>
-  <th class="th-rev">(tỷ đ)</th>
-  <th class="th-lm">TikTok*</th><th class="th-lm">FB+Cường</th>
-  <th class="th-tlm">KH/LM TikTok</th><th class="th-tlm">KH/LM FB</th>
-  <th class="th-ck">TikTok</th><th class="th-ck">FB+Cường</th>
-  <th class="th-ctr">TikTok</th><th class="th-ctr">FB+Cường</th>
-  <th class="th-pht">TikTok</th><th class="th-pht">FB+Cường</th>
-  <th class="th-ptc">TikTok</th><th class="th-ptc">FB+Cường</th>
-  <th class="th-tb">Hiển thị</th><th class="th-tb">Tiếp cận</th>
+</thead>
+<tbody>
+<tr class="week-row">
+<td class="sticky"><b>W1</b><br><small>1–7/6</small></td>
+<td>29.46</td><td>132.20</td><td class="dim">37.10</td>
+<td class="gg">11.72</td><td class="crm">—</td>
+<td class="nonq"><b>173.38</b></td>
+<td class="sl">1,994</td><td>6,001</td>
+<td class="sl">1,289</td><td>2,725</td>
+<td class="sl new">2,076</td><td class="cu">5,289</td><td class="tot"><b>7,365</b></td>
+<td class="rev sl">5.72</td>
+<td class="sl lm">128</td><td class="lm">6,844</td>
+<td class="sl tlm hi">5754%</td><td class="tlm hi">108%</td>
+<td class="sl ck">15.8k</td><td class="ck">66.0k</td>
+<td class="sl ctr">0.79%</td><td class="ctr">1.10%</td>
+<td class="sl ok">23,541đ</td>
+</tr><tr class="week-row">
+<td class="sticky"><b>W2</b><br><small>8–14/6</small></td>
+<td>46.15</td><td>193.64</td><td class="dim">34.46</td>
+<td class="gg">11.39</td><td class="crm">9.72</td>
+<td class="nonq"><b>260.91</b></td>
+<td class="sl">2,920</td><td>9,347</td>
+<td class="sl">1,785</td><td>3,708</td>
+<td class="sl new">2,098</td><td class="cu">5,270</td><td class="tot"><b>7,368</b></td>
+<td class="rev sl">5.68</td>
+<td class="sl lm">221</td><td class="lm">7,060</td>
+<td class="sl tlm hi">3334%</td><td class="tlm hi">104%</td>
+<td class="sl ck">30.1k</td><td class="ck">116.1k</td>
+<td class="sl ctr">1.03%</td><td class="ctr">1.24%</td>
+<td class="sl bad">35,411đ</td>
+</tr><tr class="week-row">
+<td class="sticky"><b>W3</b><br><small>15–21/6</small></td>
+<td>53.10</td><td>223.93</td><td class="dim">36.18</td>
+<td class="gg">12.83</td><td class="crm">19.74</td>
+<td class="nonq"><b>309.59</b></td>
+<td class="sl">3,266</td><td>17,876</td>
+<td class="sl">1,853</td><td>7,860</td>
+<td class="sl new">2,185</td><td class="cu">5,145</td><td class="tot"><b>7,330</b></td>
+<td class="rev sl">5.48</td>
+<td class="sl lm">283</td><td class="lm">3,100</td>
+<td class="sl tlm hi">2590%</td><td class="tlm hi">236%</td>
+<td class="sl ck">29.9k</td><td class="ck">126.5k</td>
+<td class="sl ctr">0.92%</td><td class="ctr">0.71%</td>
+<td class="sl bad">42,236đ</td>
+</tr><tr class="week-row">
+<td class="sticky"><b>W4</b><br><small>22–28/6</small></td>
+<td>25.01</td><td>76.47</td><td class="dim">35.40</td>
+<td class="gg">9.86</td><td class="crm">14.76</td>
+<td class="nonq"><b>126.09</b></td>
+<td class="sl">1,408</td><td>6,901</td>
+<td class="sl">887</td><td>3,236</td>
+<td class="sl new">2,181</td><td class="cu">5,140</td><td class="tot"><b>7,321</b></td>
+<td class="rev sl">5.54</td>
+<td class="sl lm">67</td><td class="lm">819</td>
+<td class="sl tlm hi">10927%</td><td class="tlm hi">894%</td>
+<td class="sl ck">13.8k</td><td class="ck">33.0k</td>
+<td class="sl ctr">0.98%</td><td class="ctr">0.48%</td>
+<td class="sl ok">17,223đ</td>
+</tr><tr class="total-row">
+<td class="sticky"><b>TỔNG T6</b><br><small>1–28/6</small></td>
+<td>153.72</td><td>626.24</td><td class="dim">143.14</td>
+<td class="gg">45.80</td><td class="crm">44.21</td>
+<td class="nonq"><b>869.97</b></td>
+<td class="sl">9,588</td><td>40,124</td>
+<td class="sl">5,814</td><td>17,530</td>
+<td class="sl new">8,540</td><td class="cu">20,844</td><td class="tot"><b>29,384</b></td>
+<td class="rev sl">22.42</td>
+<td class="sl lm">699</td><td class="lm">17,823</td>
+<td class="sl tlm hi">4204%</td><td class="tlm hi">165%</td>
+<td class="sl ck">89.6k</td><td class="ck">341.6k</td>
+<td class="sl ctr">0.94%</td><td class="ctr">0.85%</td>
+<td class="sl ok">29,607đ</td>
 </tr>
-</thead><tbody><tr class="week-header-row"><td colspan="30">Tuần 1 · 1–7/6</td></tr><tr class="">
-<td class="label-cell"><b>01/6</b> <span class="dow-badge dow-T2">T2</span></td>
-<td>4.25</td><td>19.39</td><td class="nq-spend">5.62</td>
-<td class="gg-col">1.37</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>25.01</b></td>
-<td class="tong-col">30.63</td>
-<td class="sep-l">285</td><td>1,011</td>
-<td class="sep-l">185</td><td>518</td>
-<td class="sep-l kh-new">237</td><td class="kh-cu">593</td><td class="kh-tot"><b>830</b></td>
-<td class="rev-col sep-l">0.665</td>
-<td class="lm-td sep-l">20</td><td class="lm-td">891</td>
-<td class="tlm-td tlm-hi sep-l">4150.00%</td><td class="tlm-td tlm-mid">93.15%</td>
-<td class="ck-td sep-l">2.2</td><td class="ck-td">8.9</td>
-<td class="ctr-td sep-l">0.79%</td><td class="ctr-td">0.88%</td>
-<td class="pct-td sep-l">0.29%</td><td class="pct-td">0.08%</td>
-<td class="pct-td sep-l">0.45%</td><td class="pct-td">0.16%</td>
-<td class="pct-td sep-l">0.06%</td><td class="pct-td">0.12%</td>
+</tbody>
+</table></div>
+</div>
+
+<div id="tab-daily" class="tab-pane">
+<div class="tbl-wrap" style="max-height:520px;overflow-y:auto"><table>
+<thead>
+<tr>
+<th rowspan="2" class="sticky">Ngày</th>
+<th colspan="3">CHI (M₫)</th><th>GG</th><th>CRM</th><th>TỔNG HT</th>
+<th colspan="2">HIỂN THỊ (k)</th><th colspan="2">TIẾP CẬN (k)</th>
+<th colspan="3">KHÁCH</th><th>DOANH THU (tỷ)</th>
+<th colspan="2">LƯỢT MUA</th><th colspan="2">KH/LM</th>
+<th colspan="2">CLICKS (k)</th><th colspan="2">CTR (%)</th><th>CPA</th>
+</tr>
+<tr>
+<th>TikTok</th><th>FB+Cường</th><th class="dim">NQ</th>
+<th class="gg">(M₫)</th><th class="crm">(M₫)</th><th class="nonq">(M₫)</th>
+<th>TikTok</th><th>FB</th><th>TikTok</th><th>FB</th>
+<th class="new">Mới</th><th class="cu">Cũ&gt;12W</th><th class="tot">Mới+Cũ</th>
+<th class="rev">(tỷ₫)</th>
+<th class="lm">TK*</th><th class="lm">FB</th>
+<th>TK</th><th>FB</th>
+<th class="ck">TK</th><th class="ck">FB</th>
+<th class="ctr">TK</th><th class="ctr">FB</th>
+<th>(₫/KH)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="sep-row"><td colspan="24">Tuần 1 · 1–7/6</td></tr><tr class="">
+<td class="sticky"><b>01/6</b><span class="dow dow-T2">T2</span></td>
+<td>4.25</td><td>19.39</td><td class="dim">5.62</td>
+<td class="gg">1.37</td><td class="crm">—</td>
+<td class="nonq"><b>25.01</b></td>
+<td class="sl">285</td><td>1,011</td>
+<td class="sl">185</td><td>518</td>
+<td class="sl new">237</td><td class="cu">593</td><td class="tot"><b>830</b></td>
+<td class="rev sl">0.665</td>
+<td class="sl lm">20</td><td class="lm">891</td>
+<td class="sl tlm hi">4150%</td><td class="tlm mid">93%</td>
+<td class="sl ck">2.2k</td><td class="ck">8.9k</td>
+<td class="sl ctr">0.79%</td><td class="ctr">0.88%</td>
+<td class="sl bad">30,131đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>02/6</b> <span class="dow-badge dow-T3">T3</span></td>
-<td>4.24</td><td>18.57</td><td class="nq-spend">5.95</td>
-<td class="gg-col">1.37</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>24.18</b></td>
-<td class="tong-col">30.12</td>
-<td class="sep-l">289</td><td>980</td>
-<td class="sep-l">192</td><td>486</td>
-<td class="sep-l kh-new">246</td><td class="kh-cu">605</td><td class="kh-tot"><b>851</b></td>
-<td class="rev-col sep-l">0.612</td>
-<td class="lm-td sep-l">13</td><td class="lm-td">810</td>
-<td class="tlm-td tlm-hi sep-l">6546.15%</td><td class="tlm-td tlm-hi">105.06%</td>
-<td class="ck-td sep-l">2.2</td><td class="ck-td">10.7</td>
-<td class="ctr-td sep-l">0.76%</td><td class="ctr-td">1.09%</td>
-<td class="pct-td sep-l">0.29%</td><td class="pct-td">0.09%</td>
-<td class="pct-td sep-l">0.44%</td><td class="pct-td">0.18%</td>
-<td class="pct-td sep-l">0.07%</td><td class="pct-td">0.13%</td>
+<td class="sticky"><b>02/6</b><span class="dow dow-T2">T2</span></td>
+<td>4.24</td><td>18.57</td><td class="dim">5.95</td>
+<td class="gg">1.37</td><td class="crm">—</td>
+<td class="nonq"><b>24.18</b></td>
+<td class="sl">289</td><td>980</td>
+<td class="sl">192</td><td>486</td>
+<td class="sl new">246</td><td class="cu">605</td><td class="tot"><b>851</b></td>
+<td class="rev sl">0.612</td>
+<td class="sl lm">13</td><td class="lm">810</td>
+<td class="sl tlm hi">6546%</td><td class="tlm hi">105%</td>
+<td class="sl ck">2.2k</td><td class="ck">10.7k</td>
+<td class="sl ctr">0.76%</td><td class="ctr">1.09%</td>
+<td class="sl ok">28,409đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>03/6</b> <span class="dow-badge dow-T4">T4</span></td>
-<td>4.22</td><td>18.48</td><td class="nq-spend">4.69</td>
-<td class="gg-col">2.08</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>24.78</b></td>
-<td class="tong-col">29.47</td>
-<td class="sep-l">278</td><td>840</td>
-<td class="sep-l">186</td><td>342</td>
-<td class="sep-l kh-new">263</td><td class="kh-cu">687</td><td class="kh-tot"><b>950</b></td>
-<td class="rev-col sep-l">0.754</td>
-<td class="lm-td sep-l">12</td><td class="lm-td">1,002</td>
-<td class="tlm-td tlm-hi sep-l">7916.67%</td><td class="tlm-td tlm-mid">94.81%</td>
-<td class="ck-td sep-l">2.2</td><td class="ck-td">11.2</td>
-<td class="ctr-td sep-l">0.81%</td><td class="ctr-td">1.33%</td>
-<td class="pct-td sep-l">0.34%</td><td class="pct-td">0.11%</td>
-<td class="pct-td sep-l">0.51%</td><td class="pct-td">0.28%</td>
-<td class="pct-td sep-l">0.08%</td><td class="pct-td">0.18%</td>
+<td class="sticky"><b>03/6</b><span class="dow dow-T2">T2</span></td>
+<td>4.22</td><td>18.48</td><td class="dim">4.69</td>
+<td class="gg">2.08</td><td class="crm">—</td>
+<td class="nonq"><b>24.78</b></td>
+<td class="sl">278</td><td>840</td>
+<td class="sl">186</td><td>342</td>
+<td class="sl new">263</td><td class="cu">687</td><td class="tot"><b>950</b></td>
+<td class="rev sl">0.754</td>
+<td class="sl lm">12</td><td class="lm">1,002</td>
+<td class="sl tlm hi">7917%</td><td class="tlm mid">95%</td>
+<td class="sl ck">2.2k</td><td class="ck">11.2k</td>
+<td class="sl ctr">0.81%</td><td class="ctr">1.33%</td>
+<td class="sl ok">26,085đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>04/6</b> <span class="dow-badge dow-T5">T5</span></td>
-<td>4.21</td><td>19.10</td><td class="nq-spend">2.41</td>
-<td class="gg-col">1.71</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>25.02</b></td>
-<td class="tong-col">27.42</td>
-<td class="sep-l">284</td><td>889</td>
-<td class="sep-l">180</td><td>369</td>
-<td class="sep-l kh-new">258</td><td class="kh-cu">684</td><td class="kh-tot"><b>942</b></td>
-<td class="rev-col sep-l">0.739</td>
-<td class="lm-td sep-l">14</td><td class="lm-td">1,006</td>
-<td class="tlm-td tlm-hi sep-l">6728.57%</td><td class="tlm-td tlm-mid">93.64%</td>
-<td class="ck-td sep-l">2.2</td><td class="ck-td">10.2</td>
-<td class="ctr-td sep-l">0.76%</td><td class="ctr-td">1.15%</td>
-<td class="pct-td sep-l">0.33%</td><td class="pct-td">0.11%</td>
-<td class="pct-td sep-l">0.52%</td><td class="pct-td">0.26%</td>
-<td class="pct-td sep-l">0.08%</td><td class="pct-td">0.17%</td>
+<td class="sticky"><b>04/6</b><span class="dow dow-T2">T2</span></td>
+<td>4.21</td><td>19.10</td><td class="dim">2.41</td>
+<td class="gg">1.71</td><td class="crm">—</td>
+<td class="nonq"><b>25.02</b></td>
+<td class="sl">284</td><td>889</td>
+<td class="sl">180</td><td>369</td>
+<td class="sl new">258</td><td class="cu">684</td><td class="tot"><b>942</b></td>
+<td class="rev sl">0.739</td>
+<td class="sl lm">14</td><td class="lm">1,006</td>
+<td class="sl tlm hi">6729%</td><td class="tlm mid">94%</td>
+<td class="sl ck">2.2k</td><td class="ck">10.2k</td>
+<td class="sl ctr">0.76%</td><td class="ctr">1.15%</td>
+<td class="sl ok">26,557đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>05/6</b> <span class="dow-badge dow-T6">T6</span></td>
-<td>4.19</td><td>18.70</td><td class="nq-spend">6.23</td>
-<td class="gg-col">1.52</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>24.41</b></td>
-<td class="tong-col">30.64</td>
-<td class="sep-l">280</td><td>886</td>
-<td class="sep-l">180</td><td>390</td>
-<td class="sep-l kh-new">277</td><td class="kh-cu">740</td><td class="kh-tot"><b>1,017</b></td>
-<td class="rev-col sep-l">0.791</td>
-<td class="lm-td sep-l">19</td><td class="lm-td">968</td>
-<td class="tlm-td tlm-hi sep-l">5352.63%</td><td class="tlm-td tlm-hi">105.06%</td>
-<td class="ck-td sep-l">2.2</td><td class="ck-td">9.6</td>
-<td class="ctr-td sep-l">0.78%</td><td class="ctr-td">1.08%</td>
-<td class="pct-td sep-l">0.36%</td><td class="pct-td">0.11%</td>
-<td class="pct-td sep-l">0.57%</td><td class="pct-td">0.26%</td>
-<td class="pct-td sep-l">0.09%</td><td class="pct-td">0.18%</td>
-</tr><tr class="wknd-row">
-<td class="label-cell"><b>06/6</b> <span class="dow-badge dow-T7">T7</span></td>
-<td>4.12</td><td>18.46</td><td class="nq-spend">6.09</td>
-<td class="gg-col">1.94</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>24.52</b></td>
-<td class="tong-col">30.60</td>
-<td class="sep-l">281</td><td>744</td>
-<td class="sep-l">181</td><td>316</td>
-<td class="sep-l kh-new">338</td><td class="kh-cu">947</td><td class="kh-tot"><b>1,285</b></td>
-<td class="rev-col sep-l">1.021</td>
-<td class="lm-td sep-l">25</td><td class="lm-td">1,119</td>
-<td class="tlm-td tlm-hi sep-l">5140.00%</td><td class="tlm-td tlm-hi">114.83%</td>
-<td class="ck-td sep-l">2.3</td><td class="ck-td">8.3</td>
-<td class="ctr-td sep-l">0.82%</td><td class="ctr-td">1.11%</td>
-<td class="pct-td sep-l">0.46%</td><td class="pct-td">0.17%</td>
-<td class="pct-td sep-l">0.71%</td><td class="pct-td">0.41%</td>
-<td class="pct-td sep-l">0.13%</td><td class="pct-td">0.26%</td>
-</tr><tr class="wknd-row">
-<td class="label-cell"><b>07/6</b> <span class="dow-badge dow-CN">CN</span></td>
-<td>4.23</td><td>19.50</td><td class="nq-spend">6.12</td>
-<td class="gg-col">1.74</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>25.47</b></td>
-<td class="tong-col">31.59</td>
-<td class="sep-l">298</td><td>651</td>
-<td class="sep-l">186</td><td>305</td>
-<td class="sep-l kh-new">457</td><td class="kh-cu">1,033</td><td class="kh-tot"><b>1,490</b></td>
-<td class="rev-col sep-l">1.132</td>
-<td class="lm-td sep-l">25</td><td class="lm-td">1,048</td>
-<td class="tlm-td tlm-hi sep-l">5960.00%</td><td class="tlm-td tlm-hi">142.18%</td>
-<td class="ck-td sep-l">2.4</td><td class="ck-td">7.2</td>
-<td class="ctr-td sep-l">0.82%</td><td class="ctr-td">1.11%</td>
-<td class="pct-td sep-l">0.50%</td><td class="pct-td">0.23%</td>
-<td class="pct-td sep-l">0.80%</td><td class="pct-td">0.49%</td>
-<td class="pct-td sep-l">0.16%</td><td class="pct-td">0.30%</td>
-</tr><tr class="week-header-row"><td colspan="30">Tuần 2 · 8–14/6</td></tr><tr class="">
-<td class="label-cell"><b>08/6</b> <span class="dow-badge dow-T2">T2</span></td>
-<td>4.24</td><td>20.35</td><td class="nq-spend">5.84</td>
-<td class="gg-col">1.02</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>25.61</b></td>
-<td class="tong-col">31.45</td>
-<td class="sep-l">282</td><td>876</td>
-<td class="sep-l">184</td><td>385</td>
-<td class="sep-l kh-new">210</td><td class="kh-cu">649</td><td class="kh-tot"><b>859</b></td>
-<td class="rev-col sep-l">0.664</td>
-<td class="lm-td sep-l">14</td><td class="lm-td">690</td>
-<td class="tlm-td tlm-hi sep-l">6135.71%</td><td class="tlm-td tlm-hi">124.49%</td>
-<td class="ck-td sep-l">2.5</td><td class="ck-td">9.9</td>
-<td class="ctr-td sep-l">0.89%</td><td class="ctr-td">1.14%</td>
-<td class="pct-td sep-l">0.30%</td><td class="pct-td">0.10%</td>
-<td class="pct-td sep-l">0.47%</td><td class="pct-td">0.22%</td>
-<td class="pct-td sep-l">0.07%</td><td class="pct-td">0.15%</td>
+<td class="sticky"><b>05/6</b><span class="dow dow-T2">T2</span></td>
+<td>4.19</td><td>18.70</td><td class="dim">6.23</td>
+<td class="gg">1.52</td><td class="crm">—</td>
+<td class="nonq"><b>24.41</b></td>
+<td class="sl">280</td><td>886</td>
+<td class="sl">180</td><td>390</td>
+<td class="sl new">277</td><td class="cu">740</td><td class="tot"><b>1,017</b></td>
+<td class="rev sl">0.791</td>
+<td class="sl lm">19</td><td class="lm">968</td>
+<td class="sl tlm hi">5353%</td><td class="tlm hi">105%</td>
+<td class="sl ck">2.2k</td><td class="ck">9.6k</td>
+<td class="sl ctr">0.78%</td><td class="ctr">1.08%</td>
+<td class="sl ok">23,998đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>09/6</b> <span class="dow-badge dow-T3">T3</span></td>
-<td>7.08</td><td>20.48</td><td class="nq-spend">5.08</td>
-<td class="gg-col">1.54</td><td class="crm-col">5.23</td>
-<td class="nonq-col"><b>34.33</b></td>
-<td class="tong-col">39.41</td>
-<td class="sep-l">434</td><td>884</td>
-<td class="sep-l">257</td><td>308</td>
-<td class="sep-l kh-new">290</td><td class="kh-cu">619</td><td class="kh-tot"><b>909</b></td>
-<td class="rev-col sep-l">0.695</td>
-<td class="lm-td sep-l">21</td><td class="lm-td">843</td>
-<td class="tlm-td tlm-hi sep-l">4328.57%</td><td class="tlm-td tlm-hi">107.83%</td>
-<td class="ck-td sep-l">5.5</td><td class="ck-td">13.6</td>
-<td class="ctr-td sep-l">1.28%</td><td class="ctr-td">1.53%</td>
-<td class="pct-td sep-l">0.21%</td><td class="pct-td">0.10%</td>
-<td class="pct-td sep-l">0.35%</td><td class="pct-td">0.30%</td>
-<td class="pct-td sep-l">0.07%</td><td class="pct-td">0.16%</td>
+<td class="sticky"><b>06/6</b><span class="dow dow-T2">T2</span></td>
+<td>4.12</td><td>18.46</td><td class="dim">6.09</td>
+<td class="gg">1.94</td><td class="crm">—</td>
+<td class="nonq"><b>24.52</b></td>
+<td class="sl">281</td><td>744</td>
+<td class="sl">181</td><td>316</td>
+<td class="sl new">338</td><td class="cu">947</td><td class="tot"><b>1,285</b></td>
+<td class="rev sl">1.021</td>
+<td class="sl lm">25</td><td class="lm">1,119</td>
+<td class="sl tlm hi">5140%</td><td class="tlm hi">115%</td>
+<td class="sl ck">2.3k</td><td class="ck">8.3k</td>
+<td class="sl ctr">0.82%</td><td class="ctr">1.11%</td>
+<td class="sl ok">19,079đ</td>
+</tr><tr class="wknd">
+<td class="sticky"><b>07/6</b><span class="dow dow-CN">CN</span></td>
+<td>4.23</td><td>19.50</td><td class="dim">6.12</td>
+<td class="gg">1.74</td><td class="crm">—</td>
+<td class="nonq"><b>25.47</b></td>
+<td class="sl">298</td><td>651</td>
+<td class="sl">186</td><td>305</td>
+<td class="sl new">457</td><td class="cu">1,033</td><td class="tot"><b>1,490</b></td>
+<td class="rev sl">1.132</td>
+<td class="sl lm">25</td><td class="lm">1,048</td>
+<td class="sl tlm hi">5960%</td><td class="tlm hi">142%</td>
+<td class="sl ck">2.4k</td><td class="ck">7.2k</td>
+<td class="sl ctr">0.82%</td><td class="ctr">1.11%</td>
+<td class="sl ok">17,095đ</td>
+</tr><tr class="sep-row"><td colspan="24">Tuần 2 · 8–14/6</td></tr><tr class="">
+<td class="sticky"><b>08/6</b><span class="dow dow-T2">T2</span></td>
+<td>4.24</td><td>20.35</td><td class="dim">5.84</td>
+<td class="gg">1.02</td><td class="crm">—</td>
+<td class="nonq"><b>25.61</b></td>
+<td class="sl">282</td><td>876</td>
+<td class="sl">184</td><td>385</td>
+<td class="sl new">210</td><td class="cu">649</td><td class="tot"><b>859</b></td>
+<td class="rev sl">0.664</td>
+<td class="sl lm">14</td><td class="lm">690</td>
+<td class="sl tlm hi">6136%</td><td class="tlm hi">124%</td>
+<td class="sl ck">2.5k</td><td class="ck">9.9k</td>
+<td class="sl ctr">0.89%</td><td class="ctr">1.14%</td>
+<td class="sl ok">29,815đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>10/6</b> <span class="dow-badge dow-T4">T4</span></td>
-<td>6.68</td><td>15.38</td><td class="nq-spend">4.72</td>
-<td class="gg-col">1.97</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>24.03</b></td>
-<td class="tong-col">28.75</td>
-<td class="sep-l">400</td><td>741</td>
-<td class="sep-l">246</td><td>348</td>
-<td class="sep-l kh-new">260</td><td class="kh-cu">628</td><td class="kh-tot"><b>888</b></td>
-<td class="rev-col sep-l">0.720</td>
-<td class="lm-td sep-l">26</td><td class="lm-td">806</td>
-<td class="tlm-td tlm-hi sep-l">3415.38%</td><td class="tlm-td tlm-hi">110.17%</td>
-<td class="ck-td sep-l">4.1</td><td class="ck-td">9.9</td>
-<td class="ctr-td sep-l">1.02%</td><td class="ctr-td">1.34%</td>
-<td class="pct-td sep-l">0.22%</td><td class="pct-td">0.12%</td>
-<td class="pct-td sep-l">0.36%</td><td class="pct-td">0.26%</td>
-<td class="pct-td sep-l">0.08%</td><td class="pct-td">0.15%</td>
+<td class="sticky"><b>09/6</b><span class="dow dow-T2">T2</span></td>
+<td>7.08</td><td>20.48</td><td class="dim">5.08</td>
+<td class="gg">1.54</td><td class="crm">5.23</td>
+<td class="nonq"><b>34.33</b></td>
+<td class="sl">434</td><td>884</td>
+<td class="sl">257</td><td>308</td>
+<td class="sl new">290</td><td class="cu">619</td><td class="tot"><b>909</b></td>
+<td class="rev sl">0.695</td>
+<td class="sl lm">21</td><td class="lm">843</td>
+<td class="sl tlm hi">4329%</td><td class="tlm hi">108%</td>
+<td class="sl ck">5.5k</td><td class="ck">13.6k</td>
+<td class="sl ctr">1.28%</td><td class="ctr">1.53%</td>
+<td class="sl bad">37,766đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>11/6</b> <span class="dow-badge dow-T5">T5</span></td>
-<td>6.99</td><td>32.71</td><td class="nq-spend">4.83</td>
-<td class="gg-col">1.65</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>41.36</b></td>
-<td class="tong-col">46.20</td>
-<td class="sep-l">446</td><td>1,439</td>
-<td class="sep-l">269</td><td>602</td>
-<td class="sep-l kh-new">260</td><td class="kh-cu">710</td><td class="kh-tot"><b>970</b></td>
-<td class="rev-col sep-l">0.733</td>
-<td class="lm-td sep-l">25</td><td class="lm-td">910</td>
-<td class="tlm-td tlm-hi sep-l">3880.00%</td><td class="tlm-td tlm-hi">106.59%</td>
-<td class="ck-td sep-l">4.4</td><td class="ck-td">25.4</td>
-<td class="ctr-td sep-l">0.99%</td><td class="ctr-td">1.77%</td>
-<td class="pct-td sep-l">0.22%</td><td class="pct-td">0.07%</td>
-<td class="pct-td sep-l">0.36%</td><td class="pct-td">0.16%</td>
-<td class="pct-td sep-l">0.05%</td><td class="pct-td">0.11%</td>
+<td class="sticky"><b>10/6</b><span class="dow dow-T2">T2</span></td>
+<td>6.68</td><td>15.38</td><td class="dim">4.72</td>
+<td class="gg">1.97</td><td class="crm">—</td>
+<td class="nonq"><b>24.03</b></td>
+<td class="sl">400</td><td>741</td>
+<td class="sl">246</td><td>348</td>
+<td class="sl new">260</td><td class="cu">628</td><td class="tot"><b>888</b></td>
+<td class="rev sl">0.720</td>
+<td class="sl lm">26</td><td class="lm">806</td>
+<td class="sl tlm hi">3415%</td><td class="tlm hi">110%</td>
+<td class="sl ck">4.1k</td><td class="ck">9.9k</td>
+<td class="sl ctr">1.02%</td><td class="ctr">1.34%</td>
+<td class="sl ok">27,063đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>12/6</b> <span class="dow-badge dow-T6">T6</span></td>
-<td>7.32</td><td>31.48</td><td class="nq-spend">3.88</td>
-<td class="gg-col">1.77</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>40.57</b></td>
-<td class="tong-col">44.44</td>
-<td class="sep-l">457</td><td>1,382</td>
-<td class="sep-l">278</td><td>503</td>
-<td class="sep-l kh-new">305</td><td class="kh-cu">725</td><td class="kh-tot"><b>1,030</b></td>
-<td class="rev-col sep-l">0.801</td>
-<td class="lm-td sep-l">37</td><td class="lm-td">1,009</td>
-<td class="tlm-td tlm-hi sep-l">2783.78%</td><td class="tlm-td tlm-hi">102.08%</td>
-<td class="ck-td sep-l">4.9</td><td class="ck-td">18.3</td>
-<td class="ctr-td sep-l">1.07%</td><td class="ctr-td">1.32%</td>
-<td class="pct-td sep-l">0.23%</td><td class="pct-td">0.07%</td>
-<td class="pct-td sep-l">0.37%</td><td class="pct-td">0.20%</td>
-<td class="pct-td sep-l">0.06%</td><td class="pct-td">0.13%</td>
-</tr><tr class="wknd-row">
-<td class="label-cell"><b>13/6</b> <span class="dow-badge dow-T7">T7</span></td>
-<td>7.10</td><td>36.14</td><td class="nq-spend">4.85</td>
-<td class="gg-col">1.86</td><td class="crm-col">4.49</td>
-<td class="nonq-col"><b>49.59</b></td>
-<td class="tong-col">54.44</td>
-<td class="sep-l">450</td><td>1,971</td>
-<td class="sep-l">277</td><td>755</td>
-<td class="sep-l kh-new">386</td><td class="kh-cu">935</td><td class="kh-tot"><b>1,321</b></td>
-<td class="rev-col sep-l">1.014</td>
-<td class="lm-td sep-l">49</td><td class="lm-td">1,422</td>
-<td class="tlm-td tlm-hi sep-l">2695.92%</td><td class="tlm-td tlm-mid">92.90%</td>
-<td class="ck-td sep-l">4.4</td><td class="ck-td">19.8</td>
-<td class="ctr-td sep-l">0.98%</td><td class="ctr-td">1.01%</td>
-<td class="pct-td sep-l">0.29%</td><td class="pct-td">0.07%</td>
-<td class="pct-td sep-l">0.48%</td><td class="pct-td">0.18%</td>
-<td class="pct-td sep-l">0.05%</td><td class="pct-td">0.13%</td>
-</tr><tr class="wknd-row">
-<td class="label-cell"><b>14/6</b> <span class="dow-badge dow-CN">CN</span></td>
-<td>6.74</td><td>37.10</td><td class="nq-spend">5.26</td>
-<td class="gg-col">1.58</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>45.43</b></td>
-<td class="tong-col">50.68</td>
-<td class="sep-l">450</td><td>2,053</td>
-<td class="sep-l">273</td><td>808</td>
-<td class="sep-l kh-new">387</td><td class="kh-cu">1,004</td><td class="kh-tot"><b>1,391</b></td>
-<td class="rev-col sep-l">1.055</td>
-<td class="lm-td sep-l">49</td><td class="lm-td">1,380</td>
-<td class="tlm-td tlm-hi sep-l">2838.78%</td><td class="tlm-td tlm-hi">100.80%</td>
-<td class="ck-td sep-l">4.2</td><td class="ck-td">19.1</td>
-<td class="ctr-td sep-l">0.94%</td><td class="ctr-td">0.93%</td>
-<td class="pct-td sep-l">0.31%</td><td class="pct-td">0.07%</td>
-<td class="pct-td sep-l">0.51%</td><td class="pct-td">0.17%</td>
-<td class="pct-td sep-l">0.06%</td><td class="pct-td">0.13%</td>
-</tr><tr class="week-header-row"><td colspan="30">Tuần 3 · 15–21/6</td></tr><tr class="">
-<td class="label-cell"><b>15/6</b> <span class="dow-badge dow-T2">T2</span></td>
-<td>7.90</td><td>40.08</td><td class="nq-spend">5.42</td>
-<td class="gg-col">1.12</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>49.10</b></td>
-<td class="tong-col">54.52</td>
-<td class="sep-l">502</td><td>2,365</td>
-<td class="sep-l">294</td><td>904</td>
-<td class="sep-l kh-new">240</td><td class="kh-cu">503</td><td class="kh-tot"><b>743</b></td>
-<td class="rev-col sep-l">0.561</td>
-<td class="lm-td sep-l">34</td><td class="lm-td">705</td>
-<td class="tlm-td tlm-hi sep-l">2185.29%</td><td class="tlm-td tlm-hi">105.39%</td>
-<td class="ck-td sep-l">4.7</td><td class="ck-td">20.9</td>
-<td class="ctr-td sep-l">0.93%</td><td class="ctr-td">0.88%</td>
-<td class="pct-td sep-l">0.15%</td><td class="pct-td">0.03%</td>
-<td class="pct-td sep-l">0.25%</td><td class="pct-td">0.08%</td>
-<td class="pct-td sep-l">0.03%</td><td class="pct-td">0.06%</td>
+<td class="sticky"><b>11/6</b><span class="dow dow-T2">T2</span></td>
+<td>6.99</td><td>32.71</td><td class="dim">4.83</td>
+<td class="gg">1.65</td><td class="crm">—</td>
+<td class="nonq"><b>41.36</b></td>
+<td class="sl">446</td><td>1,439</td>
+<td class="sl">269</td><td>602</td>
+<td class="sl new">260</td><td class="cu">710</td><td class="tot"><b>970</b></td>
+<td class="rev sl">0.733</td>
+<td class="sl lm">25</td><td class="lm">910</td>
+<td class="sl tlm hi">3880%</td><td class="tlm hi">107%</td>
+<td class="sl ck">4.4k</td><td class="ck">25.4k</td>
+<td class="sl ctr">0.99%</td><td class="ctr">1.77%</td>
+<td class="sl bad">42,642đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>16/6</b> <span class="dow-badge dow-T3">T3</span></td>
-<td>7.83</td><td>12.29</td><td class="nq-spend">4.96</td>
-<td class="gg-col">1.74</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>21.86</b></td>
-<td class="tong-col">26.82</td>
-<td class="sep-l">476</td><td>804</td>
-<td class="sep-l">286</td><td>414</td>
-<td class="sep-l kh-new">268</td><td class="kh-cu">651</td><td class="kh-tot"><b>919</b></td>
-<td class="rev-col sep-l">0.656</td>
-<td class="lm-td sep-l">37</td><td class="lm-td">695</td>
-<td class="tlm-td tlm-hi sep-l">2483.78%</td><td class="tlm-td tlm-hi">132.23%</td>
-<td class="ck-td sep-l">4.5</td><td class="ck-td">8.1</td>
-<td class="ctr-td sep-l">0.94%</td><td class="ctr-td">1.01%</td>
-<td class="pct-td sep-l">0.19%</td><td class="pct-td">0.11%</td>
-<td class="pct-td sep-l">0.32%</td><td class="pct-td">0.22%</td>
-<td class="pct-td sep-l">0.07%</td><td class="pct-td">0.13%</td>
+<td class="sticky"><b>12/6</b><span class="dow dow-T2">T2</span></td>
+<td>7.32</td><td>31.48</td><td class="dim">3.88</td>
+<td class="gg">1.77</td><td class="crm">—</td>
+<td class="nonq"><b>40.57</b></td>
+<td class="sl">457</td><td>1,382</td>
+<td class="sl">278</td><td>503</td>
+<td class="sl new">305</td><td class="cu">725</td><td class="tot"><b>1,030</b></td>
+<td class="rev sl">0.801</td>
+<td class="sl lm">37</td><td class="lm">1,009</td>
+<td class="sl tlm hi">2784%</td><td class="tlm hi">102%</td>
+<td class="sl ck">4.9k</td><td class="ck">18.3k</td>
+<td class="sl ctr">1.07%</td><td class="ctr">1.32%</td>
+<td class="sl bad">39,384đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>17/6</b> <span class="dow-badge dow-T4">T4</span></td>
-<td>7.95</td><td>25.74</td><td class="nq-spend">4.79</td>
-<td class="gg-col">1.51</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>35.21</b></td>
-<td class="tong-col">40.00</td>
-<td class="sep-l">511</td><td>2,018</td>
-<td class="sep-l">269</td><td>997</td>
-<td class="sep-l kh-new">278</td><td class="kh-cu">710</td><td class="kh-tot"><b>988</b></td>
-<td class="rev-col sep-l">0.742</td>
-<td class="lm-td sep-l">30</td><td class="lm-td">265</td>
-<td class="tlm-td tlm-hi sep-l">3293.33%</td><td class="tlm-td tlm-hi">372.83%</td>
-<td class="ck-td sep-l">4.4</td><td class="ck-td">24.9</td>
-<td class="ctr-td sep-l">0.87%</td><td class="ctr-td">1.23%</td>
-<td class="pct-td sep-l">0.19%</td><td class="pct-td">0.05%</td>
-<td class="pct-td sep-l">0.37%</td><td class="pct-td">0.10%</td>
-<td class="pct-td sep-l">0.04%</td><td class="pct-td">0.08%</td>
+<td class="sticky"><b>13/6</b><span class="dow dow-T2">T2</span></td>
+<td>7.10</td><td>36.14</td><td class="dim">4.85</td>
+<td class="gg">1.86</td><td class="crm">4.49</td>
+<td class="nonq"><b>49.59</b></td>
+<td class="sl">450</td><td>1,971</td>
+<td class="sl">277</td><td>755</td>
+<td class="sl new">386</td><td class="cu">935</td><td class="tot"><b>1,321</b></td>
+<td class="rev sl">1.014</td>
+<td class="sl lm">49</td><td class="lm">1,422</td>
+<td class="sl tlm hi">2696%</td><td class="tlm mid">93%</td>
+<td class="sl ck">4.4k</td><td class="ck">19.8k</td>
+<td class="sl ctr">0.98%</td><td class="ctr">1.01%</td>
+<td class="sl bad">37,537đ</td>
+</tr><tr class="wknd">
+<td class="sticky"><b>14/6</b><span class="dow dow-CN">CN</span></td>
+<td>6.74</td><td>37.10</td><td class="dim">5.26</td>
+<td class="gg">1.58</td><td class="crm">—</td>
+<td class="nonq"><b>45.43</b></td>
+<td class="sl">450</td><td>2,053</td>
+<td class="sl">273</td><td>808</td>
+<td class="sl new">387</td><td class="cu">1,004</td><td class="tot"><b>1,391</b></td>
+<td class="rev sl">1.055</td>
+<td class="sl lm">49</td><td class="lm">1,380</td>
+<td class="sl tlm hi">2839%</td><td class="tlm hi">101%</td>
+<td class="sl ck">4.2k</td><td class="ck">19.1k</td>
+<td class="sl ctr">0.94%</td><td class="ctr">0.93%</td>
+<td class="sl bad">32,656đ</td>
+</tr><tr class="sep-row"><td colspan="24">Tuần 3 · 15–21/6</td></tr><tr class="">
+<td class="sticky"><b>15/6</b><span class="dow dow-T2">T2</span></td>
+<td>7.90</td><td>40.08</td><td class="dim">5.42</td>
+<td class="gg">1.12</td><td class="crm">—</td>
+<td class="nonq"><b>49.10</b></td>
+<td class="sl">502</td><td>2,365</td>
+<td class="sl">294</td><td>904</td>
+<td class="sl new">240</td><td class="cu">503</td><td class="tot"><b>743</b></td>
+<td class="rev sl">0.561</td>
+<td class="sl lm">34</td><td class="lm">705</td>
+<td class="sl tlm hi">2185%</td><td class="tlm hi">105%</td>
+<td class="sl ck">4.7k</td><td class="ck">20.9k</td>
+<td class="sl ctr">0.93%</td><td class="ctr">0.88%</td>
+<td class="sl bad">66,081đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>18/6</b> <span class="dow-badge dow-T5">T5</span></td>
-<td>7.95</td><td>37.60</td><td class="nq-spend">4.98</td>
-<td class="gg-col">1.42</td><td class="crm-col">6.64</td>
-<td class="nonq-col"><b>53.61</b></td>
-<td class="tong-col">58.59</td>
-<td class="sep-l">475</td><td>3,165</td>
-<td class="sep-l">253</td><td>1,474</td>
-<td class="sep-l kh-new">275</td><td class="kh-cu">648</td><td class="kh-tot"><b>923</b></td>
-<td class="rev-col sep-l">0.693</td>
-<td class="lm-td sep-l">33</td><td class="lm-td">312</td>
-<td class="tlm-td tlm-hi sep-l">2796.97%</td><td class="tlm-td tlm-hi">295.83%</td>
-<td class="ck-td sep-l">4.4</td><td class="ck-td">18.8</td>
-<td class="ctr-td sep-l">0.93%</td><td class="ctr-td">0.59%</td>
-<td class="pct-td sep-l">0.19%</td><td class="pct-td">0.03%</td>
-<td class="pct-td sep-l">0.36%</td><td class="pct-td">0.06%</td>
-<td class="pct-td sep-l">0.03%</td><td class="pct-td">0.05%</td>
+<td class="sticky"><b>16/6</b><span class="dow dow-T2">T2</span></td>
+<td>7.83</td><td>12.29</td><td class="dim">4.96</td>
+<td class="gg">1.74</td><td class="crm">—</td>
+<td class="nonq"><b>21.86</b></td>
+<td class="sl">476</td><td>804</td>
+<td class="sl">286</td><td>414</td>
+<td class="sl new">268</td><td class="cu">651</td><td class="tot"><b>919</b></td>
+<td class="rev sl">0.656</td>
+<td class="sl lm">37</td><td class="lm">695</td>
+<td class="sl tlm hi">2484%</td><td class="tlm hi">132%</td>
+<td class="sl ck">4.5k</td><td class="ck">8.1k</td>
+<td class="sl ctr">0.94%</td><td class="ctr">1.01%</td>
+<td class="sl ok">23,788đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>19/6</b> <span class="dow-badge dow-T6">T6</span></td>
-<td>7.84</td><td>39.24</td><td class="nq-spend">5.33</td>
-<td class="gg-col">1.73</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>48.81</b></td>
-<td class="tong-col">54.14</td>
-<td class="sep-l">464</td><td>3,131</td>
-<td class="sep-l">261</td><td>1,350</td>
-<td class="sep-l kh-new">343</td><td class="kh-cu">759</td><td class="kh-tot"><b>1,102</b></td>
-<td class="rev-col sep-l">0.835</td>
-<td class="lm-td sep-l">54</td><td class="lm-td">374</td>
-<td class="tlm-td tlm-hi sep-l">2040.74%</td><td class="tlm-td tlm-hi">294.65%</td>
-<td class="ck-td sep-l">4.1</td><td class="ck-td">18.4</td>
-<td class="ctr-td sep-l">0.89%</td><td class="ctr-td">0.59%</td>
-<td class="pct-td sep-l">0.24%</td><td class="pct-td">0.04%</td>
-<td class="pct-td sep-l">0.42%</td><td class="pct-td">0.08%</td>
-<td class="pct-td sep-l">0.03%</td><td class="pct-td">0.07%</td>
-</tr><tr class="wknd-row">
-<td class="label-cell"><b>20/6</b> <span class="dow-badge dow-T7">T7</span></td>
-<td>6.75</td><td>26.12</td><td class="nq-spend">4.78</td>
-<td class="gg-col">2.29</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>35.16</b></td>
-<td class="tong-col">39.95</td>
-<td class="sep-l">409</td><td>2,410</td>
-<td class="sep-l">240</td><td>1,184</td>
-<td class="sep-l kh-new">368</td><td class="kh-cu">879</td><td class="kh-tot"><b>1,247</b></td>
-<td class="rev-col sep-l">0.976</td>
-<td class="lm-td sep-l">51</td><td class="lm-td">366</td>
-<td class="tlm-td tlm-hi sep-l">2445.10%</td><td class="tlm-td tlm-hi">340.71%</td>
-<td class="ck-td sep-l">3.8</td><td class="ck-td">13.8</td>
-<td class="ctr-td sep-l">0.92%</td><td class="ctr-td">0.57%</td>
-<td class="pct-td sep-l">0.30%</td><td class="pct-td">0.05%</td>
-<td class="pct-td sep-l">0.52%</td><td class="pct-td">0.11%</td>
-<td class="pct-td sep-l">0.04%</td><td class="pct-td">0.09%</td>
-</tr><tr class="wknd-row">
-<td class="label-cell"><b>21/6</b> <span class="dow-badge dow-CN">CN</span></td>
-<td>6.88</td><td>42.84</td><td class="nq-spend">5.91</td>
-<td class="gg-col">3.03</td><td class="crm-col">13.10</td>
-<td class="nonq-col"><b>65.84</b></td>
-<td class="tong-col">71.75</td>
-<td class="sep-l">430</td><td>3,983</td>
-<td class="sep-l">250</td><td>1,537</td>
-<td class="sep-l kh-new">413</td><td class="kh-cu">995</td><td class="kh-tot"><b>1,408</b></td>
-<td class="rev-col sep-l">1.017</td>
-<td class="lm-td sep-l">44</td><td class="lm-td">383</td>
-<td class="tlm-td tlm-hi sep-l">3200.00%</td><td class="tlm-td tlm-hi">367.62%</td>
-<td class="ck-td sep-l">4.1</td><td class="ck-td">21.7</td>
-<td class="ctr-td sep-l">0.95%</td><td class="ctr-td">0.55%</td>
-<td class="pct-td sep-l">0.33%</td><td class="pct-td">0.04%</td>
-<td class="pct-td sep-l">0.56%</td><td class="pct-td">0.09%</td>
-<td class="pct-td sep-l">0.03%</td><td class="pct-td">0.08%</td>
-</tr><tr class="week-header-row"><td colspan="30">Tuần 4 · 22–28/6</td></tr><tr class="">
-<td class="label-cell"><b>22/6</b> <span class="dow-badge dow-T2">T2</span></td>
-<td>8.01</td><td>39.50</td><td class="nq-spend">5.67</td>
-<td class="gg-col">1.96</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>49.47</b></td>
-<td class="tong-col">55.14</td>
-<td class="sep-l">443</td><td>3,737</td>
-<td class="sep-l">257</td><td>1,551</td>
-<td class="sep-l kh-new">321</td><td class="kh-cu">655</td><td class="kh-tot"><b>976</b></td>
-<td class="rev-col sep-l">0.721</td>
-<td class="lm-td sep-l">21</td><td class="lm-td">279</td>
-<td class="tlm-td tlm-hi sep-l">4647.62%</td><td class="tlm-td tlm-hi">349.82%</td>
-<td class="ck-td sep-l">4.2</td><td class="ck-td">16.0</td>
-<td class="ctr-td sep-l">0.95%</td><td class="ctr-td">0.43%</td>
-<td class="pct-td sep-l">0.22%</td><td class="pct-td">0.03%</td>
-<td class="pct-td sep-l">0.38%</td><td class="pct-td">0.06%</td>
-<td class="pct-td sep-l">0.02%</td><td class="pct-td">0.05%</td>
+<td class="sticky"><b>17/6</b><span class="dow dow-T2">T2</span></td>
+<td>7.95</td><td>25.74</td><td class="dim">4.79</td>
+<td class="gg">1.51</td><td class="crm">—</td>
+<td class="nonq"><b>35.21</b></td>
+<td class="sl">511</td><td>2,018</td>
+<td class="sl">269</td><td>997</td>
+<td class="sl new">278</td><td class="cu">710</td><td class="tot"><b>988</b></td>
+<td class="rev sl">0.742</td>
+<td class="sl lm">30</td><td class="lm">265</td>
+<td class="sl tlm hi">3293%</td><td class="tlm hi">373%</td>
+<td class="sl ck">4.4k</td><td class="ck">24.9k</td>
+<td class="sl ctr">0.87%</td><td class="ctr">1.23%</td>
+<td class="sl bad">35,634đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>23/6</b> <span class="dow-badge dow-T3">T3</span></td>
-<td>5.65</td><td>24.32</td><td class="nq-spend">5.18</td>
-<td class="gg-col">2.32</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>32.28</b></td>
-<td class="tong-col">37.46</td>
-<td class="sep-l">294</td><td>2,253</td>
-<td class="sep-l">185</td><td>1,089</td>
-<td class="sep-l kh-new">258</td><td class="kh-cu">612</td><td class="kh-tot"><b>870</b></td>
-<td class="rev-col sep-l">0.667</td>
-<td class="lm-td sep-l">26</td><td class="lm-td">242</td>
-<td class="tlm-td tlm-hi sep-l">3346.15%</td><td class="tlm-td tlm-hi">359.50%</td>
-<td class="ck-td sep-l">2.9</td><td class="ck-td">11.2</td>
-<td class="ctr-td sep-l">0.97%</td><td class="ctr-td">0.50%</td>
-<td class="pct-td sep-l">0.30%</td><td class="pct-td">0.04%</td>
-<td class="pct-td sep-l">0.47%</td><td class="pct-td">0.08%</td>
-<td class="pct-td sep-l">0.03%</td><td class="pct-td">0.07%</td>
+<td class="sticky"><b>18/6</b><span class="dow dow-T2">T2</span></td>
+<td>7.95</td><td>37.60</td><td class="dim">4.98</td>
+<td class="gg">1.42</td><td class="crm">6.64</td>
+<td class="nonq"><b>53.61</b></td>
+<td class="sl">475</td><td>3,165</td>
+<td class="sl">253</td><td>1,474</td>
+<td class="sl new">275</td><td class="cu">648</td><td class="tot"><b>923</b></td>
+<td class="rev sl">0.693</td>
+<td class="sl lm">33</td><td class="lm">312</td>
+<td class="sl tlm hi">2797%</td><td class="tlm hi">296%</td>
+<td class="sl ck">4.4k</td><td class="ck">18.8k</td>
+<td class="sl ctr">0.93%</td><td class="ctr">0.59%</td>
+<td class="sl bad">58,084đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>24/6</b> <span class="dow-badge dow-T4">T4</span></td>
-<td>4.30</td><td>4.46</td><td class="nq-spend">5.16</td>
-<td class="gg-col">1.35</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>10.11</b></td>
-<td class="tong-col">15.27</td>
-<td class="sep-l">247</td><td>372</td>
-<td class="sep-l">156</td><td>228</td>
-<td class="sep-l kh-new">300</td><td class="kh-cu">654</td><td class="kh-tot"><b>954</b></td>
-<td class="rev-col sep-l">0.714</td>
-<td class="lm-td sep-l">9</td><td class="lm-td">156</td>
-<td class="tlm-td tlm-hi sep-l">10600.00%</td><td class="tlm-td tlm-hi">611.54%</td>
-<td class="ck-td sep-l">2.4</td><td class="ck-td">1.4</td>
-<td class="ctr-td sep-l">0.96%</td><td class="ctr-td">0.36%</td>
-<td class="pct-td sep-l">0.39%</td><td class="pct-td">0.26%</td>
-<td class="pct-td sep-l">0.61%</td><td class="pct-td">0.42%</td>
-<td class="pct-td sep-l">0.15%</td><td class="pct-td">0.25%</td>
+<td class="sticky"><b>19/6</b><span class="dow dow-T2">T2</span></td>
+<td>7.84</td><td>39.24</td><td class="dim">5.33</td>
+<td class="gg">1.73</td><td class="crm">—</td>
+<td class="nonq"><b>48.81</b></td>
+<td class="sl">464</td><td>3,131</td>
+<td class="sl">261</td><td>1,350</td>
+<td class="sl new">343</td><td class="cu">759</td><td class="tot"><b>1,102</b></td>
+<td class="rev sl">0.835</td>
+<td class="sl lm">54</td><td class="lm">374</td>
+<td class="sl tlm hi">2041%</td><td class="tlm hi">295%</td>
+<td class="sl ck">4.1k</td><td class="ck">18.4k</td>
+<td class="sl ctr">0.89%</td><td class="ctr">0.59%</td>
+<td class="sl bad">44,292đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>25/6</b> <span class="dow-badge dow-T5">T5</span></td>
-<td>4.22</td><td>3.10</td><td class="nq-spend">5.34</td>
-<td class="gg-col">1.28</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>8.60</b></td>
-<td class="tong-col">13.94</td>
-<td class="sep-l">232</td><td>224</td>
-<td class="sep-l">145</td><td>146</td>
-<td class="sep-l kh-new">274</td><td class="kh-cu">619</td><td class="kh-tot"><b>893</b></td>
-<td class="rev-col sep-l">0.684</td>
-<td class="lm-td sep-l">9</td><td class="lm-td">50</td>
-<td class="tlm-td tlm-hi sep-l">9922.22%</td><td class="tlm-td tlm-hi">1786.00%</td>
-<td class="ck-td sep-l">2.4</td><td class="ck-td">1.4</td>
-<td class="ctr-td sep-l">1.04%</td><td class="ctr-td">0.64%</td>
-<td class="pct-td sep-l">0.38%</td><td class="pct-td">0.40%</td>
-<td class="pct-td sep-l">0.62%</td><td class="pct-td">0.61%</td>
-<td class="pct-td sep-l">0.20%</td><td class="pct-td">0.31%</td>
+<td class="sticky"><b>20/6</b><span class="dow dow-T2">T2</span></td>
+<td>6.75</td><td>26.12</td><td class="dim">4.78</td>
+<td class="gg">2.29</td><td class="crm">—</td>
+<td class="nonq"><b>35.16</b></td>
+<td class="sl">409</td><td>2,410</td>
+<td class="sl">240</td><td>1,184</td>
+<td class="sl new">368</td><td class="cu">879</td><td class="tot"><b>1,247</b></td>
+<td class="rev sl">0.976</td>
+<td class="sl lm">51</td><td class="lm">366</td>
+<td class="sl tlm hi">2445%</td><td class="tlm hi">341%</td>
+<td class="sl ck">3.8k</td><td class="ck">13.8k</td>
+<td class="sl ctr">0.92%</td><td class="ctr">0.57%</td>
+<td class="sl ok">28,197đ</td>
+</tr><tr class="wknd">
+<td class="sticky"><b>21/6</b><span class="dow dow-CN">CN</span></td>
+<td>6.88</td><td>42.84</td><td class="dim">5.91</td>
+<td class="gg">3.03</td><td class="crm">13.10</td>
+<td class="nonq"><b>65.84</b></td>
+<td class="sl">430</td><td>3,983</td>
+<td class="sl">250</td><td>1,537</td>
+<td class="sl new">413</td><td class="cu">995</td><td class="tot"><b>1,408</b></td>
+<td class="rev sl">1.017</td>
+<td class="sl lm">44</td><td class="lm">383</td>
+<td class="sl tlm hi">3200%</td><td class="tlm hi">368%</td>
+<td class="sl ck">4.1k</td><td class="ck">21.7k</td>
+<td class="sl ctr">0.95%</td><td class="ctr">0.55%</td>
+<td class="sl bad">46,764đ</td>
+</tr><tr class="sep-row"><td colspan="24">Tuần 4 · 22–28/6</td></tr><tr class="">
+<td class="sticky"><b>22/6</b><span class="dow dow-T2">T2</span></td>
+<td>8.01</td><td>39.50</td><td class="dim">5.67</td>
+<td class="gg">1.96</td><td class="crm">—</td>
+<td class="nonq"><b>49.47</b></td>
+<td class="sl">443</td><td>3,737</td>
+<td class="sl">257</td><td>1,551</td>
+<td class="sl new">321</td><td class="cu">655</td><td class="tot"><b>976</b></td>
+<td class="rev sl">0.721</td>
+<td class="sl lm">21</td><td class="lm">279</td>
+<td class="sl tlm hi">4648%</td><td class="tlm hi">350%</td>
+<td class="sl ck">4.2k</td><td class="ck">16.0k</td>
+<td class="sl ctr">0.95%</td><td class="ctr">0.43%</td>
+<td class="sl bad">50,688đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>26/6</b> <span class="dow-badge dow-T6">T6</span></td>
-<td>0.58</td><td>0.88</td><td class="nq-spend">4.70</td>
-<td class="gg-col">0.96</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>2.42</b></td>
-<td class="tong-col">7.13</td>
-<td class="sep-l">33</td><td>53</td>
-<td class="sep-l">27</td><td>42</td>
-<td class="sep-l kh-new">269</td><td class="kh-cu">726</td><td class="kh-tot"><b>995</b></td>
-<td class="rev-col sep-l">0.758</td>
-<td class="lm-td sep-l">1</td><td class="lm-td">50</td>
-<td class="tlm-td tlm-hi sep-l">99500.00%</td><td class="tlm-td tlm-hi">1990.00%</td>
-<td class="ck-td sep-l">0.3</td><td class="ck-td">0.6</td>
-<td class="ctr-td sep-l">0.84%</td><td class="ctr-td">1.17%</td>
-<td class="pct-td sep-l">3.01%</td><td class="pct-td">1.87%</td>
-<td class="pct-td sep-l">3.71%</td><td class="pct-td">2.36%</td>
-<td class="pct-td sep-l">1.15%</td><td class="pct-td">1.44%</td>
-</tr><tr class="wknd-row">
-<td class="label-cell"><b>27/6</b> <span class="dow-badge dow-T7">T7</span></td>
-<td>1.32</td><td>2.41</td><td class="nq-spend">4.11</td>
-<td class="gg-col">1.00</td><td class="crm-col">6.76</td>
-<td class="nonq-col"><b>11.48</b></td>
-<td class="tong-col">15.59</td>
-<td class="sep-l">92</td><td>141</td>
-<td class="sep-l">68</td><td>101</td>
-<td class="sep-l kh-new">346</td><td class="kh-cu">879</td><td class="kh-tot"><b>1,225</b></td>
-<td class="rev-col sep-l">0.981</td>
-<td class="lm-td sep-l">1</td><td class="lm-td">42</td>
-<td class="tlm-td tlm-hi sep-l">122500.00%</td><td class="tlm-td tlm-hi">2916.67%</td>
-<td class="ck-td sep-l">1.0</td><td class="ck-td">1.5</td>
-<td class="ctr-td sep-l">1.07%</td><td class="ctr-td">1.08%</td>
-<td class="pct-td sep-l">1.33%</td><td class="pct-td">0.87%</td>
-<td class="pct-td sep-l">1.79%</td><td class="pct-td">1.21%</td>
-<td class="pct-td sep-l">0.53%</td><td class="pct-td">0.72%</td>
-</tr><tr class="wknd-row">
-<td class="label-cell"><b>28/6</b> <span class="dow-badge dow-CN">CN</span></td>
-<td>0.93</td><td>1.80</td><td class="nq-spend">5.24</td>
-<td class="gg-col">1.00</td><td class="crm-col">8.00</td>
-<td class="nonq-col"><b>11.73</b></td>
-<td class="tong-col">16.96</td>
-<td class="sep-l">67</td><td>121</td>
-<td class="sep-l">51</td><td>79</td>
-<td class="sep-l kh-new">413</td><td class="kh-cu">995</td><td class="kh-tot"><b>1,408</b></td>
-<td class="rev-col sep-l">1.017</td>
-<td class="lm-td sep-l">—</td><td class="lm-td">—</td>
-<td class="tlm-td sep-l">—</td><td class="tlm-td">—</td>
-<td class="ck-td sep-l">0.7</td><td class="ck-td">0.9</td>
-<td class="ctr-td sep-l">1.05%</td><td class="ctr-td">0.75%</td>
-<td class="pct-td sep-l">2.11%</td><td class="pct-td">1.16%</td>
-<td class="pct-td sep-l">2.78%</td><td class="pct-td">1.78%</td>
-<td class="pct-td sep-l">0.75%</td><td class="pct-td">1.08%</td>
+<td class="sticky"><b>23/6</b><span class="dow dow-T2">T2</span></td>
+<td>5.65</td><td>24.32</td><td class="dim">5.18</td>
+<td class="gg">2.32</td><td class="crm">—</td>
+<td class="nonq"><b>32.28</b></td>
+<td class="sl">294</td><td>2,253</td>
+<td class="sl">185</td><td>1,089</td>
+<td class="sl new">258</td><td class="cu">612</td><td class="tot"><b>870</b></td>
+<td class="rev sl">0.667</td>
+<td class="sl lm">26</td><td class="lm">242</td>
+<td class="sl tlm hi">3346%</td><td class="tlm hi">360%</td>
+<td class="sl ck">2.9k</td><td class="ck">11.2k</td>
+<td class="sl ctr">0.97%</td><td class="ctr">0.50%</td>
+<td class="sl bad">37,109đ</td>
 </tr><tr class="">
-<td class="label-cell"><b>29/6</b> <span class="dow-badge dow-T2">T2</span></td>
-<td>—</td><td>0.01</td><td class="nq-spend">0.13</td>
-<td class="gg-col">—</td><td class="crm-col">—</td>
-<td class="nonq-col"><b>0.01</b></td>
-<td class="tong-col">0.14</td>
-<td class="sep-l">0</td><td>3</td>
-<td class="sep-l">—</td><td>2</td>
-<td class="sep-l kh-new">321</td><td class="kh-cu">655</td><td class="kh-tot"><b>976</b></td>
-<td class="rev-col sep-l">0.721</td>
-<td class="lm-td sep-l">—</td><td class="lm-td">—</td>
-<td class="tlm-td sep-l">—</td><td class="tlm-td">—</td>
-<td class="ck-td sep-l">—</td><td class="ck-td">0.0</td>
-<td class="ctr-td sep-l">—</td><td class="ctr-td">0.15%</td>
-<td class="pct-td sep-l">12200.00%</td><td class="pct-td">36.47%</td>
-<td class="pct-td sep-l">—</td><td class="pct-td">39.24%</td>
-<td class="pct-td sep-l">36.36%</td><td class="pct-td">39.24%</td>
-</tr></tbody></table></div></div>
-<div class="footer">30Shine · Bùi Thị Huế · T6/2026 · 1–28/6 · TikTok* = offline_shopping_events (view-through 14 ngày) · CTR FB = weighted avg by impressions</div>
+<td class="sticky"><b>24/6</b><span class="dow dow-T2">T2</span></td>
+<td>4.30</td><td>4.46</td><td class="dim">5.16</td>
+<td class="gg">1.35</td><td class="crm">—</td>
+<td class="nonq"><b>10.11</b></td>
+<td class="sl">247</td><td>372</td>
+<td class="sl">156</td><td>228</td>
+<td class="sl new">300</td><td class="cu">654</td><td class="tot"><b>954</b></td>
+<td class="rev sl">0.714</td>
+<td class="sl lm">9</td><td class="lm">156</td>
+<td class="sl tlm hi">10600%</td><td class="tlm hi">612%</td>
+<td class="sl ck">2.4k</td><td class="ck">1.4k</td>
+<td class="sl ctr">0.96%</td><td class="ctr">0.36%</td>
+<td class="sl ok">10,595đ</td>
+</tr><tr class="">
+<td class="sticky"><b>25/6</b><span class="dow dow-T2">T2</span></td>
+<td>4.22</td><td>3.10</td><td class="dim">5.34</td>
+<td class="gg">1.28</td><td class="crm">—</td>
+<td class="nonq"><b>8.60</b></td>
+<td class="sl">232</td><td>224</td>
+<td class="sl">145</td><td>146</td>
+<td class="sl new">274</td><td class="cu">619</td><td class="tot"><b>893</b></td>
+<td class="rev sl">0.684</td>
+<td class="sl lm">9</td><td class="lm">50</td>
+<td class="sl tlm hi">9922%</td><td class="tlm hi">1786%</td>
+<td class="sl ck">2.4k</td><td class="ck">1.4k</td>
+<td class="sl ctr">1.04%</td><td class="ctr">0.64%</td>
+<td class="sl ok">9,627đ</td>
+</tr><tr class="">
+<td class="sticky"><b>26/6</b><span class="dow dow-T2">T2</span></td>
+<td>0.58</td><td>0.88</td><td class="dim">4.70</td>
+<td class="gg">0.96</td><td class="crm">—</td>
+<td class="nonq"><b>2.42</b></td>
+<td class="sl">33</td><td>53</td>
+<td class="sl">27</td><td>42</td>
+<td class="sl new">269</td><td class="cu">726</td><td class="tot"><b>995</b></td>
+<td class="rev sl">0.758</td>
+<td class="sl lm">1</td><td class="lm">50</td>
+<td class="sl tlm hi">99500%</td><td class="tlm hi">1990%</td>
+<td class="sl ck">0.3k</td><td class="ck">0.6k</td>
+<td class="sl ctr">0.84%</td><td class="ctr">1.17%</td>
+<td class="sl ok">2,436đ</td>
+</tr><tr class="">
+<td class="sticky"><b>27/6</b><span class="dow dow-T2">T2</span></td>
+<td>1.32</td><td>2.41</td><td class="dim">4.11</td>
+<td class="gg">1.00</td><td class="crm">6.76</td>
+<td class="nonq"><b>11.48</b></td>
+<td class="sl">92</td><td>141</td>
+<td class="sl">68</td><td>101</td>
+<td class="sl new">346</td><td class="cu">879</td><td class="tot"><b>1,225</b></td>
+<td class="rev sl">0.981</td>
+<td class="sl lm">1</td><td class="lm">42</td>
+<td class="sl tlm hi">122500%</td><td class="tlm hi">2917%</td>
+<td class="sl ck">1.0k</td><td class="ck">1.5k</td>
+<td class="sl ctr">1.07%</td><td class="ctr">1.08%</td>
+<td class="sl ok">9,369đ</td>
+</tr><tr class="wknd">
+<td class="sticky"><b>28/6</b><span class="dow dow-CN">CN</span></td>
+<td>0.93</td><td>1.80</td><td class="dim">5.24</td>
+<td class="gg">1.00</td><td class="crm">8.00</td>
+<td class="nonq"><b>11.73</b></td>
+<td class="sl">67</td><td>121</td>
+<td class="sl">51</td><td>79</td>
+<td class="sl new">413</td><td class="cu">995</td><td class="tot"><b>1,408</b></td>
+<td class="rev sl">1.017</td>
+<td class="sl lm">—</td><td class="lm">—</td>
+<td class="sl tlm ">—</td><td class="tlm ">—</td>
+<td class="sl ck">0.7k</td><td class="ck">0.9k</td>
+<td class="sl ctr">1.05%</td><td class="ctr">0.75%</td>
+<td class="sl ok">8,331đ</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+
+<div class="footer">30Shine · Campaign Performance Dashboard · T6/2026 · Bùi Thị Huế · Ads Performance</div>
+
+<script>
+const F = "'Segoe UI',Arial,sans-serif";
+Chart.defaults.font.family = F;
+Chart.defaults.font.size = 10;
+Chart.defaults.plugins.legend.labels.boxWidth = 10;
+Chart.defaults.plugins.legend.labels.padding = 8;
+Chart.defaults.plugins.tooltip.backgroundColor = 'rgba(15,23,42,.9)';
+Chart.defaults.plugins.tooltip.padding = 8;
+
+const LBL  = ["01/6", "02/6", "03/6", "04/6", "05/6", "06/6", "07/6", "08/6", "09/6", "10/6", "11/6", "12/6", "13/6", "14/6", "15/6", "16/6", "17/6", "18/6", "19/6", "20/6", "21/6", "22/6", "23/6", "24/6", "25/6", "26/6", "27/6", "28/6"];
+const NONQ = [25.01, 24.18, 24.78, 25.02, 24.41, 24.52, 25.47, 25.61, 34.33, 24.03, 41.36, 40.57, 49.59, 45.43, 49.1, 21.86, 35.21, 53.61, 48.81, 35.16, 65.84, 49.47, 32.28, 10.11, 8.6, 2.42, 11.48, 11.73];
+const KH12 = [830, 851, 950, 942, 1017, 1285, 1490, 859, 909, 888, 970, 1030, 1321, 1391, 743, 919, 988, 923, 1102, 1247, 1408, 976, 870, 954, 893, 995, 1225, 1408];
+const REV  = [0.665, 0.612, 0.754, 0.739, 0.791, 1.021, 1.132, 0.664, 0.695, 0.72, 0.733, 0.801, 1.014, 1.055, 0.561, 0.656, 0.742, 0.693, 0.835, 0.976, 1.017, 0.721, 0.667, 0.714, 0.684, 0.758, 0.981, 1.017];
+const CPA  = [30131, 28409, 26085, 26557, 23998, 19079, 17095, 29815, 37766, 27063, 42642, 39384, 37537, 32656, 66081, 23788, 35634, 58084, 44292, 28197, 46764, 50688, 37109, 10595, 9627, 2436, 9369, 8331];
+const CTR_TK = [0.79, 0.76, 0.81, 0.76, 0.78, 0.82, 0.82, 0.89, 1.28, 1.02, 0.99, 1.07, 0.98, 0.94, 0.93, 0.94, 0.87, 0.93, 0.89, 0.92, 0.95, 0.95, 0.97, 0.96, 1.04, 0.84, 1.07, 1.05];
+const CTR_FB = [0.88, 1.09, 1.33, 1.15, 1.08, 1.11, 1.11, 1.14, 1.53, 1.34, 1.77, 1.32, 1.01, 0.93, 0.88, 1.01, 1.23, 0.59, 0.59, 0.57, 0.55, 0.43, 0.5, 0.36, 0.64, 1.17, 1.08, 0.75];
+const CK_TK  = [2.2, 2.2, 2.2, 2.2, 2.2, 2.3, 2.4, 2.5, 5.5, 4.1, 4.4, 4.9, 4.4, 4.2, 4.7, 4.5, 4.4, 4.4, 4.1, 3.8, 4.1, 4.2, 2.9, 2.4, 2.4, 0.3, 1.0, 0.7];
+const CK_FB  = [8.9, 10.7, 11.2, 10.2, 9.6, 8.3, 7.2, 9.9, 13.6, 9.9, 25.4, 18.3, 19.8, 19.1, 20.9, 8.1, 24.9, 18.8, 18.4, 13.8, 21.7, 16.0, 11.2, 1.4, 1.4, 0.6, 1.5, 0.9];
+const WL   = ["W1", "W2", "W3", "W4"];
+const WKH  = [7365, 7368, 7330, 7321];
+const WCHI = [173.4, 260.9, 309.6, 126.1];
+const WCPA = [23541, 35411, 42236, 17223];
+const WREV = [5.72, 5.68, 5.48, 5.54];
+const WMT_KH  = [8125, 8125, 8125, 8125];
+const WMT_CHI = [244.5, 244.5, 244.5, 244.5];
+const CH_L = ["TikTok", "FB+C\u01b0\u1eddng", "Google", "CRM"];
+const CH_SP= [153.7, 626.2, 45.8, 44.2];
+const CH_PU= [699, 17823, 0, 0];
+const CH_CK= [89.6, 341.6, 0, 0];
+const CH_CP= [219910, 35136, 0, 0];
+const MT_CPA = 30092;
+
+const OPT = (ex={}) => Object.assign({responsive:true,maintainAspectRatio:true,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom'}}}, ex);
+
+// C1: Chi + KH
+new Chart(document.getElementById('c_main'),{
+  data:{labels:LBL,datasets:[
+    {type:'bar',label:'Chi HT (M₫)',data:NONQ,backgroundColor:'rgba(79,70,229,.5)',yAxisID:'y',order:2},
+    {type:'line',label:'KH mới+cũ>12W',data:KH12,borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,.1)',tension:.3,pointRadius:2,yAxisID:'y2',borderWidth:2,order:1}
+  ]},
+  options:OPT({scales:{y:{position:'left',title:{display:true,text:'Chi (M₫)',font:{size:9}},grid:{color:'rgba(0,0,0,.04)'}},y2:{position:'right',title:{display:true,text:'KH',font:{size:9}},grid:{drawOnChartArea:false}}}})
+});
+
+// C2: Revenue + CPA
+new Chart(document.getElementById('c_rev_cpa'),{
+  data:{labels:LBL,datasets:[
+    {type:'bar',label:'Doanh thu (tỷ₫)',data:REV,backgroundColor:'rgba(16,185,129,.5)',yAxisID:'y',order:2},
+    {type:'line',label:'CPA (₫/KH)',data:CPA,borderColor:'#ef4444',backgroundColor:'rgba(239,68,68,.08)',tension:.3,pointRadius:2,yAxisID:'y2',borderWidth:2,order:1},
+    {type:'line',label:'MT CPA 30,092₫',data:LBL.map(()=>MT_CPA),borderColor:'#f59e0b',borderWidth:2,borderDash:[6,4],pointRadius:0,yAxisID:'y2',order:0}
+  ]},
+  options:OPT({scales:{y:{position:'left',title:{display:true,text:'Tỷ ₫',font:{size:9}},grid:{color:'rgba(0,0,0,.04)'}},y2:{position:'right',title:{display:true,text:'₫/KH',font:{size:9}},grid:{drawOnChartArea:false}}}})
+});
+
+// C3: Weekly KH + Chi grouped
+new Chart(document.getElementById('c_weekly'),{
+  data:{labels:WL,datasets:[
+    {type:'bar',label:'KH thực tế',data:WKH,backgroundColor:'rgba(245,158,11,.7)',yAxisID:'y'},
+    {type:'bar',label:'MT KH/tuần',data:WMT_KH,backgroundColor:'rgba(245,158,11,.2)',borderColor:'#f59e0b',borderWidth:1,borderDash:[],yAxisID:'y'},
+    {type:'line',label:'Chi HT (M₫)',data:WCHI,borderColor:'#4f46e5',backgroundColor:'rgba(79,70,229,.1)',tension:.3,pointRadius:4,yAxisID:'y2',borderWidth:2}
+  ]},
+  options:OPT({scales:{y:{position:'left',stacked:false,title:{display:true,text:'KH',font:{size:9}},grid:{color:'rgba(0,0,0,.04)'}},y2:{position:'right',title:{display:true,text:'M₫',font:{size:9}},grid:{drawOnChartArea:false}}}})
+});
+
+// C4: Channel spend donut
+new Chart(document.getElementById('c_channel_spend'),{
+  type:'doughnut',
+  data:{labels:CH_L,datasets:[{data:CH_SP,backgroundColor:['rgba(245,158,11,.8)','rgba(59,130,246,.8)','rgba(16,185,129,.8)','rgba(239,68,68,.8)'],borderWidth:2,borderColor:'#fff'}]},
+  options:{responsive:true,maintainAspectRatio:true,plugins:{legend:{position:'bottom'},tooltip:{callbacks:{label:ctx=>` ${ctx.label}: ${ctx.raw}M₫ (${(ctx.raw/CH_SP.reduce((a,b)=>a+b,0)*100).toFixed(1)}%)`}}}}
+});
+
+// C5: Channel CPA bar
+new Chart(document.getElementById('c_channel_cpa'),{
+  data:{labels:['TikTok','FB+Cường'],datasets:[
+    {type:'bar',label:'Lượt mua (ads)',data:[CH_PU[0],CH_PU[1]],backgroundColor:['rgba(245,158,11,.7)','rgba(59,130,246,.7)'],yAxisID:'y'},
+    {type:'line',label:'CPA (₫/lượt mua)',data:[CH_CP[0],CH_CP[1]],borderColor:'#ef4444',backgroundColor:'rgba(239,68,68,.1)',tension:.2,pointRadius:6,yAxisID:'y2',borderWidth:2}
+  ]},
+  options:OPT({scales:{y:{position:'left',title:{display:true,text:'Lượt mua',font:{size:9}}},y2:{position:'right',title:{display:true,text:'₫/lượt mua',font:{size:9}},grid:{drawOnChartArea:false}}}})
+});
+
+// C6: CTR lines
+new Chart(document.getElementById('c_ctr'),{
+  type:'line',
+  data:{labels:LBL,datasets:[
+    {label:'CTR TikTok (%)',data:CTR_TK,borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,.08)',tension:.3,pointRadius:1,borderWidth:2},
+    {label:'CTR Facebook (%)',data:CTR_FB,borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,.08)',tension:.3,pointRadius:1,borderWidth:2}
+  ]},
+  options:OPT({scales:{y:{title:{display:true,text:'CTR (%)',font:{size:9}},grid:{color:'rgba(0,0,0,.04)'}}}}),
+});
+
+// C7: Funnel rates by week (HT→KH %, TC→KH %)
+const W_HT_TK = [0.3693, 0.2524, 0.2244, 0.52];
+const W_HT_FB = [0.1227, 0.0788, 0.041, 0.1061];
+const W_TC_TK = [0.5715, 0.4128, 0.3956, 0.825];
+const W_TC_FB = [0.2702, 0.1987, 0.0933, 0.2262];
+new Chart(document.getElementById('c_funnel'),{
+  type:'bar',
+  data:{labels:WL,datasets:[
+    {label:'HT→KH TikTok (%)',data:W_HT_TK,backgroundColor:'rgba(245,158,11,.7)'},
+    {label:'HT→KH Facebook (%)',data:W_HT_FB,backgroundColor:'rgba(59,130,246,.7)'},
+    {label:'TC→KH TikTok (%)',data:W_TC_TK,backgroundColor:'rgba(245,158,11,.3)',borderColor:'#f59e0b',borderWidth:1},
+    {label:'TC→KH Facebook (%)',data:W_TC_FB,backgroundColor:'rgba(59,130,246,.3)',borderColor:'#3b82f6',borderWidth:1}
+  ]},
+  options:OPT({scales:{y:{title:{display:true,text:'%',font:{size:9}},grid:{color:'rgba(0,0,0,.04)'}}}}),
+});
+
+// Tab toggle
+function switchTab(t) {
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+t).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
 </body>
 </html>
