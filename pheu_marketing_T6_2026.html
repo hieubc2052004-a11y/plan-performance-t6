@@ -404,6 +404,49 @@ td.dim{color:#94a3b8}.nonq{font-weight:700;color:#78350f;background:#fef9c3!impo
 </div>
 </div>
 
+<!-- CHARTS ROW 1 -->
+<div class="section">
+<div class="section-hdr">📈 Campaign Performance Overview</div>
+<div class="chart-grid g2">
+  <div class="chart-box">
+    <h3>Chi tiêu hệ thống (M₫) &amp; KH mới+cũ&gt;12W <span class="badge">theo ngày</span></h3>
+    <canvas id="c_main"></canvas>
+  </div>
+  <div class="chart-box">
+    <h3>Doanh thu (tỷ₫) &amp; CPA (₫/KH) <span class="badge">theo ngày</span></h3>
+    <canvas id="c_rev_cpa"></canvas>
+  </div>
+</div>
+
+<div class="section-hdr">📊 Performance Metrics by Channel &amp; Period</div>
+<div class="chart-grid g3">
+  <div class="chart-box">
+    <h3>KH &amp; Chi tiêu theo tuần <span class="badge">vs MT</span></h3>
+    <canvas id="c_weekly"></canvas>
+  </div>
+  <div class="chart-box">
+    <h3>Phân bổ chi tiêu theo kênh <span class="badge">T6 1-28/6</span></h3>
+    <canvas id="c_channel_spend"></canvas>
+  </div>
+  <div class="chart-box">
+    <h3>Lượt mua &amp; CPA theo kênh <span class="badge">TK vs FB</span></h3>
+    <canvas id="c_channel_cpa"></canvas>
+  </div>
+</div>
+
+<div class="section-hdr">🔍 Phân tích chất lượng quảng cáo</div>
+<div class="chart-grid g2">
+  <div class="chart-box">
+    <h3>CTR theo ngày — TikTok vs Facebook <span class="badge">%</span></h3>
+    <canvas id="c_ctr"></canvas>
+  </div>
+  <div class="chart-box">
+    <h3>Phễu hiệu quả: Hiển thị → Tiếp cận → KH <span class="badge">theo tuần, %</span></h3>
+    <canvas id="c_funnel"></canvas>
+  </div>
+</div>
+</div>
+
 <!-- TUẦN VỪA QUA -->
 <div class="week-recap">
   <div class="week-recap-hdr">
@@ -973,49 +1016,6 @@ td.dim{color:#94a3b8}.nonq{font-weight:700;color:#78350f;background:#fef9c3!impo
   <div style="font-size:10px;color:#94a3b8;margin-top:10px;line-height:1.7">
     Nd = tổng nội dung unique (FB+TK) chạy trong tuần. LM = lượt mua ads (FB purch + TK offline purch). KH thực = KH mới+cũ&gt;12W từ data Windsor.
     &nbsp;·&nbsp; Nd tính unique ad per week — 1 content chạy nhiều tuần được đếm ở mỗi tuần đó.
-  </div>
-</div>
-</div>
-
-<!-- CHARTS ROW 1 -->
-<div class="section">
-<div class="section-hdr">📈 Campaign Performance Overview</div>
-<div class="chart-grid g2">
-  <div class="chart-box">
-    <h3>Chi tiêu hệ thống (M₫) &amp; KH mới+cũ&gt;12W <span class="badge">theo ngày</span></h3>
-    <canvas id="c_main"></canvas>
-  </div>
-  <div class="chart-box">
-    <h3>Doanh thu (tỷ₫) &amp; CPA (₫/KH) <span class="badge">theo ngày</span></h3>
-    <canvas id="c_rev_cpa"></canvas>
-  </div>
-</div>
-
-<div class="section-hdr">📊 Performance Metrics by Channel &amp; Period</div>
-<div class="chart-grid g3">
-  <div class="chart-box">
-    <h3>KH &amp; Chi tiêu theo tuần <span class="badge">vs MT</span></h3>
-    <canvas id="c_weekly"></canvas>
-  </div>
-  <div class="chart-box">
-    <h3>Phân bổ chi tiêu theo kênh <span class="badge">T6 1-28/6</span></h3>
-    <canvas id="c_channel_spend"></canvas>
-  </div>
-  <div class="chart-box">
-    <h3>Lượt mua &amp; CPA theo kênh <span class="badge">TK vs FB</span></h3>
-    <canvas id="c_channel_cpa"></canvas>
-  </div>
-</div>
-
-<div class="section-hdr">🔍 Phân tích chất lượng quảng cáo</div>
-<div class="chart-grid g2">
-  <div class="chart-box">
-    <h3>CTR theo ngày — TikTok vs Facebook <span class="badge">%</span></h3>
-    <canvas id="c_ctr"></canvas>
-  </div>
-  <div class="chart-box">
-    <h3>Phễu hiệu quả: Hiển thị → Tiếp cận → KH <span class="badge">theo tuần, %</span></h3>
-    <canvas id="c_funnel"></canvas>
   </div>
 </div>
 </div>
