@@ -1582,26 +1582,34 @@ td.dim{color:#94a3b8}.nonq{font-weight:700;color:#78350f;background:#fef9c3!impo
 <div id="tab-htkhrate" class="tab-pane">
 
 <div style="font-size:10px;color:#64748b;line-height:1.8;margin-bottom:10px">
-  HT→KH = KH thực (mới+cũ&gt;12W) / hiển thị kênh × 100% — tỉ lệ 1 hiển thị dẫn tới 1 KH. Số càng cao = kênh càng hiệu quả chuyển đổi. TC→KH dùng tiếp cận (reach) thay hiển thị.
+  HT→KH = KH thực (mới+cũ&gt;12W) / hiển thị kênh × 100% — tỉ lệ 1 hiển thị dẫn tới 1 KH. Số càng cao = kênh càng hiệu quả. TC→KH dùng tiếp cận (reach). NQ = nhượng quyền (không tính chi phí vào budget HT).
 </div>
 <div style="background:#fff;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 1px 4px rgba(0,0,0,.06);overflow-x:auto">
-<table style="border-collapse:collapse;width:100%;min-width:960px;font-size:12px">
+<table style="border-collapse:collapse;width:100%;min-width:1200px;font-size:12px">
 <thead>
-<tr style="background:#f8fafc;border-bottom:2px solid #e2e8f0">
-  <th style="text-align:left;padding:9px 12px;font-size:10px;font-weight:800;color:#475569">TUẦN</th>
-  <th style="text-align:left;padding:9px 12px;font-size:10px;font-weight:800;color:#64748b">GIAI ĐOẠN</th>
-  <th style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#1d4ed8">Nd FB</th>
-  <th style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#7c3aed">Nd TK</th>
-  <th style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#1e293b">Nd Tổng</th>
-  <th style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#475569">Chi (M₫)</th>
-  <th style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#64748b">Hiển thị</th>
-  <th style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#475569">Lượt mua</th>
-  <th style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#f59e0b">KH thực</th>
-  <th style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#475569">CPA</th>
-  <th style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#7c3aed;border-left:2px solid #ede9fe;white-space:nowrap">HT→KH TK</th>
-  <th style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#1d4ed8;white-space:nowrap">HT→KH FB</th>
-  <th style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#7c3aed;border-left:1px solid #ede9fe;white-space:nowrap">TC→KH TK</th>
-  <th style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#1d4ed8;white-space:nowrap">TC→KH FB</th>
+<tr style="background:#f8fafc;border-bottom:1px solid #e2e8f0">
+  <th rowspan="2" style="text-align:left;padding:9px 12px;font-size:10px;font-weight:800;color:#475569;border-bottom:2px solid #e2e8f0">TUẦN</th>
+  <th rowspan="2" style="text-align:left;padding:9px 12px;font-size:10px;font-weight:800;color:#64748b;border-bottom:2px solid #e2e8f0">GIAI ĐOẠN</th>
+  <th rowspan="2" style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#1d4ed8;border-bottom:2px solid #e2e8f0">Nd FB</th>
+  <th rowspan="2" style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#7c3aed;border-bottom:2px solid #e2e8f0">Nd TK</th>
+  <th rowspan="2" style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#1e293b;border-bottom:2px solid #e2e8f0">Nd Tổng</th>
+  <th rowspan="2" style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#475569;border-bottom:2px solid #e2e8f0">Chi (M₫)</th>
+  <th rowspan="2" style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#64748b;border-bottom:2px solid #e2e8f0">Hiển thị</th>
+  <th rowspan="2" style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#475569;border-bottom:2px solid #e2e8f0">Lượt mua</th>
+  <th rowspan="2" style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#f59e0b;border-bottom:2px solid #e2e8f0">KH thực</th>
+  <th rowspan="2" style="text-align:right;padding:9px 10px;font-size:10px;font-weight:800;color:#475569;border-bottom:2px solid #e2e8f0">CPA</th>
+  <th colspan="4" style="text-align:center;padding:7px 10px;font-size:10px;font-weight:800;color:#0369a1;background:#e0f2fe;border-left:2px solid #bae6fd;border-bottom:1px solid #bae6fd;white-space:nowrap">HT→KH (hiển thị)</th>
+  <th colspan="4" style="text-align:center;padding:7px 10px;font-size:10px;font-weight:800;color:#0369a1;background:#f0fdf4;border-left:2px solid #bbf7d0;border-bottom:1px solid #bbf7d0;white-space:nowrap">TC→KH (tiếp cận)</th>
+</tr>
+<tr style="border-bottom:2px solid #e2e8f0">
+  <th style="text-align:right;padding:6px 9px;font-size:9px;font-weight:700;color:#7c3aed;background:#e0f2fe;border-left:2px solid #bae6fd;white-space:nowrap">TikTok</th>
+  <th style="text-align:right;padding:6px 9px;font-size:9px;font-weight:700;color:#1d4ed8;background:#e0f2fe;white-space:nowrap">Facebook</th>
+  <th style="text-align:right;padding:6px 9px;font-size:9px;font-weight:700;color:#dc2626;background:#e0f2fe;white-space:nowrap">NQ</th>
+  <th style="text-align:right;padding:6px 9px;font-size:9px;font-weight:800;color:#0f766e;background:#ccfbf1;border-left:2px solid #99f6e4;white-space:nowrap">Tổng</th>
+  <th style="text-align:right;padding:6px 9px;font-size:9px;font-weight:700;color:#7c3aed;background:#f0fdf4;border-left:2px solid #bbf7d0;white-space:nowrap">TikTok</th>
+  <th style="text-align:right;padding:6px 9px;font-size:9px;font-weight:700;color:#1d4ed8;background:#f0fdf4;white-space:nowrap">Facebook</th>
+  <th style="text-align:right;padding:6px 9px;font-size:9px;font-weight:700;color:#dc2626;background:#f0fdf4;white-space:nowrap">NQ</th>
+  <th style="text-align:right;padding:6px 9px;font-size:9px;font-weight:800;color:#0f766e;background:#dcfce7;border-left:2px solid #bbf7d0;white-space:nowrap">Tổng</th>
 </tr>
 </thead>
 <tbody>
@@ -1618,8 +1626,12 @@ td.dim{color:#94a3b8}.nonq{font-weight:700;color:#78350f;background:#fef9c3!impo
   <td style="padding:9px 10px;text-align:right;color:#16a34a;font-weight:700">23,541đ</td>
   <td style="padding:9px 10px;text-align:right;font-weight:700;color:#7c3aed;border-left:2px solid #ede9fe">0.369%</td>
   <td style="padding:9px 10px;text-align:right;font-weight:700;color:#1d4ed8">0.123%</td>
-  <td style="padding:9px 10px;text-align:right;color:#7c3aed;border-left:1px solid #ede9fe">0.371%</td>
+  <td style="padding:9px 10px;text-align:right;font-weight:700;color:#dc2626">1.012%</td>
+  <td style="padding:9px 10px;text-align:right;font-weight:800;color:#0f766e;border-left:2px solid #ccfbf1">0.084%</td>
+  <td style="padding:9px 10px;text-align:right;color:#7c3aed;border-left:2px solid #ede9fe">0.371%</td>
   <td style="padding:9px 10px;text-align:right;color:#1d4ed8">0.152%</td>
+  <td style="padding:9px 10px;text-align:right;color:#dc2626">1.328%</td>
+  <td style="padding:9px 10px;text-align:right;font-weight:800;color:#0f766e;border-left:2px solid #ccfbf1">0.100%</td>
 </tr><tr style="background:#fafafa;border-bottom:1px solid #f1f5f9">
   <td style="padding:9px 12px;font-weight:700;white-space:nowrap">W2</td>
   <td style="padding:9px 12px;color:#64748b;font-size:11px;white-space:nowrap">8–14/6</td>
@@ -1633,8 +1645,12 @@ td.dim{color:#94a3b8}.nonq{font-weight:700;color:#78350f;background:#fef9c3!impo
   <td style="padding:9px 10px;text-align:right;color:#dc2626;font-weight:700">35,411đ</td>
   <td style="padding:9px 10px;text-align:right;font-weight:700;color:#7c3aed;border-left:2px solid #ede9fe">0.252%</td>
   <td style="padding:9px 10px;text-align:right;font-weight:700;color:#1d4ed8">0.079%</td>
-  <td style="padding:9px 10px;text-align:right;color:#7c3aed;border-left:1px solid #ede9fe">0.254%</td>
+  <td style="padding:9px 10px;text-align:right;font-weight:700;color:#dc2626">1.276%</td>
+  <td style="padding:9px 10px;text-align:right;font-weight:800;color:#0f766e;border-left:2px solid #ccfbf1">0.057%</td>
+  <td style="padding:9px 10px;text-align:right;color:#7c3aed;border-left:2px solid #ede9fe">0.254%</td>
   <td style="padding:9px 10px;text-align:right;color:#1d4ed8">0.095%</td>
+  <td style="padding:9px 10px;text-align:right;color:#dc2626">1.767%</td>
+  <td style="padding:9px 10px;text-align:right;font-weight:800;color:#0f766e;border-left:2px solid #ccfbf1">0.067%</td>
 </tr><tr style="background:#fff;border-bottom:1px solid #f1f5f9">
   <td style="padding:9px 12px;font-weight:700;white-space:nowrap">W3</td>
   <td style="padding:9px 12px;color:#64748b;font-size:11px;white-space:nowrap">15–21/6</td>
@@ -1648,8 +1664,12 @@ td.dim{color:#94a3b8}.nonq{font-weight:700;color:#78350f;background:#fef9c3!impo
   <td style="padding:9px 10px;text-align:right;color:#dc2626;font-weight:700">42,236đ</td>
   <td style="padding:9px 10px;text-align:right;font-weight:700;color:#7c3aed;border-left:2px solid #ede9fe">0.224%</td>
   <td style="padding:9px 10px;text-align:right;font-weight:700;color:#1d4ed8">0.041%</td>
-  <td style="padding:9px 10px;text-align:right;color:#7c3aed;border-left:1px solid #ede9fe">0.226%</td>
+  <td style="padding:9px 10px;text-align:right;font-weight:700;color:#dc2626">1.347%</td>
+  <td style="padding:9px 10px;text-align:right;font-weight:800;color:#0f766e;border-left:2px solid #ccfbf1">0.034%</td>
+  <td style="padding:9px 10px;text-align:right;color:#7c3aed;border-left:2px solid #ede9fe">0.226%</td>
   <td style="padding:9px 10px;text-align:right;color:#1d4ed8">0.050%</td>
+  <td style="padding:9px 10px;text-align:right;color:#dc2626">1.899%</td>
+  <td style="padding:9px 10px;text-align:right;font-weight:800;color:#0f766e;border-left:2px solid #ccfbf1">0.040%</td>
 </tr><tr style="background:#fafafa;border-bottom:1px solid #f1f5f9">
   <td style="padding:9px 12px;font-weight:700;white-space:nowrap">W4</td>
   <td style="padding:9px 12px;color:#64748b;font-size:11px;white-space:nowrap">22–28/6</td>
@@ -1663,8 +1683,12 @@ td.dim{color:#94a3b8}.nonq{font-weight:700;color:#78350f;background:#fef9c3!impo
   <td style="padding:9px 10px;text-align:right;color:#16a34a;font-weight:700">17,223đ</td>
   <td style="padding:9px 10px;text-align:right;font-weight:700;color:#7c3aed;border-left:2px solid #ede9fe">0.520%</td>
   <td style="padding:9px 10px;text-align:right;font-weight:700;color:#1d4ed8">0.106%</td>
-  <td style="padding:9px 10px;text-align:right;color:#7c3aed;border-left:1px solid #ede9fe">0.523%</td>
+  <td style="padding:9px 10px;text-align:right;font-weight:700;color:#dc2626">1.357%</td>
+  <td style="padding:9px 10px;text-align:right;font-weight:800;color:#0f766e;border-left:2px solid #ccfbf1">0.083%</td>
+  <td style="padding:9px 10px;text-align:right;color:#7c3aed;border-left:2px solid #ede9fe">0.523%</td>
   <td style="padding:9px 10px;text-align:right;color:#1d4ed8">0.129%</td>
+  <td style="padding:9px 10px;text-align:right;color:#dc2626">1.983%</td>
+  <td style="padding:9px 10px;text-align:right;font-weight:800;color:#0f766e;border-left:2px solid #ccfbf1">0.099%</td>
 </tr>
 </tbody>
 </table>
