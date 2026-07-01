@@ -85,6 +85,38 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .inner-scroll{overflow-x:auto;padding:12px 14px 14px}
 .empty-state{text-align:center;padding:40px;color:var(--text-3);font-size:14px}
 @media(max-width:700px){.site-header,.tab-bar,.controls,.panel{padding-left:12px;padding-right:12px}.page-sub,.ch-legend{display:none}}
+/* ── Bảng dẫn đường ── */
+.guide-section{padding:12px 24px 0}
+.guide-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.guide-label em{font-style:normal;font-weight:400;font-size:10.5px;color:var(--text-2);letter-spacing:0;text-transform:none}
+.ch-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.ch-card-head{display:flex;align-items:center;gap:10px;padding:9px 14px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.ch-icon{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+.ch-card-name{font-size:12px;font-weight:700}
+.ch-card-t6{font-size:11px;color:var(--text-3)}
+.ch-card-arrow{color:var(--text-3);font-size:11px;padding:0 3px}
+.ch-card-t7{font-size:12px;font-weight:700}
+.ch-card-dlt{font-size:10px;font-weight:700;padding:2px 6px;margin-left:auto}
+.gt-scroll{overflow-x:auto}
+.gt{width:100%;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums;min-width:680px}
+.gt thead th{padding:6px 10px;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);background:var(--surface-alt);border-bottom:1px solid var(--border);white-space:nowrap;text-align:right}
+.gt thead th.l{text-align:left}
+.gt tbody tr{border-bottom:1px solid #f0f3fa}
+.gt tbody tr:last-child{border-bottom:none}
+.gt tbody td{padding:8px 10px;vertical-align:middle;text-align:right;line-height:1.3}
+.gt tbody td.l{text-align:left}
+.gt tfoot td{padding:8px 10px;font-weight:700;text-align:right;background:var(--surface-alt);border-top:2px solid var(--border);font-size:12px}
+.gt tfoot td.l{text-align:left}
+.gt-badge{display:inline-block;font-size:9px;font-weight:800;padding:2px 5px;color:#fff}
+.gt-name{font-size:12px;font-weight:500}
+.vgood{color:#166534;font-weight:700}.vwarn{color:#92400e}.vbad{color:#991b1b;font-weight:700}
+.dchip{display:inline-block;font-size:10px;font-weight:700;padding:1px 5px;white-space:nowrap}
+.d-up{background:#dcfce7;color:#14532d}.d-dn{background:#fee2e2;color:#7f1d1d}
+.d-new{background:#dbeafe;color:#1e40af}.d-neu{background:#f1f5f9;color:#475569}
+.gt-cond{max-width:230px;text-align:left !important;font-size:11px;color:var(--text-2);line-height:1.4}
+.gt-wflag{display:inline;font-size:10px;font-weight:700;color:#92400e;background:#fef3c7;padding:0 4px;margin-right:3px}
+.guide-crm-bar{display:flex;align-items:center;gap:12px;padding:11px 14px;background:var(--surface);border:1px solid var(--border);border-radius:10px;flex-wrap:wrap}
+@media(max-width:700px){.guide-section{padding-left:12px;padding-right:12px}}
 </style>
 
 <header class="site-header">
@@ -107,6 +139,198 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
     <div class="kpi-pill"><span class="label">CRM</span><span class="val" style="color:var(--crm)">70M</span></div>
   </div>
 </header>
+
+<!-- ══ BẢNG DẪN ĐƯỜNG ══ -->
+<div class="guide-section">
+  <div class="guide-label">Bảng dẫn đường kênh T7/2026 <em>T6 thực tế 1–30/6 → T7 kế hoạch · CPA target 29,415đ · KH12 34,134 · Tổng 1,004M</em></div>
+
+  <!-- FACEBOOK -->
+  <div class="ch-card">
+    <div class="ch-card-head">
+      <span class="ch-icon" style="background:var(--fb)"></span>
+      <span class="ch-card-name" style="color:var(--fb)">Facebook</span>
+      <span class="ch-card-t6">T6: 626.2M · 17,828 mua · CPA avg 33,662đ (+12%)</span>
+      <span class="ch-card-arrow">→</span>
+      <span class="ch-card-t7" style="color:var(--fb)">T7: 683M</span>
+      <span class="dchip d-up ch-card-dlt">+9.1%</span>
+    </div>
+    <div class="gt-scroll"><table class="gt">
+      <thead><tr>
+        <th class="l" style="min-width:160px">Tuyến</th>
+        <th>T6 Chi</th><th>T6 KH</th><th>T6 CPA</th><th>vs 30k</th><th>Scale%</th>
+        <th>T7 Chi</th><th>Δ</th><th class="l">Điều kiện / Hành động</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="l"><span class="gt-badge" style="background:#1565C0">C1</span> <span class="gt-name">Tour thư giãn</span></td>
+          <td>206.3M</td><td>5,825</td><td class="vbad">35,413đ</td>
+          <td><span class="dchip d-dn">+18%</span></td><td class="vwarn">56%</td>
+          <td><strong>190M</strong></td><td><span class="dchip d-dn">−8%</span></td>
+          <td class="gt-cond">Tắt 9 ads 0 mua · Scale CPA ≤30k · CTR 1.16% cao nhất</td>
+        </tr>
+        <tr>
+          <td class="l"><span class="gt-badge" style="background:#6A1B9A">C2</span> <span class="gt-name">Thera Studio</span></td>
+          <td>98.9M</td><td>3,085</td><td class="vwarn">32,045đ</td>
+          <td><span class="dchip d-dn">+6%</span></td><td>73%</td>
+          <td><strong>108M</strong></td><td><span class="dchip d-up">+9%</span></td>
+          <td class="gt-cond">Scale 73% · Top ad CPA 17.8k · Test 3 angle mới</td>
+        </tr>
+        <tr>
+          <td class="l"><span class="gt-badge" style="background:#2E7D32">C3</span> <span class="gt-name">Nghỉ trưa</span></td>
+          <td>65.5M</td><td>1,292</td><td class="vbad">50,705đ</td>
+          <td><span class="dchip d-dn">+69%</span></td><td class="vbad">42%</td>
+          <td><strong>40M</strong></td><td><span class="dchip d-dn">−39%</span></td>
+          <td class="gt-cond"><span class="gt-wflag">⚠ Cắt mạnh</span>Giữ KOL Hoàng Sao 782 mua CPA 27k · Cắt phần còn lại CPA 71–149k</td>
+        </tr>
+        <tr>
+          <td class="l"><span class="gt-badge" style="background:#BF360C">C4</span> <span class="gt-name">Tan làm</span></td>
+          <td>65.4M</td><td>2,134</td><td class="vwarn">30,632đ</td>
+          <td><span class="dchip d-dn">+2%</span></td><td class="vgood">83%</td>
+          <td><strong>110M</strong></td><td><span class="dchip d-up">+68%</span></td>
+          <td class="gt-cond"><span class="gt-wflag">⚠ Cần content</span>4–6 nội dung mới trước W1 · 0 ads chết · KOC Nhật Trường CPA 20k</td>
+        </tr>
+        <tr>
+          <td class="l"><span class="gt-badge" style="background:#AD1457">C5</span> <span class="gt-name">Tóc đẹp đi làm</span></td>
+          <td>164.1M</td><td>5,492</td><td class="vgood">29,882đ</td>
+          <td><span class="dchip d-up">−1% ✓</span></td><td>60%</td>
+          <td><strong>215M</strong></td><td><span class="dchip d-up">+31%</span></td>
+          <td class="gt-cond">Tắt 11 ads 0 mua trước khi tăng · i2m 0.541‰ cao nhất · Scale KOC Hoàng không sao</td>
+        </tr>
+      </tbody>
+      <tfoot><tr>
+        <td class="l">Total FB 5 tuyến</td>
+        <td>600.3M</td><td>17,828</td><td class="vbad">33,662đ</td>
+        <td><span class="dchip d-dn">+12%</span></td><td>—</td>
+        <td><strong>663M</strong></td><td><span class="dchip d-up">+10%</span></td>
+        <td class="gt-cond" style="color:var(--text-3);font-size:10px">+Khác 20M = 683M tổng</td>
+      </tr></tfoot>
+    </table></div>
+  </div>
+
+  <!-- TIKTOK -->
+  <div class="ch-card">
+    <div class="ch-card-head">
+      <span class="ch-icon" style="background:var(--tk)"></span>
+      <span class="ch-card-name" style="color:var(--tk)">TikTok</span>
+      <span class="ch-card-t6">T6: 153.7M · V6s% avg ~17% Scale · C2 &amp; C4 chưa chạy</span>
+      <span class="ch-card-arrow">→</span>
+      <span class="ch-card-t7" style="color:var(--tk)">T7: 181M</span>
+      <span class="dchip d-up ch-card-dlt">+17.8%</span>
+    </div>
+    <div class="gt-scroll"><table class="gt">
+      <thead><tr>
+        <th class="l" style="min-width:160px">Tuyến</th>
+        <th>T6 Chi</th><th>T6 V6s%</th><th>T6 CPM</th>
+        <th>T7 Chi</th><th>Δ</th><th class="l">Ghi chú</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="l"><span class="gt-badge" style="background:#1565C0">C1</span> <span class="gt-name">Tour thư giãn</span></td>
+          <td>74.9M</td>
+          <td>16.9% <span style="font-size:10px;font-weight:700;color:#166534">Scale</span></td>
+          <td class="vbad">18,129đ ↑</td>
+          <td><strong>58M</strong></td><td><span class="dchip d-dn">−22%</span></td>
+          <td class="gt-cond">CPM cao nhất HT → giảm, chuyển về C5</td>
+        </tr>
+        <tr>
+          <td class="l"><span class="gt-badge" style="background:#6A1B9A">C2</span> <span class="gt-name">Thera Studio</span></td>
+          <td style="color:var(--text-3)">0.1M</td><td>18.0%</td><td style="color:var(--text-3)">—</td>
+          <td><strong>15M</strong></td><td><span class="dchip d-new">MỚI</span></td>
+          <td class="gt-cond">Test POV review căn hộ · 4–5 content W1</td>
+        </tr>
+        <tr>
+          <td class="l"><span class="gt-badge" style="background:#2E7D32">C3</span> <span class="gt-name">Nghỉ trưa</span></td>
+          <td>21.1M</td>
+          <td>17.3% <span style="font-size:10px;font-weight:700;color:#166534">Scale</span></td>
+          <td class="vwarn">17,126đ</td>
+          <td><strong>15M</strong></td><td><span class="dchip d-dn">−29%</span></td>
+          <td class="gt-cond">Giảm đồng bộ với cut FB</td>
+        </tr>
+        <tr>
+          <td class="l"><span class="gt-badge" style="background:#BF360C">C4</span> <span class="gt-name">Tan làm</span></td>
+          <td style="color:var(--text-3)">0M</td><td style="color:var(--text-3)">—</td><td style="color:var(--text-3)">—</td>
+          <td><strong>23M</strong></td><td><span class="dchip d-new">MỚI</span></td>
+          <td class="gt-cond">Format review dịch vụ · giờ 17–19h · W2 sau khi có content</td>
+        </tr>
+        <tr>
+          <td class="l"><span class="gt-badge" style="background:#AD1457">C5</span> <span class="gt-name">Tóc đẹp đi làm</span></td>
+          <td>58.2M</td><td class="vgood">17.0% Scale</td><td class="vgood">13,781đ ↓</td>
+          <td><strong>70M</strong></td><td><span class="dchip d-up">+20%</span></td>
+          <td class="gt-cond">CPM rẻ nhất HT · Scale best ads · KOC V6s% 22.4%</td>
+        </tr>
+      </tbody>
+      <tfoot><tr>
+        <td class="l">Total TK 5 tuyến</td>
+        <td>153.7M</td><td>—</td><td>—</td>
+        <td><strong>181M</strong></td><td><span class="dchip d-up">+17.8%</span></td>
+        <td class="gt-cond" style="color:var(--text-3);font-size:10px">2 tuyến mới C2+C4 = 38M · Scale ≥15% V6s%</td>
+      </tr></tfoot>
+    </table></div>
+  </div>
+
+  <!-- GOOGLE MAPS -->
+  <div class="ch-card">
+    <div class="ch-card-head">
+      <span class="ch-icon" style="background:var(--gg)"></span>
+      <span class="ch-card-name" style="color:var(--gg)">Google Maps (PMax)</span>
+      <span class="ch-card-t6">T6: 45.8M · 448 mua CPA 102k · 11,441 dir CPA_dir 4,003đ</span>
+      <span class="ch-card-arrow">→</span>
+      <span class="ch-card-t7" style="color:var(--gg)">T7: 70M</span>
+      <span class="dchip d-up ch-card-dlt">+53%</span>
+    </div>
+    <div class="gt-scroll"><table class="gt">
+      <thead><tr>
+        <th class="l" style="min-width:200px">Campaign</th>
+        <th>T6 Budget/ngày</th><th>T7 Budget/ngày</th><th>Δ</th>
+        <th>Est. Chi T7</th><th>Est. Directions</th><th>Est. Mua</th>
+        <th class="l">Hành động</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="l"><span style="display:inline-block;width:4px;height:28px;background:#166534;margin-right:8px;vertical-align:middle;border-radius:2px"></span><strong>PMax All 18/05</strong><span style="display:block;margin-left:12px;font-size:10px;color:var(--text-3)">All locations · Ưu tiên #1</span></td>
+          <td>700k</td><td><strong>1,800k</strong></td><td><span class="dchip d-up">+157%</span></td>
+          <td class="vgood">~35.7M</td><td class="vgood">~18,800</td><td>~350</td>
+          <td class="gt-cond">Nâng ngay từ 1/7</td>
+        </tr>
+        <tr>
+          <td class="l"><span style="display:inline-block;width:4px;height:28px;background:#166534;margin-right:8px;vertical-align:middle;border-radius:2px"></span><strong>HCM · CẦN TỐI ƯU</strong><span style="display:block;margin-left:12px;font-size:10px;color:var(--text-3)">HCM · Tiêu 95% budget → tăng · Ưu tiên #2</span></td>
+          <td>200k</td><td><strong>600k</strong></td><td><span class="dchip d-up">+200%</span></td>
+          <td class="vgood">~17.5M</td><td>~3,190</td><td>~195</td>
+          <td class="gt-cond">Tiêu 95% mới nâng · &lt;95% → điều tra</td>
+        </tr>
+        <tr>
+          <td class="l"><span style="display:inline-block;width:4px;height:28px;background:#B45309;margin-right:8px;vertical-align:middle;border-radius:2px"></span><strong>HN · ĐIỀU TRA</strong><span style="display:block;margin-left:12px;font-size:10px;color:var(--text-3)">Hà Nội · Theo dõi conversion type</span></td>
+          <td>600k</td><td><strong>300k</strong></td><td><span class="dchip d-dn">−50%</span></td>
+          <td class="vwarn">~7.3M</td><td>~1,124</td><td>~71</td>
+          <td class="gt-cond">Xác nhận conversion type W1 trước khi tăng lại</td>
+        </tr>
+        <tr>
+          <td class="l"><span style="display:inline-block;width:4px;height:28px;background:#1D4ED8;margin-right:8px;vertical-align:middle;border-radius:2px"></span><strong>HCM · STAR</strong><span style="display:block;margin-left:12px;font-size:10px;color:var(--text-3)">Đã fix call ext · Restart từ 1/7</span></td>
+          <td>500k</td><td><strong>350k</strong></td><td><span class="dchip d-neu">Restart</span></td>
+          <td class="vwarn">~8.9M</td><td>~1,271</td><td>~87</td>
+          <td class="gt-cond">CPA_dir &gt;10k W1 → giảm ngay 200k</td>
+        </tr>
+      </tbody>
+      <tfoot><tr>
+        <td class="l">Total GG</td>
+        <td>2,000k/ngày</td><td><strong>3,050k/ngày</strong></td><td><span class="dchip d-up">+53%</span></td>
+        <td class="vgood">~70M</td><td class="vgood">~25,070</td><td>~703</td>
+        <td class="gt-cond" style="color:var(--text-3);font-size:10px">CPA_mua ≤90k · CPA_dir ≤3,500đ</td>
+      </tr></tfoot>
+    </table></div>
+  </div>
+
+  <!-- CRM -->
+  <div class="guide-crm-bar">
+    <span class="ch-icon" style="background:var(--crm)"></span>
+    <span class="ch-card-name" style="color:var(--crm)">CRM</span>
+    <span style="font-size:12px;color:var(--text-2)">T6: 38.7M</span>
+    <span class="ch-card-arrow">→</span>
+    <span style="font-size:12px;font-weight:700;color:var(--crm)">T7: 70M</span>
+    <span class="dchip d-up">+81%</span>
+    <span style="font-size:11px;color:var(--text-3);margin-left:4px">Kích hoạt khách cũ &gt;12 tuần · ~7,000 KH12 estimate</span>
+  </div>
+</div><!-- /guide-section -->
 
 <div class="tab-bar">
   <button class="tab-btn active" onclick="switchTab('prov')">Theo Khu Vực</button>
