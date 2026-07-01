@@ -1,0 +1,508 @@
+<title>Plan Google Maps — Tháng 7/2026</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F2F6FA;
+  --surface:#FFFFFF;
+  --s2:#EBF1F8;
+  --ink:#18283A;
+  --ink2:#4E6880;
+  --ink3:#8AA4BC;
+  --blue:#0F52A0;
+  --blue-lt:#D6E6F7;
+  --green:#166534;
+  --green-lt:#DCFCE7;
+  --green-md:#15803D;
+  --red:#B91C1C;
+  --red-lt:#FEE2E2;
+  --amber:#92400E;
+  --amber-lt:#FEF3C7;
+  --amber-md:#B45309;
+  --border:#C9D9E8;
+  --rule:#D1DCE8;
+}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:14px;line-height:1.6;
+  padding:24px 16px 72px;
+  max-width:900px;margin:0 auto;
+}
+
+/* NAV HEADER */
+.hdr{
+  background:var(--ink);
+  border-radius:10px;padding:20px 26px;
+  margin-bottom:24px;
+  display:flex;align-items:center;gap:16px;
+}
+.hdr-text h1{font-size:17px;font-weight:800;color:#fff;letter-spacing:-0.3px;line-height:1.2;text-wrap:balance}
+.hdr-text p{font-size:12px;color:#7292AA;margin-top:5px}
+.hdr-badge{
+  margin-left:auto;background:#0F52A0;
+  border-radius:7px;padding:8px 14px;
+  font-size:11px;font-weight:800;color:#fff;
+  letter-spacing:.5px;text-align:center;line-height:1.3;
+  white-space:nowrap;flex-shrink:0;
+}
+
+/* EYEBROW */
+.ey{font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink3);margin-bottom:10px}
+
+/* OBJECTIVE ROW */
+.obj-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+  margin-bottom:24px;
+}
+@media(max-width:580px){.obj-row{grid-template-columns:1fr 1fr}}
+.obj-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:9px;padding:14px 16px;
+}
+.obj-label{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink3);margin-bottom:4px}
+.obj-t6{font-size:12px;color:var(--ink2);margin-bottom:2px;font-variant-numeric:tabular-nums}
+.obj-t7{font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-0.5px;line-height:1;font-variant-numeric:tabular-nums}
+.obj-delta{font-size:11px;font-weight:700;margin-top:5px;display:inline-block;padding:1px 7px;border-radius:20px}
+.up{background:var(--green-lt);color:var(--green-md)}
+.dn{background:var(--red-lt);color:var(--red)}
+.warn{background:var(--amber-lt);color:var(--amber-md)}
+
+/* CAMPAIGN BUDGET TABLE */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:9px;overflow:hidden;margin-bottom:14px}
+.card-head{
+  padding:13px 20px 11px;border-bottom:2px solid var(--ink);
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+}
+.card-head h2{font-size:14px;font-weight:800;color:var(--ink)}
+.card-head span{font-size:12px;color:var(--ink2)}
+.card-head .total{margin-left:auto;font-size:13px;font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums}
+
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+thead th{
+  background:var(--s2);color:var(--ink2);
+  font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
+  padding:8px 14px;text-align:right;border-bottom:1px solid var(--rule);white-space:nowrap;
+}
+thead th:first-child{text-align:left}
+tbody td{padding:10px 14px;text-align:right;border-bottom:1px solid var(--rule);color:var(--ink);vertical-align:middle}
+tbody td:first-child{text-align:left}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:var(--s2)}
+
+.cname{font-weight:700;font-size:13px;color:var(--ink);display:block}
+.ctag{font-size:11px;color:var(--ink3);display:block;margin-top:1px}
+.stripe{display:inline-block;width:3px;height:34px;border-radius:2px;vertical-align:middle;margin-right:10px;flex-shrink:0}
+
+.chip{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:20px;white-space:nowrap}
+.ch-g{background:var(--green-lt);color:var(--green-md)}
+.ch-r{background:var(--red-lt);color:var(--red)}
+.ch-a{background:var(--amber-lt);color:var(--amber-md)}
+.ch-b{background:var(--blue-lt);color:var(--blue)}
+
+.vg{color:var(--green-md);font-weight:700}
+.vr{color:var(--red);font-weight:700}
+.va{color:var(--amber-md);font-weight:700}
+
+.tfoot td{
+  background:var(--ink);color:#fff;font-weight:700;
+  border-bottom:none;border-top:2px solid var(--ink);
+}
+.tfoot td:first-child{border-radius:0}
+
+.fn{font-size:11.5px;color:var(--ink3);padding:9px 14px;border-top:1px solid var(--rule);line-height:1.45}
+
+/* WEEKLY TIMELINE */
+.weeks{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+@media(max-width:620px){.weeks{grid-template-columns:1fr 1fr}}
+@media(max-width:400px){.weeks{grid-template-columns:1fr}}
+
+.week{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:9px;overflow:hidden;
+}
+.week-head{
+  padding:10px 14px 8px;border-bottom:1px solid var(--rule);
+  background:var(--s2);
+}
+.week-num{font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--ink3)}
+.week-date{font-size:12.5px;font-weight:700;color:var(--ink);margin-top:1px}
+.week-body{padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.wtask{font-size:12px;color:var(--ink2);display:flex;gap:7px;line-height:1.4}
+.wt-icon{
+  width:16px;height:16px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:8px;font-weight:800;margin-top:1px;
+}
+.ic-g{background:var(--green-lt);color:var(--green-md)}
+.ic-r{background:var(--red-lt);color:var(--red)}
+.ic-a{background:var(--amber-lt);color:var(--amber-md)}
+.ic-b{background:var(--blue-lt);color:var(--blue)}
+.wtask strong{color:var(--ink)}
+
+/* KPI TABLE */
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+@media(max-width:500px){.kpi-grid{grid-template-columns:1fr}}
+.kpi-card{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:16px 18px}
+.kpi-title{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--ink3);margin-bottom:10px}
+.kpi-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--rule);font-size:12.5px}
+.kpi-row:last-child{border-bottom:none}
+.kpi-name{color:var(--ink2)}
+.kpi-val{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.kpi-flag{font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:10px;margin-left:6px}
+.flag-g{background:var(--green-lt);color:var(--green-md)}
+.flag-r{background:var(--red-lt);color:var(--red)}
+.flag-a{background:var(--amber-lt);color:var(--amber-md)}
+
+/* NOTE */
+.note{
+  background:var(--s2);border:1px solid var(--rule);border-left:3px solid var(--blue);
+  border-radius:0 8px 8px 0;padding:10px 14px;
+  font-size:12.5px;color:var(--ink2);line-height:1.5;margin-bottom:14px;
+}
+.note strong{color:var(--blue)}
+
+/* FOOTER ACTION */
+.footer-action{
+  background:var(--ink);border-radius:9px;padding:18px 22px;
+  display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;
+}
+.fa-col{flex:1;min-width:200px}
+.fa-title{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#4A6B8A;margin-bottom:10px}
+.fa-item{font-size:12.5px;color:#A8C0D8;margin-bottom:6px;display:flex;gap:8px}
+.fa-item strong{color:#fff}
+.fa-num{
+  background:#1A3550;border-radius:5px;
+  font-size:11px;font-weight:800;color:#60A5FA;
+  padding:1px 7px;white-space:nowrap;flex-shrink:0;
+}
+
+.mb24{margin-bottom:24px}
+</style>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div>
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+      <rect width="36" height="36" rx="8" fill="#1A3550"/>
+      <path d="M18 6C13.58 6 10 9.58 10 14c0 6.25 8 16 8 16s8-9.75 8-16c0-4.42-3.58-8-8-8zm0 10.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" fill="#4285F4"/>
+    </svg>
+  </div>
+  <div class="hdr-text">
+    <h1>Plan Google Maps — Tháng 7/2026</h1>
+    <p>4 campaign PMax · Budget 70M · Tối ưu từ dữ liệu T5 &amp; T6 thực tế</p>
+  </div>
+  <div class="hdr-badge">70M<br>T7/2026</div>
+</div>
+
+<!-- ══ MỤC TIÊU ══ -->
+<div class="mb24">
+  <p class="ey">Mục tiêu tháng 7 — so với thực tế tháng 6</p>
+  <div class="obj-row">
+    <div class="obj-card">
+      <div class="obj-label">Lượt mua</div>
+      <div class="obj-t6">T6 thực tế: 448</div>
+      <div class="obj-t7">≥ 600</div>
+      <span class="obj-delta up">+34%</span>
+    </div>
+    <div class="obj-card">
+      <div class="obj-label">CPA lượt mua</div>
+      <div class="obj-t6">T6 thực tế: 102.142đ</div>
+      <div class="obj-t7">≤ 90k</div>
+      <span class="obj-delta up">−12%</span>
+    </div>
+    <div class="obj-card">
+      <div class="obj-label">Get Directions</div>
+      <div class="obj-t6">T6 thực tế: 11.441</div>
+      <div class="obj-t7">≥ 20.000</div>
+      <span class="obj-delta up">+75%</span>
+    </div>
+    <div class="obj-card">
+      <div class="obj-label">CPA direction</div>
+      <div class="obj-t6">T6 thực tế: 4.003đ</div>
+      <div class="obj-t7">≤ 3.500đ</div>
+      <span class="obj-delta up">−13%</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BUDGET TABLE ══ -->
+<div class="mb24">
+  <p class="ey">Phân bổ ngân sách — từng campaign</p>
+  <div class="card">
+    <div class="card-head">
+      <h2>Budget T7/2026</h2>
+      <span>31 ngày · Tổng budget cap 2.650k/ngày</span>
+      <span class="total">Ước chi ~65–70M</span>
+    </div>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr>
+            <th>Campaign</th>
+            <th>Budget T6</th>
+            <th>Budget T7</th>
+            <th>Thay đổi</th>
+            <th>Ước chi/ngày</th>
+            <th>Ước chi tháng</th>
+            <th>Est. Directions</th>
+            <th>Est. Lượt mua</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:flex-start">
+                <span class="stripe" style="background:var(--green-md)"></span>
+                <div>
+                  <span class="cname">PMax · All · 18/05</span>
+                  <span class="ctag">All locations · Ưu tiên #1</span>
+                </div>
+              </div>
+            </td>
+            <td>700k</td>
+            <td><strong>1.800k</strong></td>
+            <td><span class="chip ch-g">+157%</span></td>
+            <td>~1.150k</td>
+            <td class="vg">~35.7M</td>
+            <td class="vg"><strong>~18.800</strong></td>
+            <td>~350</td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:flex-start">
+                <span class="stripe" style="background:var(--green-md)"></span>
+                <div>
+                  <span class="cname">HCM · CẦN TỐI ƯU</span>
+                  <span class="ctag">HCM · Tiêu 95% budget → tăng · Ưu tiên #2</span>
+                </div>
+              </div>
+            </td>
+            <td>200k</td>
+            <td><strong>600k</strong></td>
+            <td><span class="chip ch-g">+200%</span></td>
+            <td>~565k</td>
+            <td class="vg">~17.5M</td>
+            <td><strong>~3.190</strong></td>
+            <td>~195</td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:flex-start">
+                <span class="stripe" style="background:var(--amber-md)"></span>
+                <div>
+                  <span class="cname">HN · ĐIỀU TRA</span>
+                  <span class="ctag">Hà Nội · Theo dõi conversion type · Ưu tiên #3</span>
+                </div>
+              </div>
+            </td>
+            <td>600k</td>
+            <td><strong>350k</strong></td>
+            <td><span class="chip ch-a">−42%</span></td>
+            <td>~275k</td>
+            <td class="va">~8.5M</td>
+            <td><strong>~1.310</strong></td>
+            <td>~95</td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:flex-start">
+                <span class="stripe" style="background:var(--red)"></span>
+                <div>
+                  <span class="cname">HCM · STAR</span>
+                  <span class="ctag">Pause W1 → fix → bật lại W2 với 300k nếu đủ điều kiện</span>
+                </div>
+              </div>
+            </td>
+            <td>500k</td>
+            <td><strong>0 → 300k</strong></td>
+            <td><span class="chip ch-r">Pause W1</span></td>
+            <td>~0→235k</td>
+            <td class="va">~5.5M</td>
+            <td><strong>~390*</strong></td>
+            <td>~60</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr class="tfoot">
+            <td>Tổng</td>
+            <td>2.000k/ngày</td>
+            <td>2.650k/ngày</td>
+            <td>+33%</td>
+            <td>~2.225k</td>
+            <td>~67M</td>
+            <td>~23.690</td>
+            <td>~700</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <p class="fn">* STAR est. directions dựa trên CPA_dir 13.133đ hiện tại. Nếu fix call extension + radius thành công, CPA_dir có thể giảm xuống ~8.000đ → ~690 directions từ 5.5M.<br>** Est. lượt mua tính theo tỉ lệ T6 (448 mua / 45.8M chi = 9.78 mua/M). Kỳ vọng cải thiện khi PMax chiếm tỉ trọng lớn hơn.</p>
+  </div>
+</div>
+
+<!-- ══ WEEKLY PLAN ══ -->
+<div class="mb24">
+  <p class="ey">Kế hoạch từng tuần</p>
+  <div class="weeks">
+
+    <div class="week">
+      <div class="week-head">
+        <div class="week-num">Tuần 1</div>
+        <div class="week-date">1 – 7/7</div>
+      </div>
+      <div class="week-body">
+        <div class="wtask">
+          <div class="wt-icon ic-g">↑</div>
+          <div><strong>PMax</strong>: nâng budget lên <strong>1.800k/ngày</strong></div>
+        </div>
+        <div class="wtask">
+          <div class="wt-icon ic-g">↑</div>
+          <div><strong>CẦN TỐI ƯU</strong>: nâng lên <strong>600k/ngày</strong></div>
+        </div>
+        <div class="wtask">
+          <div class="wt-icon ic-a">↓</div>
+          <div><strong>HN ĐIỀU TRA</strong>: giảm xuống <strong>350k/ngày</strong></div>
+        </div>
+        <div class="wtask">
+          <div class="wt-icon ic-r">■</div>
+          <div><strong>STAR</strong>: <strong>PAUSE</strong> · thêm call extension · kiểm tra radius targeting</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-head">
+        <div class="week-num">Tuần 2</div>
+        <div class="week-date">8 – 14/7</div>
+      </div>
+      <div class="week-body">
+        <div class="wtask">
+          <div class="wt-icon ic-b">✓</div>
+          <div>Check PMax thực chi/ngày: nếu &lt;900k → tăng budget thêm 200k</div>
+        </div>
+        <div class="wtask">
+          <div class="wt-icon ic-b">✓</div>
+          <div>STAR đã fix đủ điều kiện? → bật lại <strong>300k/ngày</strong></div>
+        </div>
+        <div class="wtask">
+          <div class="wt-icon ic-b">✓</div>
+          <div>Check HN ĐIỀU TRA: tỉ lệ directions vs calls — nếu directions &lt;40% conv. tổng → giảm thêm</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-head">
+        <div class="week-num">Tuần 3</div>
+        <div class="week-date">15 – 21/7</div>
+      </div>
+      <div class="week-body">
+        <div class="wtask">
+          <div class="wt-icon ic-b">📊</div>
+          <div>Mid-month review: so sánh lũy kế với mục tiêu 600 lượt mua + 20k directions</div>
+        </div>
+        <div class="wtask">
+          <div class="wt-icon ic-a">!</div>
+          <div>Nếu CPA_dir PMax &gt;2.500đ → kiểm tra asset group, xem Google đang phân phối kênh nào</div>
+        </div>
+        <div class="wtask">
+          <div class="wt-icon ic-g">+</div>
+          <div>Nếu PMax tiêu tốt + CPA ổn → tăng thêm budget còn lại vào PMax</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-head">
+        <div class="week-num">Tuần 4</div>
+        <div class="week-date">22 – 31/7</div>
+      </div>
+      <div class="week-body">
+        <div class="wtask">
+          <div class="wt-icon ic-b">📊</div>
+          <div>Final check: đối chiếu lượt mua với Lark. So sánh attribution Google vs thực tế salon</div>
+        </div>
+        <div class="wtask">
+          <div class="wt-icon ic-b">✓</div>
+          <div>Lấy data directions từng ngày để phân tích tuần nào hiệu quả nhất → nhân ra T8</div>
+        </div>
+        <div class="wtask">
+          <div class="wt-icon ic-a">!</div>
+          <div>Nếu lượt mua &lt;500 → xem xét thêm Search campaign (từ khoá) cho T8</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ KPI ══ -->
+<div class="mb24">
+  <p class="ey">KPI theo dõi — check-in hàng tuần</p>
+  <div class="kpi-grid">
+
+    <div class="kpi-card">
+      <div class="kpi-title">Chỉ số chính (đo hàng tuần)</div>
+      <div class="kpi-row">
+        <span class="kpi-name">Lượt mua Google (lũy kế)</span>
+        <span class="kpi-val">≥ 150/tuần <span class="kpi-flag flag-g">Target</span></span>
+      </div>
+      <div class="kpi-row">
+        <span class="kpi-name">Get Directions (lũy kế)</span>
+        <span class="kpi-val">≥ 5.000/tuần <span class="kpi-flag flag-g">Target</span></span>
+      </div>
+      <div class="kpi-row">
+        <span class="kpi-name">CPA lượt mua</span>
+        <span class="kpi-val">≤ 90.000đ <span class="kpi-flag flag-g">Target</span></span>
+      </div>
+      <div class="kpi-row">
+        <span class="kpi-name">CPA direction (PMax)</span>
+        <span class="kpi-val">≤ 2.500đ <span class="kpi-flag flag-g">Target</span></span>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-title">Ngưỡng cảnh báo — cần xử lý ngay</div>
+      <div class="kpi-row">
+        <span class="kpi-name">PMax thực chi &lt; 800k/ngày</span>
+        <span class="kpi-val"><span class="kpi-flag flag-a">Budget không hấp thụ</span></span>
+      </div>
+      <div class="kpi-row">
+        <span class="kpi-name">CPA direction &gt; 3.500đ (avg)</span>
+        <span class="kpi-val"><span class="kpi-flag flag-r">Check asset/target</span></span>
+      </div>
+      <div class="kpi-row">
+        <span class="kpi-name">STAR CPA_dir vẫn &gt; 10.000đ sau fix</span>
+        <span class="kpi-val"><span class="kpi-flag flag-r">Pause lại</span></span>
+      </div>
+      <div class="kpi-row">
+        <span class="kpi-name">CẦN TỐI ƯU tiêu &lt; 80% budget</span>
+        <span class="kpi-val"><span class="kpi-flag flag-a">Check targeting</span></span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <strong>Lưu ý về lượt mua vs directions:</strong> Maps PMax tối ưu cho foot traffic (directions), không phải purchase tracking. Con số "700 lượt mua" là ước tính dựa trên tỉ lệ T6. Thực tế có thể cao hơn nếu nhiều khách đến salon qua directions nhưng không được đếm vào attribution Google. Cần đối chiếu với data Lark cuối tháng để biết con số thực.
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer-action">
+  <div class="fa-col">
+    <div class="fa-title">Việc cần làm ngay — 1/7</div>
+    <div class="fa-item"><span class="fa-num">1</span><span><strong>Tăng PMax</strong> budget lên 1.800k/ngày</span></div>
+    <div class="fa-item"><span class="fa-num">2</span><span><strong>Tăng CẦN TỐI ƯU</strong> lên 600k/ngày</span></div>
+    <div class="fa-item"><span class="fa-num">3</span><span><strong>Giảm HN ĐIỀU TRA</strong> xuống 350k/ngày</span></div>
+    <div class="fa-item"><span class="fa-num">4</span><span><strong>Pause HCM STAR</strong> — thêm call extension ngay hôm nay</span></div>
+  </div>
+  <div class="fa-col">
+    <div class="fa-title">Check-in tuần 1 — 8/7</div>
+    <div class="fa-item"><span class="fa-num">A</span><span>PMax đang chi bao nhiêu/ngày thực tế?</span></div>
+    <div class="fa-item"><span class="fa-num">B</span><span>STAR đã thêm xong call extension + fix radius chưa?</span></div>
+    <div class="fa-item"><span class="fa-num">C</span><span>CẦN TỐI ƯU có tiêu đủ 600k không hay vẫn còn dư?</span></div>
+    <div class="fa-item"><span class="fa-num">D</span><span>HN ĐIỀU TRA: directions chiếm bao nhiêu % conversions?</span></div>
+  </div>
+</div>
