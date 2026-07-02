@@ -225,6 +225,46 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .ch-divider { border-top: 1.5px solid var(--border); margin: 6px 0; }
 @media(max-width:700px){ .ch-funnels { padding-left:12px; padding-right:12px; } }
 
+
+/* ── Phễu kênh TikTok & Google ── */
+.ch-funnels { padding: 0 24px 14px; display: flex; gap: 12px; flex-wrap: wrap; }
+.ch-funnel-block { flex: 1; min-width: 320px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.ch-funnel-header { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-bottom: 1px solid var(--border); }
+.ch-funnel-title { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.ch-funnel-sub { font-size: 10px; color: var(--text-3); margin-left: auto; }
+.ch-funnel-inner { display: flex; gap: 0; }
+.ch-col { flex: 1; padding: 10px 12px; border-right: 1px solid var(--border); }
+.ch-col:last-child { border-right: none; }
+.ch-col-title { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3); margin-bottom: 8px; }
+.ch-row { display: flex; justify-content: space-between; align-items: baseline; padding: 2.5px 0; border-bottom: 1px solid #f4f6fc; }
+.ch-row:last-child { border-bottom: none; }
+.ch-lbl { font-size: 11.5px; color: var(--text-2); }
+.ch-val { font-size: 12px; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+.ch-val.tk { color: var(--tk); }
+.ch-val.gg { color: var(--gg); }
+.ch-val.warn { color: #d97706; }
+.ch-val.good { color: #1ea04e; }
+.ch-delta { font-size: 10.5px; color: var(--text-3); margin-top: 2px; text-align: right; }
+.ch-delta.up { color: #1ea04e; }
+.ch-delta.dn { color: #1ea04e; }
+.ch-divider { border-top: 1.5px solid var(--border); margin: 6px 0; }
+@media(max-width:700px){ .ch-funnels { padding-left:12px; padding-right:12px; } }
+/* ── Đòn bẩy 3 kênh ── */
+.lever-section { padding: 0 24px 10px; }
+.lever-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text-3); margin-bottom: 8px; }
+.lever-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.lever-card { background: var(--surface); border: 1px solid var(--border); border-radius: 9px; overflow: hidden; }
+.lever-card-head { display: flex; align-items: center; justify-content: space-between; padding: 7px 12px; border-bottom: 1px solid var(--border); }
+.lever-card-name { font-size: 11px; font-weight: 700; }
+.lever-card-budget { font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.lever-card-body { padding: 8px 12px; display: flex; flex-direction: column; gap: 5px; }
+.lever-row { display: flex; gap: 6px; align-items: flex-start; }
+.lever-tag { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: 1.5px 5px; border-radius: 3px; white-space: nowrap; margin-top: 1px; }
+.lever-tag.muc-tieu { background: #eef2ff; color: #4f46e5; }
+.lever-tag.don-bay { background: #f0fdf4; color: #166534; }
+.lever-text { font-size: 11.5px; color: var(--text-2); line-height: 1.5; }
+.lever-text strong { color: var(--text); font-weight: 700; }
+@media(max-width:700px){ .lever-grid{ grid-template-columns:1fr; } .lever-section{ padding-left:12px; padding-right:12px; } }
 </style>
 
 <header class="site-header">
@@ -247,6 +287,68 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
     <div class="kpi-pill"><span class="label">CRM</span><span class="val" style="color:var(--crm)">70M</span></div>
   </div>
 </header>
+
+<!-- ══ ĐÒN BẨY 3 KÊNH ══ -->
+<div class="lever-section">
+  <div class="lever-title">3 kênh — Mục tiêu & Đòn bẩy T7/2026</div>
+  <div class="lever-grid">
+
+    <!-- Facebook -->
+    <div class="lever-card">
+      <div class="lever-card-head">
+        <span class="lever-card-name" style="color:var(--fb)">Facebook</span>
+        <span class="lever-card-budget" style="color:var(--fb)">683M <span style="font-size:9px;font-weight:400;color:var(--text-3)">68%</span></span>
+      </div>
+      <div class="lever-card-body">
+        <div class="lever-row">
+          <span class="lever-tag muc-tieu">Mục tiêu</span>
+          <span class="lever-text"><strong>34,997</strong> KH mới+cũ&gt;12W · CPA <strong>19,516đ</strong></span>
+        </div>
+        <div class="lever-row">
+          <span class="lever-tag don-bay">Đòn bẩy</span>
+          <span class="lever-text">265 content (2.5×) → tần suất <strong>6.16 → 4.5</strong> → tiếp cận <strong>+49%</strong> (6.5M → 9.7M người unique) — nhiều người thấy lần đầu hơn, ít người bị nhàm hơn</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TikTok -->
+    <div class="lever-card">
+      <div class="lever-card-head">
+        <span class="lever-card-name" style="color:var(--tk)">TikTok</span>
+        <span class="lever-card-budget" style="color:var(--tk)">181M <span style="font-size:9px;font-weight:400;color:var(--text-3)">18%</span></span>
+      </div>
+      <div class="lever-card-body">
+        <div class="lever-row">
+          <span class="lever-tag muc-tieu">Mục tiêu</span>
+          <span class="lever-text">Tiếp cận <strong>2.68M</strong> unique · 6s rate <strong>≥17%</strong> · tần suất <strong>≤4.5</strong></span>
+        </div>
+        <div class="lever-row">
+          <span class="lever-tag don-bay">Đòn bẩy</span>
+          <span class="lever-text">Kênh nhận diện — mở phễu cho Facebook tại khu vực thiếu KH mới; tần suất T6 5.36 → T7 4.5, tiếp cận <strong>+49%</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Maps -->
+    <div class="lever-card">
+      <div class="lever-card-head">
+        <span class="lever-card-name" style="color:var(--gg)">Google Maps</span>
+        <span class="lever-card-budget" style="color:var(--gg)">70M <span style="font-size:9px;font-weight:400;color:var(--text-3)">7%</span></span>
+      </div>
+      <div class="lever-card-body">
+        <div class="lever-row">
+          <span class="lever-tag muc-tieu">Mục tiêu</span>
+          <span class="lever-text"><strong>18,919</strong> directions · CPD <strong>3,700đ</strong> · 685 lượt mua</span>
+        </div>
+        <div class="lever-row">
+          <span class="lever-tag don-bay">Đòn bẩy</span>
+          <span class="lever-text">Intent cao — người chủ động tìm salon gần nhà; chuyển đổi trực tiếp không qua phễu dài; tăng budget +53% để khai thác volume directions</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <!-- ══ KẾ HOẠCH FACEBOOK T7 ══ -->
 <div class="fb-plan-section">
@@ -384,6 +486,82 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 
 
 
+
+
+<!-- ══ PHỄU TIKTOK + GOOGLE ══ -->
+<div class="ch-funnels">
+
+  <!-- TikTok -->
+  <div class="ch-funnel-block">
+    <div class="ch-funnel-header">
+      <span style="width:8px;height:8px;border-radius:2px;background:var(--tk);display:inline-block"></span>
+      <span class="ch-funnel-title" style="color:var(--tk)">TikTok — Phễu T7/2026</span>
+      <span class="ch-funnel-sub">Tầng nhận diện · mở phễu cho Facebook</span>
+    </div>
+    <div class="ch-funnel-inner">
+      <div class="ch-col">
+        <div class="ch-col-title">T6 Thực tế</div>
+        <div class="ch-row"><span class="ch-lbl">Chi phí</span><span class="ch-val">153.7M</span></div>
+        <div class="ch-row"><span class="ch-lbl">Hiển thị</span><span class="ch-val">9.67M</span></div>
+        <div class="ch-row"><span class="ch-lbl">CPM</span><span class="ch-val warn">15,894đ</span></div>
+        <div class="ch-row"><span class="ch-lbl">Tần suất</span><span class="ch-val warn">5.36 ⚠</span></div>
+        <div class="ch-row"><span class="ch-lbl">Tiếp cận</span><span class="ch-val">1.81M</span></div>
+        <div class="ch-divider"></div>
+        <div class="ch-row"><span class="ch-lbl">6s View rate</span><span class="ch-val">17.0%</span></div>
+        <div class="ch-row"><span class="ch-lbl">6s Views</span><span class="ch-val">1.64M</span></div>
+        <div class="ch-row"><span class="ch-lbl">CP6s</span><span class="ch-val">94đ</span></div>
+      </div>
+      <div class="ch-col">
+        <div class="ch-col-title" style="color:var(--tk)">T7 Kế hoạch</div>
+        <div class="ch-row"><span class="ch-lbl">Chi phí</span><span class="ch-val tk">181M</span><span class="ch-delta up">+17.8%</span></div>
+        <div class="ch-row"><span class="ch-lbl">Hiển thị</span><span class="ch-val tk">12.07M</span><span class="ch-delta up">+25%</span></div>
+        <div class="ch-row"><span class="ch-lbl">CPM</span><span class="ch-val good">15,000đ</span><span class="ch-delta dn">−6%</span></div>
+        <div class="ch-row"><span class="ch-lbl">Tần suất</span><span class="ch-val good">4.5</span><span class="ch-delta dn">−16%</span></div>
+        <div class="ch-row"><span class="ch-lbl">Tiếp cận</span><span class="ch-val tk">2.68M</span><span class="ch-delta up">+49%</span></div>
+        <div class="ch-divider"></div>
+        <div class="ch-row"><span class="ch-lbl">6s View rate</span><span class="ch-val good">≥17%</span></div>
+        <div class="ch-row"><span class="ch-lbl">6s Views</span><span class="ch-val tk">2.05M</span><span class="ch-delta up">+25%</span></div>
+        <div class="ch-row"><span class="ch-lbl">CP6s</span><span class="ch-val tk">88đ</span><span class="ch-delta dn">−6%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Google Maps -->
+  <div class="ch-funnel-block">
+    <div class="ch-funnel-header">
+      <span style="width:8px;height:8px;border-radius:2px;background:var(--gg);display:inline-block"></span>
+      <span class="ch-funnel-title" style="color:var(--gg)">Google Maps (PMax) — Phễu T7/2026</span>
+      <span class="ch-funnel-sub">Tầng tìm kiếm · intent cao</span>
+    </div>
+    <div class="ch-funnel-inner">
+      <div class="ch-col">
+        <div class="ch-col-title">T6 Thực tế</div>
+        <div class="ch-row"><span class="ch-lbl">Chi phí</span><span class="ch-val">45.8M</span></div>
+        <div class="ch-row"><span class="ch-lbl">Hiển thị</span><span class="ch-val">~1.45M</span></div>
+        <div class="ch-row"><span class="ch-lbl">CPM</span><span class="ch-val">31,586đ</span></div>
+        <div class="ch-divider"></div>
+        <div class="ch-row"><span class="ch-lbl">Directions</span><span class="ch-val">11,441</span></div>
+        <div class="ch-row"><span class="ch-lbl">CPD</span><span class="ch-val">4,003đ</span></div>
+        <div class="ch-divider"></div>
+        <div class="ch-row"><span class="ch-lbl">Lượt mua</span><span class="ch-val">448</span></div>
+        <div class="ch-row"><span class="ch-lbl">CPA mua</span><span class="ch-val">102,232đ</span></div>
+      </div>
+      <div class="ch-col">
+        <div class="ch-col-title" style="color:var(--gg)">T7 Kế hoạch</div>
+        <div class="ch-row"><span class="ch-lbl">Chi phí</span><span class="ch-val gg">70M</span><span class="ch-delta up">+53%</span></div>
+        <div class="ch-row"><span class="ch-lbl">Hiển thị</span><span class="ch-val gg">~2.2M</span><span class="ch-delta up">+52%</span></div>
+        <div class="ch-row"><span class="ch-lbl">CPM</span><span class="ch-val gg">~31,000đ</span></div>
+        <div class="ch-divider"></div>
+        <div class="ch-row"><span class="ch-lbl">Directions</span><span class="ch-val gg">18,919</span><span class="ch-delta up">+65%</span></div>
+        <div class="ch-row"><span class="ch-lbl">CPD</span><span class="ch-val good">3,700đ</span><span class="ch-delta dn">−7%</span></div>
+        <div class="ch-divider"></div>
+        <div class="ch-row"><span class="ch-lbl">Lượt mua</span><span class="ch-val gg">685</span><span class="ch-delta up">+53%</span></div>
+        <div class="ch-row"><span class="ch-lbl">CPA mua</span><span class="ch-val gg">102,190đ</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
 
 
 <!-- ══ PHỄU TIKTOK + GOOGLE ══ -->
