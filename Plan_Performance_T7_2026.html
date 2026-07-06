@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan Performance T7/2026 — 30Shine</title>
+<style>
+  :root{
+    --ground:#f6f2e8; --panel:#fffdf8; --panel-2:#f0e9d7;
+    --ink:#1a232e; --ink-soft:#4a5563; --ink-faint:#7c8794;
+    --navy:#15294d; --navy-2:#20396a; --navy-ink:#eef3fb;
+    --amber:#c1892d; --amber-soft:#e8c987;
+    --line:#dfd6c1; --line-strong:#c9bd9f;
+    --good:#2f7d57; --warn:#b06a1f; --crit:#a33a3a;
+    --shadow:0 1px 2px rgba(21,41,77,.06),0 8px 28px rgba(21,41,77,.07);
+    --radius:14px; --maxw:1080px;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,"Helvetica Neue",Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ground:#0e1621; --panel:#16212f; --panel-2:#1b2942;
+      --ink:#e9edf3; --ink-soft:#aab6c4; --ink-faint:#7a8797;
+      --navy:#0c1930; --navy-2:#16294d; --navy-ink:#eef3fb;
+      --amber:#e0b45c; --amber-soft:#7a5c22;
+      --line:#26364b; --line-strong:#33465f;
+      --good:#5cc08c; --warn:#e0a24f; --crit:#e07070;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+    line-height:1.55;-webkit-font-smoothing:antialiased;font-size:16px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  section{margin:46px auto}
+  p{margin:.4em 0}
+  strong{font-weight:700}
+
+  .hero{background:linear-gradient(155deg,var(--navy) 0%,var(--navy-2) 100%);
+    color:var(--navy-ink);border-radius:0 0 26px 26px;padding:40px 0 34px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-60px;top:-40px;width:320px;height:320px;
+    border-radius:50%;background:radial-gradient(circle,rgba(224,180,92,.16),transparent 66%)}
+  .hero .wrap{position:relative;z-index:1}
+  .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--amber-soft);font-weight:700}
+  @media(prefers-color-scheme:dark){.eyebrow{color:var(--amber)}}
+  .hero h1{font-size:clamp(28px,4.5vw,46px);line-height:1.06;margin:14px 0 6px;
+    font-weight:800;letter-spacing:-.02em;text-wrap:balance;max-width:20ch}
+  .hero .sub{font-size:clamp(15px,2.2vw,19px);color:#cdd9ee;font-weight:500;max-width:58ch}
+  .hero .meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13.5px;color:#aec0dd}
+  .hero .meta b{color:#fff;font-weight:600}
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+  .tile{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 15px}
+  .tile .n{font-size:26px;font-weight:800;letter-spacing:-.01em;color:#fff}
+  .tile .n small{font-size:14px;font-weight:700;color:var(--amber-soft)}
+  .tile .l{font-size:12px;color:#b9c8e2;margin-top:2px;line-height:1.35}
+  @media(max-width:720px){.tiles{grid-template-columns:repeat(2,1fr)}.hero h1{max-width:none}}
+
+  .sh{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+  .sh .num{font-size:13px;font-weight:800;color:#fff;background:var(--navy);
+    min-width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;
+    justify-content:center;flex:none;align-self:center}
+  @media(prefers-color-scheme:dark){.sh .num{background:var(--navy-2)}}
+  .sh h2{font-size:clamp(20px,2.8vw,26px);margin:0;font-weight:800;letter-spacing:-.015em;text-wrap:balance}
+  .lead{color:var(--ink-soft);max-width:72ch;margin:2px 0 20px;font-size:15px}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:800px){.grid2,.grid3{grid-template-columns:1fr}}
+  .frame{background:var(--panel-2);border:1px solid var(--line-strong);border-radius:var(--radius);padding:18px 20px}
+
+  .qlist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+  .qlist li{display:flex;gap:10px;font-size:14.5px;align-items:flex-start}
+  .qlist .qn{font-weight:800;color:var(--amber);flex:none;font-size:13px;margin-top:2px}
+  @media(max-width:720px){.qlist{grid-template-columns:1fr}}
+
+  .principles{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chip{font-size:12.5px;background:var(--panel);border:1px solid var(--line-strong);
+    border-radius:100px;padding:5px 12px;color:var(--ink-soft);font-weight:600}
+  .chip b{color:var(--ink)}
+
+  /* weekly cycle */
+  .week-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);
+    border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .day{background:var(--panel);padding:16px 18px;border-right:1px solid var(--line)}
+  .day:last-child{border-right:none}
+  .day-head{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;
+    color:#fff;background:var(--navy);margin:-16px -18px 12px;padding:9px 18px}
+  .day-head.amber{background:linear-gradient(90deg,var(--amber),#a9711f);color:#1a232e}
+  .day-title{font-size:15px;font-weight:800;margin:0 0 6px;letter-spacing:-.01em}
+  .day ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px}
+  .day li{font-size:13px;color:var(--ink-soft);display:flex;gap:8px;align-items:flex-start}
+  .day li::before{content:"→";color:var(--amber);flex:none;font-weight:700;font-size:11px;margin-top:2px}
+  .day .out{margin-top:10px;padding:8px 10px;background:var(--panel-2);border:1px solid var(--line-strong);
+    border-radius:8px;font-size:12px;color:var(--ink-faint)}
+  .day .out b{color:var(--ink-soft)}
+  @media(max-width:800px){.week-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.week-grid{grid-template-columns:1fr}}
+
+  .camp{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--panel)}
+  .camp .top{padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px;
+    background:linear-gradient(120deg,var(--navy),var(--navy-2));color:#fff}
+  .camp .top h3{margin:0;font-size:19px;font-weight:800;letter-spacing:-.01em}
+  .camp .top .tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;
+    background:var(--amber);color:#1a232e;padding:4px 10px;border-radius:6px;flex:none}
+  .camp .top .tag.crit{background:var(--crit);color:#fff}
+  .camp .body{padding:6px 20px 18px}
+  .row{display:grid;grid-template-columns:112px 1fr;gap:6px 16px;padding:11px 0;border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:none}
+  .row .k{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);font-weight:700;padding-top:2px}
+  .row .v{font-size:14.5px;color:var(--ink)}
+  .row .v em{color:var(--amber);font-style:normal;font-weight:700}
+  .plat{display:flex;flex-direction:column;gap:5px}
+  .plat span{font-size:14px}
+  .plat b{display:inline-block;min-width:72px;color:var(--navy-2);font-weight:700}
+  @media(prefers-color-scheme:dark){.plat b{color:var(--amber)}}
+  @media(max-width:560px){.row{grid-template-columns:1fr}.plat b{min-width:0;margin-right:6px}}
+
+  .mini{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+  .mini .frame h4{margin:0 0 6px;font-size:15px}
+  @media(max-width:800px){.mini{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.mini{grid-template-columns:1fr}}
+  .tagline{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);font-weight:800;margin-bottom:4px}
+
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:540px;background:var(--panel);font-size:14px}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:var(--panel-2);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink-soft);font-weight:800}
+  tbody tr:last-child td{border-bottom:none}
+  tfoot td{font-weight:800;background:var(--panel-2)}
+  td .lead-name{font-weight:700;color:var(--navy-2)}
+  @media(prefers-color-scheme:dark){td .lead-name{color:var(--amber)}}
+  .num-c{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+
+  .approve{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .approve li{display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:start;
+    background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px 15px}
+  .approve .b{min-width:52px;padding:0 8px;height:28px;border-radius:7px;background:var(--amber);color:#1a232e;
+    font-weight:800;display:flex;align-items:center;justify-content:center;font-size:12.5px;white-space:nowrap}
+  .approve .b.n{background:var(--navy);color:#fff}
+  .approve small{color:var(--ink-faint);font-size:13px}
+
+  .risk td.sig{font-weight:700;white-space:nowrap}
+  .pill{display:inline-block;font-size:11px;font-weight:800;padding:2px 8px;border-radius:100px;letter-spacing:.03em}
+  .pill.hi{background:rgba(163,58,58,.14);color:var(--crit)}
+  .pill.mid{background:rgba(176,106,31,.16);color:var(--warn)}
+
+  .foot{color:var(--ink-faint);font-size:12.5px;border-top:1px solid var(--line);padding:20px 0 46px;line-height:1.6}
+  .callout{border-left:3px solid var(--amber);padding:4px 0 4px 14px;color:var(--ink-soft);font-size:14.5px;margin:14px 0}
+  h3.blocktitle{font-size:16px;margin:20px 0 10px;letter-spacing:-.01em;font-weight:800}
+  .note{font-size:12.5px;color:var(--ink-faint);margin-top:8px;font-style:italic}
+
+  .threshold-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:10px}
+  .threshold-row .th-box{background:var(--panel-2);border:1px solid var(--line-strong);
+    border-radius:10px;padding:11px 14px}
+  .threshold-row .th-box .tl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    font-weight:800;margin-bottom:4px}
+  .threshold-row .th-box .tl.good{color:var(--good)}
+  .threshold-row .th-box .tl.warn{color:var(--warn)}
+  .threshold-row .th-box .tl.crit{color:var(--crit)}
+  .threshold-row .th-box p{font-size:13px;color:var(--ink-soft);margin:0}
+  @media(max-width:720px){.threshold-row{grid-template-columns:1fr}}
+
+  .content-intake{display:grid;gap:8px;margin-top:10px}
+  .ci-row{display:grid;grid-template-columns:180px 52px 52px 1fr;gap:8px 14px;
+    align-items:center;padding:9px 14px;background:var(--panel);border:1px solid var(--line);
+    border-radius:9px;font-size:13.5px}
+  .ci-row .ci-type{font-weight:700}
+  .ci-row .ci-n{font-weight:800;color:var(--amber);font-variant-numeric:tabular-nums;text-align:center}
+  .ci-row .ci-w{color:var(--ink-faint);font-variant-numeric:tabular-nums;text-align:center}
+  .ci-row .ci-note{color:var(--ink-soft)}
+  .ci-head{display:grid;grid-template-columns:180px 52px 52px 1fr;gap:8px 14px;
+    padding:6px 14px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:800}
+  @media(max-width:640px){
+    .ci-head{display:none}
+    .ci-row{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
+    .ci-row .ci-note{grid-column:1/-1}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Khối Marketing · Phòng Performance · Bản trình duyệt</div>
+    <h1>Vận hành ads + kênh salon — lịch cố định 4 ngày/tuần, feedback loop mỗi tuần</h1>
+    <p class="sub">Kế hoạch Performance T7/2026: 34,997 KH12, CPA ≤35k đ trên 3 kênh (FB · TikTok · Google) + CRM + 3,480 nội dung kênh salon. Mỗi tuần có đầu ra cam kết cụ thể.</p>
+    <div class="meta">
+      <span>Trình bày · <b>Bùi Thị Huế</b> — Chuyên viên Ads Performance</span>
+      <span>Phối hợp · <b>Khánh</b> (FB · Google · NQ) · <b>Hải</b> (CRM)</span>
+      <span>Duyệt · <b>Nguyễn Kiều Oanh</b> — Giám đốc Marketing</span>
+      <span>Bám khung <b>Plan MKT H2 2026</b></span>
+    </div>
+    <div class="tiles">
+      <div class="tile"><div class="n">34,997<small> KH</small></div><div class="l">KH12 mục tiêu T7 — ads + CRM + organic quay lại</div></div>
+      <div class="tile"><div class="n">≤35<small>k đ</small></div><div class="n" style="font-size:12px;font-weight:500;color:#b9c8e2;margin-top:2px">blended CPA</div><div class="l">Xuống từ 40k lịch sử; tách CPA theo kênh hàng tuần</div></div>
+      <div class="tile"><div class="n">1,112<small>M</small></div><div class="l">Ngân sách 3 kênh + CRM · 58 salon · 10 khu vực</div></div>
+      <div class="tile"><div class="n">3,480<small> ND</small></div><div class="l">Nội dung kênh salon T7 — cơ chế live từ 8/7</div></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <div class="sh"><span class="num">0</span><h2>Khung đọc — mỗi tuần phải trả lời, không chỉ đếm tiêu tiền</h2></div>
+    <p class="lead">Duyệt là duyệt <b>ngưỡng can thiệp · lịch check · đầu ra tuần</b>. Mọi workstream đều viết theo đúng 6 câu này — cuối tháng đọc ra cái gì đúng, cái gì sai, scale được không.</p>
+    <div class="frame">
+      <ul class="qlist">
+        <li><span class="qn">1</span><span><b>Đo chỉ số gì</b> — CPA/CPM/CTR/V6s% theo kênh + loại nội dung</span></li>
+        <li><span class="qn">2</span><span><b>Ngưỡng can thiệp</b> — khi nào scale · khi nào pause · khi nào escalate lên Oanh</span></li>
+        <li><span class="qn">3</span><span><b>Lịch check cố định</b> — Thứ 3/4/5/6 · pacing 3 ngày · không check ngẫu hứng</span></li>
+        <li><span class="qn">4</span><span><b>Input cần có</b> — nội dung sạch · UTM đúng 100% · Lark đồng bộ · tệp loại trừ cập nhật</span></li>
+        <li><span class="qn">5</span><span><b>Lead & trách nhiệm</b> — Huế (TikTok + kênh salon) · Khánh (FB + Google) · Hải (CRM)</span></li>
+        <li><span class="qn">6</span><span><b>Đầu ra tuần cam kết</b> — update ads Thứ 3 · scale/kill list Thứ 6 · research report Thứ 5</span></li>
+      </ul>
+    </div>
+    <div class="principles">
+      <span class="chip">Nguyên lý nền:</span>
+      <span class="chip"><b>Mua nhiều &gt; mua rẻ</b> — volume trước; CPA là chỉ số so sánh content, không phải để tắt ads</span>
+      <span class="chip"><b>Drill-down 4 tầng</b> — tiền/tỉ lệ kênh → location/Lark → content/checklist → phễu CPM→CTR→CPN→CPA</span>
+      <span class="chip"><b>Root cause trước</b> — hỏi "tại sao?" ≥3 lần; không đổ lỗi ngoại cảnh</span>
+      <span class="chip"><b>UTM 100%</b> — không có UTM = không tính vào KPI</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><span class="num">1</span><h2>Mục tiêu T7 — 3 kênh + CRM + Kênh salon</h2></div>
+    <p class="lead">Tổng 34,997 KH12 = ads 3 kênh (23,064) + CRM (3,183) + organic quay lại (8,750). Kênh salon đóng góp vào pool chung. Ngân sách 1,112M đ.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Kênh</th><th>Ngân sách</th><th>KH mục tiêu</th><th>Chỉ số ngưỡng T7</th><th>Lead</th></tr></thead>
+        <tbody>
+          <tr><td><b>Facebook</b> — 5 tuyến C1–C5</td><td class="num-c">540M</td><td class="num-c">13,500</td><td>CPA ≤29–40k theo tuyến · CTR ≥0.75% · Frequency &lt;5</td><td><span class="lead-name">Khánh</span></td></tr>
+          <tr><td><b>TikTok</b> — 5 tuyến C1–C5</td><td class="num-c">260M</td><td class="num-c">6,564</td><td>V6s% ≥15% · CPM ≤12.8k · UTM 100%</td><td><span class="lead-name">Huế</span></td></tr>
+          <tr><td><b>Google Maps</b> — PMax</td><td class="num-c">72.7M</td><td class="num-c">3,000</td><td>CPA_dir ≤3,500đ · CPC ≤1,636đ · 44,400 directions</td><td><span class="lead-name">Khánh</span></td></tr>
+          <tr><td><b>CRM</b> — FB Mess + Zalo OA</td><td class="num-c">70M</td><td class="num-c">3,183</td><td>Open rate ≥35% · 24 salon active · tỉ lệ chuyển đổi</td><td><span class="lead-name">Hải</span></td></tr>
+          <tr><td><b>Organic quay lại</b> — 35% × C12W</td><td class="num-c">—</td><td class="num-c">8,750</td><td>Không chạy ads; phụ thuộc retention thực tế</td><td><span class="lead-name">—</span></td></tr>
+          <tr><td><b>Kênh salon</b> — organic → boost</td><td class="num-c">~169M</td><td class="num-c">pool</td><td>3,480 ND đăng · bài WIN V6s% ≥18% → boost</td><td><span class="lead-name">Huế</span></td></tr>
+        </tbody>
+        <tfoot><tr><td><b>TỔNG</b></td><td class="num-c"><b>1,112M</b></td><td class="num-c"><b>34,997</b></td><td colspan="2"></td></tr></tfoot>
+      </table>
+    </div>
+    <p class="note">Facebook: tuyến C4 Afterwork target CPA ≤29k · C5 Hair ≤29k · C2 Studio ≤30k · C1 Tour ≤33k · C3 Midday ≤40k. Google PMax: nâng cap từ 1,800k lên 3,050k/ngày ngay W1.</p>
+  </section>
+
+  <section>
+    <div class="sh"><span class="num">2</span><h2>Vòng tuần — 4 ngày cố định, 1 vòng lặp mỗi 7 ngày</h2></div>
+    <p class="lead">Mọi việc performance đều rơi vào 1 trong 4 ngày này. Không check ngoài lịch trừ khi có sự cố. Vòng lặp 4 tuần × 7 ngày = cả tháng T7.</p>
+    <div class="week-grid">
+      <div class="day">
+        <div class="day-head">Thứ 3</div>
+        <p class="day-title">Upload & chỉnh ads</p>
+        <ul>
+          <li>Nhận batch nội dung từ team Tùng (7 WC · 3 ND Hoàng · 4 bài ảnh · 4 KOC salon · 5 ND Bệnh VP)</li>
+          <li><b>Khánh:</b> upload FB + đặt UTM, tag Lark · <b>Huế:</b> upload TikTok + UTM TikTok</li>
+          <li>Pause bài đã kill tuần trước, scale bài WIN từ Thứ 6</li>
+          <li>Kiểm naming convention trước khi live</li>
+        </ul>
+        <div class="out"><b>Đầu ra:</b> tất cả bài mới live trước 12h · danh sách ghi Lark</div>
+      </div>
+      <div class="day">
+        <div class="day-head">Thứ 4</div>
+        <p class="day-title">Check first read</p>
+        <ul>
+          <li>Pacing 3 ngày: &lt;8% → tăng bid · &gt;13% → kiểm CPA ngay</li>
+          <li>Bài bị từ chối → fix ngay hoặc thay thế trong ngày</li>
+          <li><b>Khánh:</b> CPM &gt;25k (FB) → check targeting + tệp loại trừ</li>
+          <li><b>Huế:</b> V6s% &lt;12% (TikTok) → pause, test hook mới</li>
+        </ul>
+        <div class="out"><b>Đầu ra:</b> log bài lỗi + pacing lệch vào Lark trước 17h</div>
+      </div>
+      <div class="day">
+        <div class="day-head amber">Thứ 5</div>
+        <p class="day-title">Research + Kho kịch bản</p>
+        <ul>
+          <li>Báo cáo chuyên sâu: khu vực · TA tác động · đối thủ · tuyến content · tương quan kênh</li>
+          <li>Nộp 1,000 kịch bản vào kho — tìm insight từ data ads tuần (Hà lead, Huế + Khánh tham gia)</li>
+          <li>Đối chiếu pacing ngân sách theo khu vực</li>
+        </ul>
+        <div class="out"><b>Đầu ra:</b> 1 report ≤1 trang gửi Oanh · 1,000 kịch bản vào kho trước 17h</div>
+      </div>
+      <div class="day">
+        <div class="day-head">Thứ 6</div>
+        <p class="day-title">Scale decision + Feedback</p>
+        <ul>
+          <li>Scale: CPA ≤ngưỡng×0.9 hoặc V6s% ≥18% → +20–30% budget</li>
+          <li>Kill: CPA &gt;ngưỡng×1.3 sau 3 ngày · zero purchase sau 100k spend</li>
+          <li>Ghi WIN/FLOP → tag loại content → gửi Tùng để thứ 3 tuần sau điều chỉnh batch</li>
+        </ul>
+        <div class="out"><b>Đầu ra:</b> scale/kill list Lark trước 17h · budget điều chỉnh live cuối ngày</div>
+      </div>
+    </div>
+    <p class="note">Thứ 6 tuần này → Thứ 3 tuần sau phải phản ánh insight đó. Không có feedback loop này = nội dung tuần sau không khác gì tuần trước.</p>
+
+    <h3 class="blocktitle">Ngưỡng can thiệp theo kênh</h3>
+    <div class="threshold-row">
+      <div class="th-box"><div class="tl good">Scale — Facebook</div><p>CPA ≤ ngưỡng tuyến × 0.9 → tăng 20–30% budget. Frequency vẫn &lt;5. Scale bài, không scale nhóm ngay.</p></div>
+      <div class="th-box"><div class="tl good">Scale — TikTok</div><p>V6s% ≥18% sau 2 ngày → +20–30%. CPM đang ≤12.8k. Không scale nếu CTR &lt;0.5%.</p></div>
+      <div class="th-box"><div class="tl warn">Pause — Facebook</div><p>CPA &gt; ngưỡng × 1.3 sau 3 ngày · Zero purchase sau 50–100k spend · Frequency &gt;5 trên nhóm nhỏ.</p></div>
+      <div class="th-box"><div class="tl warn">Pause — TikTok</div><p>V6s% &lt;12% → pause ad set, test hook mới. CPM đột biến &gt;25k → check content + landing.</p></div>
+      <div class="th-box"><div class="tl crit">Escalate — mọi kênh</div><p>Pacing &gt;13% trong 3 ngày đầu · CPA vượt ngưỡng × 1.5 · Google PMax CPA_dir &gt;3,500đ 2 ngày liên.</p></div>
+      <div class="th-box"><div class="tl crit">Google Maps</div><p>CPA_dir &gt;3,500đ → dừng nhóm đó ngay. PMax All: nâng cap lên 3,050k/ngày từ W1. HN: verify conversion type trước khi tăng.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><span class="num">3</span><h2>Kênh salon — 3,480 nội dung · cơ chế live 8/7</h2></div>
+    <p class="lead">Workstream mới T7: kênh salon individual (TikTok + FB từng salon) chia 2 nhóm — <b>hệ thống (Huế lead)</b> và <b>nhượng quyền (Khánh lead · bổ sung sau)</b>. T7 tập trung triển khai hệ thống trước. Không có cơ chế = không boost được đúng.</p>
+
+    <div class="camp" style="margin-bottom:18px">
+      <div class="top"><h3>⚑ Cơ chế vận hành kênh salon</h3><span class="tag crit">Deadline 8/7</span></div>
+      <div class="body">
+        <div class="row"><div class="k">Mục tiêu</div><div class="v">SOP đủ để ads team check và boost nội dung salon <em>mà không cần hỏi từng người</em>. Salon pilot live theo cơ chế mới từ 8/7.</div></div>
+        <div class="row"><div class="k">SOP cần có</div><div class="v"><div class="plat">
+          <span><b>Nhận bài:</b> ai nộp, nộp vào đâu (folder/Lark), naming convention</span>
+          <span><b>Review:</b> ai duyệt, tiêu chí — checklist 7 điểm ads (hook 3s · policy · UTM · chất lượng)</span>
+          <span><b>Đăng:</b> kênh nào, lịch, UTM theo salon</span>
+          <span><b>Boost:</b> ngưỡng V6s% ≥18% → boost bao nhiêu, ai approve ngân sách</span>
+          <span><b>Check:</b> link tracking vào Lark, ai đọc cuối tuần</span>
+        </div></div></div>
+        <div class="row"><div class="k">Đầu ra 8/7</div><div class="v">1 doc SOP + form nộp bài + Lark template tracking → gửi Oanh duyệt trước 8/7</div></div>
+        <div class="row"><div class="k">Triển khai</div><div class="v">Salon pilot đầu tiên theo SOP mới live từ 8/7. Rollout toàn bộ sau khi pilot ổn định (≤W3).</div></div>
+        <div class="row"><div class="k">Lead</div><div class="v"><span class="lead-name">Huế</span> (SOP + triển khai) · Phối hợp team Huế Khánh (local content)</div></div>
+      </div>
+    </div>
+
+    <h3 class="blocktitle">3,480 nội dung salon — logic phân bổ & tiêu chí boost</h3>
+    <div class="card">
+      <p style="font-size:14.5px;color:var(--ink-soft);margin:0 0 12px">58 salon × 2 bài/ngày × 30 ngày = 3,480 bài. Nội dung do team content + salon tự quay nộp theo batch thứ 3. Huế check chuẩn, bài đạt → boost test 50–100k; bài WIN V6s% ≥18% → scale thêm.</p>
+      <div class="grid2">
+        <div>
+          <div class="tagline">Tiêu chí bài đủ chuẩn boost</div>
+          <ul style="font-size:14px;color:var(--ink-soft);padding-left:18px;margin:8px 0 0;line-height:1.8">
+            <li>Hook rõ trong 3 giây: dịch vụ + địa chỉ + CTA</li>
+            <li>Không vi phạm policy (không hứa chữa bệnh, không hù doạ)</li>
+            <li>UTM đúng naming, tag đúng địa điểm salon</li>
+            <li>Độ phân giải ≥720p, caption đúng tone "mình/bạn"</li>
+            <li>Không trùng bài đã chạy trong 2 tuần gần nhất</li>
+          </ul>
+        </div>
+        <div>
+          <div class="tagline">Lịch kiểm tra & boost theo vòng tuần</div>
+          <ul style="font-size:14px;color:var(--ink-soft);padding-left:18px;margin:8px 0 0;line-height:1.8">
+            <li><b>Thứ 3:</b> nhận batch mới, check chuẩn, live test 50–100k/bài</li>
+            <li><b>Thứ 4:</b> check bài bị từ chối → fix ngay</li>
+            <li><b>Thứ 6:</b> V6s% ≥18% → scale · FLOP → log, trả note team</li>
+            <li>Bài local WIN → xem xét whitelist chạy rộng khu vực</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="blocktitle">Kho kịch bản — 1,000/tuần, Thứ 5</h3>
+    <div class="frame">
+      <p style="font-size:14.5px;color:var(--ink-soft);margin:0 0 8px"><b>Hà lead</b> kho kịch bản. Huế + Khánh đóng góp insight từ data ads mỗi tuần. Target: 1,000 kịch bản/tuần vào kho trước 17h Thứ 5.</p>
+      <div class="grid2" style="gap:14px">
+        <div>
+          <div class="tagline">Nguồn insight Huế khai thác</div>
+          <ul style="font-size:14px;color:var(--ink-soft);padding-left:18px;margin:6px 0 0;line-height:1.8">
+            <li>Bài nào CPM thấp nhất tuần → hook đó đang work</li>
+            <li>Comment section bài viral → pain point thật của TA</li>
+            <li>Tuyến nội dung nào CPA tốt → angle đó cần thêm kịch bản</li>
+            <li>Bài FLOP → tránh angle đó tuần sau</li>
+          </ul>
+        </div>
+        <div>
+          <div class="tagline">Format nộp kịch bản</div>
+          <ul style="font-size:14px;color:var(--ink-soft);padding-left:18px;margin:6px 0 0;line-height:1.8">
+            <li>Hook (3 giây đầu) · Thân (vấn đề → giải pháp) · CTA</li>
+            <li>Tag: tuyến (C1–C5) · loại (WC/KOC/ảnh/video) · CEP</li>
+            <li>Ghi nguồn insight: bài nào gợi ý, comment nào, data nào</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><span class="num">4</span><h2>Phối hợp nội dung với team Tùng — nhận Thứ 3, phản hồi Thứ 6</h2></div>
+    <p class="lead">Tùng phụ trách chính nội dung. Huế + Khánh: nhận batch, upload, đặt UTM, theo dõi hiệu quả, <b>trả lại insight Thứ 6</b> để batch tuần sau thay đổi đúng. Không có vòng phản hồi = tiêu tiền vào nội dung cũ.</p>
+
+    <div class="ci-head">
+      <div>Loại nội dung</div><div style="text-align:center">T7 tổng</div><div style="text-align:center">Batch/tuần</div><div>Tuyến chạy & chỉ số đo</div>
+    </div>
+    <div class="content-intake">
+      <div class="ci-row">
+        <div class="ci-type">WC (World Cup angle)</div>
+        <div class="ci-n">20</div>
+        <div class="ci-w">7/tuần</div>
+        <div class="ci-note">C1 Tour · C4 Afterwork — đo CPA vs trung bình pool; angle mới nên test riêng nhóm</div>
+      </div>
+      <div class="ci-row">
+        <div class="ci-type">ND Hoàng (KOL Hoàng Sao)</div>
+        <div class="ci-n">10</div>
+        <div class="ci-w">3/tuần</div>
+        <div class="ci-note">C3 Midday — KOL đặc thù, target CPA ≤40k; T6 đang ở 27k → duy trì, không thay đổi cấu hình</div>
+      </div>
+      <div class="ci-row">
+        <div class="ci-type">Bài ảnh (từ pool 33 bài)</div>
+        <div class="ci-n">20</div>
+        <div class="ci-w">4/tuần</div>
+        <div class="ci-note">C2 Studio · C5 Hair — đo CTR ≥1% (ảnh thường thấp hơn video); CPA so sánh với video cùng tuyến</div>
+      </div>
+      <div class="ci-row">
+        <div class="ci-type">KOC từ Salon</div>
+        <div class="ci-n">20</div>
+        <div class="ci-w">4/tuần</div>
+        <div class="ci-note">C4 Afterwork · Local — UTM rate 100%; bài WIN → whitelist, thêm vào kênh salon boost</div>
+      </div>
+      <div class="ci-row">
+        <div class="ci-type">ND Bệnh VP · Tóc đẹp đi làm</div>
+        <div class="ci-n">15</div>
+        <div class="ci-w">5/tuần</div>
+        <div class="ci-note">C1 Tour · C2 Studio — tuyến kéo mới, target CPA ≤33k; đây là nội dung chiến lược cần đo kỹ nhất</div>
+      </div>
+    </div>
+
+    <div class="callout"><b>Feedback loop bắt buộc:</b> Thứ 6 ghi WIN/FLOP vào Lark có tag loại nội dung + lý do. Tùng đọc trước khi chốt batch thứ 3 tuần sau. Nếu không có log → escalate lên Oanh.</div>
+
+    <h3 class="blocktitle">32 KOC — 3 batch, whitelist theo tháng</h3>
+    <div class="mini">
+      <div class="frame">
+        <div class="tagline">Đã nhận — 15/6</div>
+        <h4>10 KOC batch 1</h4>
+        <p style="font-size:14px;color:var(--ink-soft);margin:6px 0 0">Đã chạy T6. Đánh giá: bài WIN giữ whitelist sang T7, tăng budget. Bài hết reach hoặc CPA vượt ngưỡng → off, blacklist creator. Không để chạy quán tính.</p>
+      </div>
+      <div class="frame">
+        <div class="tagline">Nhận từ Tùng — 20/7</div>
+        <h4>11 KOC batch 2</h4>
+        <p style="font-size:14px;color:var(--ink-soft);margin:6px 0 0">Upload ngay 20/7. Chạy test 50k/bài trong 3 ngày. Thứ 6/24/7: scale bài V6s% ≥18% hoặc CPA ≤ngưỡng tuyến × 0.9. Ghi nhận vào Lark trước cuối ngày 24/7.</p>
+      </div>
+      <div class="frame">
+        <div class="tagline">Nhận từ Tùng — 25/7</div>
+        <h4>11 KOC batch 3</h4>
+        <p style="font-size:14px;color:var(--ink-soft);margin:6px 0 0">Upload ngay 25/7. Chạy W5 (28–31/7). Kết quả đọc đầu tháng 8 — feed vào plan T8 và brief KOC tháng tiếp theo.</p>
+      </div>
+    </div>
+    <p class="note">Tổng 32 KOC chia 2 tuyến: 10 KOC đúng nghề (tóc đẹp đi làm) + 10 KOC trải nghiệm relief (bệnh văn phòng) + 12 KOC salon local. Đo UTM riêng từng creator.</p>
+  </section>
+
+  <section>
+    <div class="sh"><span class="num">5</span><h2>Deadline cứng tháng 7 — 4 mốc không được trễ</h2></div>
+    <p class="lead">Ngoài lịch tuần định kỳ, có 4 deadline ảnh hưởng trực tiếp đến hiệu quả ads và pipeline tháng 8.</p>
+    <ul class="approve">
+      <li><span class="b">8/7</span><div><b>Cơ chế vận hành kênh salon + Triển khai salon</b><br><small>SOP hoàn chỉnh · salon pilot live theo cơ chế mới. Nếu trễ: nội dung salon T7 không boost được đúng — mất 2–3 tuần hiệu quả, không vá lại được.</small></div></li>
+      <li><span class="b n">7/7</span><div><b>Update data tệp loại trừ lần 1</b><br><small>Upload danh sách khách đã mua &lt;12W vào custom audience loại trừ trên FB + TikTok. Tránh tiêu ngân sách vào khách cũ còn trong vùng hiệu lực — burn budget ước tính 5–10% nếu không cập nhật.</small></div></li>
+      <li><span class="b n">21/7</span><div><b>Update data tệp loại trừ lần 2</b><br><small>Mid-month refresh. Quan trọng sau W2: khối lượng khách mua từ W1 bắt đầu đủ điều kiện loại trừ nhưng chưa có trong tệp cũ.</small></div></li>
+      <li><span class="b n">W1</span><div><b>Nâng cap Google PMax All — ngay đầu tháng</b><br><small>PMax All hiện spend 1,800k/ngày, target 3,050k/ngày. Nếu không nâng: hụt ~37% reach Google Maps, thiếu ~1,100 KH trong pool. Làm ngay W1 trước khi hệ thống học lại.</small></div></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sh"><span class="num">6</span><h2>Phân vai & cam kết đầu ra</h2></div>
+    <p class="lead">Mỗi workstream có một người chịu trách nhiệm chính — để cuối tháng biết hỏi ai, sai ở đâu.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Workstream</th><th>Lead</th><th>Phối hợp</th><th>Đầu ra cam kết</th></tr></thead>
+        <tbody>
+          <tr><td><b>Vận hành ads FB</b> (5 tuyến)</td><td><span class="lead-name">Khánh</span></td><td>Huế (duyệt scale/kill)</td><td>CPA ≤ngưỡng tuyến · Frequency &lt;5 · Pacing ±5% mỗi 3 ngày</td></tr>
+          <tr><td><b>Vận hành ads TikTok</b> (5 tuyến)</td><td><span class="lead-name">Huế</span></td><td>Khánh (check chéo)</td><td>V6s% ≥15% · CPM ≤12.8k · UTM coverage 100%</td></tr>
+          <tr><td><b>Google Maps PMax</b></td><td><span class="lead-name">Khánh</span></td><td>IT (conversion verify)</td><td>3,000 KH · CPA_dir ≤3,500đ · cap nâng W1</td></tr>
+          <tr><td><b>CRM (FB Mess + Zalo OA)</b></td><td><span class="lead-name">Hải</span></td><td>Team CRM (18 nội dung Vân Hà)</td><td>Open rate ≥35% · 24 salon active · tỉ lệ chuyển đổi đo được</td></tr>
+          <tr><td><b>Kênh salon hệ thống · SOP + 3,480 ND</b></td><td><span class="lead-name">Huế</span></td><td>Team content · local</td><td>SOP live 8/7 · bài đủ chuẩn &gt;80% · WIN rate boost &gt;30%</td></tr>
+          <tr><td><b>Kênh salon nhượng quyền</b></td><td><span class="lead-name">Khánh</span></td><td>Team nhượng quyền</td><td><em style="color:var(--warn);font-style:normal">Bổ sung sau — chưa có trong plan T7</em></td></tr>
+          <tr><td><b>Kho kịch bản 1,000/tuần</b></td><td><span class="lead-name">Hà lead</span></td><td>Huế + Khánh (insight từ ads)</td><td>1,000 kịch bản vào kho trước 17h thứ 5 mỗi tuần</td></tr>
+          <tr><td><b>Research report thứ 5</b></td><td><span class="lead-name">Huế</span></td><td>Khánh (data FB/GG) · Hải (CRM)</td><td>1 report ≤1 trang gửi Oanh mỗi thứ 5</td></tr>
+          <tr><td><b>Phối hợp batch nội dung</b></td><td><span class="lead-name">Huế</span></td><td>Tùng (branding · KOC · WC)</td><td>Feedback loop thứ 6 → thứ 3 tuần sau có phản ánh</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><span class="num">7</span><h2>Đo lường & đọc cuối tháng</h2></div>
+    <p class="lead">Không dừng ở lượt xem. Đo theo chuỗi Input → Output → Kết quả kinh doanh, khớp Pyramid đo 5 tầng của Plan H2.</p>
+    <div class="grid3">
+      <div class="card"><div class="tagline">Input</div><h4 style="margin:6px 0 6px">Độ phủ & chi tiêu</h4><p style="font-size:14px;color:var(--ink-soft);margin:0">Ngân sách tiêu đúng plan (±5%) · UTM coverage 100% · 3,480 ND salon đã đăng · tệp loại trừ cập nhật 2 lần.</p></div>
+      <div class="card"><div class="tagline">Output</div><h4 style="margin:6px 0 6px">Hiệu quả trung gian</h4><p style="font-size:14px;color:var(--ink-soft);margin:0">CPA/CPM/CTR từng tuyến · V6s% TikTok ≥15% · Google CPA_dir ≤3,500đ · Frequency &lt;5 · Số bài WIN scale được.</p></div>
+      <div class="card"><div class="tagline">Kết quả KD</div><h4 style="margin:6px 0 6px">KH & thương hiệu</h4><p style="font-size:14px;color:var(--ink-soft);margin:0">KH12 ≥34,997 · CPA blended ≤35k · Tần suất quay lại · CRM open rate ≥35% · Share of Search.</p></div>
+    </div>
+    <div class="callout">Câu hỏi cuối tháng phải trả lời được: <b>Loại nội dung nào CPA tốt nhất?</b> · TikTok đóng góp real conversion hay chỉ reach? · Kênh salon boost có lift hơn organic không? · Scale được không? · Kho kịch bản có cải thiện chất lượng nội dung không?</div>
+  </section>
+
+  <section>
+    <div class="sh"><span class="num">8</span><h2>Rủi ro & phương án</h2></div>
+    <div class="tbl-wrap">
+      <table class="risk">
+        <thead><tr><th>Rủi ro</th><th>XS</th><th>Xử lý</th></tr></thead>
+        <tbody>
+          <tr><td>Cơ chế salon chậm → nội dung không boost được đúng lịch T7</td><td class="sig"><span class="pill hi">Cao</span></td><td>Chốt SOP trước 8/7. Nếu không kịp toàn bộ: chạy pilot 5–10 salon trước, rollout tiếp theo từng batch</td></tr>
+          <tr><td>Tệp loại trừ không cập nhật → burn budget vào khách cũ</td><td class="sig"><span class="pill hi">Cao</span></td><td>Nhắc cứng 7/7 và 21/7 vào Lark calendar. Ai miss → escalate lên Oanh ngay trong ngày</td></tr>
+          <tr><td>Nội dung batch thứ 3 nộp không đủ / sai chuẩn</td><td class="sig"><span class="pill mid">TB</span></td><td>Checklist 7 tiêu chí trả về ngay khi nhận. SLA: Huế phản hồi trong 4h nhận batch. Thiếu bài → chạy bài cũ WIN, không để trống slot</td></tr>
+          <tr><td>Google PMax underspend → hụt 3,000 KH Google target</td><td class="sig"><span class="pill mid">TB</span></td><td>W1: nâng cap PMax All từ 1,800k lên 3,050k/ngày. HN: verify conversion type trước khi tăng. HCM Star: reset call extension</td></tr>
+          <tr><td>Lark / Windsor mất đồng bộ → đọc sai CPA</td><td class="sig"><span class="pill mid">TB</span></td><td>Check ad_name matching mỗi thứ 4. Fallback: dùng Ads Manager trực tiếp. Ghi bất thường vào log ngay</td></tr>
+          <tr><td>Feedback loop Huế → Tùng đứt → nội dung không cải thiện</td><td class="sig"><span class="pill mid">TB</span></td><td>WIN/FLOP log bắt buộc thứ 6. Nếu không có log trong 2 tuần liên tiếp → escalate, đây là SLA liên phòng</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 class="blocktitle">Cần phối hợp</h3>
+    <div class="principles">
+      <span class="chip"><b>Team Tùng (Branding)</b> — batch nội dung thứ 3 · feedback loop thứ 6 · whitelist KOC</span>
+      <span class="chip"><b>IT</b> — Lark Base sync · conversion verify Google HN · schema SEO/GEO (Chương)</span>
+      <span class="chip"><b>CRM team</b> — danh sách 24 salon active · 1 salon HN pending tên · Zalo OA</span>
+      <span class="chip"><b>Windsor / Data</b> — UTM matching ad_name · quận-level data khi có</span>
+      <span class="chip"><b>Team Huế Khánh</b> — nội dung salon local · định hướng TikTok khu vực</span>
+    </div>
+  </section>
+
+  <div class="foot">
+    Nguồn: Plan MKT H2 2026 (bản CEO duyệt) · budget_t7_dashboard (CPA/reach targets theo kênh) · Plan Branding T7/2026 (phối hợp nội dung) · spreadsheet phân công T7 (Oanh) · framework ads performance nội bộ.
+    Số KH và ngân sách là kế hoạch — tinh chỉnh khi có data W1. Deadline cứng (8/7 · 7/7 · 21/7) không dời. · Lập: Bùi Thị Huế — 06/07/2026.
+  </div>
+</main>
+</body>
+</html>
