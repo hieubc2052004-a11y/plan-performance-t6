@@ -273,17 +273,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .kh12-bar-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text-3); }
 .kh12-bar-compare { font-size: 11px; color: var(--text-2); }
 .kh12-bar-compare strong { color: #1ea04e; }
-.kh12-cols { display: grid; grid-template-columns: 1fr 1px 1fr 1px 1.2fr; align-items: stretch; }
-.kh12-divider { background: var(--border); }
-.kh12-col { padding: 10px 16px; }
-.kh12-col-label { font-size: 10px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3); font-weight: 600; margin-bottom: 4px; }
-.kh12-col-val { font-size: 22px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; }
-.kh12-col-sub { font-size: 11px; color: var(--text-3); margin-top: 3px; }
+.kh12-cols { display: flex; align-items: stretch; }
+.kh12-col { flex: 1; padding: 12px 16px; border-right: 1px solid var(--border); }
+.kh12-col:last-child { border-right: none; }
+.kh12-sep { display: flex; align-items: center; justify-content: center; padding: 0 14px; font-size: 22px; font-weight: 300; color: var(--text-3); background: var(--surface); border-right: 1px solid var(--border); flex-shrink: 0; }
+.kh12-col-label { font-size: 9.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3); font-weight: 600; margin-bottom: 4px; }
+.kh12-col-val { font-size: 24px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; }
+.kh12-col-sub { font-size: 11px; color: var(--text-3); margin-top: 4px; line-height: 1.5; }
 .kh12-col-sub span { color: var(--text-2); }
 .kh12-total { background: #f0fdf4; }
 .kh12-total .kh12-col-val { color: #166534; }
-.kh12-eq { display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--text-3); padding: 0 4px; }
-@media(max-width:600px){ .kh12-bar{ margin-left:12px; margin-right:12px; } .kh12-cols{ grid-template-columns:1fr; } .kh12-divider{ display:none; } .kh12-eq{ display:none; } }
+@media(max-width:600px){ .kh12-bar{ margin-left:12px; margin-right:12px; } .kh12-sep{ padding:0 8px; font-size:18px; } } .kh12-cols{ grid-template-columns:1fr; } .kh12-divider{ display:none; } .kh12-eq{ display:none; } }
 
 
 
@@ -409,36 +409,26 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
     <span class="kh12-bar-compare">So T6: 29,398 → T7: <strong>34,997 (+19%)</strong></span>
   </div>
   <div class="kh12-cols">
-
     <div class="kh12-col">
       <div class="kh12-col-label">MKT đóng góp (ads + CRM)</div>
       <div class="kh12-col-val" style="color:var(--fb)">26,247</div>
       <div class="kh12-col-sub">
         KM <span>9,998</span> · C12W rời thật <span>16,249</span><br>
-        <span style="font-size:10.5px">FB 13,500 · TK 6,564 · GG 3,000 · CRM 3,183</span>
+        FB 13,500 · TK 6,564 · GG 3,000 · CRM 3,183
       </div>
     </div>
-
-    <div class="kh12-divider"></div>
-    <div class="kh12-eq">+</div>
-    <div class="kh12-divider"></div>
-
+    <div class="kh12-sep">+</div>
     <div class="kh12-col">
       <div class="kh12-col-label">C12W tự quay lại (không cần ads)</div>
       <div class="kh12-col-val" style="color:var(--text-2)">8,750</div>
-      <div class="kh12-col-sub">35% × C12W 24,999 · <span>nhảy salon + chưa phân loại</span></div>
+      <div class="kh12-col-sub">35% × C12W 24,999<br><span>nhảy salon + chưa phân loại</span></div>
     </div>
-
-    <div class="kh12-divider"></div>
-    <div class="kh12-eq">=</div>
-    <div class="kh12-divider"></div>
-
+    <div class="kh12-sep">=</div>
     <div class="kh12-col kh12-total">
       <div class="kh12-col-label">Tổng KH mới + cũ &gt;12W</div>
       <div class="kh12-col-val">34,997</div>
-      <div class="kh12-col-sub">KM <span>9,998</span> + C12W <span>24,999</span> · T6: 29,398</div>
+      <div class="kh12-col-sub">KM <span>9,998</span> + C12W <span>24,999</span><br>T6: 29,398 · <strong style="color:#1ea04e">+19%</strong></div>
     </div>
-
   </div>
 </div>
 
@@ -650,81 +640,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 </div>
 
 
-<!-- ══ PHỄU TIKTOK + GOOGLE ══ -->
-<div class="ch-funnels">
-
-  <!-- TikTok -->
-  <div class="ch-funnel-block">
-    <div class="ch-funnel-header">
-      <span style="width:8px;height:8px;border-radius:2px;background:var(--tk);display:inline-block"></span>
-      <span class="ch-funnel-title" style="color:var(--tk)">TikTok — Phễu T7/2026</span>
-      <span class="ch-funnel-sub">Tầng nhận diện · mở phễu cho Facebook</span>
-    </div>
-    <div class="ch-funnel-inner">
-      <div class="ch-col">
-        <div class="ch-col-title">T6 Thực tế</div>
-        <div class="ch-row"><span class="ch-lbl">Chi phí</span><span class="ch-val">153.7M</span></div>
-        <div class="ch-row"><span class="ch-lbl">Hiển thị</span><span class="ch-val">9.67M</span></div>
-        <div class="ch-row"><span class="ch-lbl">CPM</span><span class="ch-val warn">15,894đ</span></div>
-        <div class="ch-row"><span class="ch-lbl">Tần suất</span><span class="ch-val warn">5.36 ⚠</span></div>
-        <div class="ch-row"><span class="ch-lbl">Tiếp cận</span><span class="ch-val">1.81M</span></div>
-        <div class="ch-divider"></div>
-        <div class="ch-row"><span class="ch-lbl">6s View rate</span><span class="ch-val">17.0%</span></div>
-        <div class="ch-row"><span class="ch-lbl">6s Views</span><span class="ch-val">1.64M</span></div>
-        <div class="ch-row"><span class="ch-lbl">CP6s</span><span class="ch-val">94đ</span></div>
-      </div>
-      <div class="ch-col">
-        <div class="ch-col-title" style="color:var(--tk)">T7 Kế hoạch</div>
-        <div class="ch-row"><span class="ch-lbl">Chi phí</span><span class="ch-val tk">260M</span><span class="ch-delta up">+69%</span></div>
-        <div class="ch-row"><span class="ch-lbl">Hiển thị</span><span class="ch-val tk">20.3M</span><span class="ch-delta up">+110%</span></div>
-        <div class="ch-row"><span class="ch-lbl">CPM</span><span class="ch-val good">12,778đ</span><span class="ch-delta dn">−20%</span></div>
-        <div class="ch-row"><span class="ch-lbl">Tần suất</span><span class="ch-val good">~1.5</span><span class="ch-delta dn">−72%</span></div>
-        <div class="ch-row"><span class="ch-lbl">Tiếp cận</span><span class="ch-val tk">~13.6M</span><span class="ch-delta up">+651%</span></div>
-        <div class="ch-divider"></div>
-        <div class="ch-row"><span class="ch-lbl">6s View rate</span><span class="ch-val good">≥17%</span></div>
-        <div class="ch-row"><span class="ch-lbl">6s Views</span><span class="ch-val tk">~3.45M</span><span class="ch-delta up">+110%</span></div>
-        <div class="ch-row"><span class="ch-lbl">CP6s</span><span class="ch-val tk">~75đ</span><span class="ch-delta dn">−20%</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Google Maps -->
-  <div class="ch-funnel-block">
-    <div class="ch-funnel-header">
-      <span style="width:8px;height:8px;border-radius:2px;background:var(--gg);display:inline-block"></span>
-      <span class="ch-funnel-title" style="color:var(--gg)">Google Maps (PMax) — Phễu T7/2026</span>
-      <span class="ch-funnel-sub">Tầng tìm kiếm · intent cao</span>
-    </div>
-    <div class="ch-funnel-inner">
-      <div class="ch-col">
-        <div class="ch-col-title">T6 Thực tế</div>
-        <div class="ch-row"><span class="ch-lbl">Chi phí</span><span class="ch-val">45.8M</span></div>
-        <div class="ch-row"><span class="ch-lbl">Hiển thị</span><span class="ch-val">~1.45M</span></div>
-        <div class="ch-row"><span class="ch-lbl">CPM</span><span class="ch-val">31,586đ</span></div>
-        <div class="ch-divider"></div>
-        <div class="ch-row"><span class="ch-lbl">Directions</span><span class="ch-val">11,441</span></div>
-        <div class="ch-row"><span class="ch-lbl">CPD</span><span class="ch-val">4,003đ</span></div>
-        <div class="ch-divider"></div>
-        <div class="ch-row"><span class="ch-lbl">Lượt mua</span><span class="ch-val">448</span></div>
-        <div class="ch-row"><span class="ch-lbl">CPA mua</span><span class="ch-val">102,232đ</span></div>
-      </div>
-      <div class="ch-col">
-        <div class="ch-col-title" style="color:var(--gg)">T7 Kế hoạch</div>
-        <div class="ch-row"><span class="ch-lbl">Chi phí</span><span class="ch-val gg">72.7M</span><span class="ch-delta up">+59%</span></div>
-        <div class="ch-row"><span class="ch-lbl">Hiển thị</span><span class="ch-val gg">~2.3M</span><span class="ch-delta up">+59%</span></div>
-        <div class="ch-row"><span class="ch-lbl">CPM</span><span class="ch-val gg">~31,000đ</span></div>
-        <div class="ch-divider"></div>
-        <div class="ch-row"><span class="ch-lbl">Directions</span><span class="ch-val gg">44,400</span><span class="ch-delta up">+288%</span></div>
-        <div class="ch-row"><span class="ch-lbl">CPD</span><span class="ch-val good">1,636đ</span><span class="ch-delta dn">−59%</span></div>
-        <div class="ch-divider"></div>
-        <div class="ch-row"><span class="ch-lbl">Lượt mua</span><span class="ch-val gg">3,000</span><span class="ch-delta up">+570%</span></div>
-        <div class="ch-row"><span class="ch-lbl">CPA mua</span><span class="ch-val gg">24,200đ</span></div>
-      </div>
-    </div>
-  </div>
-
-</div>
-
 <div class="tab-bar">
   <button class="tab-btn active" onclick="switchTab('prov')">Theo Khu Vực</button>
   <button class="tab-btn" onclick="switchTab('salon')">Theo Salon</button>
@@ -913,6 +828,98 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
     <div class="rule-note">V6s% cao → TikTok phân phối rộng hơn → CPM tự rẻ hơn → CPA tốt hơn. Không dùng view 100% làm chỉ số chính — quá cuối phễu. T6 baseline: C1=16.9% · C2=18% · C3=17.3% · C5=17% · C4 chưa có TikTok.</div>
   </div>
 
+</div>
+</div>
+
+<div class="panel" id="panelNQ">
+<div class="nq-wrap">
+  <div class="nq-kpi">
+    <div class="nq-kpi-card"><div class="nq-kpi-label">Số salon</div><div class="nq-kpi-val">24</div><div class="nq-kpi-sub">xác nhận · còn ~1 HN chưa có tên</div></div>
+    <div class="nq-kpi-card"><div class="nq-kpi-label">Tổng ngân sách</div><div class="nq-kpi-val" style="color:var(--fb)">243M</div><div class="nq-kpi-sub">target 250M · còn thiếu ~7M</div></div>
+    <div class="nq-kpi-card"><div class="nq-kpi-label">Facebook</div><div class="nq-kpi-val" style="color:var(--fb)">186M</div><div class="nq-kpi-sub">76.5% · chạy tất cả vùng</div></div>
+    <div class="nq-kpi-card"><div class="nq-kpi-label">Google Ads</div><div class="nq-kpi-val" style="color:var(--gg)">57M</div><div class="nq-kpi-sub">23.5% · HCM + HN + 3 tỉnh cố định</div></div>
+    <div class="nq-kpi-card"><div class="nq-kpi-label">Chi/ngày TB</div><div class="nq-kpi-val">~8.1M</div><div class="nq-kpi-sub">243M ÷ 30 ngày</div></div>
+  </div>
+  <div class="nq-progress">
+    <span class="nq-progress-label">243M / 250M</span>
+    <div class="nq-progress-bar"><div class="nq-progress-fill" style="width:97.2%"></div></div>
+    <span class="nq-progress-label" style="color:#1ea04e">97.2%</span>
+  </div>
+
+  <div class="nq-section-title">Rate Card — chi/ngày theo vùng</div>
+  <table class="nq-table">
+    <thead><tr><th>Vùng</th><th class="r">FB/ngày</th><th class="r">GG/ngày</th><th class="r">Tổng/ngày</th><th class="r">/tháng</th></tr></thead>
+    <tbody>
+      <tr><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
+      <tr><td><span class="nq-badge hn">HN</span> <span style="font-size:10px;color:var(--text-3)">(TB salon)</span></td><td class="r">200k*</td><td class="r">100k</td><td class="r">300k*</td><td class="r">9.0M*</td></tr>
+      <tr><td><span class="nq-badge fix">Quy Nhơn (cố định)</span></td><td class="r">300k</td><td class="r">200k</td><td class="r">500k</td><td class="r">15.0M</td></tr>
+      <tr><td><span class="nq-badge fix">Mỹ Tho (cố định)</span></td><td class="r">100k</td><td class="r">100k</td><td class="r">200k</td><td class="r">6.0M</td></tr>
+      <tr><td><span class="nq-badge fix">Cao Lãnh (cố định)</span></td><td class="r">100k</td><td class="r">100k</td><td class="r">200k</td><td class="r">6.0M</td></tr>
+      <tr><td><span class="nq-badge fb">Bình Dương / Đồng Nai / Đà Nẵng / Nha Trang / Vũng Tàu</span></td><td class="r">200k</td><td class="r">—</td><td class="r">200k</td><td class="r">6.0M</td></tr>
+    </tbody>
+  </table>
+  <div style="font-size:11px;color:var(--text-3);margin-top:5px">* HN: 63B TDT đặc biệt FB 100k · 55 TH chỉ GG 100k (FB 0). Số TB chỉ mang tính tham khảo.</div>
+
+  <div class="nq-section-title">Danh sách 24 salon — chi/ngày &amp; /tháng</div>
+  <table class="nq-table">
+    <thead><tr><th>Salon</th><th>Vùng</th><th class="r">FB/ng</th><th class="r">GG/ng</th><th class="r">Tổng/ng</th><th class="r">/tháng</th></tr></thead>
+    <tbody>
+      <tr><td>27A NVL</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
+      <tr><td>68 NT</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
+      <tr><td>112 PQ</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
+      <tr><td>170 NTL</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
+      <tr><td>359 LQD</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
+      <tr><td>77B PVC</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
+      <tr><td>406 TNM</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
+      <tr><td>A6 NAT</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
+      <tr><td>177 ĐVB</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
+      <tr class="nq-off"><td>356 ĐXH &nbsp;<span class="nq-badge off">tắt</span></td><td><span class="nq-badge hcm">HCM</span></td><td class="r" style="color:var(--text-3)">300k</td><td class="r" style="color:var(--text-3)">100k</td><td class="r" style="color:var(--text-3)">400k</td><td class="r" style="color:var(--text-3)">12.0M</td></tr>
+      <tr><td>63B TDT</td><td><span class="nq-badge hn">HN</span></td><td class="r">100k</td><td class="r">100k</td><td class="r">200k</td><td class="r">6.0M</td></tr>
+      <tr><td>55 TH</td><td><span class="nq-badge hn">HN</span></td><td class="r">—</td><td class="r">100k</td><td class="r">100k</td><td class="r">3.0M</td></tr>
+      <tr><td>104 CB</td><td><span class="nq-badge hn">HN</span></td><td class="r">200k</td><td class="r">100k</td><td class="r">300k</td><td class="r">9.0M</td></tr>
+      <tr><td>VINSMART</td><td><span class="nq-badge hn">HN</span></td><td class="r">200k</td><td class="r">100k</td><td class="r">300k</td><td class="r">9.0M</td></tr>
+      <tr><td>14 LN</td><td><span class="nq-badge hn">HN</span></td><td class="r">200k</td><td class="r">100k</td><td class="r">300k</td><td class="r">9.0M</td></tr>
+      <tr><td>Quy Nhơn</td><td><span class="nq-badge fix">Cố định</span></td><td class="r">300k</td><td class="r">200k</td><td class="r">500k</td><td class="r">15.0M</td></tr>
+      <tr><td>Mỹ Tho</td><td><span class="nq-badge fix">Cố định</span></td><td class="r">100k</td><td class="r">100k</td><td class="r">200k</td><td class="r">6.0M</td></tr>
+      <tr><td>Cao Lãnh</td><td><span class="nq-badge fix">Cố định</span></td><td class="r">100k</td><td class="r">100k</td><td class="r">200k</td><td class="r">6.0M</td></tr>
+      <tr><td>65 22T12</td><td><span class="nq-badge fb">Bình Dương</span></td><td class="r">200k</td><td class="r">—</td><td class="r">200k</td><td class="r">6.0M</td></tr>
+      <tr><td>Long Khánh</td><td><span class="nq-badge fb">Đồng Nai</span></td><td class="r">200k</td><td class="r">—</td><td class="r">200k</td><td class="r">6.0M</td></tr>
+      <tr><td style="color:#d97706;font-style:italic">+ 1 salon (chưa có tên)</td><td><span class="nq-badge fb">Đồng Nai</span></td><td class="r">200k</td><td class="r">—</td><td class="r">200k</td><td class="r">6.0M</td></tr>
+      <tr><td>130 XVNT</td><td><span class="nq-badge fb">Đà Nẵng</span></td><td class="r">200k</td><td class="r">—</td><td class="r">200k</td><td class="r">6.0M</td></tr>
+      <tr><td>35 HB</td><td><span class="nq-badge fb">Nha Trang</span></td><td class="r">200k</td><td class="r">—</td><td class="r">200k</td><td class="r">6.0M</td></tr>
+      <tr><td>Bà Rịa</td><td><span class="nq-badge fb">Vũng Tàu</span></td><td class="r">200k</td><td class="r">—</td><td class="r">200k</td><td class="r">6.0M</td></tr>
+      <tr class="nq-total"><td colspan="4"><strong>TỔNG 24 salon (+ 1 Đồng Nai chưa tên)</strong></td><td class="r"><strong>~8.1M</strong></td><td class="r"><strong>~243M</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="nq-section-title">Tổng theo vùng</div>
+  <table class="nq-table">
+    <thead><tr><th>Vùng</th><th class="r">Salon</th><th class="r">FB/tháng</th><th class="r">GG/tháng</th><th class="r">Tổng/tháng</th></tr></thead>
+    <tbody>
+      <tr><td><span class="nq-badge hcm">HCM</span></td><td class="r">10</td><td class="r">90M</td><td class="r">30M</td><td class="r" style="font-weight:700">120M</td></tr>
+      <tr><td><span class="nq-badge hn">HN</span></td><td class="r">5</td><td class="r">45M</td><td class="r">15M</td><td class="r" style="font-weight:700">60M</td></tr>
+      <tr><td><span class="nq-badge fix">Quy Nhơn</span></td><td class="r">1</td><td class="r">9M</td><td class="r">6M</td><td class="r">15M</td></tr>
+      <tr><td><span class="nq-badge fix">Mỹ Tho</span></td><td class="r">1</td><td class="r">3M</td><td class="r">3M</td><td class="r">6M</td></tr>
+      <tr><td><span class="nq-badge fix">Cao Lãnh</span></td><td class="r">1</td><td class="r">3M</td><td class="r">3M</td><td class="r">6M</td></tr>
+      <tr><td><span class="nq-badge fb">Bình Dương</span></td><td class="r">1</td><td class="r">6M</td><td class="r">—</td><td class="r">6M</td></tr>
+      <tr><td><span class="nq-badge fb">Đồng Nai</span></td><td class="r">2</td><td class="r">12M</td><td class="r">—</td><td class="r">12M</td></tr>
+      <tr><td><span class="nq-badge fb">Đà Nẵng</span></td><td class="r">1</td><td class="r">6M</td><td class="r">—</td><td class="r">6M</td></tr>
+      <tr><td><span class="nq-badge fb">Nha Trang</span></td><td class="r">1</td><td class="r">6M</td><td class="r">—</td><td class="r">6M</td></tr>
+      <tr><td><span class="nq-badge fb">Vũng Tàu</span></td><td class="r">1</td><td class="r">6M</td><td class="r">—</td><td class="r">6M</td></tr>
+      <tr class="nq-total"><td><strong>TỔNG</strong></td><td class="r"><strong>24</strong></td><td class="r"><strong>186M</strong></td><td class="r"><strong>57M</strong></td><td class="r"><strong>243M</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="nq-rule">
+    <strong>Quy tắc vận hành</strong>
+    <ul>
+      <li><strong>Google Ads:</strong> chỉ chạy HCM, HN và 3 tỉnh cố định (Quy Nhơn, Mỹ Tho, Cao Lãnh) — tối thiểu 100k/ngày/salon</li>
+      <li><strong>FB-only:</strong> Bình Dương, Đồng Nai, Đà Nẵng, Nha Trang, Vũng Tàu — KHÔNG chạy Google</li>
+      <li><strong>3 tỉnh cố định:</strong> giữ nguyên mức đã chốt, không điều chỉnh</li>
+      <li><strong>Pacing GG tuần đầu:</strong> salon nào không cắn nổi 100k/ngày → rút, dồn sang FB</li>
+      <li><strong>Còn thiếu ~7M:</strong> bổ sung khi có tên 1 salon HN còn thiếu · Meta Ads đang ngắt kết nối với 4 salon HN</li>
+    </ul>
+  </div>
 </div>
 </div>
 
@@ -1395,95 +1402,5 @@ renderSalon();
   </div>
 
 </div><!-- /guide-section -->
-<div class="panel" id="panelNQ">
-<div class="nq-wrap">
-  <div class="nq-kpi">
-    <div class="nq-kpi-card"><div class="nq-kpi-label">Số salon</div><div class="nq-kpi-val">24</div><div class="nq-kpi-sub">xác nhận · còn ~1 HN chưa có tên</div></div>
-    <div class="nq-kpi-card"><div class="nq-kpi-label">Tổng ngân sách</div><div class="nq-kpi-val" style="color:var(--fb)">243M</div><div class="nq-kpi-sub">target 250M · còn thiếu ~7M</div></div>
-    <div class="nq-kpi-card"><div class="nq-kpi-label">Facebook</div><div class="nq-kpi-val" style="color:var(--fb)">186M</div><div class="nq-kpi-sub">76.5% · chạy tất cả vùng</div></div>
-    <div class="nq-kpi-card"><div class="nq-kpi-label">Google Ads</div><div class="nq-kpi-val" style="color:var(--gg)">57M</div><div class="nq-kpi-sub">23.5% · HCM + HN + 3 tỉnh cố định</div></div>
-    <div class="nq-kpi-card"><div class="nq-kpi-label">Chi/ngày TB</div><div class="nq-kpi-val">~8.1M</div><div class="nq-kpi-sub">243M ÷ 30 ngày</div></div>
-  </div>
-  <div class="nq-progress">
-    <span class="nq-progress-label">243M / 250M</span>
-    <div class="nq-progress-bar"><div class="nq-progress-fill" style="width:97.2%"></div></div>
-    <span class="nq-progress-label" style="color:#1ea04e">97.2%</span>
-  </div>
 
-  <div class="nq-section-title">Rate Card — chi/ngày theo vùng</div>
-  <table class="nq-table">
-    <thead><tr><th>Vùng</th><th class="r">FB/ngày</th><th class="r">GG/ngày</th><th class="r">Tổng/ngày</th><th class="r">/tháng</th></tr></thead>
-    <tbody>
-      <tr><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
-      <tr><td><span class="nq-badge hn">HN</span> <span style="font-size:10px;color:var(--text-3)">(TB salon)</span></td><td class="r">200k*</td><td class="r">100k</td><td class="r">300k*</td><td class="r">9.0M*</td></tr>
-      <tr><td><span class="nq-badge fix">Quy Nhơn (cố định)</span></td><td class="r">300k</td><td class="r">200k</td><td class="r">500k</td><td class="r">15.0M</td></tr>
-      <tr><td><span class="nq-badge fix">Mỹ Tho (cố định)</span></td><td class="r">100k</td><td class="r">100k</td><td class="r">200k</td><td class="r">6.0M</td></tr>
-      <tr><td><span class="nq-badge fix">Cao Lãnh (cố định)</span></td><td class="r">100k</td><td class="r">100k</td><td class="r">200k</td><td class="r">6.0M</td></tr>
-      <tr><td><span class="nq-badge fb">Bình Dương / Đồng Nai / Đà Nẵng / Nha Trang / Vũng Tàu</span></td><td class="r">200k</td><td class="r">—</td><td class="r">200k</td><td class="r">6.0M</td></tr>
-    </tbody>
-  </table>
-  <div style="font-size:11px;color:var(--text-3);margin-top:5px">* HN: 63B TDT đặc biệt FB 100k · 55 TH chỉ GG 100k (FB 0). Số TB chỉ mang tính tham khảo.</div>
-
-  <div class="nq-section-title">Danh sách 24 salon — chi/ngày &amp; /tháng</div>
-  <table class="nq-table">
-    <thead><tr><th>Salon</th><th>Vùng</th><th class="r">FB/ng</th><th class="r">GG/ng</th><th class="r">Tổng/ng</th><th class="r">/tháng</th></tr></thead>
-    <tbody>
-      <tr><td>27A NVL</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
-      <tr><td>68 NT</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
-      <tr><td>112 PQ</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
-      <tr><td>170 NTL</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
-      <tr><td>359 LQD</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
-      <tr><td>77B PVC</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
-      <tr><td>406 TNM</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
-      <tr><td>A6 NAT</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
-      <tr><td>177 ĐVB</td><td><span class="nq-badge hcm">HCM</span></td><td class="r">300k</td><td class="r">100k</td><td class="r">400k</td><td class="r">12.0M</td></tr>
-      <tr class="nq-off"><td>356 ĐXH &nbsp;<span class="nq-badge off">tắt</span></td><td><span class="nq-badge hcm">HCM</span></td><td class="r" style="color:var(--text-3)">300k</td><td class="r" style="color:var(--text-3)">100k</td><td class="r" style="color:var(--text-3)">400k</td><td class="r" style="color:var(--text-3)">12.0M</td></tr>
-      <tr><td>63B TDT</td><td><span class="nq-badge hn">HN</span></td><td class="r">100k</td><td class="r">100k</td><td class="r">200k</td><td class="r">6.0M</td></tr>
-      <tr><td>55 TH</td><td><span class="nq-badge hn">HN</span></td><td class="r">—</td><td class="r">100k</td><td class="r">100k</td><td class="r">3.0M</td></tr>
-      <tr><td>104 CB</td><td><span class="nq-badge hn">HN</span></td><td class="r">200k</td><td class="r">100k</td><td class="r">300k</td><td class="r">9.0M</td></tr>
-      <tr><td>VINSMART</td><td><span class="nq-badge hn">HN</span></td><td class="r">200k</td><td class="r">100k</td><td class="r">300k</td><td class="r">9.0M</td></tr>
-      <tr><td>14 LN</td><td><span class="nq-badge hn">HN</span></td><td class="r">200k</td><td class="r">100k</td><td class="r">300k</td><td class="r">9.0M</td></tr>
-      <tr><td>Quy Nhơn</td><td><span class="nq-badge fix">Cố định</span></td><td class="r">300k</td><td class="r">200k</td><td class="r">500k</td><td class="r">15.0M</td></tr>
-      <tr><td>Mỹ Tho</td><td><span class="nq-badge fix">Cố định</span></td><td class="r">100k</td><td class="r">100k</td><td class="r">200k</td><td class="r">6.0M</td></tr>
-      <tr><td>Cao Lãnh</td><td><span class="nq-badge fix">Cố định</span></td><td class="r">100k</td><td class="r">100k</td><td class="r">200k</td><td class="r">6.0M</td></tr>
-      <tr><td>65 22T12</td><td><span class="nq-badge fb">Bình Dương</span></td><td class="r">200k</td><td class="r">—</td><td class="r">200k</td><td class="r">6.0M</td></tr>
-      <tr><td>Long Khánh</td><td><span class="nq-badge fb">Đồng Nai</span></td><td class="r">200k</td><td class="r">—</td><td class="r">200k</td><td class="r">6.0M</td></tr>
-      <tr><td style="color:#d97706;font-style:italic">+ 1 salon (chưa có tên)</td><td><span class="nq-badge fb">Đồng Nai</span></td><td class="r">200k</td><td class="r">—</td><td class="r">200k</td><td class="r">6.0M</td></tr>
-      <tr><td>130 XVNT</td><td><span class="nq-badge fb">Đà Nẵng</span></td><td class="r">200k</td><td class="r">—</td><td class="r">200k</td><td class="r">6.0M</td></tr>
-      <tr><td>35 HB</td><td><span class="nq-badge fb">Nha Trang</span></td><td class="r">200k</td><td class="r">—</td><td class="r">200k</td><td class="r">6.0M</td></tr>
-      <tr><td>Bà Rịa</td><td><span class="nq-badge fb">Vũng Tàu</span></td><td class="r">200k</td><td class="r">—</td><td class="r">200k</td><td class="r">6.0M</td></tr>
-      <tr class="nq-total"><td colspan="4"><strong>TỔNG 24 salon (+ 1 Đồng Nai chưa tên)</strong></td><td class="r"><strong>~8.1M</strong></td><td class="r"><strong>~243M</strong></td></tr>
-    </tbody>
-  </table>
-
-  <div class="nq-section-title">Tổng theo vùng</div>
-  <table class="nq-table">
-    <thead><tr><th>Vùng</th><th class="r">Salon</th><th class="r">FB/tháng</th><th class="r">GG/tháng</th><th class="r">Tổng/tháng</th></tr></thead>
-    <tbody>
-      <tr><td><span class="nq-badge hcm">HCM</span></td><td class="r">10</td><td class="r">90M</td><td class="r">30M</td><td class="r" style="font-weight:700">120M</td></tr>
-      <tr><td><span class="nq-badge hn">HN</span></td><td class="r">5</td><td class="r">45M</td><td class="r">15M</td><td class="r" style="font-weight:700">60M</td></tr>
-      <tr><td><span class="nq-badge fix">Quy Nhơn</span></td><td class="r">1</td><td class="r">9M</td><td class="r">6M</td><td class="r">15M</td></tr>
-      <tr><td><span class="nq-badge fix">Mỹ Tho</span></td><td class="r">1</td><td class="r">3M</td><td class="r">3M</td><td class="r">6M</td></tr>
-      <tr><td><span class="nq-badge fix">Cao Lãnh</span></td><td class="r">1</td><td class="r">3M</td><td class="r">3M</td><td class="r">6M</td></tr>
-      <tr><td><span class="nq-badge fb">Bình Dương</span></td><td class="r">1</td><td class="r">6M</td><td class="r">—</td><td class="r">6M</td></tr>
-      <tr><td><span class="nq-badge fb">Đồng Nai</span></td><td class="r">2</td><td class="r">12M</td><td class="r">—</td><td class="r">12M</td></tr>
-      <tr><td><span class="nq-badge fb">Đà Nẵng</span></td><td class="r">1</td><td class="r">6M</td><td class="r">—</td><td class="r">6M</td></tr>
-      <tr><td><span class="nq-badge fb">Nha Trang</span></td><td class="r">1</td><td class="r">6M</td><td class="r">—</td><td class="r">6M</td></tr>
-      <tr><td><span class="nq-badge fb">Vũng Tàu</span></td><td class="r">1</td><td class="r">6M</td><td class="r">—</td><td class="r">6M</td></tr>
-      <tr class="nq-total"><td><strong>TỔNG</strong></td><td class="r"><strong>24</strong></td><td class="r"><strong>186M</strong></td><td class="r"><strong>57M</strong></td><td class="r"><strong>243M</strong></td></tr>
-    </tbody>
-  </table>
-
-  <div class="nq-rule">
-    <strong>Quy tắc vận hành</strong>
-    <ul>
-      <li><strong>Google Ads:</strong> chỉ chạy HCM, HN và 3 tỉnh cố định (Quy Nhơn, Mỹ Tho, Cao Lãnh) — tối thiểu 100k/ngày/salon</li>
-      <li><strong>FB-only:</strong> Bình Dương, Đồng Nai, Đà Nẵng, Nha Trang, Vũng Tàu — KHÔNG chạy Google</li>
-      <li><strong>3 tỉnh cố định:</strong> giữ nguyên mức đã chốt, không điều chỉnh</li>
-      <li><strong>Pacing GG tuần đầu:</strong> salon nào không cắn nổi 100k/ngày → rút, dồn sang FB</li>
-      <li><strong>Còn thiếu ~7M:</strong> bổ sung khi có tên 1 salon HN còn thiếu · Meta Ads đang ngắt kết nối với 4 salon HN</li>
-    </ul>
-  </div>
-</div>
-</div>
 
