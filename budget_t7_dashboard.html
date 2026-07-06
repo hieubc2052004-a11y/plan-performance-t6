@@ -288,8 +288,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 
 
 /* ══ NQ Tab ══ */
-#panelNQ { display:none }
-#panelNQ.active { display:block }
 .nq-wrap { padding: 0 24px 32px; }
 .nq-kpi { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; }
 .nq-kpi-card { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:10px 16px; flex:1; min-width:130px; }
@@ -1397,7 +1395,7 @@ renderSalon();
   </div>
 
 </div><!-- /guide-section -->
-<div id="panelNQ">
+<div class="panel" id="panelNQ">
 <div class="nq-wrap">
   <div class="nq-kpi">
     <div class="nq-kpi-card"><div class="nq-kpi-label">Số salon</div><div class="nq-kpi-val">24</div><div class="nq-kpi-sub">xác nhận · còn ~1 HN chưa có tên</div></div>
