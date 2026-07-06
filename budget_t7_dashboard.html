@@ -265,6 +265,26 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .lever-text { font-size: 11.5px; color: var(--text-2); line-height: 1.5; }
 .lever-text strong { color: var(--text); font-weight: 700; }
 @media(max-width:700px){ .lever-grid{ grid-template-columns:1fr; } .lever-section{ padding-left:12px; padding-right:12px; } }
+
+
+/* ── Tổng KH12 summary ── */
+.kh12-bar { margin: 0 24px 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 9px; overflow: hidden; }
+.kh12-bar-head { background: var(--surface-alt); padding: 6px 14px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); }
+.kh12-bar-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text-3); }
+.kh12-bar-compare { font-size: 11px; color: var(--text-2); }
+.kh12-bar-compare strong { color: #1ea04e; }
+.kh12-cols { display: grid; grid-template-columns: 1fr 1px 1fr 1px 1.2fr; align-items: stretch; }
+.kh12-divider { background: var(--border); }
+.kh12-col { padding: 10px 16px; }
+.kh12-col-label { font-size: 10px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3); font-weight: 600; margin-bottom: 4px; }
+.kh12-col-val { font-size: 22px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; }
+.kh12-col-sub { font-size: 11px; color: var(--text-3); margin-top: 3px; }
+.kh12-col-sub span { color: var(--text-2); }
+.kh12-total { background: #f0fdf4; }
+.kh12-total .kh12-col-val { color: #166534; }
+.kh12-eq { display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--text-3); padding: 0 4px; }
+@media(max-width:600px){ .kh12-bar{ margin-left:12px; margin-right:12px; } .kh12-cols{ grid-template-columns:1fr; } .kh12-divider{ display:none; } .kh12-eq{ display:none; } }
+
 </style>
 
 <header class="site-header">
@@ -345,6 +365,46 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
           <span class="lever-text">FB gieo → Google gặt (NQ corr +0.63): người thấy ads FB → search tên salon → Maps → direction → đặt lịch; scale CT từ 0.4tr → 1.3tr/salon ≈ 72.7tr</span>
         </div>
       </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ TỔNG KH12 SUMMARY ══ -->
+<div class="kh12-bar">
+  <div class="kh12-bar-head">
+    <span class="kh12-bar-title">Tổng KH mới + cũ &gt;12W — T7/2026</span>
+    <span class="kh12-bar-compare">So T6: 29,398 → T7: <strong>34,997 (+19%)</strong></span>
+  </div>
+  <div class="kh12-cols">
+
+    <div class="kh12-col">
+      <div class="kh12-col-label">MKT đóng góp (ads + CRM)</div>
+      <div class="kh12-col-val" style="color:var(--fb)">26,247</div>
+      <div class="kh12-col-sub">
+        KM <span>9,998</span> · C12W rời thật <span>16,249</span><br>
+        <span style="font-size:10.5px">FB 13,500 · TK 6,564 · GG 3,000 · CRM 3,183</span>
+      </div>
+    </div>
+
+    <div class="kh12-divider"></div>
+    <div class="kh12-eq">+</div>
+    <div class="kh12-divider"></div>
+
+    <div class="kh12-col">
+      <div class="kh12-col-label">C12W tự quay lại (không cần ads)</div>
+      <div class="kh12-col-val" style="color:var(--text-2)">8,750</div>
+      <div class="kh12-col-sub">35% × C12W 24,999 · <span>nhảy salon + chưa phân loại</span></div>
+    </div>
+
+    <div class="kh12-divider"></div>
+    <div class="kh12-eq">=</div>
+    <div class="kh12-divider"></div>
+
+    <div class="kh12-col kh12-total">
+      <div class="kh12-col-label">Tổng KH mới + cũ &gt;12W</div>
+      <div class="kh12-col-val">34,997</div>
+      <div class="kh12-col-sub">KM <span>9,998</span> + C12W <span>24,999</span> · T6: 29,398</div>
     </div>
 
   </div>
