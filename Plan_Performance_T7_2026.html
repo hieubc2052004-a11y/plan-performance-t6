@@ -151,6 +151,44 @@
   h3.blocktitle{font-size:16px;margin:20px 0 10px;letter-spacing:-.01em;font-weight:800}
   .note{font-size:12.5px;color:var(--ink-faint);margin-top:8px;font-style:italic}
 
+  /* salon timeline */
+  .timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:16px 0;
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+  .tl-step{background:var(--panel);padding:13px 15px;border-right:1px solid var(--line)}
+  .tl-step:last-child{border-right:none}
+  .tl-step.now{background:linear-gradient(180deg,rgba(193,137,45,.09),var(--panel))}
+  .tl-date{font-size:11.5px;font-weight:800;color:var(--amber);letter-spacing:.05em;margin-bottom:3px}
+  .tl-title{font-size:13px;font-weight:800;margin:0 0 6px;letter-spacing:-.01em}
+  .tl-step ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:3px}
+  .tl-step li{font-size:12px;color:var(--ink-soft);padding-left:12px;position:relative}
+  .tl-step li::before{content:"→";position:absolute;left:0;color:var(--amber);font-weight:700;font-size:10px;top:2px}
+  @media(max-width:900px){.timeline{grid-template-columns:1fr 1fr 1fr}}
+  @media(max-width:560px){.timeline{grid-template-columns:1fr 1fr}}
+
+  /* demand portfolio */
+  .demand-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px}
+  .dc{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px 14px}
+  .dc .dc-name{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--navy-2);margin-bottom:6px}
+  @media(prefers-color-scheme:dark){.dc .dc-name{color:var(--amber)}}
+  .dc .dc-bud{font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--ink)}
+  .dc .dc-bud small{font-size:12px;color:var(--ink-faint)}
+  .dc .dc-zone{font-size:12px;color:var(--ink-soft);margin-top:4px;line-height:1.4}
+  .dc .dc-sat{font-size:11.5px;color:var(--crit);margin-top:6px;padding:4px 8px;
+    background:rgba(163,58,58,.07);border-radius:6px;line-height:1.4}
+  @media(max-width:900px){.demand-cards{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.demand-cards{grid-template-columns:1fr}}
+
+  .shelf-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:14px 0}
+  .sf-step{background:var(--panel);padding:13px 16px;border-right:1px solid var(--line)}
+  .sf-step:last-child{border-right:none}
+  .sf-step .sf-n{font-size:22px;font-weight:800;color:var(--amber);opacity:.5;line-height:1;margin-bottom:4px}
+  .sf-step .sf-t{font-size:13.5px;font-weight:800;margin-bottom:5px}
+  .sf-step p{font-size:13px;color:var(--ink-soft);margin:0}
+  @media(max-width:720px){.shelf-flow{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.shelf-flow{grid-template-columns:1fr}}
+
   .threshold-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:10px}
   .threshold-row .th-box{background:var(--panel-2);border:1px solid var(--line-strong);
     border-radius:10px;padding:11px 14px}
@@ -244,6 +282,20 @@
       </table>
     </div>
     <p class="note">Facebook: tuyến C4 Afterwork target CPA ≤29k · C5 Hair ≤29k · C2 Studio ≤30k · C1 Tour ≤33k · C3 Midday ≤40k. Google PMax: nâng cap từ 1,800k lên 3,050k/ngày ngay W1.</p>
+
+    <h3 class="blocktitle">Ngân sách khu vực & điều kiện KOC hoạt động</h3>
+    <p style="font-size:14.5px;color:var(--ink-soft);margin:0 0 12px">KOC Tùng book ở đâu, performance phải có <b>budget mở đúng khu vực đó</b>. Hai việc lệch nhau = KOC content chỉ chạy organic reach, không có paid distribution, không đo được CPA, tiền booking bị lãng phí.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Khu vực KOC (branding target)</th><th>Demand chạy song song</th><th>Điều kiện performance phải xác nhận trước</th><th>Rủi ro nếu lệch</th></tr></thead>
+        <tbody>
+          <tr><td><b>HN CBD</b> — Cầu Giấy · Đống Đa · Hoàn Kiếm</td><td>C1 Tour · C4 Afterwork · C2 Studio</td><td>FB ≥200k/ngày · có ad set radius ≤3km quanh salon · 63B TDT chỉ GG</td><td>KOC content không được boost; impression organic thấp, CPA không đo được</td></tr>
+          <tr><td><b>HCM CBD</b> — Q1 · Q3 · Bình Thạnh</td><td>C1 Tour · C4 Afterwork · C5 Hair</td><td>FB ≥300k/ngày · GG 100k/ngày · UTM theo từng salon cụ thể</td><td>Tương tự HN · thêm rủi ro Google Maps hụt direction nếu không có GG</td></tr>
+          <tr><td><b>Tỉnh / ngoài CBD</b> — Thanh Hoá · Quy Nhơn · BN · Vinh</td><td>C5 Hair chủ yếu</td><td>Budget cố định · cần GĐKV approve trước khi boost KOC · không tự ý tăng</td><td>KOC book cho tỉnh mà không có GĐKV approval = không chạy được; lãng phí booking fee</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout" style="margin-top:14px"><b>Quy tắc bắt buộc trước khi Tùng confirm booking:</b> Khánh (FB) + Huế (TikTok) xác nhận budget khu vực đang mở và có ad set targeting đúng địa lý. Nếu chưa mở → mở trước (≤2 ngày) hoặc đổi khu vực KOC. Không confirm ngược chiều.</div>
   </section>
 
   <section>
@@ -326,6 +378,57 @@
         <div class="row"><div class="k">Lead</div><div class="v"><span class="lead-name">Huế</span> (SOP + triển khai) · Phối hợp team Huế Khánh (local content)</div></div>
       </div>
     </div>
+
+    <h3 class="blocktitle">22 ngày thực thi — từ 8/7 đến 31/7</h3>
+    <p style="font-size:14px;color:var(--ink-soft);margin:0 0 10px">SOP chốt 8/7 → còn 22 ngày. Không có lịch tuần = không ai biết đang đúng tiến độ hay không.</p>
+    <div class="timeline">
+      <div class="tl-step now">
+        <div class="tl-date">8/7 — W2</div>
+        <p class="tl-title">SOP live · Chọn pilot</p>
+        <ul>
+          <li>SOP + Lark template xong, nộp Oanh</li>
+          <li>Chọn 5–10 salon pilot (HN + HCM mix)</li>
+          <li>Nhận batch content đầu, check chuẩn</li>
+        </ul>
+      </div>
+      <div class="tl-step">
+        <div class="tl-date">9–12/7 — W2</div>
+        <p class="tl-title">Pilot chạy · Test 50k</p>
+        <ul>
+          <li>Batch 1 content live theo SOP mới</li>
+          <li>Boost test 50–100k/bài pilot</li>
+          <li>Kiểm UTM + naming chuẩn</li>
+        </ul>
+      </div>
+      <div class="tl-step">
+        <div class="tl-date">14–17/7 — W3</div>
+        <p class="tl-title">First read · Rollout</p>
+        <ul>
+          <li>Đọc V6s% + CPM pilot sau 5 ngày</li>
+          <li>Quyết định rollout toàn bộ hay sửa SOP</li>
+          <li>Mở rộng tất cả salon hệ thống</li>
+        </ul>
+      </div>
+      <div class="tl-step">
+        <div class="tl-date">18–24/7 — W3–W4</div>
+        <p class="tl-title">Scale WIN · Cut FLOP</p>
+        <ul>
+          <li>V6s% ≥18% → scale thêm ngân sách</li>
+          <li>FLOP 2 ngày → off, log lý do</li>
+          <li>21/7: update tệp loại trừ</li>
+        </ul>
+      </div>
+      <div class="tl-step">
+        <div class="tl-date">25–31/7 — W5</div>
+        <p class="tl-title">Optimize · Đọc cho T8</p>
+        <ul>
+          <li>Dồn budget vào bài WIN tháng</li>
+          <li>Salon nào WIN rate cao nhất?</li>
+          <li>Brief T8: angle nào work, format nào fail</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">3 cửa sổ đọc kết quả: 14/7 · 21/7 · 28/7. Mỗi lần = 1 scale/kill decision. Bỏ qua 1 cửa sổ = mất 7 ngày không tối ưu.</p>
 
     <h3 class="blocktitle">3,480 nội dung salon — logic phân bổ & tiêu chí boost</h3>
     <div class="card">
@@ -442,7 +545,73 @@
   </section>
 
   <section>
-    <div class="sh"><span class="num">5</span><h2>Deadline cứng tháng 7 — 4 mốc không được trễ</h2></div>
+    <div class="sh"><span class="num">5</span><h2>5 demand — phân bổ khu vực, tín hiệu bão hòa & backup shelf</h2></div>
+    <p class="lead">Mỗi demand (C1–C5) có khu vực phân phối riêng với lý do rõ. Khi một demand hết dung lượng thị trường — CPM tăng, không thể mua ở trần giá nữa — cần có <b>backup demand đã pass test sẵn sàng swap vào</b>. Giỏ backup này phải được làm đầy liên tục, không chờ đến lúc cần mới test.</p>
+
+    <div class="demand-cards">
+      <div class="dc">
+        <div class="dc-name">C1 · Tour</div>
+        <div class="dc-bud">190<small>M</small></div>
+        <div class="dc-zone"><b>CBD HN + HCM Q1/Q3</b><br>Dân văn phòng stress cao · income đủ chi tour gội massage · CEP "tan làm"</div>
+        <div class="dc-sat">Bão hòa: CPM &gt;30k · CTR &lt;0.5% · Freq &gt;6 trên audience CBD</div>
+      </div>
+      <div class="dc">
+        <div class="dc-name">C2 · Studio</div>
+        <div class="dc-bud">108<small>M</small></div>
+        <div class="dc-zone"><b>HCM Q1/Q3 · Bình Thạnh</b><br>Dân chuyên nghiệp, diện mạo = uy tín · audience hẹp nhưng CPP thấp</div>
+        <div class="dc-sat">Bão hòa: CPA &gt;35k liên tục 3 ngày · Reach audience cạn &lt;50k/ngày</div>
+      </div>
+      <div class="dc">
+        <div class="dc-name">C3 · Midday</div>
+        <div class="dc-bud">40<small>M</small></div>
+        <div class="dc-zone"><b>CBD mật độ VP cao</b><br>Chỉ có angle nghỉ trưa 45' · audience nhỏ · giữ KOL Hoàng (CPA 27k)</div>
+        <div class="dc-sat">Bão hòa: Reach &lt;20k/ngày · Frequency &gt;7 · không thể mở rộng audience</div>
+      </div>
+      <div class="dc">
+        <div class="dc-name">C4 · Afterwork</div>
+        <div class="dc-bud">110<small>M</small></div>
+        <div class="dc-zone"><b>CBD + tuyến giao thông</b><br>CEP "tan làm kẹt xe ghé xả" · audience rộng hơn C1 · thêm KOC Nhật Trường</div>
+        <div class="dc-sat">Bão hòa: Freq &gt;7 trên CBD · CPM tăng &gt;20% so với baseline W1</div>
+      </div>
+      <div class="dc">
+        <div class="dc-name">C5 · Hair</div>
+        <div class="dc-bud">215<small>M</small></div>
+        <div class="dc-zone"><b>Toàn quốc · mạnh tỉnh</b><br>Universal service · audience rộng nhất · dễ scale sang tỉnh khi CBD bão hòa</div>
+        <div class="dc-sat">Bão hòa: CPM tăng &gt;25% toàn hệ thống · CTR giảm dù content mới</div>
+      </div>
+    </div>
+
+    <h3 class="blocktitle">Giỏ backup demand — làm đầy liên tục, không chờ đến lúc cần</h3>
+    <p style="font-size:14.5px;color:var(--ink-soft);margin:0 0 12px">Khi một demand hit bão hòa, không thể pause không có gì thay. Cần có backup demand <b>đã pass test</b> sẵn sàng swap. Chương cung cấp hypothesis từ seeding/search — performance test và giữ shelf. Vòng lặp này chạy song song với tuần thường, không chờ khủng hoảng.</p>
+
+    <div class="shelf-flow">
+      <div class="sf-step">
+        <div class="sf-n">1</div>
+        <div class="sf-t">Chương tìm signal</div>
+        <p>Mỗi thứ 5, Chương gửi 2–3 <b>demand hypothesis</b> mới từ: seeding dư luận · search trend · competitor intelligence · insight comment bài viral. Mỗi hypothesis ghi rõ: angle là gì, TA nào, vì sao nghĩ có demand.</p>
+      </div>
+      <div class="sf-step">
+        <div class="sf-n">2</div>
+        <div class="sf-t">Performance test nhỏ</div>
+        <p>Khánh setup ad set test thứ 3 tuần tiếp: <b>50–100k / 3 ngày</b>, tách biệt với campaign chính. Đặt UTM riêng để không lẫn data. Test tối thiểu 2 content per hypothesis.</p>
+      </div>
+      <div class="sf-step">
+        <div class="sf-n">3</div>
+        <div class="sf-t">Đọc kết quả · Vào shelf</div>
+        <p>Thứ 6 đọc result. <b>Pass</b>: CPA ≤ ngưỡng tuyến gần nhất × 1.1 → ghi vào Backup Shelf Lark (tên demand, angle, khu vực, CPA test). <b>Fail</b>: ghi lý do, trả về Chương để refine signal.</p>
+      </div>
+      <div class="sf-step">
+        <div class="sf-n">4</div>
+        <div class="sf-t">Deploy khi cần · Không mất thời gian test</div>
+        <p>Khi primary demand bão hòa → lấy từ shelf ra chạy ngay, không cần test lại. Mục tiêu shelf: <b>luôn có ≥2 backup</b> cho C1, C4, C5 (3 demand ngân sách lớn nhất). C2/C3 ưu tiên sau.</p>
+      </div>
+    </div>
+
+    <div class="callout"><b>Tín hiệu bão hòa cần check mỗi thứ 4:</b> CPM tăng &gt;20% so với W1 mà content không đổi · CTR giảm liên tiếp 2 ngày · Reach ngày sau thấp hơn ngày trước dù budget không đổi · CPA drift vượt ngưỡng × 1.2. Khi thấy ≥2 tín hiệu trên 1 demand → báo Chương ngay, lấy backup shelf ra chuẩn bị swap.</div>
+  </section>
+
+  <section>
+    <div class="sh"><span class="num">6</span><h2>Deadline cứng tháng 7 — 4 mốc không được trễ</h2></div>
     <p class="lead">Ngoài lịch tuần định kỳ, có 4 deadline ảnh hưởng trực tiếp đến hiệu quả ads và pipeline tháng 8.</p>
     <ul class="approve">
       <li><span class="b">8/7</span><div><b>Cơ chế vận hành kênh salon + Triển khai salon</b><br><small>SOP hoàn chỉnh · salon pilot live theo cơ chế mới. Nếu trễ: nội dung salon T7 không boost được đúng — mất 2–3 tuần hiệu quả, không vá lại được.</small></div></li>
@@ -453,7 +622,7 @@
   </section>
 
   <section>
-    <div class="sh"><span class="num">6</span><h2>Phân vai & cam kết đầu ra</h2></div>
+    <div class="sh"><span class="num">7</span><h2>Phân vai & cam kết đầu ra</h2></div>
     <p class="lead">Mỗi workstream có một người chịu trách nhiệm chính — để cuối tháng biết hỏi ai, sai ở đâu.</p>
     <div class="tbl-wrap">
       <table>
@@ -474,7 +643,7 @@
   </section>
 
   <section>
-    <div class="sh"><span class="num">7</span><h2>Đo lường & đọc cuối tháng</h2></div>
+    <div class="sh"><span class="num">8</span><h2>Đo lường & đọc cuối tháng</h2></div>
     <p class="lead">Không dừng ở lượt xem. Đo theo chuỗi Input → Output → Kết quả kinh doanh, khớp Pyramid đo 5 tầng của Plan H2.</p>
     <div class="grid3">
       <div class="card"><div class="tagline">Input</div><h4 style="margin:6px 0 6px">Độ phủ & chi tiêu</h4><p style="font-size:14px;color:var(--ink-soft);margin:0">Ngân sách tiêu đúng plan (±5%) · UTM coverage 100% · 3,480 ND salon đã đăng · tệp loại trừ cập nhật 2 lần.</p></div>
@@ -485,7 +654,7 @@
   </section>
 
   <section>
-    <div class="sh"><span class="num">8</span><h2>Rủi ro & phương án</h2></div>
+    <div class="sh"><span class="num">9</span><h2>Rủi ro & phương án</h2></div>
     <div class="tbl-wrap">
       <table class="risk">
         <thead><tr><th>Rủi ro</th><th>XS</th><th>Xử lý</th></tr></thead>
