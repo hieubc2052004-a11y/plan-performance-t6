@@ -611,12 +611,11 @@
   </section>
 
   <section>
-    <div class="sh"><span class="num">6</span><h2>Deadline cứng tháng 7 — 4 mốc không được trễ</h2></div>
-    <p class="lead">Ngoài lịch tuần định kỳ, có 4 deadline ảnh hưởng trực tiếp đến hiệu quả ads và pipeline tháng 8.</p>
+    <div class="sh"><span class="num">6</span><h2>Deadline cứng tháng 7 — 3 mốc không được trễ</h2></div>
+    <p class="lead">Ngoài lịch tuần định kỳ, có 3 deadline ảnh hưởng trực tiếp đến hiệu quả ads và pipeline tháng 8.</p>
     <ul class="approve">
       <li><span class="b">8/7</span><div><b>Cơ chế vận hành kênh salon + Triển khai salon</b><br><small>SOP hoàn chỉnh · salon pilot live theo cơ chế mới. Nếu trễ: nội dung salon T7 không boost được đúng — mất 2–3 tuần hiệu quả, không vá lại được.</small></div></li>
-      <li><span class="b n">7/7</span><div><b>Update data tệp loại trừ lần 1</b><br><small>Upload danh sách khách đã mua &lt;12W vào custom audience loại trừ trên FB + TikTok. Tránh tiêu ngân sách vào khách cũ còn trong vùng hiệu lực — burn budget ước tính 5–10% nếu không cập nhật.</small></div></li>
-      <li><span class="b n">21/7</span><div><b>Update data tệp loại trừ lần 2</b><br><small>Mid-month refresh. Quan trọng sau W2: khối lượng khách mua từ W1 bắt đầu đủ điều kiện loại trừ nhưng chưa có trong tệp cũ.</small></div></li>
+      <li><span class="b n">W1</span><div><b>Setup dynamic custom audience loại trừ 60 ngày — một lần, không cần lặp lại</b><br><small>Tạo custom audience từ sự kiện Purchase (Pixel/CAPI) với retention 60 ngày. Hệ thống tự cập nhật liên tục: khách mua hôm nay → vào tệp loại trừ ngay, qua 60 ngày không mua → tự rời khỏi tệp. <b>Không upload CSV thủ công nữa, không làm gián đoạn máy học.</b> Thay thế hoàn toàn 2 lần upload 7/7 và 21/7 cũ.</small></div></li>
       <li><span class="b n">W1</span><div><b>Nâng cap Google PMax All — ngay đầu tháng</b><br><small>PMax All hiện spend 1,800k/ngày, target 3,050k/ngày. Nếu không nâng: hụt ~37% reach Google Maps, thiếu ~1,100 KH trong pool. Làm ngay W1 trước khi hệ thống học lại.</small></div></li>
     </ul>
   </section>
@@ -660,7 +659,7 @@
         <thead><tr><th>Rủi ro</th><th>XS</th><th>Xử lý</th></tr></thead>
         <tbody>
           <tr><td>Cơ chế salon chậm → nội dung không boost được đúng lịch T7</td><td class="sig"><span class="pill hi">Cao</span></td><td>Chốt SOP trước 8/7. Nếu không kịp toàn bộ: chạy pilot 5–10 salon trước, rollout tiếp theo từng batch</td></tr>
-          <tr><td>Tệp loại trừ không cập nhật → burn budget vào khách cũ</td><td class="sig"><span class="pill hi">Cao</span></td><td>Nhắc cứng 7/7 và 21/7 vào Lark calendar. Ai miss → escalate lên Oanh ngay trong ngày</td></tr>
+          <tr><td>Dynamic audience chưa setup W1 → vẫn hiển thị cho khách mua trong 60 ngày</td><td class="sig"><span class="pill hi">Cao</span></td><td>Setup ngay W1 (một lần). Verify bằng cách check audience size tăng dần sau 24–48h. Nếu size = 0 sau 48h → kiểm CAPI có đẩy event Purchase đúng không</td></tr>
           <tr><td>Nội dung batch thứ 3 nộp không đủ / sai chuẩn</td><td class="sig"><span class="pill mid">TB</span></td><td>Checklist 7 tiêu chí trả về ngay khi nhận. SLA: Huế phản hồi trong 4h nhận batch. Thiếu bài → chạy bài cũ WIN, không để trống slot</td></tr>
           <tr><td>Google PMax underspend → hụt 3,000 KH Google target</td><td class="sig"><span class="pill mid">TB</span></td><td>W1: nâng cap PMax All từ 1,800k lên 3,050k/ngày. HN: verify conversion type trước khi tăng. HCM Star: reset call extension</td></tr>
           <tr><td>Lark / Windsor mất đồng bộ → đọc sai CPA</td><td class="sig"><span class="pill mid">TB</span></td><td>Check ad_name matching mỗi thứ 4. Fallback: dùng Ads Manager trực tiếp. Ghi bất thường vào log ngay</td></tr>
