@@ -149,7 +149,7 @@ function buildSheet(tuyen){
     const th=({C1:{g:33000,p:60000},C2:{g:30000,p:55000},C3:{g:40000,p:70000},C4:{g:29000,p:60000},C5:{g:29000,p:60000}})[tuyen]||{g:30000,p:60000};
     const cpaColor=r.cpa&&r.cpa<=th.g?'color:#1b5e20;font-weight:800':r.cpa&&r.cpa>=th.p?'color:#c62828;font-weight:800':r.cpa?'color:#e65100':'color:#999';
     const cpaDisp=r.cpa?r.cpa.toLocaleString()+'đ':'—';
-    html+=\`<tr style="\${row}"><td style="color:#999">\${i+1}</td><td class="cap-col" style="font-size:10.5px;max-width:320px" title="\${r.ad}">\${r.ad||r.cap}</td><td class="num">\${r.s.toLocaleString()}</td><td class="num" style="\${r.mua>0?'color:#1b5e20;font-weight:700':'color:#bbb'}">\${r.mua||'—'}</td><td class="num" style="\${cpaColor}">\${cpaDisp}</td><td class="num" style="color:#888">\${r.imp||'—'}</td><td class="num" style="color:#888">\${r.freq?r.freq+'x':'—'}</td><td>\${tagLabel(r.tag)}</td></tr>\`;
+    html+=`<tr style="${row}"><td style="color:#999">${i+1}</td><td class="cap-col" style="font-size:10.5px;max-width:320px" title="${r.ad}">${r.ad||r.cap}</td><td class="num">${r.s.toLocaleString()}</td><td class="num" style="${r.mua>0?'color:#1b5e20;font-weight:700':'color:#bbb'}">${r.mua||'—'}</td><td class="num" style="${cpaColor}">${cpaDisp}</td><td class="num" style="color:#888">${r.imp||'—'}</td><td class="num" style="color:#888">${r.freq?r.freq+'x':'—'}</td><td>${tagLabel(r.tag)}</td></tr>`;
   });
   html+='</tbody></table></div>';
   html+=`<div class="sec-lbl" style="margin-top:4px;background:#ff386012;color:#c0143c;border-left:3px solid #ff3860">TikTok · ${tuyen} ${m.name} — xếp theo V6s% giảm dần</div>`;
@@ -158,7 +158,7 @@ function buildSheet(tuyen){
     const row=i%2===0?'':'background:#fafafe';
     const chiColor=r.chi>150?'color:#c62828':r.chi>120?'color:#e65100':'';
     const cprColor=r.cpr&&r.cpr>400?'color:#c62828':r.cpr&&r.cpr>280?'color:#e65100':'';
-    html+=\`<tr style="\${row}"><td style="color:#999">\${i+1}</td><td class="cap-col" style="font-size:10.5px;max-width:320px">\${r.ad||r.cap}</td><td class="num">\${r.s.toLocaleString()}</td><td class="num" style="\${r.v6s>=18?'color:#1b5e20;font-weight:800':r.v6s>=15?'color:#1565c0':'color:#c62828'}">\${r.v6s}%</td><td class="num" style="\${chiColor}">\${r.chi?r.chi+'đ':'—'}</td><td class="num">\${r.res?(r.res>999?(r.res/1000).toFixed(1)+'k':r.res):'—'}</td><td class="num" style="\${cprColor}">\${r.cpr?r.cpr+'đ':'—'}</td><td>\${tagLabel(r.tag)}</td></tr>\`;
+    html+=`<tr style="${row}"><td style="color:#999">${i+1}</td><td class="cap-col" style="font-size:10.5px;max-width:320px">${r.ad||r.cap}</td><td class="num">${r.s.toLocaleString()}</td><td class="num" style="${r.v6s>=18?'color:#1b5e20;font-weight:800':r.v6s>=15?'color:#1565c0':'color:#c62828'}">${r.v6s}%</td><td class="num" style="${chiColor}">${r.chi?r.chi+'đ':'—'}</td><td class="num">${r.res?(r.res>999?(r.res/1000).toFixed(1)+'k':r.res):'—'}</td><td class="num" style="${cprColor}">${r.cpr?r.cpr+'đ':'—'}</td><td>${tagLabel(r.tag)}</td></tr>`;
   });
   html+='</tbody></table></div>';
   return html;
@@ -172,30 +172,30 @@ function buildTQ(){
     const m=TUYEN_META[r.t];
     tkHtml+=`<div class="top-item"><span class="top-name"><span class="tuyenbadge" style="background:${m.color}">${r.t}</span>${r.koc} · <span style="color:#888">${r.cap.substring(0,40)}…</span></span><span class="top-val" style="color:#1b5e20">${r.v6s}% · ${r.chi}đ/6sv</span></div>`;
   });
-  document.getElementById('tk-top').innerHTML=tkHtml;
+  document.getElementById('tk-top').innerHTML=tkHtml||'<span style="color:#aaa;font-size:10px">Chưa có ads đủ điều kiện</span>';
 
-  // FB top by low CPM (scale, s>=80)
-  const fbTop=FB.filter(x=>x.tag==='scale'&&x.s>=80).sort((a,b)=>a.cpm-b.cpm).slice(0,7);
+  // FB top by CPA (scale, mua>=5)
+  const fbTop=FB.filter(x=>x.tag==='scale'&&x.mua>=5).sort((a,b)=>a.cpa-b.cpa).slice(0,7);
   let fbHtml='';
   fbTop.forEach(r=>{
     const m=TUYEN_META[r.t];
-    fbHtml+=`<div class="top-item"><span class="top-name"><span class="tuyenbadge" style="background:${m.color}">${r.t}</span>${r.koc} · <span style="color:#888">${r.cap.substring(0,40)}…</span></span><span class="top-val" style="color:#1565c0">CPM ${r.cpm.toLocaleString()}đ · CTR ${r.ctr}%</span></div>`;
+    fbHtml+=`<div class="top-item"><span class="top-name"><span class="tuyenbadge" style="background:${m.color}">${r.t}</span>${r.koc} · <span style="color:#888">${r.cap.substring(0,40)}…</span></span><span class="top-val" style="color:#1565c0">CPA ${r.cpa.toLocaleString()}đ · ${r.mua} mua</span></div>`;
   });
-  document.getElementById('fb-top').innerHTML=fbHtml;
+  document.getElementById('fb-top').innerHTML=fbHtml||'<span style="color:#aaa;font-size:10px">Chưa có ads đủ điều kiện</span>';
 
-  // Warnings
+  // Warnings: FB pause (CPA>ngưỡng đỏ hoặc 0 mua + chi>150k)
+  const TH={C1:60000,C2:55000,C3:70000,C4:60000,C5:60000};
   const warns=[];
   // TK stop with big spend
   TK.filter(x=>x.tag==='stop'&&x.s>=80).sort((a,b)=>b.s-a.s).forEach(r=>{
-    const m=TUYEN_META[r.t];
-    warns.push(`<div class="warn-item">🛑 <b>TK ${r.t}</b> ${r.koc} · "${r.cap.substring(0,45)}..." — V6s <b>${r.v6s}%</b>, chi/6sv <b>${r.chi}đ</b> · Chi 5d: <b>${r.s}k</b> → Dừng ngay</div>`);
+    warns.push(`<div class="warn-item">🛑 <b>TK ${r.t}</b> ${r.koc} · "${r.cap.substring(0,45)}..." — V6s <b>${r.v6s}%</b>, chi/6sv <b>${r.chi}đ</b> · Chi 7d: <b>${r.s}k</b> → Dừng ngay</div>`);
   });
-  // FB stop with big spend
-  FB.filter(x=>x.tag==='stop'&&x.s>=1000).sort((a,b)=>b.s-a.s).forEach(r=>{
-    const m=TUYEN_META[r.t];
-    warns.push(`<div class="warn-item">⚠️ <b>FB ${r.t}</b> ${r.koc} · "${r.cap.substring(0,45)}..." — CPM <b>${r.cpm.toLocaleString()}đ</b>, CTR <b>${r.ctr}%</b> · Chi 5d: <b>${r.s}k</b> → Cần đối chiếu lượt mua Lark</div>`);
+  // FB pause: CPA > ngưỡng đỏ OR 0 mua + chi>150k
+  FB.filter(x=>(x.cpa&&x.cpa>(TH[x.t]||60000))||(x.mua===0&&x.s>150)).sort((a,b)=>b.s-a.s).forEach(r=>{
+    const cpaStr=r.cpa?`CPA <b>${r.cpa.toLocaleString()}đ</b>`:'<b>0 mua</b>';
+    warns.push(`<div class="warn-item">🔴 <b>FB ${r.t}</b> ${r.koc} · "${r.cap.substring(0,45)}..." — ${cpaStr} · Chi 7d: <b>${r.s}k</b> → Pause ngay</div>`);
   });
-  document.getElementById('warn-list').innerHTML=warns.join('');
+  document.getElementById('warn-list').innerHTML=warns.join('')||'<span style="color:#1b5e20">Không có cảnh báo</span>';
 }
 
 function showTab(el,id){
