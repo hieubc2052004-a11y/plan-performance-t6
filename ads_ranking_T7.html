@@ -63,6 +63,7 @@ tr:hover td{background:#f9f9ff}
   <div class="tab" onclick="showTab(this,'C3')">☕ C3</div>
   <div class="tab" onclick="showTab(this,'C4')">🌅 C4</div>
   <div class="tab" onclick="showTab(this,'C5')">✂️ C5</div>
+  <div class="tab" onclick="showTab(this,'baocao')">📈 W1/W2 vs Plan</div>
 </div>
 <div style="background:#fff;border:1px solid #ccc;border-top:none;border-radius:0 0 8px 8px;padding:14px 16px">
 
@@ -120,6 +121,228 @@ tr:hover td{background:#f9f9ff}
 <div id="C3" class="sheet"></div>
 <div id="C4" class="sheet"></div>
 <div id="C5" class="sheet"></div>
+
+<!-- ── BÁO CÁO W1/W2 VS PLAN ── -->
+<div id="baocao" class="sheet">
+<p class="note" style="margin-bottom:10px"><b>Nguồn:</b> Meta Ads (theo vùng) + TikTok BFI (theo vùng) · W1: 01–05/7 (5 ngày) · W2: 06–12/7 (7 ngày) · Plan tháng: FB 540M/13,500 KH · TikTok 260M/6,564 KH</p>
+
+<!-- PACE -->
+<div style="font-size:11px;font-weight:700;color:#555;margin:0 0 7px;padding:5px 10px;background:#f5f5f8;border-radius:4px;display:inline-block">Pace ngân sách — 12/31 ngày đã trôi qua (38.7%)</div>
+<div class="pacing-row" style="margin-bottom:14px">
+  <div class="pace-box">
+    <div class="pace-ch" style="color:#1877f2">Facebook — 12 ngày</div>
+    <div class="pace-num" style="color:#1877f2">216M / 540M</div>
+    <div class="pace-sub">40% plan · đúng pace ✓ · W1: 75.3M · W2: 140.7M</div>
+    <div class="pace-bar" style="position:relative">
+      <div class="pace-fill" style="width:40%;background:#1877f2"></div>
+      <div style="position:absolute;top:0;bottom:0;left:38.7%;width:2px;background:#999;opacity:.5"></div>
+    </div>
+  </div>
+  <div class="pace-box">
+    <div class="pace-ch" style="color:#ff3860">TikTok — 12 ngày</div>
+    <div class="pace-num" style="color:#ff3860">137.7M / 260M</div>
+    <div class="pace-sub">53% plan · <b>OVER PACE</b> ⚠ · W1: 39.6M · W2: 98.1M</div>
+    <div class="pace-bar" style="position:relative">
+      <div class="pace-fill" style="width:53%;background:#ff3860"></div>
+      <div style="position:absolute;top:0;bottom:0;left:38.7%;width:2px;background:#999;opacity:.5"></div>
+    </div>
+  </div>
+  <div class="pace-box">
+    <div class="pace-ch" style="color:#555">Tỉ lệ TK:FB chi tiêu</div>
+    <div class="pace-num" style="color:#e65100">64 : 100</div>
+    <div class="pace-sub">Plan 48:100 · W1: 53:100 · W2: 70:100 → TK ngày càng chiếm nhiều hơn</div>
+    <div class="pace-bar"><div class="pace-fill" style="width:80%;background:#e65100"></div></div>
+  </div>
+</div>
+
+<!-- FACEBOOK OVERVIEW -->
+<div class="sec-lbl" style="background:#e8f0fe;color:#1a3660">📘 FACEBOOK — W1 vs W2 vs Plan</div>
+<div class="tbl-wrap">
+  <table>
+    <thead><tr>
+      <th>Chỉ số</th>
+      <th>W1 (5 ngày)</th>
+      <th>Plan /5 ngày</th>
+      <th>W2 (7 ngày)</th>
+      <th>Plan /7 ngày</th>
+      <th>W2 vs Plan</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td>Chi tiêu</td>
+        <td class="num">75.3M</td><td class="num" style="color:#888;font-style:italic">~87M</td>
+        <td class="num">140.7M</td><td class="num" style="color:#888;font-style:italic">~122M</td>
+        <td class="num" style="color:#1b5e20;font-weight:700">+15% ✓</td>
+      </tr>
+      <tr>
+        <td>Lượt mua</td>
+        <td class="num" style="color:#b71c1c">1,322</td><td class="num" style="color:#888;font-style:italic">~2,177</td>
+        <td class="num" style="color:#1b5e20;font-weight:700">7,044</td><td class="num" style="color:#888;font-style:italic">~3,048</td>
+        <td class="num" style="color:#1b5e20;font-weight:700">+131% ✓✓</td>
+      </tr>
+      <tr>
+        <td>CPA blended</td>
+        <td class="num" style="color:#b71c1c">56,941đ</td><td class="num" style="color:#888;font-style:italic">≤40k</td>
+        <td class="num" style="color:#1b5e20;font-weight:700">19,969đ</td><td class="num" style="color:#888;font-style:italic">≤40k</td>
+        <td class="num" style="color:#1b5e20;font-weight:700">Tốt ✓</td>
+      </tr>
+      <tr>
+        <td>CPM</td>
+        <td class="num" style="color:#e65100">15,655đ</td><td class="num" style="color:#888;font-style:italic">—</td>
+        <td class="num" style="color:#388e3c">13,273đ</td><td class="num" style="color:#888;font-style:italic">—</td>
+        <td class="num">Giảm ✓</td>
+      </tr>
+      <tr>
+        <td>CTR</td>
+        <td class="num" style="color:#388e3c">0.86%</td><td class="num" style="color:#888;font-style:italic">≥0.75%</td>
+        <td class="num" style="color:#b71c1c">0.60%</td><td class="num" style="color:#888;font-style:italic">≥0.75%</td>
+        <td class="num" style="color:#b71c1c">Dưới sàn ⚠</td>
+      </tr>
+      <tr>
+        <td>Frequency</td>
+        <td class="num">1.38</td><td class="num" style="color:#888;font-style:italic">&lt;5</td>
+        <td class="num">1.32</td><td class="num" style="color:#888;font-style:italic">&lt;5</td>
+        <td class="num" style="color:#388e3c">Ổn ✓</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- FB BY TUYẾN -->
+<div class="sec-lbl" style="background:#e8f0fe;color:#1a3660;margin-top:10px">FB theo tuyến C1–C5</div>
+<div class="tbl-wrap">
+  <table>
+    <thead><tr>
+      <th>Tuyến</th>
+      <th>Chi W1</th><th>Mua W1</th><th>CPA W1</th>
+      <th>Plan CPA</th>
+      <th>Chi W2</th><th>Mua W2</th><th>CPA W2</th>
+      <th>CTR W2</th><th>CPM W2</th>
+      <th>Status W2</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="tuyenbadge" style="background:#1565c0">C1/C2</span>Tour + Studio</td>
+        <td class="num">34.6M</td><td class="num">730</td><td class="num" style="color:#b71c1c">47,465đ</td>
+        <td class="num" style="color:#888;font-style:italic">≤33k</td>
+        <td class="num">66.3M</td><td class="num">3,592</td><td class="num" style="color:#1b5e20;font-weight:700">18,451đ</td>
+        <td class="num" style="color:#b71c1c">0.40%</td><td class="num" style="color:#388e3c">11,500đ</td>
+        <td><span class="tag tag-review">CTR thấp</span></td>
+      </tr>
+      <tr>
+        <td><span class="tuyenbadge" style="background:#6a1b9a">C3</span>Midday</td>
+        <td class="num">4.6M</td><td class="num">89</td><td class="num" style="color:#b71c1c">51,408đ</td>
+        <td class="num" style="color:#888;font-style:italic">≤40k</td>
+        <td class="num">7.1M</td><td class="num">474</td><td class="num" style="color:#1b5e20;font-weight:700">14,921đ</td>
+        <td class="num" style="color:#388e3c">0.75%</td><td class="num">13,729đ</td>
+        <td><span class="tag tag-scale">Scale</span></td>
+      </tr>
+      <tr>
+        <td><span class="tuyenbadge" style="background:#e65100">C4</span>Afterwork</td>
+        <td class="num">10.3M</td><td class="num">161</td><td class="num" style="color:#b71c1c">63,686đ</td>
+        <td class="num" style="color:#888;font-style:italic">≤29k</td>
+        <td class="num">23.1M</td><td class="num">1,127</td><td class="num" style="color:#1b5e20;font-weight:700">20,490đ</td>
+        <td class="num" style="color:#388e3c">0.82%</td><td class="num" style="color:#e65100">16,716đ</td>
+        <td><span class="tag tag-scale">Scale</span></td>
+      </tr>
+      <tr>
+        <td><span class="tuyenbadge" style="background:#2e7d32">C5</span>Hair</td>
+        <td class="num">24.2M</td><td class="num">315</td><td class="num" style="color:#b71c1c">76,882đ</td>
+        <td class="num" style="color:#888;font-style:italic">≤29k</td>
+        <td class="num">41.3M</td><td class="num">1,744</td><td class="num" style="color:#1b5e20;font-weight:700">23,695đ</td>
+        <td class="num" style="color:#388e3c">1.01%</td><td class="num" style="color:#e65100">17,424đ</td>
+        <td><span class="tag tag-scale">Scale</span></td>
+      </tr>
+    </tbody>
+    <tfoot><tr>
+      <td><b>TỔNG FB</b></td>
+      <td class="num">75.3M</td><td class="num">1,322</td><td class="num" style="color:#b71c1c">56,941đ</td>
+      <td class="num" style="color:#888;font-style:italic">≤40k</td>
+      <td class="num">140.7M</td><td class="num" style="color:#1b5e20;font-weight:700">7,044</td><td class="num" style="color:#1b5e20;font-weight:700">19,969đ</td>
+      <td class="num" style="color:#b71c1c">0.60%</td><td class="num" style="color:#388e3c">13,273đ</td>
+      <td></td>
+    </tr></tfoot>
+  </table>
+</div>
+
+<!-- FB BY REGION -->
+<div class="sec-lbl" style="background:#e8f0fe;color:#1a3660;margin-top:10px">FB theo khu vực</div>
+<div class="tbl-wrap">
+  <table>
+    <thead><tr>
+      <th>Khu vực</th>
+      <th>Chi W1</th><th>Mua W1</th><th>CPA W1</th>
+      <th>Chi W2</th><th>Mua W2</th><th>CPA W2</th>
+      <th>CPA Δ</th>
+    </tr></thead>
+    <tbody>
+      <tr><td><b>Hà Nội</b></td><td class="num">8.9M</td><td class="num">309</td><td class="num" style="color:#388e3c">28,832đ</td><td class="num">28.7M</td><td class="num">1,607</td><td class="num" style="color:#388e3c">17,858đ</td><td class="num" style="color:#388e3c">↓38%</td></tr>
+      <tr><td><b>HCM</b></td><td class="num">35.5M</td><td class="num">523</td><td class="num" style="color:#b71c1c">67,816đ</td><td class="num">48.6M</td><td class="num">2,739</td><td class="num" style="color:#388e3c">17,739đ</td><td class="num" style="color:#388e3c">↓74%</td></tr>
+      <tr><td><b>Bình Dương</b></td><td class="num">1.4M</td><td class="num">43</td><td class="num" style="color:#e65100">33,036đ</td><td class="num">4.9M</td><td class="num">308</td><td class="num" style="color:#388e3c">15,884đ</td><td class="num" style="color:#388e3c">↓52%</td></tr>
+      <tr><td><b>Đồng Nai</b></td><td class="num">0.7M</td><td class="num">28</td><td class="num" style="color:#388e3c">24,653đ</td><td class="num">2.4M</td><td class="num">154</td><td class="num" style="color:#388e3c">15,398đ</td><td class="num" style="color:#388e3c">↓38%</td></tr>
+      <tr><td><b>Bắc Ninh</b></td><td class="num">0.7M</td><td class="num">19</td><td class="num" style="color:#e65100">38,136đ</td><td class="num">2.3M</td><td class="num">118</td><td class="num" style="color:#388e3c">19,834đ</td><td class="num" style="color:#388e3c">↓48%</td></tr>
+      <tr><td><b>Thanh Hóa</b></td><td class="num">1.0M</td><td class="num">29</td><td class="num" style="color:#e65100">34,608đ</td><td class="num">3.2M</td><td class="num">131</td><td class="num" style="color:#388e3c">24,570đ</td><td class="num" style="color:#388e3c">↓29%</td></tr>
+      <tr><td><b>Vinh/Nghệ An</b></td><td class="num">0.7M</td><td class="num">13</td><td class="num" style="color:#b71c1c">54,584đ</td><td class="num">2.4M</td><td class="num">71</td><td class="num" style="color:#b71c1c">33,107đ</td><td class="num" style="color:#e65100">↓39% nhưng vẫn cao</td></tr>
+      <tr style="background:#fff5f5"><td><b>An Giang</b></td><td class="num">0.6M</td><td class="num">9</td><td class="num" style="color:#b71c1c">69,605đ</td><td class="num">1.9M</td><td class="num">15</td><td class="num" style="color:#b71c1c;font-weight:700">127,708đ</td><td class="num" style="color:#b71c1c;font-weight:700">↑+83% — cần dừng</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- TIKTOK OVERVIEW -->
+<div class="sec-lbl" style="background:#fce4ec;color:#880e4f;margin-top:14px">🎵 TIKTOK — W1 vs W2 vs Plan</div>
+<div class="tbl-wrap">
+  <table>
+    <thead><tr>
+      <th>Chỉ số</th>
+      <th>W1 (5 ngày)</th>
+      <th>W2 (7 ngày)</th>
+      <th>Plan ngưỡng</th>
+      <th>W2 vs Plan</th>
+    </tr></thead>
+    <tbody>
+      <tr><td>Chi tiêu</td><td class="num">39.6M</td><td class="num" style="color:#b71c1c">98.1M</td><td class="num" style="color:#888;font-style:italic">~101M /12 ngày</td><td class="num" style="color:#388e3c">Đúng pace</td></tr>
+      <tr><td>Impressions</td><td class="num">2.51M</td><td class="num">5.58M</td><td class="num" style="color:#888;font-style:italic">—</td><td class="num">+122%</td></tr>
+      <tr><td>CPM</td><td class="num" style="color:#b71c1c">15,761đ</td><td class="num" style="color:#b71c1c">17,570đ</td><td class="num" style="color:#888;font-style:italic">≤12,800đ</td><td class="num" style="color:#b71c1c">Vượt sàn ⚠</td></tr>
+      <tr><td>CTR (all)</td><td class="num" style="color:#388e3c">1.28%</td><td class="num" style="color:#388e3c">1.24%</td><td class="num" style="color:#888;font-style:italic">—</td><td class="num" style="color:#388e3c">Tốt</td></tr>
+      <tr><td>V6s%</td><td class="num" style="color:#388e3c">16.1%</td><td class="num" style="color:#388e3c">17.9%</td><td class="num" style="color:#888;font-style:italic">≥15%</td><td class="num" style="color:#388e3c">Đạt ✓</td></tr>
+      <tr><td>Purchase (offline)*</td><td class="num">52</td><td class="num">410</td><td class="num" style="color:#888;font-style:italic">—</td><td class="num">Không so trực tiếp**</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="note" style="margin:4px 0 10px">** TikTok "Purchases offline" = attributed conversion từ TikTok Pixel, thường thấp hơn số thực trên file quản lý do window attribution khác nhau.</p>
+
+<!-- TK BY REGION -->
+<div class="sec-lbl" style="background:#fce4ec;color:#880e4f;margin-top:6px">TikTok theo khu vực — V6s% trend</div>
+<div class="tbl-wrap">
+  <table>
+    <thead><tr>
+      <th>Khu vực</th>
+      <th>Chi W1</th><th>V6s% W1</th>
+      <th>Chi W2</th><th>V6s% W2</th>
+      <th>CPM W2</th><th>Ghi chú</th>
+    </tr></thead>
+    <tbody>
+      <tr><td><b>Hà Nội</b></td><td class="num">7.1M</td><td class="num" style="color:#388e3c">16.1%</td><td class="num">17.9M</td><td class="num" style="color:#388e3c">17.2%</td><td class="num" style="color:#b71c1c">—</td><td>Ổn định, scale tốt</td></tr>
+      <tr><td><b>HCM</b></td><td class="num">7.1M</td><td class="num" style="color:#388e3c">15.6%</td><td class="num">20.5M</td><td class="num" style="color:#388e3c">19.4%</td><td class="num" style="color:#b71c1c">—</td><td>V6s% tăng theo scale ✓</td></tr>
+      <tr><td><b>Bắc Ninh</b></td><td class="num">2.6M</td><td class="num" style="color:#388e3c">20.8%</td><td class="num">3.6M</td><td class="num" style="color:#388e3c">20.7%</td><td class="num" style="color:#b71c1c">—</td><td>V6s% cao nhất hệ thống — nhân rộng creative</td></tr>
+      <tr style="background:#fff8f0"><td><b>Thanh Hóa</b></td><td class="num">2.5M</td><td class="num" style="color:#b71c1c">11.5%</td><td class="num">3.6M</td><td class="num" style="color:#b71c1c">11.1%</td><td class="num" style="color:#b71c1c">—</td><td style="color:#b71c1c;font-weight:600">2 tuần liên tiếp &lt;12% — đổi creative</td></tr>
+      <tr style="background:#fff8f0"><td><b>Vinh/Nghệ An</b></td><td class="num">0.5M</td><td class="num" style="color:#b71c1c">13.4%</td><td class="num">3.6M</td><td class="num" style="color:#e65100">14.4%</td><td class="num" style="color:#b71c1c">—</td><td style="color:#e65100">Tăng budget nhưng V6s% chưa đạt 15%</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- FLAGS -->
+<div class="warn-list" style="margin-top:14px">
+  <div class="warn-ttl">🚦 Flags cần xử lý</div>
+  <div class="warn-item">🔴 <b>An Giang FB</b>: CPA W2 = 127,708đ (+83% vs W1). 1.9M chi / 15 lượt mua — <b>Khánh: dừng hoặc hạ budget &lt;500k/ngày ngay</b></div>
+  <div class="warn-item">🔴 <b>TikTok CPM trên ngưỡng toàn bộ</b>: W1 15.8k + W2 17.6k, target ≤12.8k — <b>Huế: review bid strategy / thử manual CPM cap</b></div>
+  <div class="warn-item">🔴 <b>TikTok over pace</b>: 53% ngân sách / 38.7% tháng → hết tiền ~24/7 nếu giữ pace — <b>Huế: hạ daily cap về ~7.5M/ngày</b></div>
+  <div class="warn-item">🟡 <b>CTR C1/C2 FB W2 = 0.40%</b> (sàn ≥0.75%) — CPA đang tốt nhưng theo dõi CPM tuần tới, nếu tăng &gt;20% → swap content</div>
+  <div class="warn-item">🟡 <b>Thanh Hóa TikTok V6s% &lt;12% 2 tuần liên tiếp</b> — thay creative trước khi tăng budget</div>
+  <div class="warn-item">🟢 <b>C3 Midday + C4 Afterwork FB W2 đều dưới plan CPA</b> (14.9k và 20.5k) — có thể tăng budget nhẹ W3</div>
+  <div class="warn-item">🟢 <b>Bắc Ninh TikTok V6s% = 20.7–20.8%</b> — cao nhất, nhân rộng concept sang Hải Phòng/Hưng Yên</div>
+</div>
+</div>
 </div>
 
 <script>
@@ -329,5 +552,6 @@ try {
   const el=document.getElementById(t);
   if(el) try { el.innerHTML=buildSheet(t); } catch(e2){ el.innerHTML='<div style="color:red">Error: '+e2.message+'</div>'; }
 });
+
 </script>
 </body></html>
