@@ -68,25 +68,28 @@ tr:hover td{background:#f9f9ff}
 
 <!-- ── TỔNG QUAN ── -->
 <div id="tq" class="sheet active">
-  <!-- Pacing W2 -->
+  <!-- Pacing W2 vs plan từ Plan_Performance_T7 (540M FB / 260M TK / 31 ngày) -->
   <div class="pacing-row">
     <div class="pace-box">
-      <div class="pace-ch" style="color:#1877f2">Facebook W2</div>
+      <div class="pace-ch" style="color:#1877f2">Facebook</div>
       <div class="pace-num" style="color:#1877f2">20.1M/ngày</div>
-      <div class="pace-sub">vs target 22.0M · pace <b>91%</b> · Chi 7d: 140.7M</div>
-      <div class="pace-bar"><div class="pace-fill" style="width:91%;background:#1877f2"></div></div>
+      <div class="pace-sub">W2 vs plan 17.4M/ngày · pace <b style="color:#1b5e20">116%</b> · Chi W2: 140.4M</div>
+      <div class="pace-sub" style="margin-top:3px;color:#aaa">W1: 15.0M/ngày (86%)</div>
+      <div class="pace-bar"><div class="pace-fill" style="width:100%;background:#1877f2"></div></div>
     </div>
     <div class="pace-box">
-      <div class="pace-ch" style="color:#ff3860">TikTok W2</div>
-      <div class="pace-num" style="color:#ff3860">7.0M/ngày</div>
-      <div class="pace-sub">vs target 5.84M · pace <b>120%</b> · Chi 7d: 48.8M</div>
-      <div class="pace-bar"><div class="pace-fill" style="width:100%;background:#ff3860"></div></div>
+      <div class="pace-ch" style="color:#ff3860">TikTok</div>
+      <div class="pace-num" style="color:#e65100">7.0M/ngày</div>
+      <div class="pace-sub">W2 vs plan 8.4M/ngày · pace <b style="color:#e65100">83%</b> · Chi W2: 48.9M</div>
+      <div class="pace-sub" style="margin-top:3px;color:#aaa">W1: 3.9M/ngày (47%) — thiếu nặng</div>
+      <div class="pace-bar"><div class="pace-fill" style="width:83%;background:#ff3860"></div></div>
     </div>
     <div class="pace-box">
-      <div class="pace-ch" style="color:#555">Tổng 2 kênh W2</div>
-      <div class="pace-num" style="color:#1b5e20">27.1M/ngày</div>
-      <div class="pace-sub">vs target 27.8M · pace <b>97%</b> · gần đạt</div>
-      <div class="pace-bar"><div class="pace-fill" style="width:97%;background:#388e3c"></div></div>
+      <div class="pace-ch" style="color:#555">Còn lại cần chi (19 ngày)</div>
+      <div class="pace-num" style="color:#c62828">+3.1M TK/ngày</div>
+      <div class="pace-sub">TK còn 191M / 19 ngày = <b style="color:#c62828">10.1M/ngày</b> (hiện 7.0M)</div>
+      <div class="pace-sub" style="margin-top:3px">FB còn 324M / 19 ngày = 17.1M/ngày ✅</div>
+      <div class="pace-bar"><div class="pace-fill" style="width:69%;background:#e65100"></div></div>
     </div>
   </div>
   <!-- W1 vs W2 + vs Target table -->
@@ -172,44 +175,140 @@ function buildSheet(tuyen){
 }
 // Build tổng quan
 function buildTQ(){
-  const TNAME={C1:'Tour',C2:'Thera',C3:'Nghỉ trưa',C4:'Tan làm',C5:'Tóc đẹp'};
-  const TARGET={C1:33000,C2:30000,C3:40000,C4:29000,C5:29000};
+  const TNAME={C1:'Tour',C2:'Thera Studio',C3:'Nghỉ trưa',C4:'Tan làm',C5:'Tóc đẹp'};
+  // Plan per day from Plan_Performance_T7 (total / 31 ngày)
+  const FB_PLAN={C1:5.0,C2:2.8,C3:1.1,C4:2.9,C5:5.6}; // M/ngày
+  const TK_PLAN={C1:2.7,C2:0.7,C3:0.7,C4:1.1,C5:3.2}; // M/ngày
+  const FB_W1={C1:5.1,C2:1.8,C3:1.0,C4:2.1,C5:5.2};   // M/ngày (1-5/7)
+  const TK_W1_V6S={C1:17.1,C2:0,C3:16.3,C4:0,C5:14.7};
+  const TK_W2_V6S={C1:16.4,C2:0,C3:15.8,C4:22.2,C5:19.1};
+  const FB_W2_DAY={C1:6.4,C2:2.9,C3:1.2,C4:2.8,C5:6.8}; // M/ngày (6-12/7)
+  const TK_W1_DAY={C1:2.1,C2:0,C3:0.4,C4:0,C5:1.4};     // M/ngày
+  const TK_W2_DAY={C1:2.5,C2:0,C3:1.0,C4:0.3,C5:3.1};   // M/ngày
+  const SIGNALS={
+    C1:'FB chi W2 tăng +25% vs W1, pace 127% plan — budget scale tốt. TK v6s nhẹ giảm 17.1%→16.4% (chưa vượt ngưỡng 18%) → cần thêm content format mới.',
+    C2:'FB W1 chỉ 62% plan → W2 đã bắt kịp 101%. TikTok C2 <b style="color:#c62828">CHƯA CHẠY</b> cả 2 tuần (plan 0.7M/ngày) → ưu tiên khai thông ngay W3.',
+    C3:'CPA FB tốt nhất hệ thống (14.8k vs target 40k — 63% dưới target). TK C3 W2 tăng mạnh +148% plan. Tín hiệu tốt nhất tháng.',
+    C4:'FB W1 chỉ 71% plan → W2 phục hồi 96%. TK C4 <b style="color:#c62828">mới chỉ 28% plan</b> dù v6s W2=22.2% (cao nhất hệ) → budget TK C4 đang bị kìm, cần mở ngay.',
+    C5:'Tuyến lớn nhất. TK v6s bứt phá 14.7%→19.1% (+4.4%) — vượt ngưỡng scale lần đầu trong T7. FB pace W2=121% plan. Tín hiệu TikTok C5 đang warming up.'
+  };
   const ACTIONS={
-    C1:'Scale FB: top 5 CPA <20k → duplicate + tăng budget 30%. TK v6s 16.4% (W2 vs W1 17.1%) → thử content mới hoặc tăng bid để cải thiện v6s.',
-    C2:'Best tuyến. Scale toàn bộ scale-tag. Duplicate top "Thera Studio" Hoàng Sao (CPA 11k). Cân nhắc tăng budget C2 thêm 20-30%.',
-    C3:'CPA tốt nhất (14.8k). Scale FB "Điểm danh đêm nay" + "KOC Sa Bo". TK v6s 15.8% → OK, theo dõi; có thể thêm content địa phương.',
-    C4:'TK mạnh (v6s 22.2% — cao nhất toàn hệ). Scale TK C4 thêm. FB "Đào Tuấn Thành - Anh em kiến trúc" CPA 16.5k → duplicate. Dừng ads CPA >40k.',
-    C5:'Tuyến gần target nhất (CPA 23.7k vs 29k). TK v6s W2=19.1% (+4.4% vs W1) — tốt, scale. FB: dừng ads CPA >40k, tập trung Lê Chiến Thắng + KOC Hoàng không sao.'
+    C1:'Giữ ngân sách FB. TK: upload content format khác (từ "review" angle) để cải thiện v6s lên ≥18%. Duplicate 3 ads FB CPA <18k.',
+    C2:'FB: đã đủ ngân sách, chỉ dừng ads review/stop. TK C2: <b>mở ngay 5-7 ads mới</b> (target 0.7M/ngày × 19 ngày = 13.3M còn thiếu).',
+    C3:'Scale cả 2 kênh. FB: duplicate "Điểm danh đêm nay" + "Sa Bo". TK: tăng budget C3, v6s 15.8% đang tốt, thêm địa phương (salon mới).',
+    C4:'TK C4: <b>mở cap ngay</b> — v6s 22.2% tốt nhất hệ nhưng chỉ chạy 0.3M/ngày. Target 1.1M/ngày. FB: duplicate "Đào Tuấn Thành - kiến trúc" (CPA 16.5k).',
+    C5:'TK: scale ads v6s≥19% — tín hiệu warming up tốt. FB: dừng ads CPA >40k, tập trung Lê Chiến Thắng 2 bài top + Hoàng không sao Series VAR.'
   };
 
-  // W1 vs W2 comparison table
-  let tblHtml=`<div style="overflow-x:auto;margin-bottom:14px"><table><thead><tr>
-    <th>Tuyến</th>
-    <th class="num">FB Chi W1</th><th class="num">FB Chi W2</th>
-    <th class="num">Lượt mua W2</th><th class="num">CPA W2</th><th class="num">Target</th><th class="num">vs Target</th>
-    <th class="num">TK V6s W1</th><th class="num">TK V6s W2</th><th class="num">TK Mua W2</th>
+  // Bảng tổng hợp W1→W2→Plan
+  let tblHtml=`<div style="overflow-x:auto;margin-bottom:10px">
+  <div style="font-size:11px;font-weight:700;color:#1a1a2e;margin-bottom:6px">📊 Facebook — So sánh từng tuyến (M/ngày vs plan)</div>
+  <table><thead><tr>
+    <th>Tuyến</th><th class="num">Plan/ngày</th><th class="num">W1/ngày</th><th class="num">Pace W1</th>
+    <th class="num">W2/ngày</th><th class="num">Pace W2</th><th class="num">Lượt mua</th>
+    <th class="num">CPA W2</th><th class="num">Target</th><th class="num">vs Target</th>
   </tr></thead><tbody>`;
   ['C1','C2','C3','C4','C5'].forEach(t=>{
     const s=S[t]; const m=TUYEN_META[t];
+    const pW1=Math.round(FB_W1[t]/FB_PLAN[t]*100);
+    const pW2=Math.round(FB_W2_DAY[t]/FB_PLAN[t]*100);
     const vs=s.cpa?Math.round((s.cpa-s.target)/s.target*100):null;
-    const vsStr=vs!==null?`<b style="color:${vs<=0?'#1b5e20':vs<=20?'#e65100':'#c62828'}">${vs>0?'+':''}${vs}%</b>`:'—';
-    const v6sDelta=s.tk_v6s_w2-s.tk_v6s_w1;
-    const v6sDeltaStr=s.tk_v6s_w1>0?`<span style="color:${v6sDelta>=0?'#1b5e20':'#c62828'};font-size:9px">(${v6sDelta>=0?'+':''}${v6sDelta.toFixed(1)}%)</span>`:'';
+    const vsStr=vs!==null?`<b style="color:${vs<=-20?'#1b5e20':vs<=0?'#2e7d32':vs<=10?'#e65100':'#c62828'}">${vs>0?'+':''}${vs}%</b>`:'—';
+    const cpaCol=s.status==='green'?'#1b5e20':'#e65100';
     tblHtml+=`<tr>
       <td><span class="tuyenbadge" style="background:${m.color}">${t}</span> ${TNAME[t]}</td>
-      <td class="num" style="color:#888">${(s.w1_chi/1000).toFixed(1)}M</td>
-      <td class="num" style="color:#1565c0;font-weight:800">${(s.chi/1000).toFixed(1)}M</td>
-      <td class="num" style="color:#1b5e20;font-weight:800">${s.mua.toLocaleString()}</td>
-      <td class="num" style="${s.status==='green'?'color:#1b5e20':s.status==='yellow'?'color:#e65100':'color:#c62828'};font-weight:800">${s.cpa?s.cpa.toLocaleString()+'đ':'—'}</td>
-      <td class="num" style="color:#888">≤${s.target.toLocaleString()}đ</td>
+      <td class="num" style="color:#888">${FB_PLAN[t].toFixed(1)}M</td>
+      <td class="num" style="color:#aaa">${FB_W1[t].toFixed(1)}M</td>
+      <td class="num" style="color:${pW1>=90?'#888':pW1>=70?'#e65100':'#c62828'}">${pW1}%</td>
+      <td class="num" style="color:#1565c0;font-weight:800">${FB_W2_DAY[t].toFixed(1)}M</td>
+      <td class="num"><b style="color:${pW2>=100?'#1b5e20':pW2>=85?'#2e7d32':'#e65100'}">${pW2}%</b></td>
+      <td class="num" style="color:#1b5e20;font-weight:700">${s.mua.toLocaleString()}</td>
+      <td class="num" style="color:${cpaCol};font-weight:800">${s.cpa?s.cpa.toLocaleString()+'đ':'—'}</td>
+      <td class="num" style="color:#aaa">≤${(s.target/1000).toFixed(0)}k</td>
       <td class="num">${vsStr}</td>
-      <td class="num" style="color:#888">${s.tk_v6s_w1>0?s.tk_v6s_w1+'%':'—'}</td>
-      <td class="num" style="${s.tk_v6s_w2>=18?'color:#1b5e20;font-weight:800':s.tk_v6s_w2>=15?'color:#1565c0':'color:#888'}">${s.tk_v6s_w2>0?s.tk_v6s_w2+'% '+v6sDeltaStr:'—'}</td>
+    </tr>`;
+  });
+  tblHtml+='</tbody></table></div>';
+
+  tblHtml+=`<div style="overflow-x:auto;margin-bottom:14px">
+  <div style="font-size:11px;font-weight:700;color:#1a1a2e;margin-bottom:6px">📊 TikTok — So sánh từng tuyến (M/ngày vs plan)</div>
+  <table><thead><tr>
+    <th>Tuyến</th><th class="num">Plan/ngày</th><th class="num">W1/ngày</th><th class="num">Pace W1</th>
+    <th class="num">W2/ngày</th><th class="num">Pace W2</th><th class="num">V6s W1</th><th class="num">V6s W2</th><th class="num">TK Mua W2</th><th>Tín hiệu</th>
+  </tr></thead><tbody>`;
+  ['C1','C2','C3','C4','C5'].forEach(t=>{
+    const s=S[t]; const m=TUYEN_META[t];
+    const pW1=TK_PLAN[t]>0?Math.round(TK_W1_DAY[t]/TK_PLAN[t]*100):0;
+    const pW2=TK_PLAN[t]>0?Math.round(TK_W2_DAY[t]/TK_PLAN[t]*100):0;
+    const v6s1=TK_W1_V6S[t]; const v6s2=TK_W2_V6S[t];
+    const delta=v6s2-v6s1;
+    const v6s2Str=v6s2>0?`<b style="color:${v6s2>=18?'#1b5e20':v6s2>=15?'#1565c0':'#888'}">${v6s2}%</b>`:'<span style="color:#c62828">Chưa chạy</span>';
+    const v6sDelta=v6s1>0?`<span style="color:${delta>=0?'#1b5e20':'#c62828'};font-size:9px">${delta>=0?'+':''}${delta.toFixed(1)}%</span>`:'';
+    let signal='';
+    if(t==='C2'&&v6s2===0) signal='<span style="color:#c62828;font-weight:700">⚠ Chưa chạy</span>';
+    else if(t==='C4'&&v6s2>=20) signal='<span style="color:#1b5e20;font-weight:700">🔥 V6s cao nhất</span>';
+    else if(t==='C5'&&v6s2>=18&&v6s1<18) signal='<span style="color:#1b5e20;font-weight:700">📈 Vừa vượt 18%</span>';
+    else if(pW2>=140) signal='<span style="color:#1b5e20">Overdelivering</span>';
+    tblHtml+=`<tr>
+      <td><span class="tuyenbadge" style="background:${m.color}">${t}</span> ${TNAME[t]}</td>
+      <td class="num" style="color:#888">${TK_PLAN[t].toFixed(1)}M</td>
+      <td class="num" style="color:#aaa">${TK_W1_DAY[t]>0?TK_W1_DAY[t].toFixed(1)+'M':'—'}</td>
+      <td class="num" style="color:${pW1>=80?'#888':pW1>=50?'#e65100':'#c62828'}">${TK_W1_DAY[t]>0?pW1+'%':'—'}</td>
+      <td class="num" style="color:#c0143c;font-weight:800">${TK_W2_DAY[t]>0?TK_W2_DAY[t].toFixed(1)+'M':'<span style=color:#c62828>0</span>'}</td>
+      <td class="num"><b style="color:${pW2>=100?'#1b5e20':pW2>=70?'#2e7d32':pW2>=30?'#e65100':'#c62828'}">${pW2>0?pW2+'%':'0%'}</b></td>
+      <td class="num" style="color:#aaa">${v6s1>0?v6s1+'%':'—'}</td>
+      <td class="num">${v6s2Str} ${v6sDelta}</td>
       <td class="num" style="color:#1b5e20">${s.tk_mua_w2>0?s.tk_mua_w2:'—'}</td>
+      <td>${signal}</td>
     </tr>`;
   });
   tblHtml+='</tbody></table></div>';
   document.getElementById('w1w2-table').innerHTML=tblHtml;
+
+  // TK top scale ads by v6s (≥18, s≥80)
+  const tkTop=TK.filter(x=>x.v6s>=18&&x.s>=80).sort((a,b)=>b.v6s-a.v6s).slice(0,7);
+  let tkHtml='';
+  tkTop.forEach(r=>{
+    const m=TUYEN_META[r.t];
+    tkHtml+=`<div class="top-item"><span class="top-name"><span class="tuyenbadge" style="background:${m.color}">${r.t}</span>${r.koc} · <span style="color:#888">${r.cap.substring(0,40)}…</span></span><span class="top-val" style="color:#1b5e20">${r.v6s}% · ${r.chi}đ/6sv</span></div>`;
+  });
+  document.getElementById('tk-top').innerHTML=tkHtml||'<span style="color:#aaa;font-size:10px">Chưa có ads đủ điều kiện</span>';
+
+  // FB top by CPA (scale, mua>=10)
+  const fbTop=FB.filter(x=>x.tag==='scale'&&x.mua>=10).sort((a,b)=>a.cpa-b.cpa).slice(0,7);
+  let fbHtml='';
+  fbTop.forEach(r=>{
+    const m=TUYEN_META[r.t];
+    fbHtml+=`<div class="top-item"><span class="top-name"><span class="tuyenbadge" style="background:${m.color}">${r.t}</span>${r.koc} · <span style="color:#888">${r.cap.substring(0,40)}…</span></span><span class="top-val" style="color:#1565c0">CPA ${r.cpa.toLocaleString()}đ · ${r.mua} mua</span></div>`;
+  });
+  document.getElementById('fb-top').innerHTML=fbHtml||'<span style="color:#aaa;font-size:10px">Chưa có ads đủ điều kiện</span>';
+
+  // Nhận xét + Action per tuyến
+  let actHtml='<div style="background:#f8faff;border:1px solid #c7d7f5;border-radius:6px;padding:12px 14px;margin-bottom:10px">';
+  actHtml+='<div style="font-size:11px;font-weight:700;color:#1a237e;margin-bottom:10px">📝 Nhận xét & Action W3 (13–19/7)</div>';
+  ['C1','C2','C3','C4','C5'].forEach(t=>{
+    const m=TUYEN_META[t];
+    actHtml+=`<div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #e8ecf5">
+      <div style="font-size:11px;font-weight:700;margin-bottom:4px"><span class="tuyenbadge" style="background:${m.color}">${t}</span> <span style="color:#1a1a2e">${TNAME[t]}</span></div>
+      <div style="font-size:10.5px;color:#37474f;margin-bottom:3px">🔍 <b>Nhận xét:</b> ${SIGNALS[t]}</div>
+      <div style="font-size:10.5px;color:#1b5e20">🎯 <b>Action:</b> ${ACTIONS[t]}</div>
+    </div>`;
+  });
+  actHtml+='</div>';
+  document.getElementById('action-list').innerHTML=actHtml;
+
+  // Warnings
+  const RED_TH={C1:60000,C2:55000,C3:70000,C4:55000,C5:55000};
+  const warns=[];
+  TK.filter(x=>x.tag==='stop'&&x.s>=80).sort((a,b)=>b.s-a.s).slice(0,5).forEach(r=>{
+    warns.push(`<div class="warn-item">🛑 <b>TK ${r.t}</b> ${r.koc} · "${r.cap.substring(0,50)}..." — V6s <b>${r.v6s}%</b> · Chi: <b>${r.s.toLocaleString()}k</b> → Dừng</div>`);
+  });
+  FB.filter(x=>(x.cpa&&x.cpa>(RED_TH[x.t]||60000))||(x.mua===0&&x.s>200)).sort((a,b)=>b.s-a.s).slice(0,5).forEach(r=>{
+    const cpaStr=r.cpa?`CPA <b>${r.cpa.toLocaleString()}đ</b>`:'<b>0 mua</b>';
+    warns.push(`<div class="warn-item">🔴 <b>FB ${r.t}</b> ${r.koc} · "${r.cap.substring(0,50)}..." — ${cpaStr} · Chi: <b>${r.s.toLocaleString()}k</b> → Pause</div>`);
+  });
+  document.getElementById('warn-list').innerHTML=warns.join('')||'<div style="color:#1b5e20;font-size:10.5px">Không có cảnh báo — tất cả tuyến FB đang trong ngưỡng CPA</div>';
+}
 
   // TK top scale ads by v6s (≥18, s≥80)
   const tkTop=TK.filter(x=>x.v6s>=18&&x.s>=80).sort((a,b)=>b.v6s-a.v6s).slice(0,7);
