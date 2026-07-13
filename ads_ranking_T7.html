@@ -331,16 +331,256 @@ tr:hover td{background:#f9f9ff}
   </table>
 </div>
 
+<!-- KM+C12W PER REGION -->
+<div class="sec-lbl" style="background:#e8f5e9;color:#1b5e20;margin-top:14px">👥 KM+C12W thực tế theo khu vực — nguồn: Data Tag Segment (tất cả kênh)</div>
+<p class="note" style="margin-bottom:8px">Nguồn CSV 232k giao dịch T5–T7. Chỉ lấy KM (khách mới) + C12W (cũ &gt;12 tuần), lọc 01–12/7. <b>HCM+HN gộp</b> vì salon tên không có hậu tố tỉnh (bao gồm cả Đồng Nai chưa tách được). Plan/12d = plan tháng × 12/31.</p>
+<div class="tbl-wrap">
+  <table>
+    <thead><tr>
+      <th>Khu vực</th>
+      <th>W1 KM</th><th>W1 C12W</th><th>W1 Tổng</th>
+      <th>W2 KM</th><th>W2 C12W</th><th>W2 Tổng</th>
+      <th>Cộng dồn</th><th>Plan /12d</th><th>% đạt</th>
+      <th>Ghi chú</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><b>HCM + HN</b> <span style="font-size:9px;color:#888">(+ĐN)</span></td>
+        <td class="num">1,753</td><td class="num">2,810</td><td class="num"><b>4,563</b></td>
+        <td class="num">2,379</td><td class="num">3,732</td><td class="num"><b>6,111</b></td>
+        <td class="num"><b>10,674</b></td><td class="num">10,497</td>
+        <td class="num" style="color:#388e3c;font-weight:700">102%</td>
+        <td>Đúng pace ✓</td>
+      </tr>
+      <tr>
+        <td><b>Đà Nẵng</b></td>
+        <td class="num">175</td><td class="num">112</td><td class="num"><b>287</b></td>
+        <td class="num">268</td><td class="num">163</td><td class="num"><b>431</b></td>
+        <td class="num"><b>718</b></td><td class="num">—</td>
+        <td class="num">—</td>
+        <td>Không trong plan — cần plan riêng</td>
+      </tr>
+      <tr>
+        <td><b>Vũng Tàu</b></td>
+        <td class="num">98</td><td class="num">90</td><td class="num"><b>188</b></td>
+        <td class="num">145</td><td class="num">122</td><td class="num"><b>267</b></td>
+        <td class="num"><b>455</b></td><td class="num">—</td>
+        <td class="num">—</td>
+        <td>Không trong plan — đang phát sinh organic</td>
+      </tr>
+      <tr>
+        <td><b>Bắc Ninh</b></td>
+        <td class="num">90</td><td class="num">78</td><td class="num"><b>168</b></td>
+        <td class="num">143</td><td class="num">115</td><td class="num"><b>258</b></td>
+        <td class="num"><b>426</b></td><td class="num">362</td>
+        <td class="num" style="color:#388e3c;font-weight:700">118%</td>
+        <td>Over plan ✓ — TK V6s% tốt 20.7%</td>
+      </tr>
+      <tr>
+        <td><b>Lâm Đồng</b></td>
+        <td class="num">64</td><td class="num">72</td><td class="num"><b>136</b></td>
+        <td class="num">80</td><td class="num">84</td><td class="num"><b>164</b></td>
+        <td class="num"><b>300</b></td><td class="num">—</td>
+        <td class="num">—</td>
+        <td>Không trong plan</td>
+      </tr>
+      <tr>
+        <td><b>Quảng Nam/Ngãi</b></td>
+        <td class="num">73</td><td class="num">53</td><td class="num"><b>126</b></td>
+        <td class="num">96</td><td class="num">73</td><td class="num"><b>169</b></td>
+        <td class="num"><b>295</b></td><td class="num">—</td>
+        <td class="num">—</td>
+        <td>Không trong plan</td>
+      </tr>
+      <tr>
+        <td><b>Cần Thơ</b></td>
+        <td class="num">44</td><td class="num">66</td><td class="num"><b>110</b></td>
+        <td class="num">69</td><td class="num">97</td><td class="num"><b>166</b></td>
+        <td class="num"><b>276</b></td><td class="num">—</td>
+        <td class="num">—</td>
+        <td>Không trong plan</td>
+      </tr>
+      <tr>
+        <td><b>Vinh / Nghệ An</b></td>
+        <td class="num">65</td><td class="num">57</td><td class="num"><b>122</b></td>
+        <td class="num">103</td><td class="num">83</td><td class="num"><b>186</b></td>
+        <td class="num"><b>308</b></td><td class="num">334</td>
+        <td class="num" style="color:#e65100;font-weight:700">92%</td>
+        <td>Gần đạt — TK V6s% vẫn &lt;15%</td>
+      </tr>
+      <tr>
+        <td><b>Bình Dương</b></td>
+        <td class="num">104</td><td class="num">127</td><td class="num"><b>231</b></td>
+        <td class="num">161</td><td class="num">214</td><td class="num"><b>375</b></td>
+        <td class="num"><b>606</b></td><td class="num">682</td>
+        <td class="num" style="color:#e65100;font-weight:700">89%</td>
+        <td>FB pace 59% — TK chưa setup</td>
+      </tr>
+      <tr>
+        <td><b>Nha Trang</b></td>
+        <td class="num">49</td><td class="num">54</td><td class="num"><b>103</b></td>
+        <td class="num">70</td><td class="num">68</td><td class="num"><b>138</b></td>
+        <td class="num"><b>241</b></td><td class="num">—</td>
+        <td class="num">—</td>
+        <td>Không trong plan</td>
+      </tr>
+      <tr>
+        <td><b>Thanh Hóa</b></td>
+        <td class="num">69</td><td class="num">92</td><td class="num"><b>161</b></td>
+        <td class="num">86</td><td class="num">132</td><td class="num"><b>218</b></td>
+        <td class="num"><b>379</b></td><td class="num">454</td>
+        <td class="num" style="color:#b71c1c;font-weight:700">83%</td>
+        <td style="color:#b71c1c">TK overspend 179% nhưng V6s% 11.1% — không hiệu quả</td>
+      </tr>
+      <tr>
+        <td><b>Long An</b></td>
+        <td class="num">23</td><td class="num">29</td><td class="num"><b>52</b></td>
+        <td class="num">27</td><td class="num">37</td><td class="num"><b>64</b></td>
+        <td class="num"><b>116</b></td><td class="num">137</td>
+        <td class="num" style="color:#b71c1c;font-weight:700">85%</td>
+        <td>FB + TK spend = 0 — chưa mở ngân sách</td>
+      </tr>
+      <tr>
+        <td><b>An Giang</b></td>
+        <td class="num">28</td><td class="num">38</td><td class="num"><b>66</b></td>
+        <td class="num">38</td><td class="num">42</td><td class="num"><b>80</b></td>
+        <td class="num"><b>146</b></td><td class="num">187</td>
+        <td class="num" style="color:#b71c1c;font-weight:700">78%</td>
+        <td style="color:#b71c1c">FB CPA W2 = 127k → dừng ngay</td>
+      </tr>
+      <tr>
+        <td><b>Tiền Giang</b></td>
+        <td class="num">30</td><td class="num">21</td><td class="num"><b>51</b></td>
+        <td class="num">39</td><td class="num">55</td><td class="num"><b>94</b></td>
+        <td class="num"><b>145</b></td><td class="num">—</td>
+        <td class="num">—</td>
+        <td>Không trong plan — C12W tăng mạnh W2</td>
+      </tr>
+      <tr>
+        <td><b>Hải Phòng</b></td>
+        <td class="num">22</td><td class="num">23</td><td class="num"><b>45</b></td>
+        <td class="num">44</td><td class="num">40</td><td class="num"><b>84</b></td>
+        <td class="num"><b>129</b></td><td class="num">—</td>
+        <td class="num">—</td>
+        <td>Không trong plan — KM W2 tăng gần gấp đôi</td>
+      </tr>
+      <tr>
+        <td><b>Đồng Tháp</b></td>
+        <td class="num">30</td><td class="num">11</td><td class="num"><b>41</b></td>
+        <td class="num">54</td><td class="num">21</td><td class="num"><b>75</b></td>
+        <td class="num"><b>116</b></td><td class="num">—</td>
+        <td class="num">—</td>
+        <td>Không trong plan — KM chiếm 72% (ít C12W)</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td><b>TỔNG</b></td>
+        <td class="num">2,805</td><td class="num">3,841</td><td class="num"><b>6,646</b></td>
+        <td class="num">3,920</td><td class="num">5,228</td><td class="num"><b>9,148</b></td>
+        <td class="num"><b>15,794</b></td><td class="num">13,547</td>
+        <td class="num" style="color:#388e3c;font-weight:700">117%</td>
+        <td>Ahead of plan overall</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+<p class="note" style="margin-top:4px">Plan /12d tổng = 34,997 × 12/31 = 13,547 (tất cả kênh: ads + CRM + organic). Thực tế 15,794 = <b>117% plan</b>. Tuy nhiên chênh lệch +2,247 phần lớn đến từ HCM+HN (gộp nhiều tỉnh) và các khu vực ngoài plan (ĐN, VT, CầnThơ...)</p>
+
+<!-- FB CHI TIÊU VS PLAN PER REGION x TUYẾN -->
+<div class="sec-lbl" style="background:#e8f0fe;color:#1a3660;margin-top:14px">💰 FB chi tiêu theo khu vực × tuyến — so plan/12d · C5 Hair là chiến dịch toàn quốc (không tách vùng)</div>
+<div class="tbl-wrap">
+  <table>
+    <thead><tr>
+      <th>Khu vực</th><th>Tuyến</th>
+      <th>Chi thực (W1+W2)</th><th>Plan /12d</th><th>% chi</th>
+      <th>Mua attributed</th><th>CPA FB</th><th>Nhận xét</th>
+    </tr></thead>
+    <tbody>
+      <tr style="background:#f0f4ff"><td rowspan="3"><b>Hà Nội</b><br><span style="font-size:9px;color:#888">Plan FB 60.7M</span></td>
+        <td>C1/C2</td><td class="num">23.9M</td><td class="num">26.5M</td><td class="num" style="color:#e65100">90%</td><td class="num">1,335</td><td class="num" style="color:#388e3c">17,878đ</td><td>CPA tốt ✓</td></tr>
+      <tr style="background:#f0f4ff"><td>C3</td><td class="num">3.4M</td><td class="num">3.6M</td><td class="num" style="color:#e65100">94%</td><td class="num">182</td><td class="num" style="color:#388e3c">18,433đ</td><td>CPA tốt ✓</td></tr>
+      <tr style="background:#f0f4ff"><td>C4</td><td class="num">9.0M</td><td class="num">10.6M</td><td class="num" style="color:#e65100">85%</td><td class="num">397</td><td class="num" style="color:#388e3c">22,573đ</td><td>CPA tốt ✓</td></tr>
+
+      <tr><td rowspan="3"><b>HCM</b><br><span style="font-size:9px;color:#888">Plan FB 105.4M</span></td>
+        <td>C1/C2</td><td class="num">56.5M</td><td class="num">45.6M</td><td class="num" style="color:#388e3c;font-weight:700">124%</td><td class="num">2,230</td><td class="num" style="color:#388e3c">25,357đ</td><td>Over pace — CPA OK ✓</td></tr>
+      <tr><td>C3</td><td class="num">7.8M</td><td class="num">6.1M</td><td class="num" style="color:#388e3c">128%</td><td class="num">347</td><td class="num" style="color:#388e3c">22,593đ</td><td>CPA tốt ✓</td></tr>
+      <tr><td>C4</td><td class="num">18.5M</td><td class="num">13.4M</td><td class="num" style="color:#388e3c">138%</td><td class="num">685</td><td class="num" style="color:#388e3c">27,066đ</td><td>CPA dưới 29k ✓</td></tr>
+
+      <tr style="background:#f0f4ff"><td rowspan="3"><b>Bình Dương</b><br><span style="font-size:9px;color:#888">Plan FB 10.8M</span></td>
+        <td>C1/C2</td><td class="num">4.1M</td><td class="num">4.6M</td><td class="num" style="color:#e65100">89%</td><td class="num">243</td><td class="num" style="color:#388e3c">16,716đ</td><td>CPA xuất sắc ✓</td></tr>
+      <tr style="background:#f0f4ff"><td>C3</td><td class="num">0.5M</td><td class="num">1.2M</td><td class="num" style="color:#b71c1c">44%</td><td class="num">34</td><td class="num" style="color:#388e3c">13,327đ</td><td>Underspend — nên tăng</td></tr>
+      <tr style="background:#f0f4ff"><td>C4</td><td class="num">1.8M</td><td class="num">3.4M</td><td class="num" style="color:#b71c1c">53%</td><td class="num">74</td><td class="num" style="color:#388e3c">24,292đ</td><td>CPA tốt — nên tăng</td></tr>
+
+      <tr><td rowspan="2"><b>Thanh Hóa</b><br><span style="font-size:9px;color:#888">Plan FB 7.2M</span></td>
+        <td>C1/C2</td><td class="num">2.9M</td><td class="num">3.1M</td><td class="num" style="color:#e65100">94%</td><td class="num">124</td><td class="num" style="color:#e65100">23,173đ</td><td>OK</td></tr>
+      <tr><td>C4</td><td class="num">1.3M</td><td class="num">1.7M</td><td class="num" style="color:#e65100">76%</td><td class="num">36</td><td class="num" style="color:#b71c1c">37,470đ</td><td style="color:#b71c1c">CPA &gt; plan 29k ⚠</td></tr>
+
+      <tr style="background:#f0f4ff"><td rowspan="2"><b>Bắc Ninh</b><br><span style="font-size:9px;color:#888">Plan FB 5.7M</span></td>
+        <td>C1/C2</td><td class="num">2.2M</td><td class="num">2.7M</td><td class="num" style="color:#e65100">81%</td><td class="num">115</td><td class="num" style="color:#388e3c">18,821đ</td><td>CPA tốt ✓</td></tr>
+      <tr style="background:#f0f4ff"><td>C4</td><td class="num">0.9M</td><td class="num">1.7M</td><td class="num" style="color:#b71c1c">51%</td><td class="num">22</td><td class="num" style="color:#b71c1c">40,935đ</td><td style="color:#b71c1c">CPA &gt; plan 29k ⚠</td></tr>
+
+      <tr><td rowspan="2"><b>Đồng Nai</b><br><span style="font-size:9px;color:#888">Plan FB 5.7M</span></td>
+        <td>C1/C2</td><td class="num">2.2M</td><td class="num">2.7M</td><td class="num" style="color:#e65100">81%</td><td class="num">140</td><td class="num" style="color:#388e3c">15,447đ</td><td>CPA xuất sắc ✓</td></tr>
+      <tr><td>C4</td><td class="num">0.9M</td><td class="num">1.7M</td><td class="num" style="color:#b71c1c">51%</td><td class="num">42</td><td class="num" style="color:#388e3c">21,405đ</td><td>CPA tốt ✓</td></tr>
+
+      <tr style="background:#f0f4ff"><td rowspan="2"><b>Vinh / Nghệ An</b><br><span style="font-size:9px;color:#888">Plan FB 5.3M</span></td>
+        <td>C1/C2</td><td class="num">2.2M</td><td class="num">2.4M</td><td class="num" style="color:#e65100">91%</td><td class="num">52</td><td class="num" style="color:#b71c1c">41,566đ</td><td style="color:#b71c1c">CPA &gt; plan 33k ⚠</td></tr>
+      <tr style="background:#f0f4ff"><td>C4</td><td class="num">0.9M</td><td class="num">1.4M</td><td class="num" style="color:#e65100">64%</td><td class="num">32</td><td class="num" style="color:#388e3c">28,085đ</td><td>CPA gần ngưỡng</td></tr>
+
+      <tr style="background:#fff5f5"><td><b>An Giang</b><br><span style="font-size:9px;color:#888">Plan FB 3.0M</span></td>
+        <td>C1/C2</td><td class="num">2.5M</td><td class="num">1.4M</td><td class="num" style="color:#b71c1c;font-weight:700">178%</td><td class="num">24</td><td class="num" style="color:#b71c1c;font-weight:700">105,919đ</td><td style="color:#b71c1c;font-weight:600">DỪNG NGAY — CPA gấp 3× ngưỡng</td></tr>
+
+      <tr><td colspan="2" style="color:#555;font-style:italic">C5 Hair — toàn quốc "All" (không tách vùng)</td>
+        <td class="num">65.5M</td><td class="num">67.7M</td><td class="num" style="color:#e65100">97%</td><td class="num">2,059</td><td class="num" style="color:#388e3c">31,832đ</td><td>CPA dưới 33k ✓ — scale được</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td colspan="2"><b>TỔNG FB</b></td>
+        <td class="num"><b>216.0M</b></td><td class="num"><b>209M</b></td>
+        <td class="num" style="color:#388e3c;font-weight:700"><b>103%</b></td>
+        <td class="num"><b>8,366</b></td><td class="num" style="color:#388e3c"><b>25,820đ</b></td>
+        <td>CPA blended tốt — đúng pace ngân sách</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+<p class="note" style="margin-top:4px">Plan/12d tính = plan tháng × 12/31. FB "mua attributed" = FB-attributed purchases (Attribution window 7-day click / 1-day view), không phải KM+C12W thực tế từ CSV.</p>
+
+<!-- TK CHI TIÊU VS PLAN PER REGION -->
+<div class="sec-lbl" style="background:#fce4ec;color:#880e4f;margin-top:12px">🎵 TikTok chi tiêu theo khu vực — so plan/12d</div>
+<div class="tbl-wrap">
+  <table>
+    <thead><tr>
+      <th>Khu vực</th>
+      <th>Chi W1+W2</th><th>Plan /12d</th><th>% chi</th>
+      <th>V6s% W2</th><th>CPM W2</th><th>Nhận xét</th>
+    </tr></thead>
+    <tbody>
+      <tr><td><b>HCM+HN</b> (gộp)</td><td class="num">52.6M</td><td class="num">80.0M</td><td class="num" style="color:#b71c1c">66%</td><td class="num" style="color:#388e3c">18–19%</td><td class="num" style="color:#b71c1c">&gt;12.8k</td><td>Underspend — nên tăng daily cap</td></tr>
+      <tr style="background:#fff5f5"><td><b>Bắc Ninh</b></td><td class="num">6.2M</td><td class="num">2.8M</td><td class="num" style="color:#b71c1c;font-weight:700">222%</td><td class="num" style="color:#388e3c">20.7%</td><td class="num" style="color:#b71c1c">&gt;12.8k</td><td style="color:#b71c1c">Over 2.2× — V6s% tốt nên OK, nhưng ngân sách cần điều chỉnh</td></tr>
+      <tr style="background:#fff5f5"><td><b>Thanh Hóa</b></td><td class="num">6.1M</td><td class="num">3.4M</td><td class="num" style="color:#b71c1c;font-weight:700">179%</td><td class="num" style="color:#b71c1c">11.1%</td><td class="num" style="color:#b71c1c">&gt;12.8k</td><td style="color:#b71c1c">Over 1.8× + V6s% &lt;12% → lãng phí — hạ ngay</td></tr>
+      <tr style="background:#fff8f0"><td><b>Vinh / Nghệ An</b></td><td class="num">4.1M</td><td class="num">2.5M</td><td class="num" style="color:#b71c1c;font-weight:700">165%</td><td class="num" style="color:#e65100">14.4%</td><td class="num" style="color:#b71c1c">&gt;12.8k</td><td style="color:#e65100">Over + V6s% gần ngưỡng — giữ nhưng đổi creative</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td><b>TỔNG TK</b></td><td class="num"><b>137.7M</b></td><td class="num"><b>101M</b></td><td class="num" style="color:#b71c1c;font-weight:700"><b>136%</b></td><td class="num">17.9%</td><td class="num" style="color:#b71c1c">17,570đ</td><td>Over pace 36% — cần điều chỉnh W3</td></tr>
+    </tfoot>
+  </table>
+</div>
+
 <!-- FLAGS -->
 <div class="warn-list" style="margin-top:14px">
   <div class="warn-ttl">🚦 Flags cần xử lý</div>
-  <div class="warn-item">🔴 <b>An Giang FB</b>: CPA W2 = 127,708đ (+83% vs W1). 1.9M chi / 15 lượt mua — <b>Khánh: dừng hoặc hạ budget &lt;500k/ngày ngay</b></div>
-  <div class="warn-item">🔴 <b>TikTok CPM trên ngưỡng toàn bộ</b>: W1 15.8k + W2 17.6k, target ≤12.8k — <b>Huế: review bid strategy / thử manual CPM cap</b></div>
-  <div class="warn-item">🔴 <b>TikTok over pace</b>: 53% ngân sách / 38.7% tháng → hết tiền ~24/7 nếu giữ pace — <b>Huế: hạ daily cap về ~7.5M/ngày</b></div>
-  <div class="warn-item">🟡 <b>CTR C1/C2 FB W2 = 0.40%</b> (sàn ≥0.75%) — CPA đang tốt nhưng theo dõi CPM tuần tới, nếu tăng &gt;20% → swap content</div>
-  <div class="warn-item">🟡 <b>Thanh Hóa TikTok V6s% &lt;12% 2 tuần liên tiếp</b> — thay creative trước khi tăng budget</div>
-  <div class="warn-item">🟢 <b>C3 Midday + C4 Afterwork FB W2 đều dưới plan CPA</b> (14.9k và 20.5k) — có thể tăng budget nhẹ W3</div>
-  <div class="warn-item">🟢 <b>Bắc Ninh TikTok V6s% = 20.7–20.8%</b> — cao nhất, nhân rộng concept sang Hải Phòng/Hưng Yên</div>
+  <div class="warn-item">🔴 <b>An Giang FB C1/C2</b>: CPA = 105,919đ, overspend 178% plan — <b>Khánh: dừng ngay, không tăng budget An Giang</b></div>
+  <div class="warn-item">🔴 <b>TikTok Thanh Hóa</b>: over pace 179% + V6s% chỉ 11.1% — chi nhiều mà không hiệu quả — <b>Huế: giảm Thanh Hóa TK về 1.5M/ngày, thay creative ngay</b></div>
+  <div class="warn-item">🔴 <b>TikTok over pace 136% toàn hệ thống</b>: nếu giữ, hết 260M trước 24/7 — <b>Huế: hạ daily cap về 7.5M/ngày tổng</b></div>
+  <div class="warn-item">🔴 <b>TikTok CPM trên ngưỡng toàn bộ</b>: W1 15.8k + W2 17.6k vs plan ≤12.8k — <b>Huế: thử manual CPM cap hoặc Reach &amp; Frequency mode</b></div>
+  <div class="warn-item">🟡 <b>Long An FB + TK = 0</b>: có 116 KM+C12W tự nhiên nhưng không mở ads — nếu muốn đạt 137 KH plan thì phải setup ads trước W3</div>
+  <div class="warn-item">🟡 <b>Bình Dương C3/C4 FB underspend (44–53%)</b> nhưng CPA rất tốt (13–24k) — nên tăng budget C3/C4 BD W3</div>
+  <div class="warn-item">🟡 <b>Thanh Hóa + Bắc Ninh + Vinh FB CPA chưa đạt ngưỡng C4</b> (37k, 41k &gt; plan 29k) — không scale C4 ở các vùng này</div>
+  <div class="warn-item">🟡 <b>CTR C1/C2 FB W2 = 0.40%</b> (sàn ≥0.75%) — CPA tốt nhưng theo dõi CPM W3, nếu tăng &gt;20% → swap content</div>
+  <div class="warn-item">🟢 <b>KM+C12W tổng 117% plan</b>: Bắc Ninh (118%), HCM+HN (102%) đang tốt — tiếp tục giữ pace</div>
+  <div class="warn-item">🟢 <b>C5 Hair quốc gia CPA 31,832đ</b> — dưới plan 33k, đang scale được — Khánh: có thể tăng 5–10% budget C5</div>
+  <div class="warn-item">🟢 <b>Bắc Ninh TikTok V6s% = 20.7%</b> — cao nhất hệ thống — nhân rộng creative concept sang Hải Phòng (KM W2 tăng 2×)</div>
 </div>
 </div>
 </div>
