@@ -80,9 +80,9 @@ tr:hover td{background:#f9f9ff}
     </div>
     <div class="pace-box">
       <div class="pace-ch" style="color:#ff3860">TikTok</div>
-      <div class="pace-num" style="color:#c62828">14.0M/ngày</div>
-      <div class="pace-sub">W2 vs plan 8.4M/ngày · pace <b style="color:#c62828">166%</b> · Chi W2: 97.7M</div>
-      <div class="pace-sub" style="margin-top:3px;color:#aaa">W1: 7.9M/ngày (94%)</div>
+      <div class="pace-num" style="color:#e65100">7.0M/ngày</div>
+      <div class="pace-sub">W2 vs plan 8.4M/ngày · pace <b style="color:#e65100">83%</b> · Chi W2: 48.9M</div>
+      <div class="pace-sub" style="margin-top:3px;color:#aaa">W1: 3.9M/ngày (47%) — thiếu nặng</div>
       <div class="pace-bar"><div class="pace-fill" style="width:83%;background:#ff3860"></div></div>
     </div>
     <div class="pace-box">
@@ -598,12 +598,12 @@ function tagLabel(tag){
 }
 function fmtNum(n){return n>=1000?(n/1000).toFixed(1)+'M':n+'k';}
 
-const S={"C1": {"chi": 44732, "mua": 2177, "cpa": 20548, "target": 33000, "status": "green", "scale": 17, "ok": 0, "review": 1, "stop": 1, "n": 19, "w1_chi": 25419, "tk_v6s_w1": 18.4, "tk_v6s_w2": 17.9, "tk_spend_w1": 7817, "tk_spend_w2": 11796, "tk_mua_w1": 13, "tk_mua_w2": 42}, "C2": {"chi": 20051, "mua": 1336, "cpa": 15008, "target": 30000, "status": "green", "scale": 7, "ok": 0, "review": 0, "stop": 1, "n": 8, "w1_chi": 8837, "tk_v6s_w1": 0, "tk_v6s_w2": 0, "tk_spend_w1": 0, "tk_spend_w2": 0, "tk_mua_w1": 0, "tk_mua_w2": 0}, "C3": {"chi": 8442, "mua": 569, "cpa": 14837, "target": 40000, "status": "green", "scale": 8, "ok": 0, "review": 0, "stop": 0, "n": 8, "w1_chi": 4949, "tk_v6s_w1": 17.1, "tk_v6s_w2": 15.8, "tk_spend_w1": 1438, "tk_spend_w2": 5174, "tk_mua_w1": 0, "tk_mua_w2": 20}, "C4": {"chi": 19543, "mua": 942, "cpa": 20747, "target": 29000, "status": "green", "scale": 6, "ok": 1, "review": 1, "stop": 1, "n": 9, "w1_chi": 10254, "tk_v6s_w1": 0, "tk_v6s_w2": 22.2, "tk_spend_w1": 0, "tk_spend_w2": 2072, "tk_mua_w1": 0, "tk_mua_w2": 11}, "C5": {"chi": 47891, "mua": 2020, "cpa": 23708, "target": 29000, "status": "green", "scale": 18, "ok": 0, "review": 3, "stop": 0, "n": 21, "w1_chi": 25818, "tk_v6s_w1": 15.4, "tk_v6s_w2": 17.9, "tk_spend_w1": 30190, "tk_spend_w2": 78650, "tk_mua_w1": 13, "tk_mua_w2": 337}};
+const S={"C1": {"chi": 44732, "mua": 2177, "cpa": 20548, "target": 33000, "status": "green", "scale": 17, "ok": 0, "review": 1, "stop": 1, "n": 19, "w1_chi": 25419, "tk_v6s_w1": 18.4, "tk_v6s_w2": 17.9, "tk_spend_w1": 7817, "tk_spend_w2": 11796, "tk_mua_w1": 13, "tk_mua_w2": 42}, "C2": {"chi": 20051, "mua": 1336, "cpa": 15008, "target": 30000, "status": "green", "scale": 7, "ok": 0, "review": 0, "stop": 1, "n": 8, "w1_chi": 8837, "tk_v6s_w1": 0, "tk_v6s_w2": 0, "tk_spend_w1": 0, "tk_spend_w2": 0, "tk_mua_w1": 0, "tk_mua_w2": 0}, "C3": {"chi": 8442, "mua": 569, "cpa": 14837, "target": 40000, "status": "green", "scale": 8, "ok": 0, "review": 0, "stop": 0, "n": 8, "w1_chi": 4949, "tk_v6s_w1": 17.1, "tk_v6s_w2": 15.8, "tk_spend_w1": 1438, "tk_spend_w2": 5174, "tk_mua_w1": 0, "tk_mua_w2": 20}, "C4": {"chi": 19543, "mua": 942, "cpa": 20747, "target": 29000, "status": "green", "scale": 6, "ok": 1, "review": 1, "stop": 1, "n": 9, "w1_chi": 10254, "tk_v6s_w1": 0, "tk_v6s_w2": 22.2, "tk_spend_w1": 0, "tk_spend_w2": 2072, "tk_mua_w1": 0, "tk_mua_w2": 11}, "C5": {"chi": 47891, "mua": 2020, "cpa": 23708, "target": 29000, "status": "green", "scale": 18, "ok": 0, "review": 3, "stop": 0, "n": 21, "w1_chi": 25818, "tk_v6s_w1": 14.3, "tk_v6s_w2": 17.9, "tk_spend_w1": 10467, "tk_spend_w2": 29803, "tk_mua_w1": 13, "tk_mua_w2": 132}};
 const TK_REVIEW={
   C1:{signal:'ok',color:'#1565c0',bg:'#e3f2fd',
     v6s:'W1 18.4% → W2 17.9% (−0.5%)',pace:'1.7M/ngày — 63% plan',mua:42,
-    nhanxet:'Chi thiếu 37% plan. V6s đang ổn định (~18%), không suy giảm đáng kể. Có thể tăng ngân sách C1 thêm.',
-    action:'Tăng ngân sách lên đủ 2.7M/ngày. V6s đang gần ngưỡng scale — 1 content mới là đủ để bứt.'},
+    nhanxet:'Chi thiếu 37% plan (1.7M vs 2.7M/ngày). V6s ổn định quanh 18% — gần ngưỡng scale. Mua offline 42.',
+    action:'Tăng ngân sách C1 lên đúng plan 2.7M/ngày. V6s gần ngưỡng — test 1 content mới để bứt 18%.'},
   C2:{signal:'stop',color:'#c62828',bg:'#ffebee',
     v6s:'Chưa chạy cả 2 tuần',pace:'0 — 0% plan',mua:0,
     nhanxet:'Toàn bộ 21.5M ngân sách TikTok C2 bị bỏ phí. Còn 19 ngày, ~13M đang miss.',
@@ -616,10 +616,10 @@ const TK_REVIEW={
     v6s:'W1 0% → W2 22.2% (mới khai thông — cao nhất hệ)',pace:'0.3M/ngày — 28% plan',mua:11,
     nhanxet:'Nghịch lý lớn nhất T7: V6s cao nhất hệ (22.2%) nhưng ngân sách chỉ 28% plan.',
     action:'ƯU TIÊN 1: mở cap lên 1.1M/ngày ngay. Content đang scale-ready, chỉ thiếu ngân sách.'},
-  C5:{signal:'review',color:'#e65100',bg:'#fff3e0',
-    v6s:'W1 15.4% → W2 17.9% (−0.5% — chưa đạt scale 18%)',pace:'11.2M/ngày — 346% plan',mua:337,
-    nhanxet:'Chi VƯỢT plan 3.5× (11.2M vs 3.2M/ngày). V6s 17.9% — chưa đạt ngưỡng scale 18%. Mua offline 337 là cao nhất hệ.',
-    action:'KHÔNG scale thêm — đang overspend 3.5× plan. Kiểm tra cấu trúc campaign: tại sao chi gấp 3 plan? Tạm dừng ads V6s <15% để tối ưu hiệu quả.'}
+  C5:{signal:'ok',color:'#1565c0',bg:'#e3f2fd',
+    v6s:'W1 14.3% → W2 17.9% (+3.6%)',pace:'4.3M/ngày — 131% plan',mua:132,
+    nhanxet:'Chi hơi vượt plan 31% (4.3M vs 3.2M/ngày). V6s tăng tốt từ 14.3%→17.9%, sắp chạm ngưỡng scale 18%. Mua offline 132 cao nhất hệ.',
+    action:'Duy trì pace. Ưu tiên content mới để đẩy V6s từ 17.9% lên ≥18% — một bước nhỏ mở scale. Tạm dừng ads V6s <12%.'}
 };
 function buildSheet(tuyen){
   const fb=FB.filter(x=>x.t===tuyen).sort((a,b)=>{if(!a.cpa&&b.cpa)return 1;if(a.cpa&&!b.cpa)return -1;return (a.cpa||999999)-(b.cpa||999999);});
@@ -678,11 +678,11 @@ function buildTQ(){
   const FB_PLAN={C1:5.0,C2:2.8,C3:1.1,C4:2.9,C5:5.6}; // M/ngày
   const TK_PLAN={C1:2.7,C2:0.7,C3:0.7,C4:1.1,C5:3.2}; // M/ngày
   const FB_W1={C1:5.1,C2:1.8,C3:1.0,C4:2.1,C5:5.2};   // M/ngày (1-5/7)
-  const TK_W1_V6S={C1:18.4,C2:0,C3:17.1,C4:0,C5:15.4};
+  const TK_W1_V6S={C1:18.4,C2:0,C3:17.1,C4:0,C5:14.3};
   const TK_W2_V6S={C1:17.9,C2:0,C3:15.8,C4:22.2,C5:17.9};
   const FB_W2_DAY={C1:6.4,C2:2.9,C3:1.2,C4:2.8,C5:6.8}; // M/ngày (6-12/7)
-  const TK_W1_DAY={C1:1.6,C2:0,C3:0.3,C4:0,C5:6.0};     // M/ngày
-  const TK_W2_DAY={C1:1.7,C2:0,C3:0.7,C4:0.3,C5:11.2};  // M/ngày
+  const TK_W1_DAY={C1:1.6,C2:0,C3:0.3,C4:0,C5:2.1};     // M/ngày
+  const TK_W2_DAY={C1:1.7,C2:0,C3:0.7,C4:0.3,C5:4.3};   // M/ngày
   const SIGNALS={
     C1:'FB chi W2 tăng +25% vs W1, pace 127% plan — budget scale tốt. TK v6s nhẹ giảm 17.1%→16.4% (chưa vượt ngưỡng 18%) → cần thêm content format mới.',
     C2:'FB W1 chỉ 62% plan → W2 đã bắt kịp 101%. TikTok C2 <b style="color:#c62828">CHƯA CHẠY</b> cả 2 tuần (plan 0.7M/ngày) → ưu tiên khai thông ngay W3.',
