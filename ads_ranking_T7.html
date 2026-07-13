@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Xếp Hạng QC T7/2026 · C1–C5 · W2 6–12/7</title>
+<title>Xếp Hạng QC T7/2026 · C1–C5 · W2 6–12/7 · v3</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',Arial,sans-serif;font-size:12px;background:#f0f2f5;padding:16px;color:#222}
@@ -359,10 +359,15 @@ function showTab(el,id){
   sheet.classList.add('active');
 }
 
-buildTQ();
+try {
+  buildTQ();
+} catch(e) {
+  const errEl=document.getElementById('w1w2-table');
+  if(errEl) errEl.innerHTML='<div style="color:red;font-size:12px;padding:10px;background:#fff3f3;border:1px solid red;border-radius:4px"><b>JS Error in buildTQ:</b> '+e.message+'<br>'+e.stack+'</div>';
+}
 ['C1','C2','C3','C4','C5'].forEach(t=>{
   const el=document.getElementById(t);
-  if(el) el.innerHTML=buildSheet(t);
+  if(el) try { el.innerHTML=buildSheet(t); } catch(e2){ el.innerHTML='<div style="color:red">Error: '+e2.message+'</div>'; }
 });
 </script>
 </body></html>
