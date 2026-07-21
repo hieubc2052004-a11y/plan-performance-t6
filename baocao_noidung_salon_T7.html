@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Báo Cáo Nội Dung Salon · Mã 11000 · T7/2026</title>
+<style>
+:root{
+  --bg:#f0f4fb;--card:#fff;--border:#dde3ef;--text:#1a2332;--sub:#546e8a;
+  --fb:#1877f2;--tk:#e91e63;--g1:#1b5e20;--g2:#2e7d32;--o:#e65100;--r:#b71c1c;
+  font-family:-apple-system,'Segoe UI',system-ui,sans-serif;font-size:13px;color:var(--text)
+}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1621;--card:#1a2334;--border:#2c3a50;--text:#cdd8e8;--sub:#7a92ae}}
+:root[data-theme="light"]{--bg:#f0f4fb;--card:#fff;--border:#dde3ef;--text:#1a2332;--sub:#546e8a}
+:root[data-theme="dark"]{--bg:#0f1621;--card:#1a2334;--border:#2c3a50;--text:#cdd8e8;--sub:#7a92ae}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);padding-bottom:48px}
+.hdr{background:var(--card);border-bottom:1px solid var(--border);padding:11px 20px;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;position:sticky;top:0;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.06)}
+.hdr-title{font-size:14px;font-weight:800;letter-spacing:-.2px}
+.hdr-sub{font-size:10px;color:var(--sub);margin-top:1px}
+.hdr-date{margin-left:auto;font-size:10px;color:var(--sub);background:var(--bg);padding:3px 9px;border-radius:4px;border:1px solid var(--border)}
+.theme-btn{cursor:pointer;background:none;border:1px solid var(--border);border-radius:4px;padding:3px 8px;font-size:10px;color:var(--sub)}
+.wrap{max-width:1440px;margin:0 auto;padding:14px 14px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:10px;margin-bottom:12px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:11px 13px}
+.card-lbl{font-size:10px;color:var(--sub);font-weight:600;margin-bottom:3px;text-transform:uppercase;letter-spacing:.3px}
+.card-val{font-size:21px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.2}
+.card-sub{font-size:10.5px;color:var(--sub);margin-top:4px;line-height:1.5}
+.ck-fb{border-top:3px solid var(--fb)}
+.ck-tk{border-top:3px solid var(--tk)}
+.ck-good{border-top:3px solid #1b5e20}
+.ck-warn{border-top:3px solid #e65100}
+.ch-lbl{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--sub);margin:12px 0 6px}
+.sec-title{font-size:10.5px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.5px;
+  margin-bottom:7px;padding-bottom:4px;border-bottom:1px solid var(--border)}
+.tbl-wrap{overflow-x:auto;border-radius:8px;border:1px solid var(--border);margin-bottom:14px}
+table{width:100%;border-collapse:collapse;background:var(--card)}
+thead th{background:#f4f6fb;font-size:10px;font-weight:700;padding:7px 10px;text-align:left;
+  white-space:nowrap;color:var(--sub);border-bottom:2px solid var(--border);cursor:pointer;user-select:none}
+:root[data-theme="dark"] thead th{background:#1c2a3a}
+thead th:hover{background:#e5eaf5}
+tbody tr:hover{background:#f7f9ff}
+:root[data-theme="dark"] tbody tr:hover{background:#1e2d3f}
+tbody tr:nth-child(even){background:#fafbfd}
+:root[data-theme="dark"] tbody tr:nth-child(even){background:#1b2940}
+td{padding:5px 10px;border-bottom:1px solid var(--border);vertical-align:middle}
+.num{text-align:right;font-variant-numeric:tabular-nums;font-size:11.5px;white-space:nowrap}
+.cap-c{max-width:195px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11.5px;cursor:help}
+.badge{display:inline-block;padding:2px 6px;border-radius:10px;font-size:9.5px;font-weight:700;white-space:nowrap;border-width:1px;border-style:solid}
+.sbadge{display:inline-block;background:var(--bg);border:1px solid var(--border);color:var(--sub);border-radius:3px;padding:1px 5px;font-size:10px;white-space:nowrap}
+tfoot tr td{font-weight:700;background:#e8eef8!important;font-size:11.5px}
+:root[data-theme="dark"] tfoot tr td{background:#1f3255!important}
+.num-tot{background:#eff3ff!important}
+:root[data-theme="dark"] .num-tot{background:#1d2f4a!important}
+.fbar{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:9px 13px;
+  margin-bottom:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.fgroup{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.flbl{font-size:10px;font-weight:700;color:var(--sub);white-space:nowrap;margin-right:2px}
+.fbtn{border:1px solid var(--border);background:var(--bg);color:var(--sub);border-radius:4px;
+  padding:3px 9px;font-size:10.5px;cursor:pointer;white-space:nowrap;transition:.1s}
+.fbtn:hover{background:var(--border)}
+.fbtn.act{background:var(--text);color:var(--card);border-color:var(--text)}
+.fbtn.ch-fb.act{background:var(--fb);border-color:var(--fb);color:#fff}
+.fbtn.ch-tk.act{background:var(--tk);border-color:var(--tk);color:#fff}
+select.fsel{border:1px solid var(--border);background:var(--bg);color:var(--text);border-radius:4px;padding:3px 7px;font-size:10.5px}
+.wk-hfb{background:#dce8ff!important;color:var(--fb)!important}
+.wk-htk{background:#ffe0ee!important;color:var(--tk)!important}
+:root[data-theme="dark"] .wk-hfb{background:#1a2850!important}
+:root[data-theme="dark"] .wk-htk{background:#2d1228!important}
+.insights{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:11px 15px;margin-bottom:12px}
+.ins-hd{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--sub);margin-bottom:7px}
+.ins-it{font-size:12px;line-height:1.6;padding:2px 0;display:flex;gap:7px}
+.cbadge{display:inline-block;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:1px 7px;font-size:10px;color:var(--sub);margin-left:5px}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div>
+    <div class="hdr-title">📊 Báo Cáo Nội Dung Salon · Mã 11000 · Tháng 7/2026</div>
+    <div class="hdr-sub">Không KOC · 15 salon · W1 (1–5/7) · W2 (6–12/7) · W3 (13–19/7) · V6s% từ Campaign Report 13–19/7</div>
+  </div>
+  <div class="hdr-date">Cập nhật: 20/7/2026</div>
+  <button class="theme-btn" onclick="(function(){var r=document.documentElement,t=r.getAttribute('data-theme');r.setAttribute('data-theme',t==='dark'?'light':'dark')})()">🌙</button>
+</div>
+
+<div class="wrap">
+
+<div class="ch-lbl" style="color:var(--fb)">📘 Facebook · 9 nội dung salon</div>
+<div class="cards">
+  <div class="card ck-fb">
+    <div class="card-lbl">Chi tiêu 1–19/7</div>
+    <div class="card-val" style="color:var(--fb)">3,925k</div>
+    <div class="card-sub">W1: 440k → W2: 1,444k → W3: 2,040k<br><span style="color:#2e7d32;font-weight:600">▲ Tăng đều mỗi tuần</span></div>
+  </div>
+  <div class="card ck-good">
+    <div class="card-lbl">KM+C12W · CPA</div>
+    <div class="card-val" style="color:#1b5e20">7,202đ</div>
+    <div class="card-sub">545 lượt mua · W2: 107 · W3: 438<br><span style="color:#1b5e20;font-weight:700">vs plan 40k = <b>18% plan CPA ✓✓</b></span></div>
+  </div>
+  <div class="card ck-fb">
+    <div class="card-lbl">CPM FB</div>
+    <div class="card-val" style="color:#e65100">~16,000đ</div>
+    <div class="card-sub">W1: 23,010đ → W2: 14,289đ → W3: 13,371đ<br><span style="color:#2e7d32">▼ CPM giảm dần — tín hiệu tốt</span></div>
+  </div>
+</div>
+
+<div class="ch-lbl" style="color:var(--tk)">📱 TikTok · 52 nội dung salon</div>
+<div class="cards">
+  <div class="card ck-tk">
+    <div class="card-lbl">Chi tiêu 1–19/7</div>
+    <div class="card-val" style="color:var(--tk)">15,700k</div>
+    <div class="card-sub">W1: 3,644k · W2: 8,042k · W3: 4,015k<br><span style="color:#e65100">⚠ W3 giảm so W2</span></div>
+  </div>
+  <div class="card ck-warn">
+    <div class="card-lbl">V6s% · Mục tiêu ≥15%</div>
+    <div class="card-val" style="color:#e65100">13.6%</div>
+    <div class="card-sub">W1: 13.3% · W2: 13.7% · W3: 13.6%<br><span style="color:#b71c1c;font-weight:700">⚠ Dưới 15% cả 3 tuần</span></div>
+  </div>
+  <div class="card ck-tk">
+    <div class="card-lbl">CPM TK · Mua offline</div>
+    <div class="card-val" style="color:#b71c1c">22,316đ</div>
+    <div class="card-sub">56 mua offline (proxy) · W3 CPM: 20,336đ<br><span style="color:#2e7d32">CPM W3 giảm — tốt</span></div>
+  </div>
+</div>
+
+<!-- Weekly table -->
+<div class="sec-title">So sánh tuần W1 / W2 / W3</div>
+<div class="tbl-wrap">
+<table>
+<thead><tr>
+  <th>Chỉ số</th>
+  <th class="wk-hfb num">W1 FB</th><th class="wk-hfb num">W2 FB</th><th class="wk-hfb num">W3 FB</th><th class="wk-hfb num">Tổng FB</th>
+  <th class="wk-htk num">W1 TK</th><th class="wk-htk num">W2 TK</th><th class="wk-htk num">W3 TK</th><th class="wk-htk num">Tổng TK</th>
+</tr></thead>
+<tbody>
+<tr><td>Chi tiêu (k VND)</td>
+  <td class="num">440k</td><td class="num">1,444k</td><td class="num">2,040k</td><td class="num num-tot"><b>3,925k</b></td>
+  <td class="num">3,644k</td><td class="num">8,042k</td><td class="num">4,015k</td><td class="num num-tot"><b>15,700k</b></td></tr>
+<tr><td>CPM</td>
+  <td class="num" style="color:#b71c1c">23,010đ</td><td class="num" style="color:#2e7d32">14,289đ</td><td class="num" style="color:#1b5e20">13,371đ</td><td class="num num-tot"><b style="color:#e65100">~16k</b></td>
+  <td class="num" style="color:#b71c1c">22,404đ</td><td class="num" style="color:#b71c1c">23,359đ</td><td class="num" style="color:#e65100">20,336đ</td><td class="num num-tot"><b style="color:#b71c1c">22,316đ</b></td></tr>
+<tr><td>KM+C12W / Mua offline</td>
+  <td class="num" style="color:#aaa">— <span style="font-size:9px">no data</span></td><td class="num" style="color:#2e7d32">107</td><td class="num" style="color:#1b5e20;font-weight:700">438</td><td class="num num-tot"><b style="color:#1b5e20">545</b></td>
+  <td class="num">2</td><td class="num">24</td><td class="num">30</td><td class="num num-tot"><b>56</b></td></tr>
+<tr><td>CPA (FB) / V6s% (TK)</td>
+  <td class="num" style="color:#aaa">—</td><td class="num" style="color:#1b5e20;font-weight:700">13,495đ</td><td class="num" style="color:#1b5e20;font-weight:700">4,658đ</td><td class="num num-tot"><b style="color:#1b5e20">7,202đ</b></td>
+  <td class="num" style="color:#e65100">13.3%</td><td class="num" style="color:#e65100">13.7%</td><td class="num" style="color:#e65100">13.6%</td><td class="num num-tot"><b style="color:#e65100">13.6% ⚠</b></td></tr>
+</tbody>
+</table>
+</div>
+<div style="font-size:10px;color:var(--sub);margin-bottom:14px">* FB W1 mua=0 do file gốc không ghi nhận. V6s% TK W3 từ Campaign Report 13–19/7 (nguồn chính thức). TK mua = offline proxy, không = KM+C12W thực tế.</div>
+
+<!-- Insights -->
+<div class="insights">
+  <div class="ins-hd">Nhận xét chính</div>
+  <div class="ins-it"><span>✅</span><span><b>FB salon CPA 7,202đ</b> — chỉ 18% plan CPA 40k. Radius targeting cực hiệu quả. W3 CPA xuống còn 4,658đ — tốt nhất tháng.</span></div>
+  <div class="ins-it"><span>⚠</span><span><b>TK V6s% 13.6%</b> — dưới ngưỡng 15% cả 3 tuần. Hook 0–3 giây cần mạnh hơn để giữ người xem đến giây thứ 6.</span></div>
+  <div class="ins-it"><span>📈</span><span><b>FB spend tăng đều:</b> 440k → 1,444k → 2,040k. Mua bùng nổ W3 (438 vs 107 W2). Tiếp tục scale FB salon W4.</span></div>
+  <div class="ins-it"><span>🔄</span><span><b>TK W3 chi giảm</b> 8,042k → 4,015k. Tuy nhiên CPM W3 giảm xuống 20,336đ. Đẩy thêm TK budget nếu V6s% cải thiện trên 15%.</span></div>
+  <div class="ins-it"><span>⭐</span><span><b>Top FB:</b> 483 TN C3 Nghỉ trưa (CPA 8,509đ) · 483 TN C1 Tour (CPA 3,658đ). Cân nhắc nhân bản creative này cho salon khác.</span></div>
+</div>
+
+<!-- Filter bar -->
+<div class="fbar">
+  <div class="fgroup">
+    <span class="flbl">Kênh:</span>
+    <button class="fbtn ch-fb act" data-ch="fb" onclick="setCh(this)">📘 FB</button>
+    <button class="fbtn ch-tk" data-ch="tk" onclick="setCh(this)">📱 TikTok</button>
+    <button class="fbtn" data-ch="all" onclick="setCh(this)">Cả hai</button>
+  </div>
+  <div class="fgroup">
+    <span class="flbl">Tuyến:</span>
+    <button class="fbtn act" data-t="all" onclick="setT(this)">Tất cả</button>
+    <button class="fbtn" data-t="C1" onclick="setT(this)" style="color:#1565C0">C1 Tour</button>
+    <button class="fbtn" data-t="C3" onclick="setT(this)" style="color:#2E7D32">C3 Nghỉ trưa</button>
+    <button class="fbtn" data-t="C4" onclick="setT(this)" style="color:#BF360C">C4 Tan làm</button>
+    <button class="fbtn" data-t="C5" onclick="setT(this)" style="color:#AD1457">C5 Tóc đẹp</button>
+  </div>
+  <div class="fgroup">
+    <span class="flbl">Salon:</span>
+    <select class="fsel" id="salon-sel" onchange="applyF()">
+      <option value="all">Tất cả salon</option>
+      <option value="10 TP">10 TP</option>
+      <option value="11 PKT">11 PKT</option>
+      <option value="1180 QT">1180 QT</option>
+      <option value="12 LDT">12 LDT</option>
+      <option value="168 NVC">168 NVC</option>
+      <option value="186 DTH">186 DTH</option>
+      <option value="236 DBT">236 DBT</option>
+      <option value="304 NT TH">304 NT TH</option>
+      <option value="32 NAT">32 NAT</option>
+      <option value="362 NGT BN">362 NGT BN</option>
+      <option value="4 LQD BN">4 LQD BN</option>
+      <option value="483 TN">483 TN</option>
+      <option value="595 BT TH">595 BT TH</option>
+      <option value="76 PVH">76 PVH</option>
+      <option value="80 TP TH">80 TP TH</option>
+    </select>
+  </div>
+  <span id="cnt" style="margin-left:auto;font-size:10px;color:var(--sub)"></span>
+</div>
+
+<!-- FB Table -->
+<div id="fb-sec">
+<div class="sec-title">📘 Facebook · Nội dung salon <span class="cbadge" id="fb-cnt">9</span></div>
+<div class="tbl-wrap"><table id="fb-tbl">
+<thead><tr>
+  <th onclick="srt('fb-tbl',0)">Tuyến</th>
+  <th onclick="srt('fb-tbl',1)">Salon</th>
+  <th onclick="srt('fb-tbl',2)">Caption</th>
+  <th class="num" onclick="srt('fb-tbl',3)">W1 Chi ↕</th>
+  <th class="num" onclick="srt('fb-tbl',4)">W2 Chi ↕</th>
+  <th class="num" onclick="srt('fb-tbl',5)">W3 Chi ↕</th>
+  <th class="num" onclick="srt('fb-tbl',6)">Tổng ↕</th>
+  <th class="num" onclick="srt('fb-tbl',7)">Mua W2+W3 ↕</th>
+  <th class="num" onclick="srt('fb-tbl',8)">CPA ↕</th>
+  <th class="num" onclick="srt('fb-tbl',9)">CPM ↕</th>
+  <th class="num" onclick="srt('fb-tbl',10)">3s View</th>
+</tr></thead>
+<tbody id="fb-body"></tbody>
+<tfoot><tr id="fb-foot">
+  <td colspan="3">Tổng hiển thị</td>
+  <td class="num" id="fs-w1">—</td><td class="num" id="fs-w2">—</td><td class="num" id="fs-w3">—</td>
+  <td class="num" id="fs-tot">—</td><td class="num" id="fs-mua">—</td>
+  <td class="num" id="fs-cpa">—</td><td class="num" id="fs-cpm">—</td><td class="num">—</td>
+</tr></tfoot>
+</table></div>
+<div style="font-size:10px;color:var(--sub);margin-bottom:14px">W1 mua=0 do file FB tuần 1 không ghi nhận lượt mua. CPA tính từ W2+W3.</div>
+</div>
+
+<!-- TK Table -->
+<div id="tk-sec">
+<div class="sec-title">📱 TikTok · Nội dung salon <span class="cbadge" id="tk-cnt">52</span></div>
+<div class="tbl-wrap"><table id="tk-tbl">
+<thead><tr>
+  <th onclick="srt('tk-tbl',0)">Tuyến</th>
+  <th onclick="srt('tk-tbl',1)">Salon</th>
+  <th onclick="srt('tk-tbl',2)">Caption</th>
+  <th class="num" onclick="srt('tk-tbl',3)">W1 Chi ↕</th>
+  <th class="num" onclick="srt('tk-tbl',4)">W2 Chi ↕</th>
+  <th class="num" onclick="srt('tk-tbl',5)">W3 Chi ↕</th>
+  <th class="num" onclick="srt('tk-tbl',6)">Tổng ↕</th>
+  <th class="num" onclick="srt('tk-tbl',7)">V6s% (tổng) ↕</th>
+  <th class="num" onclick="srt('tk-tbl',8)">CPM W3 ↕</th>
+  <th class="num" onclick="srt('tk-tbl',9)">CPM tổng ↕</th>
+  <th class="num" onclick="srt('tk-tbl',10)">Đ/6sv</th>
+  <th class="num" onclick="srt('tk-tbl',11)">Mua(px) ↕</th>
+</tr></thead>
+<tbody id="tk-body"></tbody>
+<tfoot><tr id="tk-foot">
+  <td colspan="3">Tổng hiển thị</td>
+  <td class="num" id="ts-w1">—</td><td class="num" id="ts-w2">—</td><td class="num" id="ts-w3">—</td>
+  <td class="num" id="ts-tot">—</td><td class="num" id="ts-v6s">—</td>
+  <td class="num" id="ts-cpmw3">—</td><td class="num" id="ts-cpm">—</td>
+  <td class="num">—</td><td class="num" id="ts-mua">—</td>
+</tr></tfoot>
+</table></div>
+<div style="font-size:10px;color:var(--sub);margin-bottom:14px">V6s% = tỉ lệ xem video đến giây thứ 6. Mục tiêu: ≥15% (xanh), ≥12% (cam), &lt;12% (đỏ). 🔥 = ≥20%. W3 V6s% từ Campaign Report 13–19/7.</div>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+const TC={'C1':'#1565C0','C2':'#6A1B9A','C3':'#2E7D32','C4':'#BF360C','C5':'#AD1457','KHÁC':'#78909c'};
+const TN={'C1':'Tour thư giãn','C2':'Thera Studio','C3':'Nghỉ trưa','C4':'Tan làm','C5':'Tóc đẹp đi làm','KHÁC':'Khác'};
+const FB_DATA=[{"ad": "483 TN . 11000 . Không KOC . Nghỉ trưa . 45p nghỉ trưa cho anh em . Shinecombo . 19062026", "t": "C3", "salon": "483 TN", "cap": "45p nghỉ trưa cho anh em", "w1": {"sp": 350, "mua": 0, "cpm": 24308, "cpa": 0, "v3s": 0.0, "d3s": 0}, "w2": {"sp": 1376, "mua": 95, "cpm": 14501, "cpa": 14483, "v3s": 0.0, "d3s": 0}, "w3": {"sp": 835, "mua": 206, "cpm": 14293, "cpa": 4053, "v3s": 8.5, "d3s": 98}, "tot": {"sp": 2561, "mua": 301, "cpm": 15272, "cpa": 8509, "v3s": 8.5, "d3s": 302}}, {"ad": "483 TN . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Ghé salon 483 TN . Shinecombo . 110626", "t": "C1", "salon": "483 TN", "cap": "Ghé salon 483 TN", "w1": {"sp": 73, "mua": 0, "cpm": 19684, "cpa": 0, "v3s": 0.0, "d3s": 0}, "w2": {"sp": 61, "mua": 11, "cpm": 10155, "cpa": 5505, "v3s": 0.0, "d3s": 0}, "w3": {"sp": 576, "mua": 183, "cpm": 10397, "cpa": 3146, "v3s": 2.4, "d3s": 236}, "tot": {"sp": 710, "mua": 194, "cpm": 10907, "cpa": 3658, "v3s": 2.4, "d3s": 291}}, {"ad": "595 BT TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Review bảo : 30Shine đắt và bị chê nhiều . Shinecombo . 040626", "t": "C1", "salon": "595 BT TH", "cap": "Review bảo : 30Shine đắt và bị chê nhiều", "w1": {"sp": 0, "mua": 0, "cpm": 0, "cpa": 0, "v3s": 0.0, "d3s": 0}, "w2": {"sp": 0, "mua": 0, "cpm": 0, "cpa": 0, "v3s": 0.0, "d3s": 0}, "w3": {"sp": 271, "mua": 17, "cpm": 17969, "cpa": 15945, "v3s": 1.3, "d3s": 214}, "tot": {"sp": 271, "mua": 17, "cpm": 17969, "cpa": 15945, "v3s": 1.3, "d3s": 214}}, {"ad": "595 BT TH . 11000 . Không KOC . Nghỉ trưa . Nhiều anh em văn phòng, làm sale . Shinecombo . 100626", "t": "C3", "salon": "595 BT TH", "cap": "Nhiều anh em văn phòng, làm sale", "w1": {"sp": 0, "mua": 0, "cpm": 0, "cpa": 0, "v3s": 0.0, "d3s": 0}, "w2": {"sp": 0, "mua": 0, "cpm": 0, "cpa": 0, "v3s": 0.0, "d3s": 0}, "w3": {"sp": 175, "mua": 14, "cpm": 13755, "cpa": 12531, "v3s": 0.5, "d3s": 321}, "tot": {"sp": 175, "mua": 14, "cpm": 13755, "cpa": 12531, "v3s": 0.5, "d3s": 321}}, {"ad": "595 BT TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Chúng em tự tin vào những gì salon em làm . Shinecombo . 170526", "t": "C1", "salon": "595 BT TH", "cap": "Chúng em tự tin vào những gì salon em làm", "w1": {"sp": 0, "mua": 0, "cpm": 0, "cpa": 0, "v3s": 0.0, "d3s": 0}, "w2": {"sp": 0, "mua": 0, "cpm": 0, "cpa": 0, "v3s": 0.0, "d3s": 0}, "w3": {"sp": 77, "mua": 5, "cpm": 9054, "cpa": 15420, "v3s": 0.3, "d3s": 224}, "tot": {"sp": 77, "mua": 5, "cpm": 9054, "cpa": 15420, "v3s": 0.3, "d3s": 224}}, {"ad": "595 BT TH . 11000 . Không KOC . Nghỉ trưa . Giờ nghỉ trưa – đừng lướt điện thoại, ghé 30Shine làm một giấc . Shinecombo . 070526", "t": "C3", "salon": "595 BT TH", "cap": "Giờ nghỉ trưa – đừng lướt điện thoại, ghé 30Shine làm một giấc", "w1": {"sp": 0, "mua": 0, "cpm": 0, "cpa": 0, "v3s": 0.0, "d3s": 0}, "w2": {"sp": 0, "mua": 0, "cpm": 0, "cpa": 0, "v3s": 0.0, "d3s": 0}, "w3": {"sp": 55, "mua": 8, "cpm": 16532, "cpa": 6873, "v3s": 0.2, "d3s": 282}, "tot": {"sp": 55, "mua": 8, "cpm": 16532, "cpa": 6873, "v3s": 0.2, "d3s": 282}}, {"ad": "595 BT TH . 11000 . Không KOC . Nghỉ trưa . Anh em dân văn phòng — hôm nay số đến đâu rồi? . Shinecombo . 100626", "t": "C3", "salon": "595 BT TH", "cap": "Anh em dân văn phòng — hôm nay số đến đâu rồi?", "w1": {"sp": 0, "mua": 0, "cpm": 0, "cpa": 0, "v3s": 0.0, "d3s": 0}, "w2": {"sp": 0, "mua": 0, "cpm": 0, "cpa": 0, "v3s": 0.0, "d3s": 0}, "w3": {"sp": 46, "mua": 3, "cpm": 9182, "cpa": 15285, "v3s": 0.4, "d3s": 127}, "tot": {"sp": 46, "mua": 3, "cpm": 9182, "cpa": 15285, "v3s": 0.4, "d3s": 127}}, {"ad": "483 TN . 11000 . Không KOC . Ngứa tai . Các anh đã dành time cho mình chưa . Lấy ráy tai . 120526", "t": "KHÁC", "salon": "483 TN", "cap": "Các anh đã dành time cho mình chưa", "w1": {"sp": 13, "mua": 0, "cpm": 9800, "cpa": 0, "v3s": 0.0, "d3s": 0}, "w2": {"sp": 3, "mua": 0, "cpm": 12827, "cpa": 0, "v3s": 0.0, "d3s": 0}, "w3": {"sp": 1, "mua": 1, "cpm": 15707, "cpa": 1445, "v3s": 0.0, "d3s": 482}, "tot": {"sp": 18, "mua": 1, "cpm": 10571, "cpa": 17791, "v3s": 0.0, "d3s": 5930}}, {"ad": "483 TN . 11000 . Không KOC . Nghỉ trưa . GHÉ SALON 483 THỐNG NHẤT – THƯ GIÃN & F5 BẢN THÂN . Shinecombo . 280526", "t": "C3", "salon": "483 TN", "cap": "GHÉ SALON 483 THỐNG NHẤT – THƯ GIÃN & F5 BẢN THÂN", "w1": {"sp": 4, "mua": 0, "cpm": 13082, "cpa": 0, "v3s": 0.0, "d3s": 0}, "w2": {"sp": 4, "mua": 1, "cpm": 5461, "cpa": 4172, "v3s": 0.0, "d3s": 0}, "w3": {"sp": 4, "mua": 1, "cpm": 7985, "cpa": 3689, "v3s": 0.0, "d3s": 461}, "tot": {"sp": 12, "mua": 2, "cpm": 7649, "cpa": 5756, "v3s": 0.0, "d3s": 1439}}];
+const TK_DATA=[{"ad": "80 TP TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Nhiều anh văn phòng, làm sales, làm quản lý . Shinecombo . 190526", "t": "C1", "salon": "80 TP TH", "cap": "Nhiều anh văn phòng, làm sales, làm quản lý", "w1": {"sp": 489, "mua": 1, "cpm": 20206, "v6s": 12.5, "d6s": 161}, "w2": {"sp": 630, "mua": 2, "cpm": 21438, "v6s": 12.2, "d6s": 176}, "w3": {"sp": 827, "mua": 11, "cpm": 19890, "v6s": 11.1, "d6s": 181}, "tot": {"sp": 1946, "mua": 14, "v6s": 11.8, "cpm": 20471, "d6s": 181}}, {"ad": "80 TP TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . 45 phút thư giãn chỉ 122k trọn gói . Shinecombo . 180326", "t": "C1", "salon": "80 TP TH", "cap": "45 phút thư giãn chỉ 122k trọn gói", "w1": {"sp": 313, "mua": 0, "cpm": 17524, "v6s": 14.3, "d6s": 123}, "w2": {"sp": 960, "mua": 6, "cpm": 20074, "v6s": 16.7, "d6s": 121}, "w3": {"sp": 412, "mua": 9, "cpm": 18615, "v6s": 12.2, "d6s": 153}, "tot": {"sp": 1685, "mua": 15, "v6s": 15.2, "cpm": 19244, "d6s": 153}}, {"ad": "595 BT TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . 30Shine mang trải nghiệm thông minh . Shinecombo . 280326", "t": "C1", "salon": "595 BT TH", "cap": "30Shine mang trải nghiệm thông minh", "w1": {"sp": 397, "mua": 0, "cpm": 29593, "v6s": 11.1, "d6s": 266}, "w2": {"sp": 1165, "mua": 6, "cpm": 23847, "v6s": 11.4, "d6s": 209}, "w3": {"sp": 39, "mua": 0, "cpm": 28839, "v6s": 11.2, "d6s": 257}, "tot": {"sp": 1600, "mua": 6, "cpm": 25164, "v6s": 11.3, "d6s": 222}}, {"ad": "10 TP . 11000 . Không KOC . Nghỉ trưa . các anh em trang chạy KPI còng lưng , trưa không biết đi đâu ? . Shinecombo . 120626", "t": "C3", "salon": "10 TP", "cap": "các anh em trang chạy KPI còng lưng , trưa không biết đi đâu ?", "w1": {"sp": 243, "mua": 0, "cpm": 18273, "v6s": 15.8, "d6s": 116}, "w2": {"sp": 761, "mua": 1, "cpm": 22429, "v6s": 16.0, "d6s": 141}, "w3": {"sp": 450, "mua": 5, "cpm": 18360, "v6s": 15.2, "d6s": 120}, "tot": {"sp": 1454, "mua": 6, "v6s": 15.7, "cpm": 20475, "d6s": 120}}, {"ad": "168 NVC . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Qua ngay 168 nguyễn văn cừ . Shinecombo . 170526", "t": "C1", "salon": "168 NVC", "cap": "Qua ngay 168 nguyễn văn cừ", "w1": {"sp": 274, "mua": 0, "cpm": 14643, "v6s": 16.9, "d6s": 87}, "w2": {"sp": 424, "mua": 3, "cpm": 15032, "v6s": 16.1, "d6s": 93}, "w3": {"sp": 524, "mua": 2, "cpm": 13770, "v6s": 15.6, "d6s": 88}, "tot": {"sp": 1222, "mua": 5, "v6s": 16.1, "cpm": 14404, "d6s": 88}}, {"ad": "595 BT TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Review bảo : 30Shine đắt và bị chê nhiều . Shinecombo . 04062026", "t": "C1", "salon": "595 BT TH", "cap": "Review bảo : 30Shine đắt và bị chê nhiều", "w1": {"sp": 373, "mua": 0, "cpm": 17949, "v6s": 7.5, "d6s": 241}, "w2": {"sp": 621, "mua": 2, "cpm": 18711, "v6s": 8.1, "d6s": 230}, "w3": {"sp": 18, "mua": 0, "cpm": 19487, "v6s": 7.9, "d6s": 248}, "tot": {"sp": 1013, "mua": 2, "cpm": 18435, "v6s": 7.9, "d6s": 234}}, {"ad": "80 TP TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . 120k diện mạo đẹp trai tự tin ngay . Shinecombo . 080326", "t": "C1", "salon": "80 TP TH", "cap": "120k diện mạo đẹp trai tự tin ngay", "w1": {"sp": 121, "mua": 0, "cpm": 37212, "v6s": 14.0, "d6s": 266}, "w2": {"sp": 341, "mua": 0, "cpm": 31869, "v6s": 13.5, "d6s": 237}, "w3": {"sp": 376, "mua": 0, "cpm": 16575, "v6s": 11.3, "d6s": 146}, "tot": {"sp": 838, "mua": 0, "v6s": 12.6, "cpm": 25778, "d6s": 146}}, {"ad": "595 BT TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Thanh Hóa đang bước vào những ngày nắng nóng . Shinecombo . 200326", "t": "C1", "salon": "595 BT TH", "cap": "Thanh Hóa đang bước vào những ngày nắng nóng", "w1": {"sp": 233, "mua": 0, "cpm": 31025, "v6s": 16.5, "d6s": 188}, "w2": {"sp": 392, "mua": 0, "cpm": 34565, "v6s": 18.7, "d6s": 185}, "w3": {"sp": 179, "mua": 0, "cpm": 28815, "v6s": 17.2, "d6s": 168}, "tot": {"sp": 804, "mua": 0, "v6s": 17.7, "cpm": 32259, "d6s": 168}}, {"ad": "186 DTH . 11000 . Không KOC . Nghỉ trưa . +1 recommend cho các vợ  . Gội . 100626", "t": "C3", "salon": "186 DTH", "cap": "+1 recommend cho các vợ", "w1": {"sp": 108, "mua": 0, "cpm": 36588, "v6s": 18.4, "d6s": 199}, "w2": {"sp": 492, "mua": 1, "cpm": 28076, "v6s": 16.6, "d6s": 169}, "w3": {"sp": 125, "mua": 0, "cpm": 22695, "v6s": 17.4, "d6s": 131}, "tot": {"sp": 725, "mua": 1, "v6s": 17.0, "cpm": 28416, "d6s": 131}}, {"ad": "304 NT TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . 304 Nguyễn Trãi, TP Thanh Hoá . Shinecombo . 120326", "t": "C1", "salon": "304 NT TH", "cap": "304 Nguyễn Trãi, TP Thanh Hoá", "w1": {"sp": 139, "mua": 0, "cpm": 17884, "v6s": 9.7, "d6s": 184}, "w2": {"sp": 450, "mua": 0, "cpm": 21158, "v6s": 10.3, "d6s": 205}, "w3": {"sp": 7, "mua": 0, "cpm": 25053, "v6s": 10.5, "d6s": 238}, "tot": {"sp": 596, "mua": 0, "cpm": 20327, "v6s": 10.1, "d6s": 200}}, {"ad": "10 TP . 11000 . Không KOC . Nghỉ trưa . Đặt lịch ngay thôi . Shinecombo . 080526", "t": "C3", "salon": "10 TP", "cap": "Đặt lịch ngay thôi", "w1": {"sp": 91, "mua": 0, "cpm": 15245, "v6s": 12.2, "d6s": 125}, "w2": {"sp": 258, "mua": 0, "cpm": 19976, "v6s": 13.3, "d6s": 150}, "w3": {"sp": 221, "mua": 0, "cpm": 19125, "v6s": 13.0, "d6s": 148}, "tot": {"sp": 570, "mua": 0, "v6s": 13.0, "cpm": 18891, "d6s": 148}}, {"ad": "595 BT TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Sự thật là 99% đàn ông . Shinecombo . 100326", "t": "C1", "salon": "595 BT TH", "cap": "Sự thật là 99% đàn ông", "w1": {"sp": 146, "mua": 0, "cpm": 13743, "v6s": 7.6, "d6s": 181}, "w2": {"sp": 322, "mua": 0, "cpm": 15174, "v6s": 8.5, "d6s": 179}, "w3": {"sp": 6, "mua": 0, "cpm": 13275, "v6s": 9.8, "d6s": 136}, "tot": {"sp": 474, "mua": 0, "cpm": 14676, "v6s": 8.2, "d6s": 179}}, {"ad": "12 LDT . 11000 . Không KOC . Nghỉ trưa .  Kỳ nghỉ trưa chỉ 45 phút – đủ để nâng cấp phong độ!  . Shinecombo . 120626", "t": "C3", "salon": "12 LDT", "cap": "Kỳ nghỉ trưa chỉ 45 phút – đủ để nâng cấp phong độ!", "w1": {"sp": 85, "mua": 0, "cpm": 33515, "v6s": 17.1, "d6s": 196}, "w2": {"sp": 174, "mua": 1, "cpm": 38599, "v6s": 20.0, "d6s": 193}, "w3": {"sp": 25, "mua": 0, "cpm": 51000, "v6s": 30.6, "d6s": 166}, "tot": {"sp": 284, "mua": 1, "v6s": 20.1, "cpm": 38169, "d6s": 166}}, {"ad": "32 NAT . 11000 . Không KOC . Nghỉ trưa . Ghé salon 32 NAT  . Shinecombo . 110626", "t": "C3", "salon": "32 NAT", "cap": "Ghé salon 32 NAT", "w1": {"sp": 92, "mua": 0, "cpm": 15575, "v6s": 12.8, "d6s": 121}, "w2": {"sp": 137, "mua": 1, "cpm": 22373, "v6s": 16.2, "d6s": 138}, "w3": {"sp": 40, "mua": 0, "cpm": 24735, "v6s": 18.4, "d6s": 134}, "tot": {"sp": 269, "mua": 1, "v6s": 15.4, "cpm": 20399, "d6s": 134}}, {"ad": "595 BT TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . 30Shine mang trải nghiệm thông minh . Shinecombo . 100326", "t": "C1", "salon": "595 BT TH", "cap": "30Shine mang trải nghiệm thông minh", "w1": {"sp": 6, "mua": 0, "cpm": 15262, "v6s": 8.2, "d6s": 185}, "w2": {"sp": 63, "mua": 0, "cpm": 32503, "v6s": 14.4, "d6s": 226}, "w3": {"sp": 172, "mua": 2, "cpm": 35445, "v6s": 11.2, "d6s": 316}, "tot": {"sp": 241, "mua": 2, "v6s": 12.0, "cpm": 34173, "d6s": 316}}, {"ad": "11 PKT . 11000 . Không KOC . Nghỉ trưa . 12h trưa mà nằm cái giường massage này rung rung bóp vai . Shinecombo . 070526", "t": "C3", "salon": "11 PKT", "cap": "12h trưa mà nằm cái giường massage này rung rung bóp vai", "w1": {"sp": 49, "mua": 0, "cpm": 29400, "v6s": 18.9, "d6s": 156}, "w2": {"sp": 96, "mua": 0, "cpm": 27254, "v6s": 18.2, "d6s": 149}, "w3": {"sp": 63, "mua": 0, "cpm": 25500, "v6s": 19.1, "d6s": 133}, "tot": {"sp": 208, "mua": 0, "v6s": 18.6, "cpm": 27228, "d6s": 133}}, {"ad": "80 TP TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Sự thật là 99% đàn ông . Shinecombo . 110326", "t": "C1", "salon": "80 TP TH", "cap": "Sự thật là 99% đàn ông", "w1": {"sp": 10, "mua": 0, "cpm": 25315, "v6s": 7.7, "d6s": 327}, "w2": {"sp": 69, "mua": 0, "cpm": 33445, "v6s": 13.7, "d6s": 244}, "w3": {"sp": 114, "mua": 1, "cpm": 27285, "v6s": 9.6, "d6s": 286}, "tot": {"sp": 193, "mua": 1, "v6s": 11.0, "cpm": 29385, "d6s": 286}}, {"ad": "76 PVH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Chuyến du lịch 45 phút - giá trị xứng đáng . Shinecombo . 030626", "t": "C1", "salon": "76 PVH", "cap": "Chuyến du lịch 45 phút - giá trị xứng đáng", "w1": {"sp": 63, "mua": 1, "cpm": 25114, "v6s": 22.6, "d6s": 111}, "w2": {"sp": 22, "mua": 0, "cpm": 33346, "v6s": 14.0, "d6s": 238}, "w3": {"sp": 85, "mua": 0, "cpm": 21165, "v6s": 15.5, "d6s": 137}, "tot": {"sp": 170, "mua": 1, "v6s": 17.9, "cpm": 24205, "d6s": 137}}, {"ad": "80 TP TH . 11000 . Không KOC . Tóc đẹp đi làm . anh em 9 X nhưng cứ bị nhầm là 8 X  . Uốn . 270526", "t": "C5", "salon": "80 TP TH", "cap": "anh em 9 X nhưng cứ bị nhầm là 8 X", "w1": {"sp": 58, "mua": 0, "cpm": 28265, "v6s": 9.6, "d6s": 295}, "w2": {"sp": 103, "mua": 1, "cpm": 28271, "v6s": 10.9, "d6s": 260}, "w3": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 12.5, "d6s": 0}, "tot": {"sp": 161, "mua": 1, "cpm": 28111, "v6s": 10.4, "d6s": 269}}, {"ad": "80 TP TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Thanh Hóa nắng nóng lên rồi tóc bết da đầu ngứa khó chịu vô cùng . Shinecombo . 280326", "t": "C1", "salon": "80 TP TH", "cap": "Thanh Hóa nắng nóng lên rồi tóc bết da đầu ngứa khó chịu vô cùng", "w1": {"sp": 21, "mua": 0, "cpm": 15773, "v6s": 7.4, "d6s": 212}, "w2": {"sp": 122, "mua": 0, "cpm": 17891, "v6s": 9.1, "d6s": 198}, "w3": {"sp": 3, "mua": 0, "cpm": 32211, "v6s": 9.5, "d6s": 340}, "tot": {"sp": 146, "mua": 0, "cpm": 17707, "v6s": 8.8, "d6s": 201}}, {"ad": "236 DBT . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . người bạn Thái Lan qua trải nhiệm dịch vụ và review bằng tiếng Thái . Shinecombo . 120626", "t": "C1", "salon": "236 DBT", "cap": "người bạn Thái Lan qua trải nhiệm dịch vụ và review bằng tiếng Thái", "w1": {"sp": 23, "mua": 0, "cpm": 18345, "v6s": 22.1, "d6s": 83}, "w2": {"sp": 20, "mua": 0, "cpm": 22892, "v6s": 20.6, "d6s": 111}, "w3": {"sp": 86, "mua": 0, "cpm": 11985, "v6s": 17.6, "d6s": 68}, "tot": {"sp": 129, "mua": 0, "v6s": 18.9, "cpm": 14810, "d6s": 68}}, {"ad": "80 TP TH . 11000 . Không KOC . Nghỉ trưa . giờ trưa của anh đang làm gì . Shinecombo . 080526", "t": "C3", "salon": "80 TP TH", "cap": "giờ trưa của anh đang làm gì", "w1": {"sp": 46, "mua": 0, "cpm": 25401, "v6s": 11.2, "d6s": 227}, "w2": {"sp": 72, "mua": 0, "cpm": 25646, "v6s": 10.9, "d6s": 236}, "w3": {"sp": 1, "mua": 0, "cpm": 23182, "v6s": 5.5, "d6s": 425}, "tot": {"sp": 119, "mua": 0, "cpm": 25522, "v6s": 10.9, "d6s": 233}}, {"ad": "12 LDT . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . đàn ông không nói ra nhưng ai cũng cần một nơi để được chăm . Shinecombo . 180326", "t": "C1", "salon": "12 LDT", "cap": "đàn ông không nói ra nhưng ai cũng cần một nơi để được chăm", "w1": {"sp": 35, "mua": 0, "cpm": 13375, "v6s": 13.3, "d6s": 100}, "w2": {"sp": 36, "mua": 0, "cpm": 12635, "v6s": 12.0, "d6s": 106}, "w3": {"sp": 30, "mua": 0, "cpm": 10965, "v6s": 11.7, "d6s": 94}, "tot": {"sp": 101, "mua": 0, "v6s": 12.4, "cpm": 12395, "d6s": 94}}, {"ad": "1180 QT . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . 139k mà trải nghiệm cở này chắc tháng nào cũng qua  . Shinecombo . 310526", "t": "C1", "salon": "1180 QT", "cap": "139k mà trải nghiệm cở này chắc tháng nào cũng qua", "w1": {"sp": 38, "mua": 0, "cpm": 27856, "v6s": 19.9, "d6s": 140}, "w2": {"sp": 34, "mua": 0, "cpm": 22678, "v6s": 11.9, "d6s": 191}, "w3": {"sp": 1, "mua": 0, "cpm": 58846, "v6s": 0.0, "d6s": 0}, "tot": {"sp": 73, "mua": 0, "cpm": 25280, "v6s": 15.6, "d6s": 162}}, {"ad": "362 NGT BN . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Review:30shine đắt và bị chê nhiều . Shinecombo . 040626", "t": "C1", "salon": "362 NGT BN", "cap": "Review:30shine đắt và bị chê nhiều", "w1": {"sp": 27, "mua": 0, "cpm": 18116, "v6s": 24.4, "d6s": 74}, "w2": {"sp": 22, "mua": 0, "cpm": 25927, "v6s": 27.5, "d6s": 94}, "w3": {"sp": 24, "mua": 0, "cpm": 24735, "v6s": 26.2, "d6s": 94}, "tot": {"sp": 73, "mua": 0, "v6s": 25.9, "cpm": 22646, "d6s": 94}}, {"ad": "10 TP . 11000 . Không KOC . Tóc đẹp đi làm . Lần cuối cùng ai đó nói anh trông già hơn tuổi là khi nào . Uốn . 140526", "t": "C5", "salon": "10 TP", "cap": "Lần cuối cùng ai đó nói anh trông già hơn tuổi là khi nào", "w1": {"sp": 29, "mua": 0, "cpm": 23219, "v6s": 21.0, "d6s": 111}, "w2": {"sp": 22, "mua": 0, "cpm": 24340, "v6s": 18.0, "d6s": 135}, "w3": {"sp": 16, "mua": 0, "cpm": 30090, "v6s": 21.8, "d6s": 137}, "tot": {"sp": 67, "mua": 0, "v6s": 20.2, "cpm": 25228, "d6s": 137}}, {"ad": "595 BT TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Chúng em tự tin vào những gì salon em làm . Shinecombo . 170526", "t": "C1", "salon": "595 BT TH", "cap": "Chúng em tự tin vào những gì salon em làm", "w1": {"sp": 8, "mua": 0, "cpm": 26379, "v6s": 5.2, "d6s": 510}, "w2": {"sp": 8, "mua": 0, "cpm": 16208, "v6s": 6.8, "d6s": 239}, "w3": {"sp": 45, "mua": 0, "cpm": 23205, "v6s": 10.3, "d6s": 227}, "tot": {"sp": 61, "mua": 0, "v6s": 9.2, "cpm": 22704, "d6s": 227}}, {"ad": "1180 QT . 11000 . Không KOC . Tóc đẹp đi làm . Mùa bóng tới rồi tóc phải vào form . Shinecombo . 110626", "t": "C5", "salon": "1180 QT", "cap": "Mùa bóng tới rồi tóc phải vào form", "w1": {"sp": 27, "mua": 0, "cpm": 18732, "v6s": 14.5, "d6s": 129}, "w2": {"sp": 34, "mua": 0, "cpm": 13892, "v6s": 11.3, "d6s": 123}, "w3": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 7.1, "d6s": 0}, "tot": {"sp": 61, "mua": 0, "cpm": 15642, "v6s": 12.5, "d6s": 125}}, {"ad": "595 BT TH . 11000 . Không KOC . Nghỉ trưa . Giờ nghỉ trưa – đừng lướt điện thoại, ghé 30Shine làm một giấc . Shinecombo . 070526", "t": "C3", "salon": "595 BT TH", "cap": "Giờ nghỉ trưa – đừng lướt điện thoại, ghé 30Shine làm một giấc", "w1": {"sp": 19, "mua": 0, "cpm": 22812, "v6s": 9.2, "d6s": 248}, "w2": {"sp": 40, "mua": 0, "cpm": 40399, "v6s": 11.3, "d6s": 357}, "w3": {"sp": 2, "mua": 0, "cpm": 31875, "v6s": 8.3, "d6s": 382}, "tot": {"sp": 60, "mua": 0, "cpm": 32442, "v6s": 10.3, "d6s": 315}}, {"ad": "168 NVC . 11000 . Không KOC . Nghỉ trưa . giờ trưa của anh đang làm gì . Shinecombo . 060526", "t": "C3", "salon": "168 NVC", "cap": "giờ trưa của anh đang làm gì", "w1": {"sp": 9, "mua": 0, "cpm": 45446, "v6s": 18.8, "d6s": 242}, "w2": {"sp": 35, "mua": 0, "cpm": 38333, "v6s": 19.0, "d6s": 202}, "w3": {"sp": 10, "mua": 0, "cpm": 21165, "v6s": 12.3, "d6s": 173}, "tot": {"sp": 54, "mua": 0, "v6s": 17.7, "cpm": 36339, "d6s": 173}}, {"ad": "595 BT TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Ưu đãi chào hè . Shinecombo . 130326", "t": "C1", "salon": "595 BT TH", "cap": "Ưu đãi chào hè", "w1": {"sp": 7, "mua": 0, "cpm": 20337, "v6s": 7.1, "d6s": 288}, "w2": {"sp": 18, "mua": 0, "cpm": 21477, "v6s": 12.8, "d6s": 168}, "w3": {"sp": 25, "mua": 0, "cpm": 24480, "v6s": 9.7, "d6s": 252}, "tot": {"sp": 50, "mua": 0, "v6s": 10.5, "cpm": 22819, "d6s": 252}}, {"ad": "595 BT TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Nếu như cả đời này không rực rỡ . Shinecombo . 230326", "t": "C1", "salon": "595 BT TH", "cap": "Nếu như cả đời này không rực rỡ", "w1": {"sp": 15, "mua": 0, "cpm": 28545, "v6s": 8.0, "d6s": 356}, "w2": {"sp": 25, "mua": 0, "cpm": 27362, "v6s": 8.3, "d6s": 330}, "w3": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 0.0, "d6s": 0}, "tot": {"sp": 40, "mua": 0, "cpm": 27328, "v6s": 8.1, "d6s": 339}}, {"ad": "12 LDT . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Đi đâu cũng được nhưng đi với mái tóc gọn gàng là thấy tự tin . Shinecombo . 200326", "t": "C1", "salon": "12 LDT", "cap": "Đi đâu cũng được nhưng đi với mái tóc gọn gàng là thấy tự tin", "w1": {"sp": 6, "mua": 0, "cpm": 33324, "v6s": 21.0, "d6s": 159}, "w2": {"sp": 4, "mua": 0, "cpm": 30964, "v6s": 17.9, "d6s": 173}, "w3": {"sp": 30, "mua": 0, "cpm": 20145, "v6s": 17.8, "d6s": 113}, "tot": {"sp": 40, "mua": 0, "v6s": 18.3, "cpm": 23204, "d6s": 113}}, {"ad": "168 NVC . 11000 . Không KOC . Nghỉ trưa . Tranh thủ buổi trưa tạt vào 30shine 168 nguyễn văn cừ thư giãn đi . Shinecombo . 250526", "t": "C3", "salon": "168 NVC", "cap": "Tranh thủ buổi trưa tạt vào 30shine 168 nguyễn văn cừ thư giãn đi", "w1": {"sp": 5, "mua": 0, "cpm": 10962, "v6s": 16.3, "d6s": 67}, "w2": {"sp": 22, "mua": 0, "cpm": 22987, "v6s": 15.3, "d6s": 150}, "w3": {"sp": 10, "mua": 0, "cpm": 15045, "v6s": 14.0, "d6s": 107}, "tot": {"sp": 37, "mua": 0, "v6s": 15.1, "cpm": 19216, "d6s": 107}}, {"ad": "4 LQD BN . 11000 . Không KOC . Nghỉ trưa . Giờ nghỉ trưa - Đừng lướt điện thoại, ghé 30 Shine làm một giấc . Shinecombo . 070526", "t": "C3", "salon": "4 LQD BN", "cap": "Giờ nghỉ trưa - Đừng lướt điện thoại, ghé 30 Shine làm một giấc", "w1": {"sp": 10, "mua": 0, "cpm": 50495, "v6s": 22.3, "d6s": 227}, "w2": {"sp": 18, "mua": 0, "cpm": 48605, "v6s": 12.4, "d6s": 391}, "w3": {"sp": 8, "mua": 0, "cpm": 26520, "v6s": 12.1, "d6s": 219}, "tot": {"sp": 36, "mua": 0, "v6s": 15.1, "cpm": 44222, "d6s": 219}}, {"ad": "362 NGT BN . 11000 . Không KOC . Nghỉ trưa . 12 h trưa của các anh làm gì ghé ngay 30shine 362 Ngô Gia Tự . Shinecombo . 060526", "t": "C3", "salon": "362 NGT BN", "cap": "12 h trưa của các anh làm gì ghé ngay 30shine 362 Ngô Gia Tự", "w1": {"sp": 8, "mua": 0, "cpm": 49355, "v6s": 24.5, "d6s": 201}, "w2": {"sp": 6, "mua": 0, "cpm": 34773, "v6s": 14.8, "d6s": 235}, "w3": {"sp": 2, "mua": 0, "cpm": 14280, "v6s": 4.7, "d6s": 306}, "tot": {"sp": 16, "mua": 0, "v6s": 18.4, "cpm": 39502, "d6s": 306}}, {"ad": "483 TN . 11000 . Không KOC . Nghỉ trưa . GHÉ SALON 483 THỐNG NHẤT – THƯ GIÃN & F5 BẢN THÂN . Shinecombo . 280526", "t": "C3", "salon": "483 TN", "cap": "GHÉ SALON 483 THỐNG NHẤT – THƯ GIÃN & F5 BẢN THÂN", "w1": {"sp": 5, "mua": 0, "cpm": 32324, "v6s": 13.4, "d6s": 242}, "w2": {"sp": 6, "mua": 0, "cpm": 78704, "v6s": 29.6, "d6s": 266}, "w3": {"sp": 1, "mua": 0, "cpm": 51000, "v6s": 20.0, "d6s": 255}, "tot": {"sp": 12, "mua": 0, "v6s": 22.1, "cpm": 57070, "d6s": 255}}, {"ad": "362 NGT BN . 11000 . Không KOC . Tóc đẹp đi làm . Anh em nào tóc thưa tóc mỏng lao hết vô đây với chúng em nhaaaa . Uốn . 130526", "t": "C5", "salon": "362 NGT BN", "cap": "Anh em nào tóc thưa tóc mỏng lao hết vô đây với chúng em nhaaaa", "w1": {"sp": 2, "mua": 0, "cpm": 33750, "v6s": 17.6, "d6s": 191}, "w2": {"sp": 3, "mua": 0, "cpm": 34207, "v6s": 19.5, "d6s": 175}, "w3": {"sp": 6, "mua": 0, "cpm": 54060, "v6s": 23.1, "d6s": 234}, "tot": {"sp": 11, "mua": 0, "v6s": 21.1, "cpm": 44953, "d6s": 234}}, {"ad": "4 LQD BN . 11000 . Không KOC . Tóc đẹp đi làm . Nỗi đau: Mất tự tin xã hội . Uốn . 110626", "t": "C5", "salon": "4 LQD BN", "cap": "Nỗi đau: Mất tự tin xã hội", "w1": {"sp": 4, "mua": 0, "cpm": 22816, "v6s": 24.2, "d6s": 94}, "w2": {"sp": 3, "mua": 0, "cpm": 21399, "v6s": 16.1, "d6s": 133}, "w3": {"sp": 2, "mua": 0, "cpm": 8925, "v6s": 13.5, "d6s": 67}, "tot": {"sp": 9, "mua": 0, "v6s": 19.1, "cpm": 19257, "d6s": 67}}, {"ad": "12 LDT . 11000 . Không KOC . Tóc đẹp đi làm . Cắt tóc không chỉ để gọn… mà còn để nâng tầm phong cách . Uốn . 240526", "t": "C5", "salon": "12 LDT", "cap": "Cắt tóc không chỉ để gọn… mà còn để nâng tầm phong cách", "w1": {"sp": 5, "mua": 0, "cpm": 20959, "v6s": 18.3, "d6s": 115}, "w2": {"sp": 3, "mua": 0, "cpm": 14011, "v6s": 7.1, "d6s": 196}, "w3": {"sp": 1, "mua": 0, "cpm": 127500, "v6s": 75.0, "d6s": 170}, "tot": {"sp": 9, "mua": 0, "v6s": 20.9, "cpm": 30481, "d6s": 170}}, {"ad": "32 NAT . 11000 . Không KOC . Nghỉ trưa . Giờ nghỉ trưa anh thường làm gì  . Shinecombo . 040626", "t": "C3", "salon": "32 NAT", "cap": "Giờ nghỉ trưa anh thường làm gì", "w1": {"sp": 3, "mua": 0, "cpm": 39844, "v6s": 15.6, "d6s": 255}, "w2": {"sp": 4, "mua": 0, "cpm": 22578, "v6s": 12.0, "d6s": 188}, "w3": {"sp": 2, "mua": 0, "cpm": 24225, "v6s": 7.9, "d6s": 306}, "tot": {"sp": 9, "mua": 0, "v6s": 12.3, "cpm": 28699, "d6s": 306}}, {"ad": "595 BT TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Anh em dân văn phòng . Gội . 060726", "t": "C1", "salon": "595 BT TH", "cap": "Anh em dân văn phòng", "w1": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 0, "d6s": 0}, "w2": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 0, "d6s": 0}, "w3": {"sp": 8, "mua": 0, "cpm": 54060, "v6s": 11.9, "d6s": 453}, "tot": {"sp": 8, "mua": 0, "v6s": 11.9, "cpm": 54060, "d6s": 453}}, {"ad": "4 LQD BN . 11000 . Không KOC . Tóc đẹp đi làm . Tóc thưa, đỉnh trắng không phải \"số phận\" . Uốn . 160526", "t": "C5", "salon": "4 LQD BN", "cap": "Tóc thưa, đỉnh trắng không phải \"số phận\"", "w1": {"sp": 2, "mua": 0, "cpm": 43302, "v6s": 22.6, "d6s": 191}, "w2": {"sp": 3, "mua": 0, "cpm": 20959, "v6s": 21.2, "d6s": 99}, "w3": {"sp": 2, "mua": 0, "cpm": 25245, "v6s": 29.6, "d6s": 85}, "tot": {"sp": 7, "mua": 0, "v6s": 24.0, "cpm": 28567, "d6s": 85}}, {"ad": "595 BT TH . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . World Cup thì 4 năm mới có một lần . Shinecombo . 120726", "t": "C1", "salon": "595 BT TH", "cap": "World Cup thì 4 năm mới có một lần", "w1": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 0, "d6s": 0}, "w2": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 0, "d6s": 0}, "w3": {"sp": 5, "mua": 0, "cpm": 26010, "v6s": 12.8, "d6s": 204}, "tot": {"sp": 5, "mua": 0, "v6s": 12.8, "cpm": 26010, "d6s": 204}}, {"ad": "168 NVC . 11000 . Không KOC . Tóc đẹp đi làm . Qua 30shine 168 NvC . Uốn . 110626", "t": "C5", "salon": "168 NVC", "cap": "Qua 30shine 168 NvC", "w1": {"sp": 0, "mua": 0, "cpm": 11087, "v6s": 26.1, "d6s": 42}, "w2": {"sp": 1, "mua": 0, "cpm": 23721, "v6s": 4.6, "d6s": 510}, "w3": {"sp": 2, "mua": 0, "cpm": 10965, "v6s": 15.9, "d6s": 70}, "tot": {"sp": 3, "mua": 0, "v6s": 12.1, "cpm": 15217, "d6s": 70}}, {"ad": "11 PKT . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Review: 30shine đắt và bị chê nhiều . Shinecombo . 070626", "t": "C1", "salon": "11 PKT", "cap": "Review: 30shine đắt và bị chê nhiều", "w1": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 15.4, "d6s": 0}, "w2": {"sp": 1, "mua": 0, "cpm": 23182, "v6s": 9.1, "d6s": 255}, "w3": {"sp": 2, "mua": 0, "cpm": 29580, "v6s": 15.9, "d6s": 185}, "tot": {"sp": 3, "mua": 0, "v6s": 13.6, "cpm": 27447, "d6s": 185}}, {"ad": "362 NGT BN . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Nơi bạn chọn để thư giãn . Shinecombo . 200626", "t": "C1", "salon": "362 NGT BN", "cap": "Nơi bạn chọn để thư giãn", "w1": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 0, "d6s": 0}, "w2": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 0, "d6s": 0}, "w3": {"sp": 3, "mua": 0, "cpm": 39015, "v6s": 18.1, "d6s": 216}, "tot": {"sp": 3, "mua": 0, "v6s": 18.1, "cpm": 39015, "d6s": 216}}, {"ad": "483 TN . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . Ghé salon 483 TN . Shinecombo . 110626", "t": "C1", "salon": "483 TN", "cap": "Ghé salon 483 TN", "w1": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 4.9, "d6s": 0}, "w2": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 2.0, "d6s": 0}, "w3": {"sp": 1, "mua": 0, "cpm": 12966, "v6s": 10.2, "d6s": 128}, "tot": {"sp": 1, "mua": 0, "cpm": 4500, "v6s": 5.9, "d6s": 76}}, {"ad": "12 LDT . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . 45 phút – Nâng cấp một phiên bản đẹp hơn của chính mình . Shinecombo . 180626", "t": "C1", "salon": "12 LDT", "cap": "45 phút – Nâng cấp một phiên bản đẹp hơn của chính mình", "w1": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 0, "d6s": 0}, "w2": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 0, "d6s": 0}, "w3": {"sp": 1, "mua": 0, "cpm": 16065, "v6s": 11.2, "d6s": 142}, "tot": {"sp": 1, "mua": 0, "v6s": 11.2, "cpm": 16065, "d6s": 142}}, {"ad": "362 NGT BN . 11000 . Không KOC . Tóc đẹp đi làm . Chọn kiểu tóc phù hợp cho ngày hè tại 30shine . Uốn . 160726", "t": "C5", "salon": "362 NGT BN", "cap": "Chọn kiểu tóc phù hợp cho ngày hè tại 30shine", "w1": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 0, "d6s": 0}, "w2": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 0, "d6s": 0}, "w3": {"sp": 1, "mua": 0, "cpm": 13770, "v6s": 9.7, "d6s": 142}, "tot": {"sp": 1, "mua": 0, "v6s": 9.7, "cpm": 13770, "d6s": 142}}, {"ad": "4 LQD BN . 11000 . Không KOC . Tan làm . Xứ lý đau cổ vai gáy cho anh em văn phòng . Shinecombo . 170726", "t": "C4", "salon": "4 LQD BN", "cap": "Xứ lý đau cổ vai gáy cho anh em văn phòng", "w1": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 0, "d6s": 0}, "w2": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 0, "d6s": 0}, "w3": {"sp": 1, "mua": 0, "cpm": 5865, "v6s": 6.2, "d6s": 96}, "tot": {"sp": 1, "mua": 0, "v6s": 6.2, "cpm": 5865, "d6s": 96}}, {"ad": "10 TP . 11000 . Không KOC . Tour du lịch thư giãn 45 phút . ngủ 7 8 tiếng mà dậy vẫn mệt . Shinecombo . 170726", "t": "C1", "salon": "10 TP", "cap": "ngủ 7 8 tiếng mà dậy vẫn mệt", "w1": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 0, "d6s": 0}, "w2": {"sp": 0, "mua": 0, "cpm": 0, "v6s": 0, "d6s": 0}, "w3": {"sp": 1, "mua": 0, "cpm": 23205, "v6s": 18.2, "d6s": 128}, "tot": {"sp": 1, "mua": 0, "v6s": 18.2, "cpm": 23205, "d6s": 128}}];
+
+let curCh='fb', curT='all', curSalon='all';
+
+function n(v,u){if(!v)return'<span style="color:#bbb">—</span>';return u==='k'?v.toLocaleString()+'k':u==='d'?v.toLocaleString()+'đ':v.toString()}
+function pctC(v,tgt){return v<=tgt*0.7?'#1b5e20':v<=tgt?'#2e7d32':v<=tgt*1.3?'#e65100':'#b71c1c'}
+
+function cpmFb(c){return c<=12800?'#1b5e20':c<=18000?'#e65100':'#b71c1c'}
+function cpmTk(c){return c<=18000?'#1b5e20':c<=22000?'#e65100':'#b71c1c'}
+function v6sC(v){return v>=20?'#1b5e20':v>=15?'#2e7d32':v>=12?'#e65100':'#b71c1c'}
+function v6sBg(v){return v>=20?'#c8e6c9':v>=15?'#e8f5e9':v>=12?'#fff3e0':'#ffebee'}
+function cpaC(c){return c<=15000?'#1b5e20':c<=40000?'#2e7d32':'#b71c1c'}
+
+function badge(t){var c=TC[t]||'#888';return '<span class="badge" style="background:'+c+'18;color:'+c+';border-color:'+c+'60">'+t+'</span>';}
+function sbadge(s){return '<span class="sbadge">'+s+'</span>';}
+
+function renderFb(data){
+  var body=document.getElementById('fb-body');
+  var html='';
+  var sw1=0,sw2=0,sw3=0,stot=0,smua=0,simp=0;
+  data.forEach(function(r){
+    var w1=r.w1,w2=r.w2,w3=r.w3,tot=r.tot;
+    var allMua=w2.mua+w3.mua;
+    var allCpa=tot.cpa;
+    var cpaStr=allCpa?'<b style="color:'+cpaC(allCpa)+'">'+allCpa.toLocaleString()+'đ</b>':'<span style="color:#bbb">—</span>';
+    var cpmStr=tot.cpm?'<span style="color:'+cpmFb(tot.cpm)+'">'+tot.cpm.toLocaleString()+'đ</span>':'—';
+    var mua12=(w2.mua||0)+'/'+(w3.mua||0);
+    sw1+=w1.sp;sw2+=w2.sp;sw3+=w3.sp;stot+=tot.sp;smua+=allMua;simp+=tot.cpm?1:0;
+    html+='<tr data-t="'+r.t+'" data-salon="'+r.salon+'">'
+      +'<td>'+badge(r.t)+'</td>'
+      +'<td>'+sbadge(r.salon)+'</td>'
+      +'<td class="cap-c" title="'+r.ad.replace(/"/g,"&quot;")+'">'+r.cap+'</td>'
+      +'<td class="num">'+(w1.sp?w1.sp.toLocaleString()+'k':'<span style="color:#bbb">—</span>')+'</td>'
+      +'<td class="num">'+(w2.sp?w2.sp.toLocaleString()+'k':'<span style="color:#bbb">—</span>')+'</td>'
+      +'<td class="num">'+(w3.sp?w3.sp.toLocaleString()+'k':'<span style="color:#bbb">—</span>')+'</td>'
+      +'<td class="num num-tot"><b>'+tot.sp.toLocaleString()+'k</b></td>'
+      +'<td class="num">'+mua12+'</td>'
+      +'<td class="num">'+cpaStr+'</td>'
+      +'<td class="num">'+cpmStr+'</td>'
+      +'<td class="num">'+(tot.v3s?tot.v3s+'K':'—')+'</td>'
+      +'</tr>';
+  });
+  body.innerHTML=html;
+  document.getElementById('fb-cnt').textContent=data.length;
+  var allMuaTot=0; data.forEach(function(r){allMuaTot+=(r.w2.mua||0)+(r.w3.mua||0);});
+  var allSpTot=0; data.forEach(function(r){allSpTot+=r.tot.sp;});
+  var cpaAvg=allMuaTot?Math.round(allSpTot*1000/allMuaTot):0;
+  document.getElementById('fs-w1').textContent=sw1?sw1.toLocaleString()+'k':'—';
+  document.getElementById('fs-w2').textContent=sw2?sw2.toLocaleString()+'k':'—';
+  document.getElementById('fs-w3').textContent=sw3?sw3.toLocaleString()+'k':'—';
+  document.getElementById('fs-tot').textContent=stot?stot.toLocaleString()+'k':'—';
+  document.getElementById('fs-mua').textContent=allMuaTot||'—';
+  document.getElementById('fs-cpa').textContent=cpaAvg?cpaAvg.toLocaleString()+'đ':'—';
+}
+
+function renderTk(data){
+  var body=document.getElementById('tk-body');
+  var html='';
+  var sw1=0,sw2=0,sw3=0,stot=0,smua=0,sv6s_w=0,scpm_w=0,scpmw3_w=0,sw3_for_cpm=0;
+  data.forEach(function(r){
+    var w1=r.w1,w2=r.w2,w3=r.w3,tot=r.tot;
+    var v6s=tot.v6s;
+    var v6sStr='<span style="background:'+v6sBg(v6s)+';color:'+v6sC(v6s)+';padding:2px 6px;border-radius:3px;font-weight:700">'+v6s+'%'+(v6s>=20?' 🔥':v6s<12?' ⚠':'')+'</span>';
+    var cpmW3Str=w3.cpm?'<span style="color:'+cpmTk(w3.cpm)+'">'+w3.cpm.toLocaleString()+'đ</span>':'—';
+    var cpmTotStr=tot.cpm?'<span style="color:'+cpmTk(tot.cpm)+'">'+tot.cpm.toLocaleString()+'đ</span>':'—';
+    sw1+=w1.sp;sw2+=w2.sp;sw3+=w3.sp;stot+=tot.sp;smua+=tot.mua;
+    if(tot.sp>0){sv6s_w+=v6s*tot.sp;scpm_w+=tot.cpm*tot.sp;}
+    if(w3.sp>0){scpmw3_w+=w3.cpm*w3.sp;sw3_for_cpm+=w3.sp;}
+    html+='<tr data-t="'+r.t+'" data-salon="'+r.salon+'">'
+      +'<td>'+badge(r.t)+'</td>'
+      +'<td>'+sbadge(r.salon)+'</td>'
+      +'<td class="cap-c" title="'+r.ad.replace(/"/g,"&quot;")+'">'+r.cap+'</td>'
+      +'<td class="num">'+(w1.sp?w1.sp.toLocaleString()+'k':'<span style="color:#bbb">—</span>')+'</td>'
+      +'<td class="num">'+(w2.sp?w2.sp.toLocaleString()+'k':'<span style="color:#bbb">—</span>')+'</td>'
+      +'<td class="num">'+(w3.sp?w3.sp.toLocaleString()+'k':'<span style="color:#bbb">—</span>')+'</td>'
+      +'<td class="num num-tot"><b>'+tot.sp.toLocaleString()+'k</b></td>'
+      +'<td class="num">'+v6sStr+'</td>'
+      +'<td class="num">'+cpmW3Str+'</td>'
+      +'<td class="num">'+cpmTotStr+'</td>'
+      +'<td class="num">'+(tot.d6s?tot.d6s.toLocaleString()+'đ':'—')+'</td>'
+      +'<td class="num">'+(tot.mua||'<span style="color:#bbb">—</span>')+'</td>'
+      +'</tr>';
+  });
+  body.innerHTML=html;
+  document.getElementById('tk-cnt').textContent=data.length;
+  var avgV6s=stot?Math.round(sv6s_w/stot*10)/10:0;
+  var avgCpm=stot?Math.round(scpm_w/stot):0;
+  var avgCpmW3=sw3_for_cpm?Math.round(scpmw3_w/sw3_for_cpm):0;
+  document.getElementById('ts-w1').textContent=sw1?sw1.toLocaleString()+'k':'—';
+  document.getElementById('ts-w2').textContent=sw2?sw2.toLocaleString()+'k':'—';
+  document.getElementById('ts-w3').textContent=sw3?sw3.toLocaleString()+'k':'—';
+  document.getElementById('ts-tot').textContent=stot?stot.toLocaleString()+'k':'—';
+  document.getElementById('ts-v6s').innerHTML=avgV6s?('<span style="color:'+v6sC(avgV6s)+';font-weight:700">'+avgV6s+'%</span>'):'—';
+  document.getElementById('ts-cpmw3').textContent=avgCpmW3?avgCpmW3.toLocaleString()+'đ':'—';
+  document.getElementById('ts-cpm').textContent=avgCpm?avgCpm.toLocaleString()+'đ':'—';
+  document.getElementById('ts-mua').textContent=smua||'—';
+}
+
+function applyF(){
+  var salon=document.getElementById('salon-sel').value;
+  curSalon=salon;
+  var fbD=FB_DATA.filter(function(r){
+    return (curT==='all'||r.t===curT)&&(curSalon==='all'||r.salon===curSalon);
+  });
+  var tkD=TK_DATA.filter(function(r){
+    return (curT==='all'||r.t===curT)&&(curSalon==='all'||r.salon===curSalon);
+  });
+  var fbSec=document.getElementById('fb-sec');
+  var tkSec=document.getElementById('tk-sec');
+  if(curCh==='fb'){fbSec.style.display='';tkSec.style.display='none';}
+  else if(curCh==='tk'){fbSec.style.display='none';tkSec.style.display='';}
+  else{fbSec.style.display='';tkSec.style.display='';}
+  renderFb(fbD); renderTk(tkD);
+}
+
+function setCh(btn){
+  document.querySelectorAll('[data-ch]').forEach(function(b){b.classList.remove('act');});
+  btn.classList.add('act'); curCh=btn.getAttribute('data-ch'); applyF();
+}
+function setT(btn){
+  document.querySelectorAll('[data-t]').forEach(function(b){b.classList.remove('act');});
+  btn.classList.add('act'); curT=btn.getAttribute('data-t'); applyF();
+}
+
+function srt(tblId,col){
+  var tbl=document.getElementById(tblId);
+  var rows=Array.from(tbl.querySelectorAll('tbody tr'));
+  var asc=tbl.getAttribute('data-sort-col')===String(col)&&tbl.getAttribute('data-sort-asc')==='1';
+  rows.sort(function(a,b){
+    var av=a.cells[col].textContent.replace(/[^0-9.\-]/g,'')||'0';
+    var bv=b.cells[col].textContent.replace(/[^0-9.\-]/g,'')||'0';
+    var an=parseFloat(av),bn=parseFloat(bv);
+    if(isNaN(an)||isNaN(bn)){return asc?av.localeCompare(bv):bv.localeCompare(av);}
+    return asc?an-bn:bn-an;
+  });
+  var tbody=tbl.querySelector('tbody');
+  rows.forEach(function(r){tbody.appendChild(r);});
+  tbl.setAttribute('data-sort-col',col);
+  tbl.setAttribute('data-sort-asc',asc?'0':'1');
+}
+
+// Init
+applyF();
+</script>
+</body>
+</html>
