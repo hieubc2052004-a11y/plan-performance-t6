@@ -975,9 +975,10 @@ renderFbAds('ALL');renderTkAds('ALL');
 
 <!-- ── CỔNG CHI TIỀN VS PLAN ── -->
 <div id="kenh" class="sheet">
-<p class="note" style="margin-bottom:10px"><b>Truy ngược kết quả — Cổng chi tiền T7/2026 · 1–19/7 (19/31 ngày · 61.3%)</b><br>Plan: FB 540M/13,500 KM+C12W · TK 260M/6,564 KM+C12W · GG Maps 72.7M/3,000 KH · CRM 42.6M/3,183 KH · Organic 8,750 KH (không ads)</p>
+<p class="note" style="margin-bottom:10px"><b>Truy ngược kết quả — Cổng chi tiền T7/2026 · 1–19/7 (19/31 ngày · 61.3%)</b><br>
+Plan: FB 540M/13,500 KM+C12W · TK 260M/6,564 KM+C12W · GG Maps 72.7M/3,000 KH · CRM 42.6M/3,183 KH<br>
+<span style="color:#e65100">Nguồn số: report FB/TK file (1-19/7) · Reach = daily sum, không deduplicated · Mua offline TK = view-through conversion trong file · Số content = đang chạy W3</span></p>
 
-<!-- CHANNEL SUMMARY CARDS -->
 <div style="font-size:11px;font-weight:700;color:#1b5e20;margin:0 0 7px;padding:5px 10px;background:#e8f5e9;border-radius:4px;display:inline-block">🎯 Tổng quan 5 kênh — chi thực 1–19/7 vs Plan T7</div>
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px">
   <div style="background:#fff;border:2px solid #1877f2;border-radius:8px;padding:10px 12px">
@@ -994,9 +995,9 @@ renderFbAds('ALL');renderTkAds('ALL');
     <div style="font-size:17px;font-weight:800;color:#e65100">125.3M</div>
     <div style="font-size:10px;color:#666;margin-bottom:5px">/ 260M plan · <b style="color:#e65100">Pace 79% ⚠</b></div>
     <div style="font-size:11px;margin-bottom:2px">V6s% avg: <b style="color:#388e3c">18.0%</b> (target ≥15%)</div>
-    <div style="font-size:11px;margin-bottom:2px">CPM avg: <b style="color:#e65100">~16,600đ</b> (target ≤12.8k)</div>
+    <div style="font-size:11px;margin-bottom:2px">Mua offline tổng: <b>529</b></div>
     <div style="font-size:11px;margin-bottom:6px">C2 Studio: <b style="color:#b71c1c">0đ — chưa triển khai</b></div>
-    <div style="background:#fff3e0;border-radius:4px;padding:3px 7px;font-size:10px;color:#e65100;font-weight:700">⚠️ Under pace 21% · cần 11.2M/ngày W4</div>
+    <div style="background:#fff3e0;border-radius:4px;padding:3px 7px;font-size:10px;color:#e65100;font-weight:700">⚠️ Under pace 21%</div>
   </div>
   <div style="background:#fff;border:2px solid #bbb;border-radius:8px;padding:10px 12px">
     <div style="font-size:10px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px">🗺 Google Maps PMax</div>
@@ -1018,234 +1019,105 @@ renderFbAds('ALL');renderTkAds('ALL');
   </div>
 </div>
 
-<!-- FB PER TUYẾN TABLE -->
-<div style="font-size:11px;font-weight:700;color:#1565c0;margin:0 0 7px;padding:5px 10px;background:#dce8ff;border-radius:4px;display:inline-block">🔵 Facebook — Spend & Lượt mua (FB pixel) theo tuyến vs Plan (1–19/7 · prorated 61.3%)</div>
+<div style="font-size:11px;font-weight:700;color:#1565c0;margin:0 0 7px;padding:5px 10px;background:#dce8ff;border-radius:4px;display:inline-block">🔵 Facebook — Spend &amp; chỉ số theo tuyến vs Plan (1–19/7 · prorated 61.3%)</div>
 <div class="tbl-wrap"><table>
 <thead>
 <tr style="background:#dce8ff">
-  <th>Tuyến</th>
-  <th class="num">Plan tháng</th>
-  <th class="num">Plan 19d</th>
-  <th class="num">Chi thực</th>
-  <th class="num">Pace</th>
-  <th class="num">Lượt mua (FB px)</th>
-  <th class="num">CPA thực</th>
-  <th class="num">CPA target</th>
-  <th class="num">Δ CPA</th>
-  <th>Đánh giá</th>
+  <th rowspan="2">Tuyến</th>
+  <th rowspan="2" class="num">Plan tháng</th>
+  <th rowspan="2" class="num">Pace vs 19d</th>
+  <th rowspan="2" class="num">Chi thực</th>
+  <th colspan="3" style="text-align:center;background:#bbdefb;color:#0d47a1">Video</th>
+  <th colspan="2" style="text-align:center;background:#c8e6c9;color:#1b5e20">Phân phối</th>
+  <th colspan="3" style="text-align:center;background:#fff9c4;color:#6d4c00">Kết quả</th>
+  <th rowspan="2">Δ CPA vs target</th>
+  <th rowspan="2" class="num">Content W3</th>
+</tr>
+<tr style="font-size:10px">
+  <th class="num" style="background:#bbdefb">CPM</th>
+  <th class="num" style="background:#bbdefb">3s View</th>
+  <th class="num" style="background:#bbdefb">đ/3s view</th>
+  <th class="num" style="background:#c8e6c9">Hiển thị</th>
+  <th class="num" style="background:#c8e6c9">Reach*</th>
+  <th class="num" style="background:#fff9c4">Lượt mua (FB px)</th>
+  <th class="num" style="background:#fff9c4">CPA (FB px)</th>
+  <th class="num" style="background:#fff9c4">CPA target</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-  <td><span class="tuyenbadge" style="background:#1565C0">C1</span> Tour thư giãn</td>
-  <td class="num">154.8M</td><td class="num" style="color:#888">94.9M</td>
-  <td class="num"><b>111.5M</b></td>
-  <td class="num" style="color:#1b5e20;font-weight:700">117%</td>
-  <td class="num"><b>3,988</b></td>
-  <td class="num" style="color:#1b5e20">27,948đ</td>
-  <td class="num" style="color:#888">33,000đ</td>
-  <td class="num" style="color:#1b5e20;font-weight:700">-15%</td>
-  <td><span class="tag tag-scale">🟢 CPA tốt</span></td>
-</tr>
-<tr>
-  <td><span class="tuyenbadge" style="background:#6A1B9A">C2</span> Thera Studio</td>
-  <td class="num">88.0M</td><td class="num" style="color:#888">53.9M</td>
-  <td class="num"><b>47.0M</b></td>
-  <td class="num" style="color:#e65100;font-weight:700">87%</td>
-  <td class="num"><b>2,384</b></td>
-  <td class="num" style="color:#1b5e20">19,704đ</td>
-  <td class="num" style="color:#888">30,000đ</td>
-  <td class="num" style="color:#1b5e20;font-weight:700">-34%</td>
-  <td><span class="tag tag-scale">🟢 Scale ngay ↑</span></td>
-</tr>
-<tr>
-  <td><span class="tuyenbadge" style="background:#2E7D32">C3</span> Nghỉ trưa</td>
-  <td class="num">32.6M</td><td class="num" style="color:#888">20.0M</td>
-  <td class="num"><b>20.6M</b></td>
-  <td class="num" style="color:#1b5e20;font-weight:700">103%</td>
-  <td class="num"><b>1,163</b></td>
-  <td class="num" style="color:#1b5e20">17,692đ</td>
-  <td class="num" style="color:#888">40,000đ</td>
-  <td class="num" style="color:#1b5e20;font-weight:700">-56%</td>
-  <td><span class="tag tag-ok">✅ Ổn định · giữ</span></td>
-</tr>
-<tr>
-  <td><span class="tuyenbadge" style="background:#BF360C">C4</span> Tan làm</td>
-  <td class="num">89.6M</td><td class="num" style="color:#888">54.9M</td>
-  <td class="num"><b>44.7M</b></td>
-  <td class="num" style="color:#b71c1c;font-weight:700">81%</td>
-  <td class="num"><b>1,560</b></td>
-  <td class="num" style="color:#e65100">28,626đ</td>
-  <td class="num" style="color:#888">29,000đ</td>
-  <td class="num" style="color:#1b5e20;font-weight:700">-1%</td>
-  <td><span class="tag tag-review">⚠️ Under pace · bổ sung creative</span></td>
-</tr>
-<tr>
-  <td><span class="tuyenbadge" style="background:#AD1457">C5</span> Tóc đẹp đi làm</td>
-  <td class="num">175.0M</td><td class="num" style="color:#888">107.3M</td>
-  <td class="num"><b>106.1M</b></td>
-  <td class="num" style="color:#1b5e20;font-weight:700">99%</td>
-  <td class="num"><b>2,952</b></td>
-  <td class="num" style="color:#b71c1c">35,937đ</td>
-  <td class="num" style="color:#888">29,000đ</td>
-  <td class="num" style="color:#b71c1c;font-weight:700">+24%</td>
-  <td><span class="tag tag-stop">🛑 CPA vượt · audit creative</span></td>
-</tr>
-<tr style="background:#fafafa">
-  <td style="color:#999;font-size:10px">Salon / không tuyến</td>
-  <td class="num" style="color:#ccc">—</td><td class="num" style="color:#ccc">—</td>
-  <td class="num" style="color:#999">5.9M</td>
-  <td class="num" style="color:#ccc">—</td>
-  <td class="num" style="color:#ccc">—</td>
-  <td class="num" style="color:#ccc">—</td>
-  <td class="num" style="color:#ccc">—</td>
-  <td class="num" style="color:#ccc">—</td>
-  <td style="color:#999;font-size:10px">Salon local/unclassified</td>
-</tr>
-<tr style="background:#e8f5e9;font-weight:700">
-  <td>TỔNG Facebook</td>
-  <td class="num">540M</td><td class="num" style="color:#888">331M</td>
-  <td class="num">335.9M</td>
-  <td class="num" style="color:#1b5e20">101%</td>
-  <td class="num">12,047</td>
-  <td class="num" style="color:#1b5e20">27,920đ</td>
-  <td class="num" style="color:#888">40,000đ</td>
-  <td class="num" style="color:#1b5e20">-30%</td>
-  <td><span class="tag tag-scale">✅ Đúng pace · vượt KM</span></td>
-</tr>
+<tr><td><span class="tuyenbadge" style="background:#1565C0">C1</span> Tour thư giãn</td><td class="num">154.8M</td><td class="num" style="color:#1b5e20;font-weight:700">117%</td><td class="num"><b>111.5M</b></td><td class="num">11,591đ</td><td class="num">365.3K</td><td class="num">305đ</td><td class="num">9,616K</td><td class="num">8,176K</td><td class="num"><b>3,988</b></td><td class="num" style="color:#1b5e20">27,948đ</td><td class="num" style="color:#888">33,000đ</td><td><span class="tag tag-scale">🟢 -15%</span></td><td class="num"><b>30</b></td></tr>
+<tr><td><span class="tuyenbadge" style="background:#6A1B9A">C2</span> Thera Studio</td><td class="num">88.0M</td><td class="num" style="color:#e65100;font-weight:700">87%</td><td class="num"><b>47.0M</b></td><td class="num">8,896đ</td><td class="num">134.8K</td><td class="num">349đ</td><td class="num">5,353K</td><td class="num">4,588K</td><td class="num"><b>2,384</b></td><td class="num" style="color:#1b5e20">19,704đ</td><td class="num" style="color:#888">30,000đ</td><td><span class="tag tag-scale">🟢 -34%</span></td><td class="num"><b>8</b></td></tr>
+<tr><td><span class="tuyenbadge" style="background:#2E7D32">C3</span> Nghỉ trưa</td><td class="num">32.6M</td><td class="num" style="color:#1b5e20;font-weight:700">103%</td><td class="num"><b>20.6M</b></td><td class="num">13,203đ</td><td class="num">53.6K</td><td class="num">384đ</td><td class="num">1,562K</td><td class="num">1,383K</td><td class="num"><b>1,163</b></td><td class="num" style="color:#1b5e20">17,693đ</td><td class="num" style="color:#888">40,000đ</td><td><span class="tag tag-scale">🟢 -56%</span></td><td class="num"><b>21</b></td></tr>
+<tr><td><span class="tuyenbadge" style="background:#BF360C">C4</span> Tan làm</td><td class="num">89.6M</td><td class="num" style="color:#e65100;font-weight:700">81%</td><td class="num"><b>44.7M</b></td><td class="num">16,299đ</td><td class="num">194.1K</td><td class="num">230đ</td><td class="num">2,740K</td><td class="num">2,364K</td><td class="num"><b>1,560</b></td><td class="num" style="color:#1b5e20">28,626đ</td><td class="num" style="color:#888">29,000đ</td><td><span class="tag tag-ok">✅ -1%</span></td><td class="num"><b>16</b></td></tr>
+<tr><td><span class="tuyenbadge" style="background:#AD1457">C5</span> Tóc đẹp đi làm</td><td class="num">175.0M</td><td class="num" style="color:#1b5e20;font-weight:700">99%</td><td class="num"><b>106.1M</b></td><td class="num">15,500đ</td><td class="num">543.5K</td><td class="num">195đ</td><td class="num">6,840K</td><td class="num">5,933K</td><td class="num"><b>2,952</b></td><td class="num" style="color:#b71c1c">35,937đ</td><td class="num" style="color:#888">29,000đ</td><td><span class="tag tag-review">⚠️ +24%</span></td><td class="num"><b>44</b></td></tr>
+<tr style="background:#e8f5e9;font-weight:700"><td>TỔNG Facebook</td><td class="num">540M</td><td class="num" style="color:#1b5e20">101%</td><td class="num">335.9M</td><td class="num">—</td><td class="num">1,291.3K</td><td class="num">260đ</td><td class="num">26,111K</td><td class="num">22,442K</td><td class="num">12,047</td><td class="num" style="color:#1b5e20">27,920đ</td><td class="num" style="color:#888">40,000đ</td><td><span class="tag tag-scale">✅ -30%</span></td><td class="num">119</td></tr>
 </tbody></table></div>
-<p class="note">CPA target: C1 ≤33k · C2 ≤30k · C3 ≤40k · C4 ≤29k · C5 ≤29k. Plan 19d = Plan tháng × 61.3% (19/31 ngày). Δ CPA = (CPA thực − target) / target. Lượt mua FB pixel tổng 12,047. <b>Lưu ý:</b> đây là số FB tự báo (pixel attribution), <b>không phải</b> KM+C12W Windsor — cần đối chiếu Windsor để xác nhận.</p>
+<p class="note">*Reach = tổng daily, không deduplicated (cùng người xem nhiều ngày tính nhiều lần). Lượt mua = Meta pixel attribution — chưa đối chiếu Windsor. Số content W3 = bài đang chạy tuần hiện tại. Nguồn: báo-cáo-tài-khoản-tỉnh-ngày1-19-thang-7.xlsx</p>
 
-<!-- TK PER TUYẾN TABLE -->
-<div style="font-size:11px;font-weight:700;color:#bf360c;margin:14px 0 7px;padding:5px 10px;background:#fff3e0;border-radius:4px;display:inline-block">🎵 TikTok — Spend & V6s% theo tuyến vs Plan (1–19/7 · prorated 61.3%)</div>
+<div style="font-size:11px;font-weight:700;color:#bf360c;margin:14px 0 7px;padding:5px 10px;background:#fff3e0;border-radius:4px;display:inline-block">🎵 TikTok — Spend &amp; chỉ số theo tuyến vs Plan (1–19/7 · prorated 61.3%)</div>
 <div class="tbl-wrap"><table>
 <thead>
 <tr style="background:#fff3e0">
-  <th>Tuyến</th>
-  <th class="num">Plan tháng</th>
-  <th class="num">Plan 19d</th>
-  <th class="num">Chi thực</th>
-  <th class="num">Pace</th>
-  <th class="num">V6s% (≥15%)</th>
-  <th class="num">CPM (≤12.8k)</th>
-  <th>Đánh giá</th>
+  <th rowspan="2">Tuyến</th>
+  <th rowspan="2" class="num">Plan tháng</th>
+  <th rowspan="2" class="num">Pace vs 19d</th>
+  <th rowspan="2" class="num">Chi thực</th>
+  <th colspan="2" style="text-align:center;background:#ffe0b2;color:#bf360c">Chất lượng</th>
+  <th colspan="2" style="text-align:center;background:#c8e6c9;color:#1b5e20">Phân phối</th>
+  <th colspan="2" style="text-align:center;background:#fce4ec;color:#880e4f">Mua offline (view-through)</th>
+  <th rowspan="2" class="num">Content W3</th>
+  <th rowspan="2">Đánh giá</th>
+</tr>
+<tr style="font-size:10px">
+  <th class="num" style="background:#ffe0b2">V6s% (≥15%)</th>
+  <th class="num" style="background:#ffe0b2">CPM (≤12.8k)</th>
+  <th class="num" style="background:#c8e6c9">Hiển thị</th>
+  <th class="num" style="background:#c8e6c9">Reach*</th>
+  <th class="num" style="background:#fce4ec">Mua offline</th>
+  <th class="num" style="background:#fce4ec">CPA offline</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-  <td><span class="tuyenbadge" style="background:#1565C0">C1</span> Tour thư giãn</td>
-  <td class="num">83.3M</td><td class="num" style="color:#888">51.1M</td>
-  <td class="num"><b>45.9M</b></td>
-  <td class="num" style="color:#e65100;font-weight:700">90%</td>
-  <td class="num" style="color:#388e3c;font-weight:700">16.4% ✓</td>
-  <td class="num" style="color:#b71c1c">17,352đ ⚠</td>
-  <td><span class="tag tag-review">⚠️ Under pace · CPM cao</span></td>
-</tr>
-<tr>
-  <td><span class="tuyenbadge" style="background:#6A1B9A">C2</span> Thera Studio</td>
-  <td class="num">21.5M</td><td class="num" style="color:#888">13.2M</td>
-  <td class="num"><b style="color:#b71c1c">0M</b></td>
-  <td class="num" style="color:#b71c1c;font-weight:700">0%</td>
-  <td class="num" style="color:#aaa">—</td>
-  <td class="num" style="color:#aaa">—</td>
-  <td><span class="tag tag-stop">🛑 Chưa triển khai</span></td>
-</tr>
-<tr>
-  <td><span class="tuyenbadge" style="background:#2E7D32">C3</span> Nghỉ trưa</td>
-  <td class="num">21.5M</td><td class="num" style="color:#888">13.2M</td>
-  <td class="num"><b>16.3M</b></td>
-  <td class="num" style="color:#1b5e20;font-weight:700">123%</td>
-  <td class="num" style="color:#388e3c">15.4% ✓</td>
-  <td class="num" style="color:#b71c1c">19,244đ ⚠</td>
-  <td><span class="tag tag-ok">✅ Đúng pace · giảm CPM</span></td>
-</tr>
-<tr>
-  <td><span class="tuyenbadge" style="background:#BF360C">C4</span> Tan làm</td>
-  <td class="num">33.0M</td><td class="num" style="color:#888">20.2M</td>
-  <td class="num"><b style="color:#b71c1c">9.0M</b></td>
-  <td class="num" style="color:#b71c1c;font-weight:700">45%</td>
-  <td class="num" style="color:#1b5e20;font-weight:800">21.6% 🔥</td>
-  <td class="num" style="color:#b71c1c">18,911đ ⚠</td>
-  <td><span class="tag tag-stop">🛑 Under pace 55% · V6s% TỐT NHẤT</span></td>
-</tr>
-<tr>
-  <td><span class="tuyenbadge" style="background:#AD1457">C5</span> Tóc đẹp đi làm</td>
-  <td class="num">100.7M</td><td class="num" style="color:#888">61.7M</td>
-  <td class="num"><b>54.1M</b></td>
-  <td class="num" style="color:#e65100;font-weight:700">88%</td>
-  <td class="num" style="color:#1b5e20;font-weight:700">18.9% ✓</td>
-  <td class="num" style="color:#1b5e20">15,261đ ✓</td>
-  <td><span class="tag tag-ok">✅ Hiệu quả nhất TK · tăng budget</span></td>
-</tr>
-<tr style="background:#fff8f0;font-weight:700">
-  <td>TỔNG TikTok</td>
-  <td class="num">260M</td><td class="num" style="color:#888">159.4M</td>
-  <td class="num">125.3M</td>
-  <td class="num" style="color:#e65100">79%</td>
-  <td class="num" style="color:#388e3c">~18.0%*</td>
-  <td class="num" style="color:#e65100">~16,600đ*</td>
-  <td><span class="tag tag-review">⚠️ Under pace 21%</span></td>
-</tr>
+<tr><td><span class="tuyenbadge" style="background:#1565C0">C1</span> Tour thư giãn</td><td class="num">83.3M</td><td class="num" style="color:#e65100;font-weight:700">90%</td><td class="num"><b>45.9M</b></td><td class="num" style="color:#1b5e20;font-weight:700">16.4%</td><td class="num" style="color:#b71c1c">17,352đ</td><td class="num">2,646K</td><td class="num">2,630K</td><td class="num"><b>139</b></td><td class="num" style="color:#888">330,216đ</td><td class="num"><b>57</b></td><td><span class="tag tag-review">⚠️ Under pace · CPM cao</span></td></tr>
+<tr><td><span class="tuyenbadge" style="background:#6A1B9A">C2</span> Thera Studio</td><td class="num">21.5M</td><td class="num" style="color:#b71c1c;font-weight:700">0%</td><td class="num" style="color:#b71c1c"><b>0M</b></td><td class="num" style="color:#aaa">—</td><td class="num" style="color:#aaa">—</td><td class="num" style="color:#aaa">—</td><td class="num" style="color:#aaa">—</td><td class="num" style="color:#aaa">—</td><td class="num" style="color:#aaa">—</td><td class="num" style="color:#aaa">—</td><td><span class="tag tag-stop">🛑 Chưa triển khai</span></td></tr>
+<tr><td><span class="tuyenbadge" style="background:#2E7D32">C3</span> Nghỉ trưa</td><td class="num">21.5M</td><td class="num" style="color:#1b5e20;font-weight:700">123%</td><td class="num"><b>16.3M</b></td><td class="num" style="color:#1b5e20;font-weight:700">15.4%</td><td class="num" style="color:#b71c1c">19,244đ</td><td class="num">849K</td><td class="num">846K</td><td class="num"><b>62</b></td><td class="num" style="color:#888">262,903đ</td><td class="num"><b>28</b></td><td><span class="tag tag-ok">✅ Đúng pace</span></td></tr>
+<tr><td><span class="tuyenbadge" style="background:#BF360C">C4</span> Tan làm</td><td class="num">33.0M</td><td class="num" style="color:#b71c1c;font-weight:700">45%</td><td class="num"><b>9.0M</b></td><td class="num" style="color:#1b5e20;font-weight:700">21.6%</td><td class="num" style="color:#b71c1c">18,911đ</td><td class="num">475K</td><td class="num">471K</td><td class="num"><b>40</b></td><td class="num" style="color:#888">225,000đ</td><td class="num"><b>13</b></td><td><span class="tag tag-stop">🛑 Under pace 55% · V6s% TỐT NHẤT</span></td></tr>
+<tr><td><span class="tuyenbadge" style="background:#AD1457">C5</span> Tóc đẹp đi làm</td><td class="num">100.7M</td><td class="num" style="color:#e65100;font-weight:700">88%</td><td class="num"><b>54.1M</b></td><td class="num" style="color:#1b5e20;font-weight:700">18.9%</td><td class="num" style="color:#b71c1c">15,261đ</td><td class="num">3,544K</td><td class="num">3,518K</td><td class="num"><b>288</b></td><td class="num" style="color:#888">187,847đ</td><td class="num"><b>61</b></td><td><span class="tag tag-ok">✅ Tốt nhất · tăng budget</span></td></tr>
+<tr style="background:#fff8f0;font-weight:700"><td>TỔNG TikTok</td><td class="num">260M</td><td class="num" style="color:#e65100">79%</td><td class="num">125.3M</td><td class="num" style="color:#388e3c">~18.0%</td><td class="num" style="color:#e65100">~16,600đ</td><td class="num">7,514K</td><td class="num">7,465K</td><td class="num">529</td><td class="num" style="color:#888">~237,000đ</td><td class="num">159</td><td><span class="tag tag-review">⚠️ Under pace 21%</span></td></tr>
 </tbody></table></div>
-<p class="note">*V6s% và CPM tổng là ước tính. TK không đo KM+C12W trực tiếp — V6s% ≥15% = chỉ số chất lượng. <b>C4 TK nghịch lý</b>: V6s% cao nhất (21.6%) nhưng pace thấp nhất (45%) — content tốt, budget quá thấp. Cần tăng cap/bid C4 TK ngay.</p>
+<p class="note">*Reach = tổng daily, không deduplicated. Mua offline TK = view-through conversion trong file TikTok (người xem ad rồi đặt lịch sau). CPA offline TK cao hơn FB là bình thường — TK là kênh awareness, không đo direct conversion. Nguồn: Tiktok Ads_báo cáo nội dung ads 1-19 tháng 7.xlsx</p>
 
-<!-- GAP ANALYSIS -->
 <div style="font-size:11px;font-weight:700;color:#b71c1c;margin:14px 0 7px;padding:5px 10px;background:#ffebee;border-radius:4px;display:inline-block">🚨 Gap analysis — 4 vấn đề cốt lõi W4 cần xử lý</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
   <div style="border:2px solid #ef9a9a;border-radius:6px;padding:10px;background:#fff">
     <div style="font-size:11px;font-weight:800;color:#b71c1c;margin-bottom:5px">🔴 [1] C5 FB — CPA 35,937đ (+24% vs target 29k)</div>
-    <div style="font-size:10.5px;color:#37474f;line-height:1.55">W3: CPA nhảy lên 49,668đ (▲113% vs W2). Spend 106M nhưng lượt mua (FB pixel) giảm hiệu suất. Root cause: creative bão hòa — reach rộng mà CTR/CVR giảm. <b>Action W4:</b> Audit từng bài có CPA >35k, off ngay. Test ≥3 creative hook mới.</div>
+    <div style="font-size:10.5px;color:#37474f;line-height:1.55">Reach 5.9M rộng nhưng CPA W3 nhảy lên 49,668đ (▲113% vs W2). 44 content W3. Root cause: creative bão hòa — reach rộng mà CVR giảm. <b>Action W4:</b> Off bài CPA &gt;35k, test ≥3 creative hook mới.</div>
   </div>
   <div style="border:2px solid #ef9a9a;border-radius:6px;padding:10px;background:#fff">
     <div style="font-size:11px;font-weight:800;color:#b71c1c;margin-bottom:5px">🔴 [2] TK C2 Studio — 0đ / 19 ngày (plan 21.5M)</div>
-    <div style="font-size:10.5px;color:#37474f;line-height:1.55">Toàn bộ 13.2M prorated bỏ không. <b>Quyết định cần có ngay:</b> (a) Setup TK C2 W4 nếu có creative sẵn, hoặc (b) Chuyển 13M sang C5/C4 TK — tuyến đang thiếu budget. Không để đến W5 mới quyết.</div>
+    <div style="font-size:10.5px;color:#37474f;line-height:1.55">0 hiển thị, 0 content W3. 13.2M prorated bỏ không. <b>Quyết định W4:</b> (a) Setup TK C2 nếu có creative, hoặc (b) chuyển ngân sách sang C5/C4 TK đang V6s% tốt.</div>
   </div>
   <div style="border:2px solid #ffb74d;border-radius:6px;padding:10px;background:#fff">
-    <div style="font-size:11px;font-weight:800;color:#e65100;margin-bottom:5px">🟡 [3] TK C4 Tan làm — V6s% 21.6% nhưng pace chỉ 45%</div>
-    <div style="font-size:10.5px;color:#37474f;line-height:1.55">Đây là tuyến TK hiệu quả nhất (V6s% tốt nhất hệ) nhưng chỉ chi được 9M/20.2M. Lãng phí cơ hội nghiêm trọng. <b>Action:</b> Tăng cap TK C4 từ W4 — nếu V6s% vẫn ≥18% sau 2 ngày → scale thêm 30%. Check xem ad set có bị giới hạn bid không.</div>
+    <div style="font-size:11px;font-weight:800;color:#e65100;margin-bottom:5px">🟡 [3] TK C4 Tan làm — V6s% 21.6% nhưng pace 45%</div>
+    <div style="font-size:10.5px;color:#37474f;line-height:1.55">13 content W3, Hiển thị 475K, Reach 471K — rất thấp. V6s% 21.6% tốt nhất hệ nhưng budget quá nhỏ (9M/20.2M). <b>Action:</b> Tăng cap TK C4 W4 ngay — content tốt, thiếu tiền phân phối.</div>
   </div>
   <div style="border:2px solid #a5d6a7;border-radius:6px;padding:10px;background:#fff">
-    <div style="font-size:11px;font-weight:800;color:#1b5e20;margin-bottom:5px">🟢 [4] C2 FB — CPA 19.7k (tốt nhất hệ) · pace chỉ 87%</div>
-    <div style="font-size:10.5px;color:#37474f;line-height:1.55">CPM 8,896đ thấp nhất, CPA -34% vs target. Đây là tuyến cần scale nhất nhưng đang under pace. <b>Action:</b> Tăng budget C2 FB W4 thêm 10–20%. Nhân thêm creative Không KOC (CPM thấp hơn KOC). Kiểm tra xem saturation chưa (Freq &lt;3 = ok).</div>
+    <div style="font-size:11px;font-weight:800;color:#1b5e20;margin-bottom:5px">🟢 [4] C2 FB — CPA 19.7k (-34%) · 8 content · Reach 4.6M</div>
+    <div style="font-size:10.5px;color:#37474f;line-height:1.55">CPM 8,896đ thấp nhất, CPA -34% vs target, reach 4.6M với chỉ 8 content (hiệu suất/bài cao nhất). Pace 87%. <b>Action:</b> Tăng budget C2 FB +10–20% W4, nhân thêm creative Không KOC.</div>
   </div>
 </div>
 
-<!-- MISSING CHANNELS NOTE -->
 <div style="background:#f5f5f5;border:1px solid #ddd;border-radius:6px;padding:10px 14px;margin-bottom:12px">
   <div style="font-size:11px;font-weight:700;color:#555;margin-bottom:6px">📵 3 kênh chưa có data — cần bổ sung để đánh giá blended CPA toàn hệ</div>
   <table style="width:100%;font-size:10.5px;border-collapse:collapse">
-  <tr style="border-bottom:1px solid #ddd">
-    <th style="text-align:left;padding:4px 8px;color:#777;font-weight:700">Kênh</th>
-    <th style="text-align:right;padding:4px 8px;color:#777;font-weight:700">Budget plan</th>
-    <th style="text-align:right;padding:4px 8px;color:#777;font-weight:700">KH target</th>
-    <th style="text-align:left;padding:4px 8px;color:#777;font-weight:700">Data cần pull</th>
-    <th style="text-align:left;padding:4px 8px;color:#777;font-weight:700">Người cung cấp</th>
-  </tr>
-  <tr>
-    <td style="padding:4px 8px">🗺 Google Maps PMax</td>
-    <td style="text-align:right;padding:4px 8px">72.7M</td>
-    <td style="text-align:right;padding:4px 8px">3,000 KH</td>
-    <td style="padding:4px 8px">CPA_dir · Directions · Impressions · Spend thực</td>
-    <td style="padding:4px 8px;font-weight:700">Khánh</td>
-  </tr>
-  <tr>
-    <td style="padding:4px 8px">💬 CRM Messenger + Zalo</td>
-    <td style="text-align:right;padding:4px 8px">42.6M</td>
-    <td style="text-align:right;padding:4px 8px">3,183 KH</td>
-    <td style="padding:4px 8px">Open rate · Lượt re-engagement · KH chuyển đổi · 24 salon status</td>
-    <td style="padding:4px 8px;font-weight:700">Hải</td>
-  </tr>
-  <tr>
-    <td style="padding:4px 8px">🔁 Organic quay lại</td>
-    <td style="text-align:right;padding:4px 8px">—</td>
-    <td style="text-align:right;padding:4px 8px">8,750 KH</td>
-    <td style="padding:4px 8px">C12W quay lại thực tế từ Windsor · không chạy ads · kéo tự nhiên</td>
-    <td style="padding:4px 8px;font-weight:700">Windsor data</td>
-  </tr>
+  <tr style="border-bottom:1px solid #ddd"><th style="text-align:left;padding:4px 8px;color:#777;font-weight:700">Kênh</th><th style="text-align:right;padding:4px 8px;color:#777;font-weight:700">Budget plan</th><th style="text-align:right;padding:4px 8px;color:#777;font-weight:700">KH target</th><th style="text-align:left;padding:4px 8px;color:#777;font-weight:700">Data cần pull</th><th style="text-align:left;padding:4px 8px;color:#777;font-weight:700">Người cung cấp</th></tr>
+  <tr><td style="padding:4px 8px">🗺 Google Maps PMax</td><td style="text-align:right;padding:4px 8px">72.7M</td><td style="text-align:right;padding:4px 8px">3,000 KH</td><td style="padding:4px 8px">CPA_dir · Directions · Impressions · Spend thực</td><td style="padding:4px 8px;font-weight:700">Khánh</td></tr>
+  <tr><td style="padding:4px 8px">💬 CRM Messenger + Zalo</td><td style="text-align:right;padding:4px 8px">42.6M</td><td style="text-align:right;padding:4px 8px">3,183 KH</td><td style="padding:4px 8px">Open rate · KH chuyển đổi · 24 salon status</td><td style="padding:4px 8px;font-weight:700">Hải</td></tr>
+  <tr><td style="padding:4px 8px">🔁 Organic quay lại</td><td style="text-align:right;padding:4px 8px">—</td><td style="text-align:right;padding:4px 8px">8,750 KH</td><td style="padding:4px 8px">C12W quay lại thực tế từ Windsor</td><td style="padding:4px 8px;font-weight:700">Windsor data</td></tr>
   </table>
-  <div style="font-size:10px;color:#888;margin-top:6px">Khi có đủ data 3 kênh → blended CPA = (FB chi + GG chi + CRM chi) / (FB KM + GG KM + CRM KM) — target ≤35k. Hiện chỉ tính được FB CPA 27,920đ.</div>
 </div>
 </div>
+
 </div>
 
 <script>
